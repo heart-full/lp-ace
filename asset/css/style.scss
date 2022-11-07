@@ -554,6 +554,10 @@ a {
 
 
 /* TOP-PAGE Main Block -------------------------------------------------- */
+.Index {
+  counter-reset: number 0;
+}
+
 :is(.Index .main .top-section)::before {
   content: attr(title);
   color: #999;
@@ -572,7 +576,22 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
+}
 
+:is(.Index .main .top-section)::after {
+  counter-increment: number 1;
+  content: "0"counter(number) "";
+  color: #fff;
+  font-size: 2em;
+  font-family: "Noto-Sans", sans-serif;
+  font-weight: 900;
+  line-height: 0.8;
+  display: block;
+  padding: 0.35em 1.1em 0.2em 0.7em;
+  background-color: rgb(55, 108, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 :is(.Index .intro)::before {
@@ -594,6 +613,8 @@ a {
 :is(.Index .facilities)::before {
   background-image: url(../images/contents05.svg);
 }
+
+
 
 :is(.Index .staff-message-holder) { 
   position: relative;
