@@ -748,7 +748,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: clamp(0.5em, 1.3333333333vw, 1em);
+  gap: 1em;
 }
 
 :is(.Index .whats-ace-staff-message span:last-of-type) {

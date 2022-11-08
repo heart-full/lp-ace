@@ -773,7 +773,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: clamp(0.5em, calc(100vw * 0.8 * 16 / 960),1em);
+  // gap: clamp(0.5em, calc(100vw * 0.8 * 16 / 960),1em);
+  gap: 1em;
 }
 
 :is(.Index .whats-ace-staff-message span:last-of-type) {
