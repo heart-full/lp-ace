@@ -21,6 +21,17 @@ body {
   height: 100%;
 }
 
+/*
+@media screen and (max-width: 960px) {
+  body {
+    font-size: clamp(12px, calc(100vw * 18 / 960), 18px);
+  }
+}
+
+.touch-device body {
+  font-size: 16px;
+}
+*/
 h1, h2 {
   text-align: center;
   margin-bottom: 16px;
