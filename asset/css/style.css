@@ -329,6 +329,8 @@ a {
   color: hsl(173deg, 33%, 51%);
   font-size: 1.5em;
   letter-spacing: 1.5em;
+  text-align: center;
+  padding-left: 1.5em;
   opacity: 0.75;
 }
 
