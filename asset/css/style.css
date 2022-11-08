@@ -327,7 +327,7 @@ a {
 .hr-dots::before {
   content: "•••";
   color: hsl(173deg, 33%, 51%);
-  font-size: 1.5em;
+  font-size: 3em;
   letter-spacing: 1.5em;
   text-align: center;
   padding-left: 1.5em;
