@@ -326,12 +326,10 @@ a {
 }
 .hr-dots::before {
   content: url(../images/hr.svg);
+  aspect-ratio: 300/45;
   width: 100px;
   color: hsl(173deg, 33%, 51%);
-  font-size: 6em;
-  font-family: "Noto-Sans", sans-serif;
-  letter-spacing: 0.005em;
-  text-align: center;
+  line-height: 0;
 }
 
 /* Footer Block ------------------------------------------------*/
