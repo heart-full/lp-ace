@@ -325,7 +325,8 @@ a {
   justify-content: center;
 }
 .hr-dots::before {
-  content: "・・・";
+  content: url(../images/hr.svg);
+  width: 100px;
   color: hsl(173deg, 33%, 51%);
   font-size: 6em;
   font-family: "Noto-Sans", sans-serif;
