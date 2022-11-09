@@ -662,7 +662,7 @@ a {
 }
 
 .staff-message {
-  font-size: clamp(10px, 1.3333333333vw, 0.8em);
+  font-size: clamp(10px, 1.6666666667vw, 1em);
   line-height: 1.1;
   padding: 0;
   margin: 0;
@@ -767,6 +767,84 @@ a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 16px auto;
+  margin: 16px auto 32px;
+}
+
+/* カリキュラム */
+.curriculumn-weekly-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+:is(.curriculumn-weekly-table tbody) {
+  display: contents;
+}
+
+:is(.curriculumn-weekly-table tr) {
+  background-color: hsl(152deg, 100%, 88%);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 2px 2px rgba(126, 126, 126, 0.2);
+}
+
+:is(.curriculumn-weekly-table th, .curriculumn-weekly-table td) {
+  display: block;
+}
+
+:is(.curriculumn-weekly-table th) {
+  color: hsl(106deg, 69%, 20%);
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
+  border-bottom: solid 2px #fff;
+}
+
+:is(.curriculumn-weekly-table li) {
+  color: #333;
+  text-indent: -0.75em;
+  padding-left: 1em;
+}
+
+:is(.curriculumn-weekly-table li)::before {
+  content: "・";
+}
+
+/* よくあるご質問 */
+:is(.Index .faq details) {
+  background-color: hsl(173deg, 33%, 40%);
+  padding: clamp(8px, 1.6666666667vw, 1em);
+  border-radius: 1em;
+}
+
+:is(.Index .faq details summary) {
+  font-size: 1.2em;
+  background: url(../images/q.png) no-repeat left center;
+  background-size: 6%;
+  display: grid;
+  align-items: center;
+  height: 3em;
+  margin-bottom: 0.5em;
+  padding-left: 6%;
+}
+
+:is(.Index .faq details summary span) {
+  background-color: #fff;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5em;
+  border-radius: 0.5em;
+}
+
+:is(.Index .faq details .faq-answer) {
+  color: #fff;
+  background: url(../images/a.png) no-repeat left center;
+  background-size: 6%;
+  display: grid;
+  align-items: center;
+  min-height: 6em;
+  padding-left: 7%;
 }
 /*# sourceMappingURL=style.css.map */

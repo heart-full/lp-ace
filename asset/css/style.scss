@@ -683,7 +683,8 @@ a {
 }
 
 .staff-message {
-  font-size: clamp(10px, calc(100vw * 0.8 * 16 / 960), 0.8em);
+  // font-size: clamp(10px, calc(100vw * 0.8 * 16 / 960), 0.8em);
+  font-size: clamp(10px, calc(100vw * 16 / 960), 1em);
   line-height: 1.1;
   padding: 0;
   margin: 0;
@@ -792,5 +793,88 @@ a {
 :is(.Index .ace-concept-image-holder) {
   display: block;
   width: fit-content;
-  margin: 16px auto;
+  margin: 16px auto 32px;
 }
+
+
+/* カリキュラム */
+.curriculumn-weekly-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+:is(.curriculumn-weekly-table tbody) {
+  display: contents;
+}
+
+:is(.curriculumn-weekly-table tr) {
+  background-color: hsl(152, 100%, 88%);
+  // width: fit-content;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 2px 2px rgba(126, 126, 126, .2);
+}
+
+:is(.curriculumn-weekly-table th, .curriculumn-weekly-table td) {
+  display: block;
+}
+
+:is(.curriculumn-weekly-table th) {
+  color: hsl(106, 69%, 20%);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
+  border-bottom: solid 2px #fff;
+}
+
+:is(.curriculumn-weekly-table li) {
+  color: #333;
+  text-indent: -.75em;
+  padding-left: 1em;
+}
+
+:is(.curriculumn-weekly-table li)::before {
+  content: '・';
+  // padding-right: 0.2em;
+}
+
+
+/* よくあるご質問 */
+:is(.Index .faq details) {
+  background-color: hsl(173, 33%, 40%);
+  padding: clamp(8px, calc(100vw * 16 / 960), 1em);
+  border-radius: 1em;
+}
+
+:is(.Index .faq details summary) {
+  font-size: 1.2em;
+  background: url(../images/q.png) no-repeat left center;
+  background-size: 6%;
+  display: grid;
+  align-items: center;
+  height: 3em;
+  margin-bottom: .5em;
+  padding-left: 6%;
+}
+
+:is(.Index .faq details summary span) {
+  background-color: #fff;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  padding: 0 .5em;
+  border-radius: 0.5em;
+}
+
+:is(.Index .faq details .faq-answer) {
+  color: #fff;
+  background: url(../images/a.png) no-repeat left center;
+  background-size: 6%;
+  display: grid;
+  align-items: center;
+  min-height: 6em;
+  padding-left: 7%;
+}
+
