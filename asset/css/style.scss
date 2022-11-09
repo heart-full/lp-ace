@@ -840,6 +840,11 @@ a {
   // padding-right: 0.2em;
 }
 
+/* ACEの一日のスケジュール */
+.activities-time-table-graph-holder {
+  display: grid;
+  justify-items: center;
+}
 
 /* よくあるご質問 */
 :is(.Index .faq details) {

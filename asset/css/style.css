@@ -811,6 +811,12 @@ a {
   content: "・";
 }
 
+/* ACEの一日のスケジュール */
+.activities-time-table-graph-holder {
+  display: grid;
+  justify-items: center;
+}
+
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173deg, 33%, 40%);
