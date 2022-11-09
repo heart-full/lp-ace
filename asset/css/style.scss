@@ -134,7 +134,7 @@ a {
 .page_header {
   padding-top: clamp(1px, calc((100vw - 960px) * 8 / 960), 8px);
   height: 100vh;
-  // height: 100dvh;
+  height: 100svh;
   overflow: hidden;
   position: relative;
 }
@@ -377,7 +377,7 @@ a {
 
 :is(.touch-device .page_footer) {
   height: 100vh;
-  // height: 100dvh;
+  height: 100svh;
   max-height: 600px;
 }
 
