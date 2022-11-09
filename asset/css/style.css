@@ -318,18 +318,19 @@ a {
 .hr-dots {
   border: 0;
   height: 2em;
+  padding: 0;
   margin: 2.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hr-dots::before {
-  content: "•••";
+  content: "・・・";
   color: hsl(173deg, 33%, 51%);
-  font-size: 1.5em;
-  letter-spacing: 1.5em;
+  font-size: 6em;
+  font-family: "Noto-Sans", sans-serif;
+  letter-spacing: 0.01em;
   text-align: center;
-  padding-left: 1.5em;
 }
 
 /* Footer Block ------------------------------------------------*/
