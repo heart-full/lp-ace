@@ -843,6 +843,36 @@ a {
   font-weight: 500;
 }
 
+/* 施設紹介 */
+.facilities-photo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+:is(.facilities-photo-wrapper > figure) {
+  position: relative;
+}
+
+:is(.facilities-photo-wrapper > figure > figcaption) {
+  color: #fff;
+  font-size: 0.6em;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.25em 0.5em;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+:is(.facilities-photo-wrapper > figure:first-of-type) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173deg, 23%, 40%);
