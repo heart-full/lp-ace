@@ -853,13 +853,21 @@ a {
   border-radius: 0.5em;
 }
 
-.activities-suchedule-timetable dd {
+:is(.activities-suchedule-timetable > dt) {
+  background-color: #fff;
+  width: 16em;
+  padding: 0.25em 0.25em;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+}
+
+:is(.activities-suchedule-timetable > dd) {
   margin-bottom: 1em;
 }
 
 /* よくあるご質問 */
 :is(.Index .faq details) {
-  background-color: hsl(173, 33%, 40%);
+  background-color: hsl(173, 23%, 40%);
   padding: clamp(8px, calc(100vw * 16 / 960), 1em);
   border-radius: 1em;
 }
