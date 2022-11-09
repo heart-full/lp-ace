@@ -817,6 +817,17 @@ a {
   justify-items: center;
 }
 
+.activities-suchedule-timetable {
+  color: hsl(219deg, 100%, 0%);
+  background-color: hsl(189deg, 31%, 90%);
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.activities-suchedule-timetable dd {
+  margin-bottom: 1em;
+}
+
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173deg, 33%, 40%);
