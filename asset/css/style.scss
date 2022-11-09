@@ -848,12 +848,14 @@ a {
 
 .activities-suchedule-timetable {
   color: hsl(219, 100%, 0%);
-  background-color: hsl(189, 31%, 90%);
+  background-color: hsl(60, 29%, 90%);
   padding: 0.5em;
   border-radius: 0.5em;
 }
 
 :is(.activities-suchedule-timetable > dt) {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
   background-color: #fff;
   width: 16em;
   padding: 0.25em 0.25em;
@@ -864,6 +866,12 @@ a {
 :is(.activities-suchedule-timetable > dd) {
   margin-bottom: 1em;
 }
+
+:is(.activities-suchedule-timetable > dd dt) {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+}
+
 
 /* よくあるご質問 */
 :is(.Index .faq details) {
