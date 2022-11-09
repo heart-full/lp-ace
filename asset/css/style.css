@@ -332,6 +332,10 @@ a {
   line-height: 0;
 }
 
+:is(.touch-device .hr-dots)::before {
+  transform: scale(0.8);
+}
+
 /* Footer Block ------------------------------------------------*/
 .page_footer {
   display: grid;

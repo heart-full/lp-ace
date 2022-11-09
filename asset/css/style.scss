@@ -354,6 +354,10 @@ a {
 
 }
 
+:is(.touch-device .hr-dots)::before {
+  transform: scale(0.8);
+}
+
 
 
 /* Footer Block ------------------------------------------------*/
