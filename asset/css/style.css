@@ -976,7 +976,7 @@ summary::-webkit-details-marker {
 
 /* 見学・体験 */
 :is(.kengaku > section) {
-  font-size: 16px;
+  font-size: 2em;
 }
 
 :is(.kengaku .experience-schedule) {
