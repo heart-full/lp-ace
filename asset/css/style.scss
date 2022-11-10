@@ -1026,8 +1026,11 @@ summary::-webkit-details-marker {
 
 /* 見学・体験 */
 :is(.kengaku > section) {
-  font-size: 1.5em;
   margin: 0;
+}
+
+:is(.touch-device .kengaku >section) {
+  font-size: 1.5em;
 }
 
 :is(.kengaku > section h3) {
