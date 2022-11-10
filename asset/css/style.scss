@@ -1057,9 +1057,14 @@ summary::-webkit-details-marker {
   gap: 1em;
 }
 
+:is(.kengaku .experience-schedule + p) {
+  width: fit-content;
+  margin: 16px auto 0;
+}
+
 :is(.kengaku .reception-time) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 0fr));
   gap: 1em;
 }
 
