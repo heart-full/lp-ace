@@ -483,7 +483,7 @@ a {
 }
 
 .access-map {
-  width: clamp(300px, calc(100vmin * 420 / 960), 420px);
+  // width: clamp(300px, calc(100vmin * 420 / 960), 420px);
   padding: 16px 16px 0;
   height: auto;
   // transform: scale(1.2);
