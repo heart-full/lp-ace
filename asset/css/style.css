@@ -423,11 +423,6 @@ a {
   transform-origin: top left;
 }
 
-@media screen and (max-width: 630px) {
-  .branch-info {
-    transform: scale(1);
-  }
-}
 .access-map-holder {
   grid-column-start: 2;
   grid-column-end: 3;
