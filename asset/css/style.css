@@ -358,7 +358,7 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   .page_footer {
-    grid-template-rows: 2fr 2fr 1fr 1.5em;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
   }
 }
@@ -979,6 +979,17 @@ summary::-webkit-details-marker {
   font-size: 1.5em;
 }
 
+:is(.kengaku > section h3) {
+  line-height: 1;
+  padding-left: 0.25em;
+  margin-bottom: 0.5em;
+  border-left: solid 0.5em hsl(173deg, 33%, 51%);
+}
+
+:is(.kengaku > section h3 ~ *) {
+  padding-left: 1em;
+}
+
 :is(.kengaku .experience-schedule) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -989,5 +1000,9 @@ summary::-webkit-details-marker {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1em;
+}
+
+:is(.kengaku .sub-section.hr-dots) {
+  transform: scale(0.5);
 }
 /*# sourceMappingURL=style.css.map */
