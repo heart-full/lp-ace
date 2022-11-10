@@ -1013,6 +1013,10 @@ summary::-webkit-details-marker {
   gap: 1em;
 }
 
+:is(.kengaku .reception-time *) {
+  margin: 0;
+}
+
 :is(.kengaku .sub-section.hr-dots) {
   margin: 0;
   transform: scale(0.3);
