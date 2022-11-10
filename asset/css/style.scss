@@ -837,7 +837,7 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   // gap: clamp(0.5em, calc(100vw * 0.8 * 16 / 960),1em);
-  gap: 1em;
+  gap: 2em;
 }
 
 :is(.Index .whats-ace-staff-message span:last-of-type) {
@@ -863,7 +863,7 @@ a {
 }
 
 :is(.curriculumn-weekly-table tr) {
-  background-color: hsl(152, 100%, 88%);
+  background-color: hsl(190deg 44% 73%);
   // width: fit-content;
   padding: 0.5em;
   border-radius: 0.5em;
@@ -879,8 +879,14 @@ a {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
   padding-bottom: 0.25em;
-  margin-bottom: 0.75em;
-  border-bottom: solid 2px #fff;
+  margin-bottom: 0.5em;
+  // border-bottom: solid 2px #fff;
+}
+
+:is(.curriculumn-weekly-table ul) {
+  background-color: #fff;
+  margin-bottom: 0;
+  border-radius: 6px;
 }
 
 :is(.curriculumn-weekly-table li) {
