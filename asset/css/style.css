@@ -996,9 +996,16 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .contact .contact-details-holder) {
-  display: grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+:is(.kengaku .contact .contact-details-holder > details) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 180px;
 }
 
 :is(.kengaku .experience-schedule) {
