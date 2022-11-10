@@ -82,6 +82,12 @@ a {
   text-decoration: none;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
+
+
 .Container {
   // display: flex;
   // flex-direction: column;
@@ -938,10 +944,13 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 :is(.facilities-photo-wrapper > figure) {
   position: relative;
+  border-radius: 1em;
+  overflow: hidden;
 }
 
 :is(.facilities-photo-wrapper > figure > figcaption) {
@@ -962,6 +971,17 @@ a {
   grid-row-end: 2;
 }
 
+:is(.facilities .message-for-you) {
+  background-color:hsl(40, 100%, 86%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 32px;
+  padding: 16px;
+  border-radius: 1em;
+}
+
+
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173, 23%, 40%);
@@ -978,10 +998,6 @@ a {
   height: 3em;
   margin-bottom: .5em;
   padding-left: 6%;
-}
-
-.Index .faq details summary::-webkit-details-marker {
-  display: none;
 }
 
 :is(.Index .faq details summary span) {
