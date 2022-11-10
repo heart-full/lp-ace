@@ -973,6 +973,10 @@ a {
   padding-left: 6%;
 }
 
+:is(.Index .faq details summary)::webkit-details-marker {
+  display: none;
+}
+
 :is(.Index .faq details summary span) {
   background-color: #fff;
   display: grid;
