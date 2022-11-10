@@ -1027,6 +1027,7 @@ summary::-webkit-details-marker {
 /* 見学・体験 */
 :is(.kengaku > section) {
   font-size: 1.5em;
+  margin: 0;
 }
 
 :is(.kengaku > section h3) {
@@ -1053,5 +1054,6 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .sub-section.hr-dots) {
-  transform: scale(0.5);
+  margin: 0;
+  transform: scale(0.3);
 }
