@@ -995,6 +995,12 @@ summary::-webkit-details-marker {
   margin: 0;
 }
 
+:is(.kengaku .contact .contact-details-holder) {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 :is(.kengaku .experience-schedule) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
