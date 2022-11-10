@@ -77,6 +77,10 @@ a {
   text-decoration: none;
 }
 
+summary {
+  display: block;
+}
+
 summary::-webkit-details-marker {
   display: none;
 }
@@ -968,5 +972,22 @@ summary::-webkit-details-marker {
   align-items: center;
   min-height: 6em;
   padding-left: 7%;
+}
+
+/* 見学・体験 */
+:is(.kengaku > section) {
+  font-size: 16px;
+}
+
+:is(.kengaku .experience-schedule) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+:is(.kengaku .reception-time) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
 }
 /*# sourceMappingURL=style.css.map */
