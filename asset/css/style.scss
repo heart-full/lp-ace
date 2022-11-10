@@ -396,8 +396,8 @@ summary::-webkit-details-marker {
 // }
 
 :is(.touch-device .page_footer) {
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
   // max-height: 600px;
 }
 
