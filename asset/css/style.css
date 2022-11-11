@@ -1002,6 +1002,12 @@ summary::-webkit-details-marker {
   gap: 2em;
 }
 
+@media screen and (max-width: 640px) {
+  :is(.kengaku .contact .contact-details-holder) {
+    grid: none;
+    gap: 0;
+  }
+}
 :is(.kengaku .contact .contact-details-holder > details) {
   width: -webkit-fit-content;
   width: -moz-fit-content;
