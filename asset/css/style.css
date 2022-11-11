@@ -348,7 +348,7 @@ summary::-webkit-details-marker {
 /* Footer Block ------------------------------------------------*/
 .page_footer {
   display: grid;
-  grid-template-rows: 2fr 1fr 1em;
+  grid-template-rows: 2fr 1fr 2em;
   grid-template-columns: 1fr 1fr;
   min-height: 480px;
   position: relative;
@@ -358,7 +358,7 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   .page_footer {
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2em;
     grid-template-columns: 1fr;
   }
 }
@@ -996,8 +996,8 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .contact .contact-details-holder) {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
   gap: 2em;
 }
 
@@ -1006,6 +1006,13 @@ summary::-webkit-details-marker {
   width: -moz-fit-content;
   width: fit-content;
   min-width: 180px;
+}
+
+:is(.kengaku .announce p) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 :is(.kengaku .experience-schedule) {
@@ -1024,7 +1031,11 @@ summary::-webkit-details-marker {
 :is(.kengaku .reception-time) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 0fr));
-  gap: 1em;
+  gap: 1em 2em;
+}
+
+:is(.kengaku .reception-time > details) {
+  min-width: 180px;
 }
 
 :is(.kengaku .reception-time *) {
