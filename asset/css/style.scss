@@ -990,6 +990,7 @@ summary::-webkit-details-marker {
 :is(.Index .faq details) {
   background-color: hsl(173, 23%, 40%);
   padding: clamp(8px, calc(100vw * 16 / 960), 1em);
+  margin-bottom: 1em;
   border-radius: 1em;
 }
 
