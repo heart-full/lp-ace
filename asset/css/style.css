@@ -998,7 +998,7 @@ summary::-webkit-details-marker {
 
 :is(.kengaku .contact .contact-details-holder) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+  grid-template-columns: auto auto;
   gap: 2em;
 }
 
