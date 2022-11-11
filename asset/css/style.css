@@ -1023,9 +1023,13 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .experience-schedule) {
+  color: #fff;
+  background-color: #649cc9;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
 }
 
 :is(.kengaku .experience-schedule + p) {
