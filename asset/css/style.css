@@ -970,6 +970,10 @@ summary::-webkit-details-marker {
   border-radius: 1em;
 }
 
+.message-for-you-wrapper {
+  padding: 1em;
+}
+
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173deg, 23%, 40%);
