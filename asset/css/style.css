@@ -998,6 +998,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku summary) {
+  font-size: 1.1em;
   font-weight: bold;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1039,6 +1040,14 @@ summary::-webkit-details-marker {
   border-radius: 1em;
 }
 
+:is(.kengaku .announce p span) {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 :is(.kengaku .experience-schedule) {
   color: #fff;
   background-color: #649cc9;
@@ -1068,10 +1077,6 @@ summary::-webkit-details-marker {
 
 :is(.kengaku .reception-time > details) {
   min-width: 180px;
-}
-
-:is(.kengaku .reception-time p) {
-  margin: 0;
 }
 
 :is(.kengaku .sub-section.hr-dots) {
