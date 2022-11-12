@@ -997,9 +997,13 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .contact .contact-details-holder) {
+  color: #fff;
+  background-color: #649cc9;
   display: grid;
   grid-template-columns: auto auto;
   gap: 2em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
 }
 
 @media screen and (max-width: 640px) {
@@ -1016,10 +1020,12 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .announce p) {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  color: #fff;
+  background-color: #649cc9;
+  text-align: center;
+  padding: 0.5em 1em;
   margin: 0 auto;
+  border-radius: 1em;
 }
 
 :is(.kengaku .experience-schedule) {
@@ -1040,9 +1046,13 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .reception-time) {
+  color: #fff;
+  background-color: #649cc9;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1em 2em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
 }
 
 :is(.kengaku .reception-time > details) {
