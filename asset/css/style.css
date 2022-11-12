@@ -914,6 +914,17 @@ summary::-webkit-details-marker {
   margin-bottom: 1em;
 }
 
+:is(.users-voice-exsamples summary) {
+  font-size: 1.1em;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 0.25em;
+  margin-bottom: 0.5em;
+  border-bottom: solid 1px #fff;
+}
+
 /* 施設紹介 */
 .facilities-photo-wrapper {
   display: grid;
