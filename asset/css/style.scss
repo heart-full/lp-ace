@@ -55,11 +55,11 @@ th {
 picture {
   display: inline-block;
 }
-
+/*
 section, p, ul, ol, dl {
   margin-bottom: 1em;
 }
-
+*/
 img {
   vertical-align: bottom;
   max-width: 100%;
@@ -1126,7 +1126,7 @@ summary::-webkit-details-marker {
   min-width: 180px;
 }
 
-:is(.kengaku .reception-time *) {
+:is(.kengaku .reception-time p) {
   margin: 0;
 }
 
