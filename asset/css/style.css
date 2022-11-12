@@ -1034,7 +1034,6 @@ summary::-webkit-details-marker {
 :is(.kengaku .announce p) {
   color: #fff;
   background-color: #649cc9;
-  text-align: center;
   padding: 0.5em 1em;
   margin: 0 auto;
   border-radius: 1em;
