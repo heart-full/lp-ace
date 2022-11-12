@@ -943,6 +943,22 @@ summary::-webkit-details-marker {
   font-weight: 500;
 }
 
+/* 利用者の声 */
+.users-voice-exsamples {
+  background-color:hsl(173, 23%, 80%);
+  width: fit-content;
+  padding: 0.5em 1em;
+  border-radius: 16px;
+}
+
+.users-voice-exsamples:nth-of-type(2n) {
+  margin-left: auto;
+}
+
+.users-voice-exsamples:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
 /* 施設紹介 */
 .facilities-photo-wrapper {
   display: grid;
