@@ -1064,6 +1064,10 @@ summary::-webkit-details-marker {
   margin: 16px auto 0;
 }
 
+:is(.kengaku .experience-schedule-exception) {
+  color: #f00;
+}
+
 :is(.kengaku .reception-time) {
   color: #fff;
   background-color: #649cc9;
