@@ -1046,6 +1046,15 @@ summary::-webkit-details-marker {
   margin: 0;
 }
 
+:is(.kengaku summary) {
+  font-weight: bold;
+  width: fit-content;
+  padding: 0 0.25em;
+  margin-bottom: 0.5em;
+  border-bottom: solid 1px #fff;
+}
+
+
 :is(.kengaku .contact .contact-details-holder) {
   color: #fff;
   background-color: #649cc9;
