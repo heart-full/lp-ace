@@ -960,6 +960,10 @@ summary::-webkit-details-marker {
   grid-row-end: 2;
 }
 
+:is(.facilities .message-for-you-wrapper) {
+  padding: 1em;
+}
+
 :is(.facilities .message-for-you) {
   background-color: hsl(40deg, 100%, 86%);
   display: grid;
@@ -970,10 +974,11 @@ summary::-webkit-details-marker {
   border-radius: 1em;
 }
 
-.message-for-you-wrapper {
-  padding: 1em;
+@media screen and (max-width: 640px) {
+  :is(.facilities .message-for-you) {
+    grid: none;
+  }
 }
-
 /* よくあるご質問 */
 :is(.Index .faq details) {
   background-color: hsl(173deg, 23%, 40%);
