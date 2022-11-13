@@ -1123,7 +1123,7 @@ summary::-webkit-details-marker {
 :is(.Index .faq details summary) {
   font-size: 1.2em;
   background: url(../images/q.png) no-repeat left center;
-  background-size: 6%;
+  background-size: contain;
   display: grid;
   align-items: center;
   height: 3em;
