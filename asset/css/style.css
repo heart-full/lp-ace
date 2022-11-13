@@ -685,6 +685,7 @@ summary::-webkit-details-marker {
   aspect-ratio: 597/448;
   position: relative;
   overflow: hidden;
+  border: solid 1px hsl(173deg, 23%, 55%);
 }
 
 .staff-message-holder::before {
@@ -733,7 +734,7 @@ summary::-webkit-details-marker {
 */
 .staff-message {
   font-size: clamp(10px, 1.6666666667vw, 1em);
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   line-height: 2;
   height: auto;
   padding: 0;
@@ -939,6 +940,7 @@ summary::-webkit-details-marker {
   color: hsl(219deg, 100%, 0%);
   background-color: hsl(60deg, 29%, 90%);
   padding: 0.5em;
+  margin-bottom: 1em;
   border-radius: 0.5em;
 }
 
