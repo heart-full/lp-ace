@@ -753,11 +753,27 @@ summary::-webkit-details-marker {
 }
 
 .staff-message-wrapper {
-  background-color: #fff;
-  // width: clamp(240px, calc(100vw * 60 /100), 60%);
-  padding: 1em;
-  // aspect-ratio: 400 / 166;
-  position: relative;
+  color: #333;
+  font-weight: bold;
+  padding: 5em 4em 3em;
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  border: solid 1px #666;
+  border-radius: 50%;
+}
+
+.staff-message-wrapper::before {
+  content: '';
+  background-color: rgba(255, 255, 255, .75);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  z-index: -1;
 }
 
 /*
