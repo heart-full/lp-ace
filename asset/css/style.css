@@ -781,6 +781,7 @@ summary::-webkit-details-marker {
     border-radius: 8px;
   }
   .staff-message {
+    letter-spacing: unset;
     writing-mode: unset;
   }
   :is(.staff-message .text-combine) {
