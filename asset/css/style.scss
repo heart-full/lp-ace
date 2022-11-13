@@ -725,7 +725,7 @@ summary::-webkit-details-marker {
   border: solid 1px hsl(173, 23%, 55%);
 }
 
-.staff-message-holder::before {
+:is(.Index .staff-message-holder)::before {
   content: '';
   background-repeat: no-repeat;
   background-position: top center;
@@ -752,7 +752,7 @@ summary::-webkit-details-marker {
   padding: 1em;
 }
 
-.staff-message-wrapper {
+:is(.Index .staff-message-wrapper) {
   color: #333;
   font-weight: bold;
   padding: 5em 4em 3em;
@@ -763,7 +763,7 @@ summary::-webkit-details-marker {
   border-radius: 50%;
 }
 
-.staff-message-wrapper::before {
+:is(.staff-message-wrapper)::before {
   content: '';
   background-color: rgba(255, 255, 255, .75);
   position: absolute;
@@ -812,6 +812,29 @@ summary::-webkit-details-marker {
 
 
 @media screen and (max-width: 600px) {
+  :is(.Index .staff-message-wrapper) {
+    padding: 1em;
+    top: unset;
+    bottom:16px;
+    left: 16px;
+    border-radius: 8px;
+  }
+  
+  :is(.staff-message-wrapper)::before {
+    border-radius: 8px;
+  }
+
+  .staff-message {
+    writing-mode: unset;
+  }
+  
+  :is(.staff-message .text-combine) {
+    text-orientation: unset;
+  }
+}
+
+/*
+@media screen and (max-width: 600px) {
   .staff-message-wrapper {
     line-height: 1;
     width: 320px;
@@ -824,6 +847,7 @@ summary::-webkit-details-marker {
     line-height: 1;
   }
 }
+*/
 
 
 /* 事業所紹介セクション*/
