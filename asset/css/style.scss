@@ -1178,7 +1178,7 @@ summary::-webkit-details-marker {
   align-items: center;
   height: 3em;
   margin-bottom: .5em;
-  padding-left: 6%;
+  padding-left: 10%;
 }
 
 :is(.Index .faq details summary span) {
@@ -1193,11 +1193,11 @@ summary::-webkit-details-marker {
 :is(.Index .faq details .faq-answer) {
   color: #fff;
   background: url(../images/a.png) no-repeat left center;
-  background-size: 6%;
+  background-size: 8%;
   display: grid;
   align-items: center;
   min-height: 6em;
-  padding-left: 7%;
+  padding-left: 10%;
 }
 
 
