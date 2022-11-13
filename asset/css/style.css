@@ -1190,6 +1190,7 @@ summary::-webkit-details-marker {
   gap: 2em;
   padding: 0.5em 1em;
   border-radius: 1em;
+  position: relative;
 }
 
 @media screen and (max-width: 640px) {
@@ -1203,6 +1204,14 @@ summary::-webkit-details-marker {
   width: -moz-fit-content;
   width: fit-content;
   min-width: 180px;
+}
+
+:is(.kengaku .contact .ace-line-qr) {
+  width: clamp(32px, 6.6666666667vw, 64px);
+  height: clamp(32px, 6.6666666667vw, 64px);
+  position: absolute;
+  top: clamp(8px, 1.6666666667vw, 16px);
+  right: clamp(8px, 1.6666666667vw, 16px);
 }
 
 :is(.kengaku .announce p) {
