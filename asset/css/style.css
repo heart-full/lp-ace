@@ -1126,7 +1126,7 @@ summary::-webkit-details-marker {
   background-size: contain;
   display: grid;
   align-items: center;
-  height: 3em;
+  height: 5em;
   margin-bottom: 0.5em;
   padding-left: 10%;
 }
@@ -1135,7 +1135,7 @@ summary::-webkit-details-marker {
   background-color: #fff;
   display: grid;
   align-items: center;
-  height: 100%;
+  height: 3em;
   padding: 0 0.5em;
   border-radius: 0.5em;
 }
@@ -1143,10 +1143,10 @@ summary::-webkit-details-marker {
 :is(.Index .faq details .faq-answer) {
   color: #fff;
   background: url(../images/a.png) no-repeat left center;
-  background-size: 8%;
+  background-size: contain;
   display: grid;
   align-items: center;
-  min-height: 6em;
+  min-height: 6.5em;
   padding-left: 10%;
 }
 
