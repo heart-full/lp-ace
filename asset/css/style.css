@@ -1207,11 +1207,15 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .contact .ace-line-qr) {
-  width: clamp(32px, 6.6666666667vw, 64px);
-  height: clamp(32px, 6.6666666667vw, 64px);
   position: absolute;
   top: clamp(8px, 1.6666666667vw, 16px);
   right: clamp(8px, 1.6666666667vw, 16px);
+}
+
+:is(.kengaku .contact .ace-line-qr figcaption) {
+  color: #fff;
+  font-size: 0.6em;
+  text-align: center;
 }
 
 :is(.kengaku .announce p) {
