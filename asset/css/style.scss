@@ -714,9 +714,29 @@ summary::-webkit-details-marker {
 
 
 
-:is(.Index .staff-message-holder) { 
+:is(.Index .staff-message-holder) {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto; 
+  aspect-ratio: 597 / 448;
   position: relative;
+  overflow: hidden;
 }
+
+.staff-message-holder::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
 
 :is(.Index .staff-photo-holder) {
   width: 100%;
@@ -732,31 +752,39 @@ summary::-webkit-details-marker {
 }
 
 .staff-message-wrapper {
-  width: clamp(240px, calc(100vw * 60 /100), 60%);
-  height: auto;
-  aspect-ratio: 400 / 166;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-}
-
-.staff-message-bg {
-  width: 100%;
-  height: auto;
-  margin: 5% 0 0;
+  background-color: #fff;
+  // width: clamp(240px, calc(100vw * 60 /100), 60%);
+  padding: 1em;
+  // aspect-ratio: 400 / 166;
   position: relative;
 }
+
+/*
+.staff-message-bg {
+  width: 100%;
+  height: 100%;
+  margin: 5% 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg);
+  z-index: -1;
+}
+*/
 
 .staff-message {
   // font-size: clamp(10px, calc(100vw * 0.8 * 16 / 960), 0.8em);
   font-size: clamp(10px, calc(100vw * 16 / 960), 1em);
-  line-height: 1.1;
+  letter-spacing: 8px;
+  line-height: 2;
+  height: auto;
   padding: 0;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  writing-mode: vertical-rl;
+}
+
+:is(.staff-message .text-combine) {
+  text-orientation: upright;
 }
 
 
@@ -831,6 +859,10 @@ summary::-webkit-details-marker {
 }
 */
 
+.intro-staff-message-holder::before {
+  background-image: url(../images/staff-photo01.png);
+}
+
 :is(.Index .whats-ace-title) {
   font-size: clamp(14px, calc(100vw * 32 / 960), 32px);
   width: fit-content;
@@ -863,6 +895,10 @@ summary::-webkit-details-marker {
 
 
 /* カリキュラム */
+.curriculumn-staff-message-holder::before {
+  background-image: url(../images/staff-photo03.png);
+}
+
 .curriculumn-time-table {
   color: #fff;
   font-size: 1.2em;
@@ -933,6 +969,10 @@ summary::-webkit-details-marker {
 
 
 /* ACEの一日のスケジュール */
+.activities-staff-message-holder::before {
+  background-image: url(../images/staff-photo02.png);
+}
+
 .activities-time-table-graph-holder {
   display: grid;
   justify-items: center;
