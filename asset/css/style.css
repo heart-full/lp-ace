@@ -771,14 +771,14 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 600px) {
   :is(.Index .staff-message-wrapper) {
-    padding: 1em;
+    padding: clamp(8px, 1.3333333333vw, 1em);
     top: unset;
-    bottom: 16px;
-    left: 16px;
-    border-radius: 8px;
+    bottom: clamp(8px, 1.6666666667vw, 16px);
+    left: clamp(8px, 1.6666666667vw, 16px);
+    border-radius: clamp(8px, 1.6666666667vw, 16px);
   }
   :is(.staff-message-wrapper)::before {
-    border-radius: 8px;
+    border-radius: clamp(8px, 1.6666666667vw, 16px);
   }
   .staff-message {
     letter-spacing: unset;
@@ -895,6 +895,12 @@ summary::-webkit-details-marker {
   background-image: url(../images/staff-photo03.png);
 }
 
+@media screen and (max-width: 640px) {
+  :is(.Index .curriculumn .staff-message-wrapper) {
+    top: clamp(8px, 1.6666666667vw, 16px);
+    bottom: unset;
+  }
+}
 .curriculumn-time-table {
   color: #fff;
   font-size: 1.2em;
@@ -967,6 +973,12 @@ summary::-webkit-details-marker {
   background-image: url(../images/staff-photo02.png);
 }
 
+@media screen and (max-width: 640px) {
+  :is(.Index .activities .staff-message-wrapper) {
+    top: clamp(8px, 1.6666666667vw, 16px);
+    bottom: unset;
+  }
+}
 .activities-time-table-graph-holder {
   display: grid;
   justify-items: center;

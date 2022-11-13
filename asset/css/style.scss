@@ -813,15 +813,15 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 600px) {
   :is(.Index .staff-message-wrapper) {
-    padding: 1em;
+    padding: clamp(8px, calc(100vw * 16 * 0.8 / 960), 1em);
     top: unset;
-    bottom:16px;
-    left: 16px;
-    border-radius: 8px;
+    bottom: clamp(8px, calc(100vw * 16 / 960), 16px);
+    left: clamp(8px, calc(100vw * 16 / 960), 16px);
+    border-radius: clamp(8px, calc(100vw * 16 / 960), 16px);
   }
   
   :is(.staff-message-wrapper)::before {
-    border-radius: 8px;
+    border-radius: clamp(8px, calc(100vw * 16 / 960), 16px);
   }
 
   .staff-message {
@@ -942,6 +942,13 @@ summary::-webkit-details-marker {
   background-image: url(../images/staff-photo03.png);
 }
 
+@media screen and (max-width: 640px) {
+  :is(.Index .curriculumn .staff-message-wrapper) {
+    top: clamp(8px, calc(100vw * 16 / 960), 16px);
+    bottom: unset;
+  }
+}
+
 .curriculumn-time-table {
   color: #fff;
   font-size: 1.2em;
@@ -1014,6 +1021,13 @@ summary::-webkit-details-marker {
 /* ACEの一日のスケジュール */
 .activities-staff-message-holder::before {
   background-image: url(../images/staff-photo02.png);
+}
+
+@media screen and (max-width: 640px) {
+  :is(.Index .activities .staff-message-wrapper) {
+    top: clamp(8px, calc(100vw * 16 / 960), 16px);
+    bottom: unset;
+  }
 }
 
 .activities-time-table-graph-holder {
