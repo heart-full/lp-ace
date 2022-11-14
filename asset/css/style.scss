@@ -1348,11 +1348,28 @@ summary::-webkit-details-marker {
 
 
 /* SNS */
-:is(.sns-wrapper > details) {
+:is(.sns-holder > details) {
   display: grid;
+  justify-items: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto 32px;
 }
 
-:is(.sns .qr-code) {
+:is(.sns-holder > details summary) {
+  margin: 0 auto;
+}
+
+:is(.sns-holder > details .details-description) {
+  text-align: center;
+}
+
+:is(.sns-holder > details .details-description dd) {
+  padding: 0;
+  margin: 0;
+}
+
+:is(.sns-holder .qr-code) {
   width: clamp(80px, calc(100vw * 120 / 960), 120px);
   aspect-ratio: 1 /1;
 }
