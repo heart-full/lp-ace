@@ -1280,4 +1280,12 @@ summary::-webkit-details-marker {
 }
 
 /* 事業所案内 */
+:is(.sns-wrapper > details) {
+  display: grid;
+}
+
+:is(.sns .qr-code) {
+  width: clamp(80px, 12.5vw, 120px);
+  aspect-ratio: 1/1;
+}
 /*# sourceMappingURL=style.css.map */
