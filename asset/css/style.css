@@ -89,6 +89,11 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+[lang=en] {
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: unset;
+}
+
 .Container {
   position: relative;
 }
@@ -1273,4 +1278,6 @@ summary::-webkit-details-marker {
   margin: 0;
   transform: scale(0.3);
 }
+
+/* 事業所案内 */
 /*# sourceMappingURL=style.css.map */
