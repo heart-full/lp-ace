@@ -1279,7 +1279,7 @@ summary::-webkit-details-marker {
   transform: scale(0.3);
 }
 
-/* 事業所案内 */
+/* SNS */
 :is(.sns-wrapper > details) {
   display: grid;
 }
@@ -1288,4 +1288,6 @@ summary::-webkit-details-marker {
   width: clamp(80px, 12.5vw, 120px);
   aspect-ratio: 1/1;
 }
+
+/* 事業所案内 */
 /*# sourceMappingURL=style.css.map */

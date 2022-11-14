@@ -1337,7 +1337,7 @@ summary::-webkit-details-marker {
 }
 
 
-/* 事業所案内 */
+/* SNS */
 :is(.sns-wrapper > details) {
   display: grid;
 }
@@ -1346,3 +1346,7 @@ summary::-webkit-details-marker {
   width: clamp(80px, calc(100vw * 120 / 960), 120px);
   aspect-ratio: 1 /1;
 }
+
+
+/* 事業所案内 */
+
