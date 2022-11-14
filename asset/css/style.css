@@ -536,6 +536,7 @@ summary::-webkit-details-marker {
   background: radial-gradient(rgba(93, 108, 107, 0.3) 0%, rgba(95, 162, 158, 0) 90%);
   box-shadow: 0 0 24px rgb(116, 132, 145);
   transition: all 0.7s ease;
+  cursor: pointer;
 }
 
 .button::before {
