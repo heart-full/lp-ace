@@ -1290,8 +1290,16 @@ summary::-webkit-details-marker {
 }
 
 /* SNS */
+:is(.sns-holder) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
 :is(.sns-holder > details) {
   display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
   justify-items: center;
   align-items: center;
   width: -webkit-fit-content;
@@ -1301,7 +1309,10 @@ summary::-webkit-details-marker {
 }
 
 :is(.sns-holder > details summary) {
-  margin: 0 auto;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin: 0 auto 0.5em;
+  border-bottom: solid 2px hsl(173deg, 23%, 55%);
 }
 
 :is(.sns-holder > details .details-description) {
