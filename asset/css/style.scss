@@ -1176,13 +1176,18 @@ summary::-webkit-details-marker {
 
 :is(.Index .faq details summary) {
   font-size: 1.2em;
-  background: url(../images/q.png) no-repeat left center;
-  background-size: contain;
   display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 1em;
   align-items: center;
   height: 5em;
   margin-bottom: .5em;
-  padding-left: 10%;
+}
+
+:is(.Index .faq details summary img) {
+  width: 64px;
+  aspect-ratio: 256 /431;
 }
 
 :is(.Index .faq details summary span) {
@@ -1194,14 +1199,19 @@ summary::-webkit-details-marker {
   border-radius: 0.5em;
 }
 
-:is(.Index .faq details .faq-answer) {
+:is(.Index .faq details .details-description-holder) {
   color: #fff;
-  background: url(../images/a.png) no-repeat left center;
-  background-size: contain;
   display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 1em;
   align-items: center;
   min-height: 6.5em;
-  padding-left: 10%;
+}
+
+:is(.Index .faq details .details-description-holder img) {
+  width: 64px;
+  aspect-ratio: 242 / 454;
 }
 
 
