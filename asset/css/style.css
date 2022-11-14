@@ -1130,7 +1130,7 @@ summary::-webkit-details-marker {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  gap: 1em;
+  gap: clamp(8px, 1.6666666667vw, 16px);
   align-items: center;
   height: 5em;
   margin-bottom: 0.5em;
@@ -1155,7 +1155,7 @@ summary::-webkit-details-marker {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
-  gap: 1em;
+  gap: clamp(8px, 1.6666666667vw, 16px);
   align-items: center;
   min-height: 6.5em;
 }
