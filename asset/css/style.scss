@@ -1186,7 +1186,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.Index .faq details summary img) {
-  width: 64px;
+  width: clamp(48px, calc(100vw * 64 / 960), 64px);
   aspect-ratio: 256 /431;
 }
 
@@ -1210,7 +1210,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.Index .faq details .details-description-holder img) {
-  width: 64px;
+  width: clamp(48px, calc(100vw * 64 / 960), 64px);
   aspect-ratio: 242 / 454;
 }
 
