@@ -1202,7 +1202,7 @@ summary::-webkit-details-marker {
 :is(.Index .faq details .details-description-holder) {
   color: #fff;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   gap: clamp(8px, calc(100vw * 16 / 960), 16px);
   align-items: center;
