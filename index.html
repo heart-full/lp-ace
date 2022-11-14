@@ -54,7 +54,11 @@
         <p class="site-concept">あなたの「働きたい」を応援します</p>
         <div class="site-message-holder"><p class="site-message">就労移行支援事業所ハートフルACE（エース）は<span>障がいを抱えて就労でお悩みのあなたを</span><span>支援サポートいたします。</span></p></div>
       </div>
-      <nav id="Global" class="g-nav">
+      <button class="button wake-menu">
+        <span class="button__wrapper"></span>
+        <span class="button__box">menu</span>
+      </button>
+      <nav id="Global" class="nav g-nav">
         <ul>
           <li><a class="button" href="./">
             <div class="button__wrapper"></div>
@@ -454,7 +458,11 @@
     </main>
 
     <footer id="footer" class="page_footer">
-      <nav id="Local" class="l-nav">
+      <button class="button wake-menu">
+        <span class="button__wrapper"></span>
+        <span class="button__box">menu</span>
+      </button>
+      <nav id="Local" class="nav l-nav">
         <ul>
           <li><a class="button" href="./">
             <div class="button__wrapper"></div>
@@ -480,6 +488,16 @@
       <small class="copyright">Copyright@Heartfull ACE</small>
     </footer>
   </div>
-  <script></script>
+  <script>
+    const wake_menus = document.querySelectorAll('.wake-menu');
+    wake_menus.forEach((elm)=> {
+      elm.addEventListener('click', ()=>{
+        const target = elm.nextElementSibling;
+        elm.classList.toggle('on');
+        target.classList.toggle('on');
+        console.log(elm);
+      });
+    });
+  </script>
 </body>
 </html>
