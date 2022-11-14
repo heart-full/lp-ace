@@ -1330,4 +1330,15 @@ summary::-webkit-details-marker {
 }
 
 /* 事業所案内 */
+.ace-general-info-table {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+:is(.ace-general-info-table th, .ace-general-info-table td) {
+  padding: 0.5em;
+  border-bottom: solid 1px hsl(173deg, 23%, 40%);
+}
 /*# sourceMappingURL=style.css.map */
