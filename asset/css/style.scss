@@ -682,6 +682,14 @@ summary::-webkit-details-marker {
   transform: rotate(0) scale(0.8);
 }
 
+:is(.page_header .wake-menu.on) {
+  top: 374px;
+}
+
+:is(.page_footer .wake-menu.on) {
+  top: 346px;
+}
+
 :is(.wake-menu.on .button__box)::after {
   content: 'Close';
   color: #666;
