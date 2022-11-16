@@ -1474,7 +1474,7 @@ summary::-webkit-details-marker {
   font-size: clamp(32px, calc(100vw * 64 / 960), 64px);
   line-height: 1.4;
   span {
-    letter-spacing: 0.05em;
+    letter-spacing: 0.2em;
     display: inline-block;
     opacity: 0;
     @for $i from 1 through 30 {
