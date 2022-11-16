@@ -776,41 +776,44 @@
   </script>
 
   <script>
+    let loading_end = false;
     window.addEventListener('load', 
-    function(){
-      let flag = false;
-      let loading_end = false;
-      const loading = document.getElementById("loading");
-      const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
-      async function logo_loading() {
-        const loading_anims = document.querySelectorAll('.loading_anim');
-        const anim_heartfull = document.getElementById('anim_heartfull');
-        const anim_ace = document.getElementById('anim_ace');
+      function(){
+        let flag = false;
+        const loading = document.getElementById("loading");
+        const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
+        async function logo_loading() {
+          const loading_anims = document.querySelectorAll('.loading_anim');
+          const anim_heartfull = document.getElementById('anim_heartfull');
+          const anim_ace = document.getElementById('anim_ace');
+          
+          await anim_heartfull.classList.add('active');
+          await sleep(2000);
+          await anim_heartfull.addEventListener('transitionend', () => {
+            if (flag) return; //ループ防止
+            anim_ace.classList.add('active');
+            console.log('Heartfull Animation Ended');
+            flag = true;
+          });
+
+          await anim_ace.addEventListener('transitionend', () => {
+            setTimeout(() => {
+              anim_heartfull.classList.remove('active'),
+              anim_ace.classList.remove('active');
+              loading_end = true;
+            }, 2000);
+          });
+
+          await sleep(6000);
+
+          loading.classList.add('end');
+        }
         
-        await anim_heartfull.classList.add('active');
-        await sleep(2000);
-        await anim_heartfull.addEventListener('transitionend', () => {
-          if (flag) return; //ループ防止
-          anim_ace.classList.add('active');
-          console.log('Heartfull Animation Ended');
-          flag = true;
-        });
-
-        await anim_ace.addEventListener('transitionend', () => {
-          setTimeout(() => {
-            anim_heartfull.classList.remove('active'),
-            anim_ace.classList.remove('active');
-            loading_end = true;
-          }, 2000);
-        });
-
-        loading_end = true;
+        logo_loading();
       }
-      
-      logo_loading();
-    }
-
     )
+
+    if(loading_end) loading.remove();
   </script>
 </body>
 </html>
