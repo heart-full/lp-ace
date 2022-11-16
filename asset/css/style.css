@@ -1418,6 +1418,7 @@ summary::-webkit-details-marker {
   line-height: 1.4;
 }
 .c-text span {
+  letter-spacing: 0.05em;
   display: inline-block;
   opacity: 0;
 }
