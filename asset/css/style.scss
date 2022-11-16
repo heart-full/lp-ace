@@ -1449,6 +1449,51 @@ summary::-webkit-details-marker {
 }
 
 
+/* Loading */
+#loading {
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+}
+
+/* Loading Message */
+.l-wrapper {
+  padding: 50px;
+}
+
+.c-text {
+  font-size: 20px;
+  line-height: 1.4;
+  span {
+    display: inline-block;
+    opacity: 0;
+    @for $i from 1 through 30 {
+      &:nth-child(#{$i}) {
+        animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
+      }
+    }
+  }
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(-10px) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 
 /* SVG Animation */
 /* Heartfull open */
