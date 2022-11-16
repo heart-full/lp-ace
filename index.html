@@ -776,30 +776,41 @@
   </script>
 
   <script>
-    window.addEventListener('load', function(){
+    window.addEventListener('load', 
+    function(){
       let flag = false;
-      const logo_loading = () => {
+      let loading_end = false;
+      const loading = document.getElementById("loading");
+      const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
+      async function logo_loading() {
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
         const anim_ace = document.getElementById('anim_ace');
         
-        anim_heartfull.classList.add('active');
-        anim_heartfull.addEventListener('transitionend', () => {
-          if (flag) return; //アニメーション終了時の再作動防止
+        await anim_heartfull.classList.add('active');
+        await sleep(2000);
+        await anim_heartfull.addEventListener('transitionend', () => {
+          if (flag) return; //ループ防止
           anim_ace.classList.add('active');
           console.log('Heartfull Animation Ended');
           flag = true;
         });
 
-        anim_ace.addEventListener('transitionend', () => {
-          setTimeout(() => (
+        await anim_ace.addEventListener('transitionend', () => {
+          setTimeout(() => {
             anim_heartfull.classList.remove('active'),
-            anim_ace.classList.remove('active')
-          ), 2000);
+            anim_ace.classList.remove('active');
+            loading_end = true;
+          }, 2000);
         });
+
+        loading_end = true;
       }
+      
       logo_loading();
-    });
+    }
+
+    )
   </script>
 </body>
 </html>
