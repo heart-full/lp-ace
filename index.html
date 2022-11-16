@@ -804,9 +804,10 @@
             }, 2000);
           });
 
-          await sleep(6000);
-
-          loading.classList.add('end');
+          await sleep(7000);
+          loading.classList.add('remove');
+          await sleep(5000);
+          loading.remove();
         }
         
         logo_loading();
