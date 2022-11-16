@@ -1466,18 +1466,19 @@ summary::-webkit-details-marker {
 
 /* Loading Message */
 .l-wrapper {
+  text-align: center;
   padding: 50px;
 }
 
 .c-text {
-  font-size: 20px;
+  font-size: clamp(32px, calc(100vw * 64 / 960), 64px);
   line-height: 1.4;
   span {
     display: inline-block;
     opacity: 0;
     @for $i from 1 through 30 {
       &:nth-child(#{$i}) {
-        animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
+        animation: text 2s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
       }
     }
   }
