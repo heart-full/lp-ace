@@ -35,7 +35,11 @@
   <link rel="stylesheet" href="./asset/css/style.css" />
 </head>
 <body id="Index" class="Index">
-  <div id="loading"></div>
+  <div id="loading">
+    <div id="loading_message01" class="l-wrapper">
+      <p class="c-text js-span-wrap-text">あなたの<br />「働きたい」を<br />応援します</p>
+    </div>
+  </div>
   <div id="Container" class="Container">
     <header id="header" class="page_header">
       <h1 class="page-title" title="Heartfull ACE">
@@ -568,12 +572,12 @@
     </svg>
   </template>
   <template>
-    <div id="loading_message01">
+    <div id="loading_message01" class="l-wrapper">
       あなたの<br />「働きたい」を<br />応援します
     </div>
   </template>
   <template>
-    <div id="loading_message02">
+    <div id="loading_message02" class="l-wrapper">
       就労移行支援事業所<br />ハートフルACE
     </div>
   </template>
@@ -587,6 +591,48 @@
         target.classList.toggle('on');
       });
     });
+  </script>
+
+  <script>
+    class SpanWrap {
+      constructor(target) {
+        this.target = this.convertElement(target);
+        this.nodes = [...this.target.childNodes];
+        this.convert();
+      }
+      convert() {
+        let spanWrapText = ""
+        this.nodes.forEach((node) => {
+          if (node.nodeType == 3) {//テキストの場合
+            const text = node.textContent.replace(/\r?\n/g, '');//テキストから改行コード削除
+            //spanで囲んで連結
+            spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
+              return acc + `<span>${v}</span>`
+            }, "");
+          } else {//テキスト以外
+            //<br>などテキスト以外の要素をそのまま連結
+            spanWrapText = spanWrapText + node.outerHTML
+          }
+        })
+        this.target.innerHTML = spanWrapText
+      }
+
+      //jQueryオブジェクトや文字列セレクターを変換
+      convertElement(element) {
+        if (element instanceof HTMLElement) {
+          return element
+        }
+        if (element instanceof jQuery) {
+          return element[0]
+        }
+        return document.querySelector(element);
+      }
+    }
+
+    const targets = [...document.querySelectorAll(".js-span-wrap-text")]
+    targets.forEach( (target) => {
+      new SpanWrap(target);
+    })
   </script>
 </body>
 </html>
