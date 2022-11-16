@@ -767,14 +767,17 @@
       }
     }
 
-    const targets = [...document.querySelectorAll(".js-span-wrap-text")]
-    targets.forEach( (target) => {
-      new SpanWrap(target);
-    })
+    const catch_loading = () => {
+      const targets = [...document.querySelectorAll(".js-span-wrap-text")]
+      targets.forEach( (target) => {
+        new SpanWrap(target);
+      });
+    }
   </script>
 
   <script>
     window.addEventListener('load', function(){
+      let flag = false;
       const logo_loading = () => {
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
@@ -782,8 +785,17 @@
         
         anim_heartfull.classList.add('active');
         anim_heartfull.addEventListener('transitionend', () => {
+          if (flag) return; //アニメーション終了時の再作動防止
           anim_ace.classList.add('active');
           console.log('Heartfull Animation Ended');
+          flag = true;
+        });
+
+        anim_ace.addEventListener('transitionend', () => {
+          setTimeout(() => (
+            anim_heartfull.classList.remove('active'),
+            anim_ace.classList.remove('active')
+          ), 2000);
         });
       }
       logo_loading();
