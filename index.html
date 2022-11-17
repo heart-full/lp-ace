@@ -617,7 +617,6 @@
   </template>
 
   <script>
-
     /* Navigation Button */
     const wake_menus = document.querySelectorAll('.wake-menu');
     wake_menus.forEach((elm)=> {
@@ -633,9 +632,10 @@
      * Loading Animation
      * 
      * *************************************************/
-     const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
-
-     const fadeout = async function(o, t) {
+    //Timer
+    const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
+    //Fade Out
+    const fadeout = async function(o, t) {
       o.classList.add('fadeout');
       await sleep(t);
       o.remove();
@@ -654,24 +654,22 @@
         this.nodes = [...this.target.childNodes];
         this.convert();
       }
+
       convert() {
         let spanWrapText = ""
         this.nodes.forEach((node) => {
-          if (node.nodeType == 3) {//テキストの場合
-            const text = node.textContent.replace(/\r?\n/g, '');//テキストから改行コード削除
-            //spanで囲んで連結
+          if (node.nodeType == 3) {
+            const text = node.textContent.replace(/\r?\n/g, '');
             spanWrapText = spanWrapText + text.split('').reduce((acc, v) => {
               return acc + `<span>${v}</span>`
             }, "");
-          } else {//テキスト以外
-            //<br>などテキスト以外の要素をそのまま連結
+          } else {
             spanWrapText = spanWrapText + node.outerHTML
           }
         })
         this.target.innerHTML = spanWrapText
       }
-
-      //jQueryオブジェクトや文字列セレクターを変換
+      // Correspondence for jQuery Object & etc.
       convertElement(element) {
         if (element instanceof HTMLElement) {
           return element
@@ -692,7 +690,6 @@
 
 
     /* Loading Logo SVG Animation */
-
     const loading_logo = async function(flag, loading_flag){
       const logo = document.getElementById('loading_logo');
       const loading_anims = document.querySelectorAll('.loading_anim');
@@ -743,8 +740,6 @@
         fadeout(container, 0);
       }
     );
-    
-    //window.addEventListener('load',loading_logo);
   </script>
 </body>
 </html>
