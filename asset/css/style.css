@@ -1414,8 +1414,35 @@ summary::-webkit-details-marker {
   z-index: 200;
   transition: all 1s;
   opacity: 1;
+  background: linear-gradient(-45deg, #f9c2eb, #a8c2ee, #c2f9d0, #ffdea5) fixed;
+  background-size: 800% 800%;
+  -webkit-animation: GradietionAnimation 9s ease infinite;
+          animation: GradietionAnimation 9s ease infinite;
 }
 
+@-webkit-keyframes GradietionAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes GradietionAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 #loading.fadeout {
   opacity: 0;
 }
