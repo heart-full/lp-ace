@@ -779,12 +779,23 @@
       });
     }
 
+    const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
+
+    const fadeout = async function(o, t) {
+      o.classList.add('fadeout');
+      await sleep(t);
+      o.remove();
+    }
+
     window.addEventListener('load', 
       async function(){
+        const container = document.getElementById('loading');
         const template = document.getElementById('c-text');
         const clone = template.content.cloneNode(true);
         await document.getElementById('loading_message01').appendChild(clone);
-        catch_loading();
+        await catch_loading();
+        await sleep(6000);
+        fadeout(container, 3000);
       }
     );
 

@@ -1471,8 +1471,12 @@ summary::-webkit-details-marker {
   bottom: 0;
   left: 0;
   z-index: 200;
-  // transition: all 0.5s;
+  transition: all 0.5s;
   opacity: 1;
+}
+
+#loading.fadeout {
+  opacity: 0;
 }
 
 #loading.remove {
