@@ -1482,7 +1482,7 @@ summary::-webkit-details-marker {
 /* Loading Message */
 .l-wrapper {
   text-align: center;
-  padding: 50px;
+  padding: clamp(8px, calc(100vw * 50 / 960), 50px);
 }
 
 .c-text {

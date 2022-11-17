@@ -1423,7 +1423,7 @@ summary::-webkit-details-marker {
 /* Loading Message */
 .l-wrapper {
   text-align: center;
-  padding: 50px;
+  padding: clamp(8px, 5.2083333333vw, 50px);
 }
 
 .c-text {
