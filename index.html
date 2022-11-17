@@ -36,7 +36,7 @@
 </head>
 <body id="Index" class="Index">
   <div id="loading">
-    <div id="loading_logo">
+    <!-- <div id="loading_logo">
       <svg id="anim_heartfull" class="loading_anim" version="1.1" id="_レイヤー_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 650.4 226.8" style="enable-background:new 0 0 650.4 226.8;" xml:space="preserve" width="650.4000244140625" height="226.8000030517578">
         <style type="text/css">
           .st0{fill:#FFFFFF;stroke:#231815;stroke-width:2;}
@@ -143,7 +143,7 @@
           </g>
         </g>
       </svg>
-    </div>
+    </div> -->
   </div>
   <div id="Container" class="Container">
     <header id="header" class="page_header">
@@ -839,12 +839,17 @@
         await container.appendChild(clone_text);
         const message = document.getElementById('loading_message01');
         await catch_loading();
-        await sleep(6000);
-        await fadeout(message, 3000);
+        await sleep(4000);
+        await fadeout(message, 1000);
         await container.appendChild(clone_logo);
+        const logo = document.getElementById('loading_logo');
+        const loading_anims = document.querySelectorAll('.loading_anim');
+        const anim_heartfull = document.getElementById('anim_heartfull');
+        const anim_ace = document.getElementById('anim_ace');
+        await sleep(1000);
         await loading_logo(flag, loading_end);
-        await sleep(6000);
-        fadeout(container, 5000);
+        await sleep(1000);
+        fadeout(container, 0);
       }
     );
     
