@@ -8,9 +8,9 @@
 
 html {
   font-size: 16px;
-  overflow-y: scroll;
   height: 100%;
-}
+  overflow-y: scroll;
+  scroll-behavior: smooth;}
 
 body {
   font-size: 18px;
@@ -1311,6 +1311,10 @@ summary::-webkit-details-marker {
   border-bottom: solid 1px hsl(173, 23%, 40%);
 }
 
+
+
+
+
 /***************************************************
 /*
 /* Miscellaneous
@@ -1455,6 +1459,7 @@ summary::-webkit-details-marker {
 }
 
 
+
 /***************************************************
 /* Loading
  **************************************************/
@@ -1481,10 +1486,11 @@ summary::-webkit-details-marker {
   opacity: 0;
 }
 
-/* Loading Message */
+/* Loading Text Message */
 .l-wrapper {
   text-align: center;
   padding: clamp(8px, calc(100vw * 50 / 960), 50px);
+  transition: all 0.5s;
 }
 
 .c-text {
@@ -1512,6 +1518,17 @@ summary::-webkit-details-marker {
     transform: none;
   }
 }
+
+#loading_message01 {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+#loading_message01.fadeout {
+  opacity: 0;
+}
+
+
 
 /***************************************************
 /* SVG Animation
