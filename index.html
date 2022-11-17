@@ -780,13 +780,10 @@
     }
 
     window.addEventListener('load', 
-      function(){
-        // template要素を取得
+      async function(){
         const template = document.getElementById('c-text');
-        // template要素の内容を複製
         const clone = template.content.cloneNode(true);
-        // div#containerの中に追加
-        document.getElementById('loading_message01').appendChild(clone);
+        await document.getElementById('loading_message01').appendChild(clone);
         catch_loading();
       }
     );
