@@ -701,7 +701,6 @@
       let i = 0;
       await anim_heartfull.addEventListener('transitionend', () => {
         i++;
-        // if (flag) return; //ループ防止
         if(i !== 15) return;
         anim_ace.classList.add('active');
         console.log('Heartfull Animation Ended');
@@ -737,9 +736,9 @@
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
         const anim_ace = document.getElementById('anim_ace');
-        await sleep(0);
+        await sleep(3000);
         await loading_logo(flag, loading_end);
-        await sleep(0);
+        await sleep(3000);
         fadeout(container, 0);
       }
     );
