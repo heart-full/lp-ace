@@ -1506,7 +1506,8 @@ summary::-webkit-details-marker {
 }
 
 .c-text {
-  color:rgb(42, 110, 25);
+  // color:rgb(42, 110, 25);
+  color: #fff;
   font-size: clamp(16px, calc(100vw * 64 / 960), 64px);
   line-height: 1.4;
   span {

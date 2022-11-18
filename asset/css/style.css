@@ -1462,7 +1462,7 @@ summary::-webkit-details-marker {
 }
 
 .c-text {
-  color: rgb(42, 110, 25);
+  color: #fff;
   font-size: clamp(16px, 6.6666666667vw, 64px);
   line-height: 1.4;
 }
