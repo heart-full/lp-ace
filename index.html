@@ -698,8 +698,11 @@
 
       await anim_heartfull.classList.add('active');
       await sleep(0);
+      let i = 0;
       await anim_heartfull.addEventListener('transitionend', () => {
-        if (flag) return; //ループ防止
+        i++;
+        // if (flag) return; //
+        if(i !== 35) return;
         anim_ace.classList.add('active');
         console.log('Heartfull Animation Ended');
         flag = true;
