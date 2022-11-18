@@ -729,7 +729,7 @@ summary::-webkit-details-marker {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 960px) {
   :is(.Index .staff-message-wrapper) {
     padding: clamp(8px, calc(100vw * 16 * 0.8 / 960), 1em);
     top: unset;
