@@ -718,7 +718,7 @@
 
       await sleep(7000);
       loading.classList.add('remove');
-      await sleep(0);
+      await sleep(6000);
       loading_end = true;
     }
     
@@ -739,9 +739,8 @@
         const anim_ace = document.getElementById('anim_ace');
         await sleep(0);
         await loading_logo(flag, loading_end);
-        await sleep(0);
-        fadeout(container, 0);
-        sleep(3000);
+        await sleep(6000);
+        fadeout(container, 6000);
       }
     );
   </script>
