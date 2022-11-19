@@ -706,10 +706,10 @@
         console.log('Heartfull Animation Ended');
         flag = true;
       });
-      // let j = 0;
+      let j = 0;
       await anim_ace.addEventListener('transitionend', () => {
-        // j++;
-        // if(j !== 3) return;
+        j++;
+        if(j !== 3) return;
         setTimeout(() => {
           anim_heartfull.classList.remove('active'),
           anim_ace.classList.remove('active');
@@ -737,9 +737,9 @@
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
         const anim_ace = document.getElementById('anim_ace');
-        await sleep(6000);
+        await sleep(3000);
         await loading_logo(flag, loading_end);
-        await sleep(6000);
+        await sleep(3000);
       }
     );
 
