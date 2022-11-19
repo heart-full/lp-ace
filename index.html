@@ -718,7 +718,7 @@
 
       await sleep(7000);
       loading.classList.add('remove');
-      await sleep(3000);
+      await sleep(0);
       loading_end = true;
     }
     
@@ -740,7 +740,7 @@
         await sleep(0);
         await loading_logo(flag, loading_end);
         await sleep(0);
-        if(loading_end) fadeout(container, 6000);
+        fadeout(container, 0);
       }
     );
   </script>
