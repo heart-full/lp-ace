@@ -717,7 +717,7 @@
       });
 
       await sleep(7000);
-      // loading.classList.add('remove');
+      loading.classList.add('remove');
       await sleep(0);
       loading_end = true;
     }
@@ -750,9 +750,9 @@
       let i = 0;
       const observer = new MutationObserver(async function (mutations) {
         i++;
-        container.addEventListener('transitionend', function() {
+        container.addEventListener('transitionend', async function() {
           if(i !== 1) return;
-          sleep(3000);
+          await sleep(3000);
           container.remove();
           console.log('Loading Ended');
         });
