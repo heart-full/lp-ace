@@ -723,17 +723,17 @@
     }
 
     //アニメーションの終了を監視
-    (() => {
-      'use strict';
-      const observer = new MutationObserver(function (mutations) {
-        fadeout(c, 3000);
-      });
+    // (() => {
+    //   'use strict';
+    //   const observer = new MutationObserver(function (mutations) {
+    //     fadeout(c, 3000);
+    //   });
 
-      observer.observe(container, {
-        attributes: true
-      });
+    //   observer.observe(container, {
+    //     attributes: true
+    //   });
 
-    })();
+    // })();
     
     /* Full Loading Animation */
     window.addEventListener('DOMContentLoaded', 
@@ -753,7 +753,7 @@
         await sleep(0);
         await loading_logo(flag, loading_end);
         await sleep(0);
-        // if(loading_end) fadeout(container, 0);
+        if(loading_end) fadeout(container, 0);
       }
     );
   </script>
