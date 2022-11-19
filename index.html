@@ -752,9 +752,9 @@
         i++;
         container.addEventListener('transitionend', async function() {
           if(i !== 1) return;
-          console.log('Loading Ended');
           await sleep(3000);
           container.remove();
+          console.log('Loading Ended');
         });
       });
 
