@@ -747,7 +747,10 @@
     //アニメーションの終了を監視
     (() => {
       'use strict';
+      let i = 0;
       const observer = new MutationObserver(function (mutations) {
+        i++;
+        if(i !== 1) return;
         console.log('Loading Ended');
       });
 
