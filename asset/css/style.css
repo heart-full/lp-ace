@@ -1416,7 +1416,7 @@ summary::-webkit-details-marker {
   opacity: 1;
 }
 
-:is(.touch-device #loading) {
+:is(#loading) {
   background: linear-gradient(-45deg, #f9c2eb, #a8c2ee, #c2f9d0, #ffdea5) fixed;
   background-size: 800% 800%;
   -webkit-animation: GradietionAnimation 9s ease infinite;

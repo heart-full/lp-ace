@@ -691,10 +691,10 @@
 
     /* Loading Logo SVG Animation */
     const loading_logo = async function(flag, loading_flag){
-      const logo = document.getElementById('loading_logo');
-      const loading_anims = document.querySelectorAll('.loading_anim');
-      const anim_heartfull = document.getElementById('anim_heartfull');
-      const anim_ace = document.getElementById('anim_ace');
+      // const logo = document.getElementById('loading_logo');
+      // const loading_anims = document.querySelectorAll('.loading_anim');
+      // const anim_heartfull = document.getElementById('anim_heartfull');
+      // const anim_ace = document.getElementById('anim_ace');
 
       await anim_heartfull.classList.add('active');
       await sleep(0);
@@ -710,15 +710,12 @@
       await anim_ace.addEventListener('transitionend', () => {
         j++;
         if(j !== 3) return;
-        setTimeout(() => {
-          anim_heartfull.classList.remove('active'),
-          anim_ace.classList.remove('active');
-        }, 2000);
+        anim_heartfull.classList.remove('active');
+        anim_ace.classList.remove('active');
       });
 
-      await sleep(7000);
+      await sleep(7000); //ロゴの表示時間
       loading.classList.add('remove');
-      await sleep(0);
       loading_end = true;
     }
 
@@ -737,9 +734,9 @@
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
         const anim_ace = document.getElementById('anim_ace');
-        await sleep(3000);
+        await sleep(0);
         await loading_logo(flag, loading_end);
-        await sleep(3000);
+        await sleep(0);
       }
     );
 
@@ -750,10 +747,7 @@
       const observer = new MutationObserver(async function (mutations) {
         i++;
         container.addEventListener('transitionend', async function() {
-          if(i !== 1) return;
-          container.classList.add('fadeout');
-          await sleep(6000);
-          // container.remove();
+          container.remove();
           console.log('Loading Ended');
         });
       });
