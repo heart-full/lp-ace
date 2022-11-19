@@ -752,6 +752,7 @@
         container.addEventListener('transitionend', async function() {
           if(i !== 1) return;
           container.classList.add('fadeout');
+          await sleep(6000);
           container.remove();
           console.log('Loading Ended');
         });
