@@ -737,9 +737,9 @@
         const loading_anims = document.querySelectorAll('.loading_anim');
         const anim_heartfull = document.getElementById('anim_heartfull');
         const anim_ace = document.getElementById('anim_ace');
-        sleep(6000);
+        await sleep(6000);
         await loading_logo(flag, loading_end);
-        sleep(6000);
+        await sleep(6000);
       }
     );
 
@@ -752,7 +752,7 @@
         container.addEventListener('transitionend', async function() {
           if(i !== 1) return;
           container.classList.add('fadeout');
-          sleep(6000);
+          await sleep(6000);
           container.remove();
           console.log('Loading Ended');
         });
