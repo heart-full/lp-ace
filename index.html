@@ -723,17 +723,17 @@
     }
 
     //アニメーションの終了を監視
-    ((target) => {
+    (() => {
       'use strict';
       const observer = new MutationObserver(function (mutations) {
         fadeout(c, 3000);
       });
 
-      observer.observe(target, {
+      observer.observe(container, {
         attributes: true
       });
 
-    })(container);
+    })();
     
     /* Full Loading Animation */
     window.addEventListener('DOMContentLoaded', 
