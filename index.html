@@ -748,8 +748,7 @@
     (() => {
       'use strict';
       const observer = new MutationObserver(function (mutations) {
-        // fadeout(container, 3000);
-        console.log('Loading Ended');
+        fadeout(container, 3000);
       });
 
       observer.observe(container, {
