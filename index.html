@@ -748,11 +748,11 @@
     (() => {
       'use strict';
       let i = 0;
-      const observer = new MutationObserver(function (mutations) {
+      const observer = new MutationObserver(async function (mutations) {
         i++;
         if(i !== 1) return;
         console.log('Loading Ended');
-        sleep(3000);
+        await sleep(3000);
         container.remove();
       });
 
