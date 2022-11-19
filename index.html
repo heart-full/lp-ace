@@ -743,7 +743,7 @@
       }
     );
 
-    //アニメーションの終了を監視
+    //ローディングの終了を監視
     (() => {
       'use strict';
       let i = 0;
@@ -753,7 +753,7 @@
           if(i !== 1) return;
           container.classList.add('fadeout');
           await sleep(6000);
-          container.remove();
+          // container.remove();
           console.log('Loading Ended');
         });
       });
