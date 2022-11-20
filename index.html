@@ -719,9 +719,9 @@
         anim_ace.classList.remove('active');
       });
 
-      await sleep(7000); //ロゴの表示時間
-      loading.classList.add('remove');
-      loading_end = true;
+      await sleep(6000); //ロゴの表示時間
+      // loading.classList.add('remove');
+      // loading_end = true;
     }
 
     /* Full Loading Animation */
@@ -729,6 +729,14 @@
       async function(){
         let loading_end = false;
         let flag = false;
+        await container.appendChild(clone_logo);
+        const logo = document.getElementById('loading_logo');
+        const loading_anims = document.querySelectorAll('.loading_anim');
+        const anim_heartfull = document.getElementById('anim_heartfull');
+        const anim_ace = document.getElementById('anim_ace');
+        await sleep(0);
+        await loading_logo(flag, loading_end);
+        await fadeout(logo, 1000);
         await container.appendChild(clone_text01);
         const message01 = document.getElementById('loading_message01');
         await catch_loading();
@@ -737,16 +745,9 @@
         await container.appendChild(clone_text02);
         const message02 = document.getElementById('loading_message02');
         await catch_loading();
-        await sleep(4000);
-        await fadeout(message02, 4000);
-        await container.appendChild(clone_logo);
-        const logo = document.getElementById('loading_logo');
-        const loading_anims = document.querySelectorAll('.loading_anim');
-        const anim_heartfull = document.getElementById('anim_heartfull');
-        const anim_ace = document.getElementById('anim_ace');
-        await sleep(0);
-        await loading_logo(flag, loading_end);
-        await sleep(0);
+        await sleep(6000);
+        await fadeout(container, 3000);
+        container.remove();
       }
     );
 

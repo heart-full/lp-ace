@@ -1509,7 +1509,7 @@ summary::-webkit-details-marker {
 
 .c-text {
   // color:rgb(42, 110, 25);
-  color: #fff;
+  color: hsl(106, 69%, 20%);
   font-size: clamp(16px, calc(100vw * 64 / 960), 64px);
   line-height: 1.4;
   span {
@@ -1518,7 +1518,7 @@ summary::-webkit-details-marker {
     opacity: 0;
     @for $i from 1 through 30 {
       &:nth-child(#{$i}) {
-        animation: text 2s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
+        animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) #{$i * 0.1}s forwards;
       }
     }
   }
@@ -1537,7 +1537,7 @@ summary::-webkit-details-marker {
 
 #loading_message01 {
   opacity: 1;
-  transition: all 0.3s;
+  transition: all 1s;
 }
 
 #loading_message01.fadeout {
