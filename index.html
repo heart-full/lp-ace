@@ -689,12 +689,10 @@
     }
 
     const catch_loading = () => {
-      // const targets = [...document.querySelectorAll(".js-span-wrap-text")]
-      // targets.forEach( (target) => {
-      //   new SpanWrap(target);
-      // });
-      const target = document.querySelector('.js-span-wrap-text');
-      new SpanWrap(target);
+      const targets = [...document.querySelectorAll(".js-span-wrap-text")]
+      targets.forEach( (target) => {
+        new SpanWrap(target);
+      });
     }
 
 
