@@ -257,6 +257,8 @@ summary::-webkit-details-marker {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-top: auto;
+  margin-bottom: clamp(8px, 3.3333333333vw, 32px);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
