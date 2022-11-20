@@ -490,9 +490,14 @@
     </footer>
   </div>
   
-  <template id="c-text">
+  <template id="c-text01">
     <div id="loading_message01" class="l-wrapper">
       <p class="c-text js-span-wrap-text">あなたの<br />「働きたい」を<br />応援します</p>
+    </div>
+  </template>
+  <template id="c-text02">
+    <div id="loading_message02" class="l-wrapper">
+      <p class="c-text js-span-wrap-text">障がい者<br />就労移行支援事業所<br >ハートフルＡＣＥ</p>
     </div>
   </template>
   <template id="loading_anim_logo">
@@ -642,9 +647,11 @@
     }
 
     const container = document.getElementById('loading');
-    const template_text = document.getElementById('c-text');
+    const template_text01 = document.getElementById('c-text01');
+    const template_text02 = document.getElementById('c-text02');
     const template_logo = document.getElementById('loading_anim_logo');
-    const clone_text = template_text.content.cloneNode(true);
+    const clone_text01 = template_text01.content.cloneNode(true);
+    const clone_text02 = template_text02.content.cloneNode(true);
     const clone_logo = template_logo.content.cloneNode(true);
 
     /* Text Animation */
@@ -682,19 +689,17 @@
     }
 
     const catch_loading = () => {
-      const targets = [...document.querySelectorAll(".js-span-wrap-text")]
-      targets.forEach( (target) => {
-        new SpanWrap(target);
-      });
+      // const targets = [...document.querySelectorAll(".js-span-wrap-text")]
+      // targets.forEach( (target) => {
+      //   new SpanWrap(target);
+      // });
+      const target = document.querySelector('.js-span-wrap-text');
+      new SpanWrap(target);
     }
 
 
     /* Loading Logo SVG Animation */
     const loading_logo = async function(flag, loading_flag){
-      // const logo = document.getElementById('loading_logo');
-      // const loading_anims = document.querySelectorAll('.loading_anim');
-      // const anim_heartfull = document.getElementById('anim_heartfull');
-      // const anim_ace = document.getElementById('anim_ace');
 
       await anim_heartfull.classList.add('active');
       await sleep(0);
@@ -724,11 +729,16 @@
       async function(){
         let loading_end = false;
         let flag = false;
-        await container.appendChild(clone_text);
-        const message = document.getElementById('loading_message01');
+        await container.appendChild(clone_text01);
+        const message01 = document.getElementById('loading_message01');
         await catch_loading();
         await sleep(4000);
-        await fadeout(message, 1000);
+        await fadeout(message01, 1000);
+        await container.appendChild(clone_text02);
+        const message02 = document.getElementById('loading_message02');
+        await catch_loading();
+        await sleep(4000);
+        await fadeout(message02, 4000);
         await container.appendChild(clone_logo);
         const logo = document.getElementById('loading_logo');
         const loading_anims = document.querySelectorAll('.loading_anim');
