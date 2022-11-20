@@ -706,7 +706,6 @@
         i++;
         if(i !== 15) return;
         anim_ace.classList.add('active');
-        console.log('Heartfull Animation Ended');
         flag = true;
       });
       let j = 0;
@@ -715,6 +714,7 @@
         if(j !== 2) return;
         anim_heartfull.classList.remove('active');
         anim_ace.classList.remove('active');
+        console.log('Heartfull ACE Animation Ended');
       });
 
       await sleep(6000); //ロゴの表示時間
