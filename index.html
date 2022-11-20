@@ -765,11 +765,12 @@
         attributes: true
       });
     })();
-
+</script>
+<script>
     //
-    window.addEventListener('load', ()=>{
+    // window.addEventListener('DOMContentLoaded', ()=>{
       const bodys = document.getElementsByTagName('body');
-      const mql = window.matchMedia('(orientation: landscape)');
+      const mql = window.matchMedia("(orientation: landscape)");
       /* Event Listener */
       const listener = (e) => {
         if(e.matches) {
@@ -780,13 +781,13 @@
           console.log('portrait');
         }
 
-        /* regist Listner */
-        mql.addEventListener("change", listener);
-
         /* Initialization */
         listener(mql);
+
+        /* regist Listner */
+        mql.addEventListener("change", listener);
       }
-    })  
+    // })  
 
   </script>
 </body>
