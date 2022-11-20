@@ -22,6 +22,10 @@ body {
   height: 100%;
 }
 
+body.landscape {
+  background-color: hsl(173deg, 33%, 51%);
+}
+
 /*
 @media screen and (max-width: 960px) {
   body {

@@ -764,9 +764,29 @@
       observer.observe(container, {
         attributes: true
       });
-
     })();
-    
+
+    //
+    window.addEventListener('load', ()=>{
+      const bodys = document.getElementsByTagName('body');
+      const mql = window.matchMedia('(orientation: landscape)');
+      /* Event Listener */
+      const listener = (e) => {
+        if(e.matches) {
+          bodys[0].classList.add('landscape');
+          console.log('landscape');
+        } else {
+          bodys[0].classList.remove('landscape');
+          console.log('portrait');
+        }
+
+        /* regist Listner */
+        mql.addEventListener("change", listener);
+
+        /* Initialization */
+        listener(mql);
+      }
+    })  
 
   </script>
 </body>
