@@ -340,7 +340,9 @@ summary::-webkit-details-marker {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   backdrop-filter: blur(8px);
+  cursor: pointer;
 }
+
 .scroll_prompt::before {
   content: '';
   color: #fff;
@@ -354,7 +356,7 @@ summary::-webkit-details-marker {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: -2;
   border-bottom: solid 2px rgba(255, 255, 255, 0.25);
 }
 
@@ -370,7 +372,7 @@ summary::-webkit-details-marker {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 101;
+  z-index: -1;
   transform: scaleX(0);
   transform-origin: right;
   animation: scroll_prompt ease-in-out 1.6s infinite;
