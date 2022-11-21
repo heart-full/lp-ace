@@ -1744,9 +1744,53 @@ summary::-webkit-details-marker {
 }
 
 #anim_ace .svg-elem-1 {
-  stroke-dashoffset: 1170.2764892578px;
-  stroke-dasharray: 1170.2764892578px;
-  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+  stroke-dashoffset: 1170.498046875px;
+  stroke-dasharray: 1170.498046875px;
+  fill: transparent;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
+}
+
+#anim_ace.active .svg-elem-1 {
+  stroke-dashoffset: 0;
+  fill: rgb(255, 255, 255);
+}
+
+#anim_ace .svg-elem-2 {
+  stroke-dashoffset: 294.8476257324px;
+  stroke-dasharray: 294.8476257324px;
+  fill: transparent;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+}
+
+#anim_ace.active .svg-elem-2 {
+  stroke-dashoffset: 0;
+  fill: rgb(255, 255, 255);
+}
+
+#anim_ace .svg-elem-3 {
+  stroke-dashoffset: 344.7370605469px;
+  stroke-dasharray: 344.7370605469px;
+  fill: transparent;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
+}
+
+#anim_ace.active .svg-elem-3 {
+  stroke-dashoffset: 0;
+  fill: rgb(255, 255, 255);
+}
+
+/*
+#anim_ace {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+#anim_ace .svg-elem-1 {
+  stroke-dashoffset: 1170.2764892578125px;
+  stroke-dasharray: 1170.2764892578125px;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+          transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
 }
 
 #anim_ace.active .svg-elem-1 {
@@ -1754,9 +1798,10 @@ summary::-webkit-details-marker {
 }
 
 #anim_ace .svg-elem-2 {
-  stroke-dashoffset: 294.5940856934px;
-  stroke-dasharray: 294.5940856934px;
-  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s;
+  stroke-dashoffset: 294.5940856933594px;
+  stroke-dasharray: 294.5940856933594px;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s;
+          transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s;
 }
 
 #anim_ace.active .svg-elem-2 {
@@ -1764,12 +1809,14 @@ summary::-webkit-details-marker {
 }
 
 #anim_ace .svg-elem-3 {
-  stroke-dashoffset: 344.6270751953px;
-  stroke-dasharray: 344.6270751953px;
-  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s;
+  stroke-dashoffset: 344.6270751953125px;
+  stroke-dasharray: 344.6270751953125px;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s;
+          transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s;
 }
 
 #anim_ace.active .svg-elem-3 {
   stroke-dashoffset: 0;
 }
+*/
 /*# sourceMappingURL=style.css.map */
