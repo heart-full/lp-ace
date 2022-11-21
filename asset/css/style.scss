@@ -273,9 +273,12 @@ summary::-webkit-details-marker {
   background-color: #ffffff66;
   place-self: center;
   width: fit-content;
-  margin-top: auto;
-  margin-bottom: clamp(8px, calc(100vw * 32 / 960), 32px);
   backdrop-filter: blur(3px);
+}
+
+:is(.touch-device .site-concept) {
+  margin-top: auto;
+  margin-bottom: clamp(8px, calc(100vw * 32 / 960), 32px);;
 }
 
 .site-message-holder {
