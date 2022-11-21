@@ -226,7 +226,7 @@ summary::-webkit-details-marker {
   color: rgb(42, 110, 25);
   line-height: 0.8;
   background-color: #fff;
-  padding: 0.3em 0.4em;
+  padding: 0.4em;
   border-radius: 3px;
 }
 
@@ -327,6 +327,8 @@ summary::-webkit-details-marker {
   top: -64px;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
 }
 
 .scroll_prompt::before {
