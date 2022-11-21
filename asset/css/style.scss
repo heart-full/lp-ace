@@ -1339,6 +1339,7 @@ summary::-webkit-details-marker {
   transition : all .7s ease ;
   cursor: pointer;
 }
+
 .button::before{
   content : '' ;
   position : absolute ;
@@ -1351,6 +1352,7 @@ summary::-webkit-details-marker {
   background: rgb(170,255,240);
   background: radial-gradient( rgba(255,255,255,1) 0%, rgba(255,255,255,0) 33%, rgba(255,255,255,0) 100%);
 }
+
 .button::after{
   content : '' ;
   position : absolute ;
@@ -1363,6 +1365,7 @@ summary::-webkit-details-marker {
   background: rgb(170,255,240);
   background: radial-gradient( rgba(255,255,255,1) 0%, rgba(255,255,255,0) 33%, rgba(255,255,255,0) 100%);
 }
+
 .button__wrapper{
   width : 100% ;
   height :100% ;
@@ -1377,6 +1380,7 @@ summary::-webkit-details-marker {
   radial-gradient(at 26% 100%, hsla(240,0%,44%,1) 0px, transparent 50%),
   radial-gradient(at 79% 0%, hsla(336,0%,51%,1) 0px, transparent 50%);
 }
+
 .button__box{
   display : flex ;
   justify-content : center ;
@@ -1393,7 +1397,9 @@ summary::-webkit-details-marker {
   background: rgb(255,255,255);
   background: linear-gradient(120deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,0) 50%);
   transition : all 1s ease ;
+  backdrop-filter: blur(5px);
 }
+
 .button__box::before{
   content : '' ;
   position : absolute ;
