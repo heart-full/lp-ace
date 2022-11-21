@@ -120,6 +120,10 @@ summary::-webkit-details-marker {
   top: 110px;
 }
 
+:is(.touch-device .g-nav) {
+  top: 80px;
+}
+
 .l-nav {
   top: 80px;
 }
@@ -1389,6 +1393,10 @@ summary::-webkit-details-marker {
 
 :is(.page_header .wake-menu.on) {
   top: 374px;
+}
+
+:is(.touch-device .page_header .wake-menu.on) {
+  top: 344px;
 }
 
 :is(.page_footer .wake-menu.on) {
