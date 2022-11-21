@@ -1326,6 +1326,10 @@ summary::-webkit-details-marker {
           backdrop-filter: blur(5px);
 }
 
+:is(.touch-device .button__box) {
+  font-weight: 700;
+}
+
 .button__box::before {
   content: "";
   position: absolute;
