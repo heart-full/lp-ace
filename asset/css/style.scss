@@ -5,6 +5,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+*::before, *::after {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 16px;
@@ -286,7 +289,8 @@ summary::-webkit-details-marker {
 }
 
 .site-message-holder {
-    background-color: hsl(189deg 100% 78%);;
+    background-color: hsl(189deg 100% 78%);
+    position: relative;
 }
 
 .site-message {
@@ -317,6 +321,70 @@ summary::-webkit-details-marker {
   z-index: -1;
 }
 */
+
+/* page scroll prompt */
+.scroll_prompt {
+  color: #fff;
+  font-size: 0.8em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  line-height: 0.8;
+  text-align: center;
+  width: 64px;
+  height: 24px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 8px;
+  position: absolute;
+  top: -64px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.scroll_prompt::before {
+  content: '';
+  color: #fff;
+  line-height: 0.8;
+  display: block;
+  width: 64px;
+  height: 24px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.25);
+}
+
+.scroll_prompt::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 24px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 8px;
+  border-bottom: solid 2px rgba(255, 255, 255);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 101;
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: scroll_prompt ease-in-out 1.6s infinite;
+}
+
+@keyframes scroll_prompt {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+
+}
 
 
 /* Main Block ------------------------------------------------- */
