@@ -121,7 +121,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.touch-device .g-nav) {
-  top: 60px;
+  top: 20px;
 }
 
 .l-nav {
@@ -1396,7 +1396,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.touch-device .page_header .wake-menu.on) {
-  top: 304px;
+  top: 264px;
 }
 
 :is(.page_footer .wake-menu.on) {
