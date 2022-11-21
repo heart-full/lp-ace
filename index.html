@@ -761,6 +761,7 @@
     })
   </script>
   <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
     const scroll_prompt = document.querySelector('.scroll_prompt');
     scroll_prompt.addEventListener('click', ()=>{
       let height = window.innerHeight
@@ -771,6 +772,7 @@
       });
       console.log(`${height}px`);
     })
+  })
   </script>
 </body>
 </html>
