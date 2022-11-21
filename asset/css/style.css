@@ -457,7 +457,7 @@ summary::-webkit-details-marker {
   display: grid;
   grid-template-rows: 2fr 1fr 2em;
   grid-template-columns: 1fr 1fr;
-  min-height: 480px;
+  max-height: 540px;
   position: relative;
   z-index: 1;
   overflow: hidden;
