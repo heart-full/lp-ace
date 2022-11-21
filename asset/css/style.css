@@ -1327,6 +1327,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.touch-device .button__box) {
+  font-size: 1.1em;
   font-weight: 700;
 }
 
