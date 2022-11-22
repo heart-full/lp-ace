@@ -775,30 +775,32 @@
   })
   </script>
   <script>
-    // 着火点となる要素
-    const inviews = document.querySelectorAll('.inview');
+    document.addEventListener('DOMContentLoaded', ()=>{
+        // 着火点となる要素
+      const inviews = document.querySelectorAll('.inview');
 
-    const options = {
-      threshold: 1
-    };
+      const options = {
+        threshold: 1
+      };
 
-    // 実行するよ
-    const observer = new IntersectionObserver(showElements);
+      // 実行するよ
+      const observer = new IntersectionObserver(showElements);
 
-    // 各 .heading に到達したら発動。複数あるから forEach 使うよ。
-    inviews.forEach(heading => {
-      observer.observe(inview);
-    });
-
-    // 要素が表示されたら実行する動作
-    function showElements(entries){
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 各 .heading に .active を加える
-          entry.target.classList.add('active');
-        }
+      // 各 .heading に到達したら発動。複数あるから forEach 使うよ。
+      inviews.forEach(inview => {
+        observer.observe(inview);
       });
-    };  
-</script>
+
+      // 要素が表示されたら実行する動作
+      function showElements(entries){
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 各 .heading に .active を加える
+            entry.target.classList.add('active');
+          }
+        });
+      }
+    })
+  </script>
 </body>
 </html>
