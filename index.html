@@ -776,27 +776,31 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', ()=>{
-        // 着火点となる要素
+      // trigger
       const inviews = document.querySelectorAll('.inview');
-
+      // options
       const options = {
-        threshold: 1
+        root: null,
+        threshold: 0,
+        rootMargin: "-50% 0%"
       };
 
-      // 実行するよ
-      const observer = new IntersectionObserver(showElements);
+      // Observer Object
+      const observer = new IntersectionObserver(showElements, options);
 
-      // 各 .heading に到達したら発動。複数あるから forEach 使うよ。
+      // fire
       inviews.forEach(inview => {
         observer.observe(inview);
       });
 
-      // 要素が表示されたら実行する動作
+      // execution
       function showElements(entries){
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             // 各 .heading に .active を加える
             entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
           }
         });
       }
