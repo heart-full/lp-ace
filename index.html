@@ -603,11 +603,20 @@
       });
     });
 
-    /***************************************************
-     * 
-     * Loading Animation
-     * 
-     * *************************************************/
+  /***************************************************
+   * 
+   * Loading Animation
+   * 
+   * *************************************************/
+    // Loading Cookie Check
+    let Cookie = false;
+    if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
+      console.log(document.cookie);
+      Cookie = true;
+      document.getElementById('loading').remove();
+    }
+
+
     //Timer
     const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
     //Fade Out
@@ -694,8 +703,9 @@
     }
 
     /* Full Loading Animation */
-    window.addEventListener('DOMContentLoaded', 
+    window.addEventListener('DOMContentLoaded',
       async function(){
+        if(Cookie) return;
         let loading_end = false;
         let flag = false;
         await container.appendChild(clone_logo);
@@ -717,18 +727,22 @@
         await sleep(6000);
         await fadeout(container, 3000);
         container.remove();
+
       }
     );
 
     //ローディングの終了を監視
     (() => {
       'use strict';
+      if(Cookie) return;
       let i = 0;
       const observer = new MutationObserver(async function (mutations) {
         i++;
         container.addEventListener('transitionend', async function() {
           container.remove();
           console.log('Loading Ended');
+          // Set Cookie
+          document.cookie = "loading=finished";
         });
       });
 
