@@ -797,7 +797,7 @@
       function showElements(entries){
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // 各 .heading に .active を加える
+            // 各 .inview に .active を加える
             entry.target.classList.add('active');
           } else {
             entry.target.classList.remove('active');
