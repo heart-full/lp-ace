@@ -1310,6 +1310,7 @@ summary::-webkit-details-marker {
   color: #f00;
   background-color: #fff;
   padding-left: 1em;
+  margin-top: clamp(8px, 1.6666666667vw, 16px);
   border-radius: clamp(8px, 1.6666666667vw, 16px);
 }
 

@@ -1364,6 +1364,7 @@ summary::-webkit-details-marker {
   color: #f00;
   background-color: #fff;
   padding-left: 1em;
+  margin-top: clamp(8px, calc(100vw * 16 / 960), 16px);
   border-radius: clamp(8px, calc(100vw * 16 / 960), 16px);
 }
 
