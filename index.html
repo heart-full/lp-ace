@@ -36,7 +36,7 @@
 </head>
 <body id="Index" class="Index">
   <div id="loading"></div>
-  <div id="Container" class="Container">
+  < id="Container" class="Container">
     <header id="header" class="page_header">
       <h1 class="page-title" title="Heartfull ACE">
         <img class="corp-logo" src="asset/images/heartfull-logo.png" width="400" height="143" alt="合同会社ハートフルのロゴ">
@@ -186,28 +186,64 @@
           <picture class="activities-time-table-graph-holder">
             <img class="activities-time-table-graph" src="asset/images/activities-time-table.svg" width="547" height="152" alt="ハートフルACEの一日のスケジュール(例)">
           </picture>
-          <dl class="activities-suchedule-timetable">
-            <dt>【10時】運動</dt>
-            <dd>ラジオ体操第一・第二で体をほぐし、自律神経を整える運動で毎日リフレッシュしています。</dd>
-            <dt>【11時】カリキュラム</dt>
-            <dd>メンタルヘルス・ビジネスマナー講座などわかりやすいテキストをご用意しております。※自宅からもオンライン(zoom)でたのしく参加することができます。</dd>
-            <dt>【12時】昼休み</dt>
-            <dd>おいしい日替わり弁当を3種類、無料で提供しています。</dd>
-            <dt>【13～18時】午後の活動</dt>
-            <dd>
+          <table class="activities-suchedule-timetable">
+            <tr class="timetable 10to11">
+            <th>【10時】運動</th>
+            <td>
+              <span>ラジオ体操第一・第二で体をほぐし、自律神経を整える運動で毎日リフレッシュしています。</span>
+              <img src="asset/images/taisou.svg" width="355" height="425" alt="朝の体操"></td>
+            </tr>
+            <tr class="timetable 11to12">
+            <th>【11時】カリキュラム</th>
+            <td>
+              <span>メンタルヘルス・ビジネスマナー講座などわかりやすいテキストをご用意しております。</span>
+              <span><img src="asset/images/curriculumn02.svg" width="469" height="236" alt="11時からはカリキュラム"></span>
+            </td>
+            <td class="zoom">
+              <span>※自宅からもオンライン(zoom) </span>
+              <span><img src="asset/images/remote.svg" width="353" height="305" alt="zoomで座卓学習にも対応しています。"></span>
+            </td>
+            </tr>
+            <tr class="timetable 12to13">
+            <th>【12時】昼休み</th>
+            <td>
+              <span>おいしい日替わり弁当を3種類、無料で提供しています。</span>
+              <img src="" alt="">
+            </td>
+            </tr>
+            <tr class="timetable 13to18">
+            <th>【13～18時】午後の活動</th>
+            <td>
               <dl>
                 <dt>個人面談</dt>
-                <dd>個人情報に配慮しております。なんでもお話ください。(秘密厳守)</dd>
+                <dd>個人情報に配慮しております。なんでもお話ください。(秘密厳守) <br /><img src="asset/images/mendan.svg" width="382" height="290" alt="個人面談"></dd>
+              </dl>
+              <dl>
                 <dt>就活指導</dt>
                 <dd>面接練習や応募書類の作成はもちろん、あなたに合った実習先や企業をご提案いたします。</dd>
-                <dt>作業訓練(データ入力・軽作業等)</dt>
-                <dd>軽作業からデータ入力まで多種多様な訓練メニューを準備しています。</dd>
-                <dt>座談会(隔週)</dt>
-                <dd>楽しいゲームやテーマを決めて会話をすることでコミュニケーション能力の向上を目指します。</dd>
               </dl>
-            </dd>
-          </dl>
-          <p class=""><span>一日のスケジュールは</span><br /><span>あくまでも参考例です。</span><br /><span>短時間や午後からの</span><br /><span>利用の方もいらっしゃいます。</span><br /><span>また、働きながらの利用や</span><br /><span>休職中の方も</span><span>ご利用いただけます。</span></p>
+              <dl>
+                <dt>作業訓練(データ入力・軽作業等)</dt>
+                <dd>
+                  <div>軽作業からデータ入力まで多種多様な訓練メニューを準備しています。</div>
+                  <div><img src="asset/images/keisagyo.svg" width="537" height="497" alt="軽作業訓練">
+                  <img src="asset/images/nyuryoku.png" width="290" height="146" alt="データ入力作業"></div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>座談会(隔週)</dt>
+                <dd>
+                  <div>楽しいゲームやテーマを決めて会話をすることでコミュニケーション能力の向上を目指します。</div>
+                  <div><img src="asset/images/game.svg" width="833" height="449" alt="午後の活動「座談会でゲーム」">
+                  <img src="asset/images/zadankai.svg" width="576" height="346" alt="午後の活動「座談会」"></div>
+                </dd>
+              </dl>
+            </td>
+            </tr>
+          </table>
+          <div class="staff-message-holder">
+            <p class=""><span>一日のスケジュールは</span><br /><span>あくまでも参考例です。</span><br /><span>短時間や午後からの</span><br /><span>利用の方もいらっしゃいます。</span><br /><span>また、働きながらの利用や</span><br /><span>休職中の方も</span><span>ご利用いただけます。</span></p>
+          </div>
           <!-- <div class="activities-staff-message-holder staff-message-holder">
             <div class="staff-message-wrapper">
               <p class="activities-schedule-message staff-message"><span>一日のスケジュールは</span><br /><span>あくまでも参考例です。</span><br /><span>短時間や午後からの</span><br /><span>利用の方もいらっしゃいます。</span><br /><span>また、働きながらの利用や</span><br /><span>休職中の方も</span><span>ご利用いただけます。</span></p>
@@ -361,11 +397,11 @@
           <div class="experience-schedule">
             <details open>
               <summary>カリキュラム体験</summary>
-              <p>（11:00 ～ 11:50）<br />※お気軽にご相談ください</p>
+              <p>（11:00 ～ 11:50）<br />※お気軽にご相談ください<br /><img src="asset/images/curriculumn.svg" width="998" height="656" alt="カリキュラム体験"></p>
             </details>
             <details open>
               <summary>個別面談（約30分）</summary>
-              <p>※ACEのご紹介・お悩み相談など</p>
+              <p>※ACEのご紹介・お悩み相談など<br /><img src="asset/images/mendan2.svg" width="478" height="240" alt="体験個別面談"></p>
             </details>
           </div>
           <p class="experience-schedule-exception"><span>平日の午後や土曜日（午後のみ）もご相談可能です。</span><br /><span>ご希望の日時をお伝えください。 </span></p>
@@ -376,15 +412,15 @@
           <div class="reception-time">
             <details open>
               <summary>月 ～ 金</summary>
-              <p>10：00 ～ 18：00</p>
+              <p><span>10：00 ～ 18：00</span><img src="asset/images/10to6.svg" whidt="363" height="390" alt="平日の見学受付時間は午前10時から午後6時まで"></p>
             </details>
             <details open>
               <summary>土</summary>
-              <p>12：00 ～ 18：00</p>
+              <p><span>12：00 ～ 18：00</span><img src="asset/images/12to6.svg" width="340" height="390" alt="土曜日の見学受付は正午12時から午後6時まで"></p>
             </details>
             <details open>
               <summary>日・祝</summary>
-              <p>休み</p>
+              <p><span>休み</span><br /><img src="asset/images/ojigi1.svg" width="312" height="312" alt="日・祝日はご見学は受け付けていません。"></p>
             </details>
           </div>
         </section>
@@ -457,6 +493,33 @@
               </td>
             </tr>
           </table>
+        </section>
+      </section>
+      <hr class="sub-section hr-dots">
+
+      <section class="location top-section inview" title="Access">
+        <h2 class="info-title top-section-title"><span>アクセス</span></h2>
+        <section>
+          <h3>公共交通機関のご利用</h3>
+          <details>
+            <summary>ＪＲ「博多駅」から</summary>
+            <div></div>
+          </details>
+          <details>
+            <summary>西鉄大牟田線「福岡天神駅」から</summary>
+            <div></div>
+          </details>
+          <details>
+            <summary>地下鉄空港線「天神駅」から</summary>
+            <div></div>
+          </details>
+          <details>
+            <summary>地下鉄七隈線「天神南駅」から</summary>
+            <div></div>
+          </details>
+        </section>
+        <section>
+          <h3>お車でのご来所</h3>
         </section>
       </section>
     </main>

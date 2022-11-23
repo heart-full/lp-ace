@@ -385,7 +385,11 @@ summary::-webkit-details-marker {
     transform: scaleX(1);
   }
 }
-/* Main Block ------------------------------------------------- */
+/*****************************************************************
+/*
+/* Main Block
+/*
+******************************************************************/
 :is(.main section) {
   padding: 16px;
 }
@@ -452,7 +456,11 @@ summary::-webkit-details-marker {
   transform: scale(0.8);
 }
 
-/* Footer Block ------------------------------------------------*/
+/*****************************************************************
+/*
+/* Footer Block
+/*
+******************************************************************/
 .page_footer {
   display: grid;
   grid-template-rows: 2fr 1fr 2em;
@@ -644,7 +652,7 @@ summary::-webkit-details-marker {
 
 :is(.Index .main .top-section)::after {
   counter-increment: number 1;
-  content: "0" counter(number) "";
+  content: counter(number, decimal-leading-zero);
   color: #fff;
   font-size: 2em;
   font-family: "Noto-Sans", sans-serif;
@@ -994,26 +1002,39 @@ summary::-webkit-details-marker {
 .activities-suchedule-timetable {
   color: hsl(219deg, 100%, 0%);
   background-color: hsl(60deg, 29%, 90%);
+  display: block;
   padding: 0.5em;
   margin-bottom: 1em;
   border-radius: 0.5em;
 }
 
-:is(.activities-suchedule-timetable > dt) {
+.activities-suchedule-timetable tr {
+  display: block;
+  margin-bottom: 1em;
+}
+
+:is(.activities-suchedule-timetable th) {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
   background-color: #fff;
+  display: block;
   width: 16em;
   padding: 0.25em 0.25em;
   margin-bottom: 0.5em;
   border-radius: 1em;
 }
 
-:is(.activities-suchedule-timetable > dd) {
+:is(.activities-suchedule-timetable td) {
+  gap: clamp(8px, 1.6666666667vw, 16px);
   margin-bottom: 1em;
+  position: relative;
 }
 
-:is(.activities-suchedule-timetable > dd dt) {
+:is(.activities-suchedule-timetable tr:not(:last-of-type) td) {
+  display: flex;
+}
+
+:is(.activities-suchedule-timetable dt) {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   background-color: #fff;
@@ -1025,8 +1046,31 @@ summary::-webkit-details-marker {
   border-radius: 16px;
 }
 
-:is(.activities-suchedule-timetable > dd dd) {
+:is(.activities-suchedule-timetable dd) {
   margin-bottom: 1em;
+}
+
+:is(.activities-suchedule-timetable .timetable img) {
+  max-width: clamp(120px, 25vw, 240px);
+  position: relative;
+}
+
+:is(.activities-suchedule-timetable .zoom span) {
+  position: relative;
+}
+
+:is(.activities-suchedule-timetable .zoom span:nth-of-type(2))::after {
+  content: "";
+  background: url(../images/zoom.png) no-repeat center center;
+  background-size: cover;
+  display: block;
+  width: clamp(24px, 5vw, 48px);
+  height: clamp(24px, 5vw, 48px);
+  aspect-ratio: 140/139;
+  position: absolute;
+  top: 16px;
+  left: 8px;
+  z-index: 300;
 }
 
 /* 利用者の声 */
@@ -1270,7 +1314,7 @@ summary::-webkit-details-marker {
   color: #fff;
   background-color: #649cc9;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1em 2em;
   padding: 0.5em 1em;
   border-radius: 1em;
@@ -1278,6 +1322,31 @@ summary::-webkit-details-marker {
 
 :is(.kengaku .reception-time > details) {
   min-width: 180px;
+}
+
+:is(.kengaku .reception-time > details summary) {
+  background-color: #fff;
+  width: 100%;
+  padding: 0 0.5em;
+  border-radius: 0.8em;
+}
+
+:is(.kengaku .reception-time > details:first-of-type summary) {
+  color: hsl(106deg, 69%, 20%);
+}
+
+:is(.kengaku .reception-time > details:nth-of-type(2) summary) {
+  color: hsl(236deg, 100%, 50%);
+}
+
+:is(.kengaku .reception-time > details:nth-of-type(3) summary) {
+  color: hsl(0deg, 100%, 41%);
+}
+
+:is(.kengaku .reception-time > details img) {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
 }
 
 :is(.kengaku .sub-section.hr-dots) {
