@@ -1032,6 +1032,7 @@ summary::-webkit-details-marker {
 
 :is(.activities-suchedule-timetable tr:not(:last-of-type) td) {
   display: flex;
+  flex-wrap: wrap;
 }
 
 :is(.activities-suchedule-timetable dt) {
