@@ -1055,6 +1055,10 @@ summary::-webkit-details-marker {
   position: relative;
 }
 
+:is(.activities-suchedule-timetable .timetable11to12 span:nth-of-type(2) img) {
+  max-width: clamp(120px, 25vw, 320px);
+}
+
 :is(.activities-suchedule-timetable .zoom span) {
   position: relative;
 }
