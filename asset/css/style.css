@@ -481,6 +481,7 @@ summary::-webkit-details-marker {
 :is(.touch-device .page_footer) {
   height: 100vh;
   height: 100svh;
+  max-height: unset;
 }
 
 .page_footer:has(.nav.on)::before {
