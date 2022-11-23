@@ -1308,6 +1308,8 @@ summary::-webkit-details-marker {
 
 :is(.kengaku .experience-schedule-exception) {
   color: #f00;
+  background-color: #fff;
+  border-radius: clamp(8px, 1.6666666667vw, 16px);
 }
 
 :is(.kengaku .reception-time) {
