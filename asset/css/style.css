@@ -1309,6 +1309,7 @@ summary::-webkit-details-marker {
 :is(.kengaku .experience-schedule-exception) {
   color: #f00;
   background-color: #fff;
+  padding-left: 1em;
   border-radius: clamp(8px, 1.6666666667vw, 16px);
 }
 
