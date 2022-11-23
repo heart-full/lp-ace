@@ -1099,6 +1099,10 @@ summary::-webkit-details-marker {
   margin-bottom: 1em;
 }
 
+:is(.activities-suchedule-timetable .timetable span:first-of-type) {
+  min-width: 200px;
+}
+
 :is(.activities-suchedule-timetable .timetable img) {
   // flex: 1;
   max-width: clamp(120px, calc(100vw * 240 / 960 ), 240px);
