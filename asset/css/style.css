@@ -1291,12 +1291,17 @@ summary::-webkit-details-marker {
   border-radius: 1em;
 }
 
-:is(.kengaku .announce p span) {
+:is(.kengaku .announce .contents > p span) {
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+}
+
+:is(.kengaku .announce .contents picture) {
+  background-color: #fff;
+  display: block;
 }
 
 :is(.kengaku .experience-schedule) {
