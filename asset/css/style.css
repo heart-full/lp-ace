@@ -1426,7 +1426,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.sns-holder > details) {
-  background-color: hsl(173deg, 33%, 51%);
+  background-color: #649cc9;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
