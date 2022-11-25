@@ -1356,7 +1356,7 @@ summary::-webkit-details-marker {
     width: 30%;
     margin: 0 auto;
   }
-  
+
   :is(.kengaku .contact .ace-line-qr img) {
     width: 100%;
   }
@@ -1480,17 +1480,22 @@ summary::-webkit-details-marker {
 :is(.sns-holder) {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-template-rows: auto;
+  gap: 1.5em;
 }
 
 :is(.sns-holder > details) {
+  background-color: hsl(173, 33%, 51%);
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
   justify-items: center;
   align-items: center;
   width: fit-content;
+  padding: 16px;
   margin: 0 auto 32px;
+  border-radius: 16px;
 }
 
 :is(.sns-holder > details summary) {
@@ -1510,7 +1515,8 @@ summary::-webkit-details-marker {
 }
 
 :is(.sns-holder .qr-code) {
-  width: clamp(80px, calc(100vw * 120 / 960), 120px);
+  // width: clamp(80px, calc(100vw * 120 / 960), 120px);
+  width: 200px;
   aspect-ratio: 1 /1;
 }
 
