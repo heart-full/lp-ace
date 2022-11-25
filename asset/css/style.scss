@@ -1444,10 +1444,17 @@ summary::-webkit-details-marker {
 :is(.kengaku .experience-schedule .whiteboard02 img:last-of-type) {
   width: 40%;
   position: absolute;
-  top: clamp(16px, calc(100vw * 32 /960), 32px);
-  left: clamp(42px, calc(100vw * 64 /960), 64px);
+  top: 32px;
+  left: 64px;
   aspect-ratio: 704/508;
   transform: rotate(-15deg);
+}
+
+@media screen and (max-width: 640px) {
+  :is(.kengaku .experience-schedule .whiteboard02 img:last-of-type) {
+    top: clamp(16px, calc(100vw * 32 /640), 32px);
+    left: clamp(42px, calc(100vw * 64 /640), 64px);
+  }
 }
 
 :is(.kengaku .experience-schedule + p) {
