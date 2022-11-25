@@ -491,6 +491,7 @@ summary::-webkit-details-marker {
   .page_footer {
     grid-template-rows: 1fr 1fr 1fr 2em;
     grid-template-columns: 1fr;
+    max-height: unset;
   }
 }
 
