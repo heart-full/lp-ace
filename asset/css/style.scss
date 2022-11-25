@@ -1287,7 +1287,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku summary) {
-  font-size: 1.1em;
+  // font-size: 1.1em;
   font-weight: bold;
   width: fit-content;
   padding: 0 0.25em;
@@ -1301,7 +1301,7 @@ summary::-webkit-details-marker {
   background-color: #649cc9;
   display: grid;
   // grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   // display: flex;
   // justify-content: center;
   // flex-wrap: wrap;
@@ -1311,10 +1311,20 @@ summary::-webkit-details-marker {
   position: relative;
 }
 
+:is(.kengaku .contact .contact-details-holder .tel-number) {
+  color: #666;
+  font-size: clamp(1.2em, calc(100vw * 32 / 960), 32px);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  background-color: #fff;
+  padding: 0 0.5em;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 640px) {
   :is(.kengaku .contact .contact-details-holder) {
     grid: none;
-    gap: 0;
+    gap: 1em;
   }  
 }
 
@@ -1324,11 +1334,32 @@ summary::-webkit-details-marker {
 }
 
 :is(.kengaku .contact .ace-line-qr) {
+  text-align: center;
   // width: clamp(32px, calc(100vw * 64 / 960), 64px);
   // height: clamp(32px, calc(100vw * 64 / 960), 64px);
   position: absolute;
-  top: clamp(8px, calc(100vw * 16 / 960), 16px);
+  // top: clamp(8px, calc(100vw * 16 / 960), 16px);
+  top: -32px;
   right: clamp(8px, calc(100vw * 16 / 960), 16px);
+  transform: scale(1.5);
+  transform-origin: right bottom;
+}
+
+@media screen and (max-width: 640px) {
+  :is(.kengaku .contact .ace-line-qr) {
+    position: unset;
+    transform: unset;
+    transform-origin: unset;
+  }
+
+  :is(.kengaku .contact .ace-line-qr figure) {
+    width: 30%;
+    margin: 0 auto;
+  }
+  
+  :is(.kengaku .contact .ace-line-qr img) {
+    width: 100%;
+  }
 }
 
 :is(.kengaku .contact .ace-line-qr figcaption) {
@@ -1346,9 +1377,15 @@ summary::-webkit-details-marker {
   border-radius: 1em;
 }
 
+:is(.kengaku .announce .contents > p) {
+  flex: 1;
+} 
+
 :is(.kengaku .announce .contents > p span) {
+  text-indent: -1em;
   display: block;
   width: fit-content;
+  padding: 0 0.25em;
   margin: 0 auto;
 }
 
@@ -1359,6 +1396,12 @@ summary::-webkit-details-marker {
   aspect-ratio: 9 / 12;
   padding: 9px;
   border-radius: 50%;
+  transform: scale(1.5);
+  border: solid 2px #649cc9;
+}
+
+:is(.kengaku .announce .contents picture img) {
+  transform: scale(1.0);
 }
 
 :is(.kengaku .experience-schedule) {
@@ -1366,10 +1409,7 @@ summary::-webkit-details-marker {
   background-color: #649cc9;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1em;
-  // display: flex;
-  // justify-content: center;
-  // flex-wrap: wrap;
+  gap: 2em;
   padding: 0.5em 1em;
   border-radius: 1em;
 }
