@@ -1395,7 +1395,7 @@ summary::-webkit-details-marker {
   width: 20%;
   aspect-ratio: 9 / 12;
   padding: 9px;
-  margin-right: clamp(0px, calc(100vw * 0.3 * 64 / 960), 64px);
+  margin-right: 64px;
   border-radius: 50%;
   transform: scale(1.5);
   border: solid 2px #649cc9;
@@ -1403,6 +1403,12 @@ summary::-webkit-details-marker {
 
 :is(.kengaku .announce .contents picture img) {
   transform: scale(1.0);
+}
+
+@media screen and (max-width: 640px) {
+  :is(.kengaku .announce .contents picture) {
+    margin-right: clamp(0px, calc(100vw * 0.3 * 64 / 960), 64px);
+  }
 }
 
 :is(.kengaku .experience-schedule) {

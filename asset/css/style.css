@@ -1338,7 +1338,7 @@ summary::-webkit-details-marker {
   width: 20%;
   aspect-ratio: 9/12;
   padding: 9px;
-  margin-right: clamp(0px, 2vw, 64px);
+  margin-right: 64px;
   border-radius: 50%;
   transform: scale(1.5);
   border: solid 2px #649cc9;
@@ -1348,6 +1348,11 @@ summary::-webkit-details-marker {
   transform: scale(1);
 }
 
+@media screen and (max-width: 640px) {
+  :is(.kengaku .announce .contents picture) {
+    margin-right: clamp(0px, 2vw, 64px);
+  }
+}
 :is(.kengaku .experience-schedule) {
   color: #fff;
   background-color: #649cc9;
