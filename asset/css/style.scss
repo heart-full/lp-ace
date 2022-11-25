@@ -1395,6 +1395,7 @@ summary::-webkit-details-marker {
   width: 20%;
   aspect-ratio: 9 / 12;
   padding: 9px;
+  margin-right: clamp(32px, calc(100vw * 64 / 960), 64px);
   border-radius: 50%;
   transform: scale(1.5);
   border: solid 2px #649cc9;
@@ -1412,6 +1413,34 @@ summary::-webkit-details-marker {
   gap: 2em;
   padding: 0.5em 1em;
   border-radius: 1em;
+}
+
+:is(.kengaku .experience-schedule .whiteboard02) {
+  display:block;
+  width:100%;
+  height:auto;
+  position:relative;
+  aspect-ratio:998 / 656;
+}
+
+
+:is(.kengaku .experience-schedule .whiteboard02 img) {
+  display: block;
+}
+
+:is(.kengaku .experience-schedule .whiteboard02 img:first-of-type) {
+  width:100%;
+  height:auto;
+  aspect-ratio:998/656;
+}
+
+:is(.kengaku .experience-schedule .whiteboard02 img:last-of-type) {
+  width: 40%;
+  position: absolute;
+  top: clamp(16px, calc(100vw * 32 /960), 32px);
+  left: clamp(42px, calc(100vw * 64 /960), 64px);
+  aspect-ratio: 704/508;
+  transform: rotate(-15deg);
 }
 
 :is(.kengaku .experience-schedule + p) {
