@@ -476,7 +476,7 @@ summary::-webkit-details-marker {
   .page_footer {
     grid-template-rows: 1fr 1fr 1fr 4em;
     grid-template-columns: 1fr;
-    max-height: unset;
+    max-height: 100vh;
   }
 }
 :is(.touch-device .page_footer) {
@@ -1584,7 +1584,7 @@ iframe {
 
 :is(.sns-holder .line .sns-logo)::before {
   aspect-ratio: 320/320;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 :is(.sns-holder .youtube .sns-logo)::before {
