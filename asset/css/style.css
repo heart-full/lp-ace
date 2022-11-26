@@ -1185,6 +1185,18 @@ summary::-webkit-details-marker {
   grid-row-end: 2;
 }
 
+@media screen and (max-width: 640px) {
+  .facilities-photo-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: unset;
+  }
+  :is(.facilities-photo-wrapper > figure:first-of-type) {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+}
 :is(.facilities .message-for-you-wrapper) {
   padding: 1em;
 }
