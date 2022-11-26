@@ -312,17 +312,16 @@ summary::-webkit-details-marker {
 */
 /* page scroll prompt */
 .scroll_prompt {
-  color: #fff;
+  color: #999;
   font-size: 0.8em;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
-  line-height: 0.8;
+  line-height: 21px;
   text-align: center;
   width: 64px;
   height: 24px;
   padding-right: 4px;
   padding-left: 4px;
-  padding-bottom: 8px;
   position: absolute;
   top: -64px;
   left: 50%;
@@ -330,6 +329,10 @@ summary::-webkit-details-marker {
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   cursor: pointer;
+}
+
+:is(.touch-device .scroll_prompt) {
+  top: -80px;
 }
 
 .scroll_prompt::before {
@@ -357,7 +360,7 @@ summary::-webkit-details-marker {
   padding-right: 4px;
   padding-left: 4px;
   padding-bottom: 8px;
-  border-bottom: solid 2px rgb(255, 255, 255);
+  border-bottom: solid 2px rgb(141, 141, 141);
   position: absolute;
   top: 0;
   right: 0;
@@ -474,7 +477,7 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   .page_footer {
-    grid-template-rows: 1fr 1fr 1fr 4em;
+    grid-template-rows: 1fr 1fr 1fr 2em;
     grid-template-columns: 1fr;
     max-height: 100vh;
   }
