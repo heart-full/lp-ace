@@ -1587,6 +1587,7 @@ iframe {
   padding: 16px;
   margin: 0 auto 32px;
   border-radius: 16px;
+  position: relative;
 }
 
 :is(.sns-holder > details summary) {
@@ -1611,6 +1612,38 @@ iframe {
   aspect-ratio: 1 /1;
 }
 
+:is(.sns .sns-title),
+:is(.sns .channel-name) {
+  color: #fff;
+  font-size: 1.5em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+}
+
+:is(.sns-holder .sns-logo) {
+  display: block;
+  width: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+:is(.sns-holder .sns-logo)::before {
+  content: '';
+  background-color: #fff;
+  display: block;
+  width: 100%;
+  height: 110%;
+  // height: auto;
+  // aspect-ratio: 1 / 1;
+  padding: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+}
 
 /* 事業所案内 */
 .ace-general-info-table {
