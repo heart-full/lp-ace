@@ -1082,6 +1082,11 @@ summary::-webkit-details-marker {
   position: relative;
 }
 
+:is(.activities-suchedule-timetable td .comment) {
+  display: block;
+  margin-bottom: 1em;
+}
+
 :is(.activities-suchedule-timetable tr:not(:last-of-type) td) {
   display: flex;
   flex-wrap: wrap;
@@ -1115,6 +1120,7 @@ summary::-webkit-details-marker {
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
   transform: scale(0.8);
+  transform-origin: top center;
 }
 
 :is(.activities-suchedule-timetable .zoom span) {
@@ -1135,9 +1141,26 @@ summary::-webkit-details-marker {
   z-index: 300;
 }
 
+:is(.activities .training .image-holder) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
 :is(.activities .recruit .image-holder) {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
 
+:is(.activities .recruit .image-holder img) {
+  width: 100%;
+}
+
+:is(.activities .symposium .image-holder) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 /* 利用者の声 */
@@ -1185,14 +1208,20 @@ summary::-webkit-details-marker {
 }
 
 :is(.facilities-photo-wrapper > figure > figcaption) {
-  color: #fff;
+  color: #000;
   font-size: 0.6em;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 0.25em 0.5em;
   position: absolute;
   top: 16px;
   left: 16px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+}
+
+@media screen and (max-width: 720px){
+  :is(.facilities-photo-wrapper > figure > figcaption) {
+    position: unset;
+  }
 }
 
 :is(.facilities-photo-wrapper > figure:first-of-type) {
