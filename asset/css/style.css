@@ -1057,13 +1057,12 @@ summary::-webkit-details-marker {
   min-width: 200px;
 }
 
-:is(.activities-suchedule-timetable .timetable img) {
-  max-width: clamp(120px, 25vw, 240px);
-  position: relative;
-}
-
 :is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img) {
   max-width: clamp(120px, 45vw, 480px);
+}
+
+:is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img:first-of-type) {
+  transfoem: scale(0.8);
 }
 
 :is(.activities-suchedule-timetable .zoom span) {
