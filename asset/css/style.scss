@@ -1141,6 +1141,12 @@ summary::-webkit-details-marker {
   z-index: 300;
 }
 
+iframe {
+  width: 100%;
+  aspect-ratio: 1080 / 1920;
+  height: auto;
+}
+
 :is(.activities .recruit .image-holder),
 :is(.activities .training .image-holder),
 :is(.activities .symposium .image-holder) {
