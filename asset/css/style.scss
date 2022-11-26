@@ -489,7 +489,7 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   .page_footer {
-    grid-template-rows: 1fr 1fr 1fr 2em;
+    grid-template-rows: 1fr 1fr 1fr 4em;
     grid-template-columns: 1fr;
     max-height: unset;
   }
