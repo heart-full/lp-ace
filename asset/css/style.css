@@ -1057,12 +1057,16 @@ summary::-webkit-details-marker {
   min-width: 200px;
 }
 
+:is(.activities-suchedule-timetable .timetable img) {
+  max-width: clamp(120px, 22.5vw, 240px);
+}
+
 :is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img) {
   max-width: clamp(120px, 45vw, 480px);
 }
 
-:is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img:first-of-type) {
-  transfoem: scale(0.8);
+:is(.activities-suchedule-timetable .timetable .training img:first-of-type) {
+  transform: scale(0.8);
 }
 
 :is(.activities-suchedule-timetable .zoom span) {
@@ -1081,6 +1085,10 @@ summary::-webkit-details-marker {
   top: 16px;
   left: 8px;
   z-index: 300;
+}
+
+:is(.activities .recruit .image-holder) {
+  display: grid;
 }
 
 /* 利用者の声 */
