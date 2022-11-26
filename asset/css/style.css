@@ -1579,7 +1579,7 @@ iframe {
 :is(.sns-holder .twitter .sns-logo)::before {
   aspect-ratio: 248/204;
   border-radius: 50%;
-  transform: rotate(-32deg);
+  transform: rotate(-38deg);
 }
 
 :is(.sns-holder .line .sns-logo)::before {
