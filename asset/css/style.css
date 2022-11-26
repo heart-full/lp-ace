@@ -1093,26 +1093,16 @@ summary::-webkit-details-marker {
   z-index: 300;
 }
 
-:is(.activities .training .image-holder) {
+:is(.activities .recruit .image-holder),
+:is(.activities .training .image-holder),
+:is(.activities .symposium .image-holder) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-:is(.activities .recruit .image-holder) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 16px;
 }
 
 :is(.activities .recruit .image-holder img) {
   width: 100%;
-}
-
-:is(.activities .symposium .image-holder) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
 }
 
 /* 利用者の声 */
