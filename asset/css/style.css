@@ -1065,7 +1065,7 @@ summary::-webkit-details-marker {
   max-width: clamp(120px, 45vw, 480px);
 }
 
-:is(.activities-suchedule-timetable .timetable .training img:first-of-type) {
+:is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
   transform: scale(0.8);
 }
 
