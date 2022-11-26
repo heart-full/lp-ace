@@ -1087,7 +1087,7 @@ summary::-webkit-details-marker {
 /* 利用者の声 */
 .users-voice-exsamples {
   color: #fff;
-  background-color: hsl(173deg, 23%, 55%);
+  background-color: hsl(173deg, 23%, 40%);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
