@@ -492,6 +492,34 @@
             </div>
           </details>
         </section>
+        <section>
+          <div id="ace_movies">
+            <h3 class="mv-heading" data-en="Video"><span>ACEの紹介動画</span></h3>
+            <p class="note">※ 動画は再生が終了すると自動で閉じます。</p>
+            <div class="modal-wrap">
+              <ul class="playList-wrap">
+                <li class="playList" data-ytid="vOQno7LLfVI" data-start="0" data-end="150" data-title="ACEへの行き方"><span>ACEへの行き方</span></li>
+                <li class="playList" data-ytid="KAgT2aSKQvw" data-start="0" data-end="" data-title="個別面談"><span>個別面談</span></li>
+                <li class="playList" data-ytid="ja0FXcdsRho" data-start="0" data-end="" data-title="カリキュラム(メンタルヘルス編)"><span>カリキュラム<br>(メンタルヘルス編)</span></li>
+                <li class="playList" data-ytid="zWeE3Od1BQw" data-start="0" data-end="" data-title="カリキュラム(ビジネスマナー編)"><span>カリキュラム<br>(ビジネスマナー編)</span></li>
+                <li class="playList" data-ytid="zqzKZ9eHVNY" data-start="0" data-end="" data-title="ネガティブな時は体を動かそう！"><span>ネガティブな時は<br>体をうごかそう！</span></li>
+                <li class="playList" data-ytid="ZmSLwwL-GWw" data-start="0" data-end="" data-title="ハートフルACEで運動しませんか？！"><span>ハートフルACEで<br>運動しませんか？！</span></li>
+                <li class="playList" data-ytid="wtRPK4ecngY" data-start="0" data-end="" data-title="ACE利用者の就職先"><span>ACE利用者の<br>就職先</span></li>
+              </ul>
+              <!-- Modal -->
+              <div class="movie-modal">
+                <div class="modal-box">
+                  <div class="modal-inner">
+                    <div id="close">×</div>
+                    <div class="movie"></div>
+                  </div>
+                </div>
+                <div id="overlay"></div>
+              </div>
+              <!-- Modal -->
+            </div>
+          </div><!-- ACE YouTube -->
+          </section>
       </section>
       <hr class="sub-section hr-dots">
 
@@ -988,7 +1016,7 @@
     const html = document.getElementsByTagName('html')
     const movies = document.querySelectorAll('.youtube');
     const movie_modal = document.querySelector('.movie-modal');
-    const modal_wrap  = document.querySelector('.modal-wrp');
+    const modal_wrap  = document.querySelector('.modal-wrap');
     movies.forEach(movie, function(){
       const attrs = movie.attributes;
       let ytid  = movie.dataset.ytid;
