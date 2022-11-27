@@ -2306,7 +2306,7 @@ iframe {
   background-color: rgba(000, 000, 000, 0.95);
   pointer-events: none;
   transition: all 1s;
-  z-index: 10;
+  z-index: 300;
 }
 #ace_movies .movie-modal.active {
   opacity: 1;

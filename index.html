@@ -970,18 +970,20 @@
     })
   </script>
   <script>
-  document.addEventListener('load', function(){
-    const html         = document.getElementsByTagName('html');
+  window.addEventListener('DOMContentLoaded', function(){
+    const htmls        = document.getElementsByTagName('html');
     const playLists    = document.querySelectorAll('.playList');
     const movie_modal  = document.querySelector('.movie-modal');
     const movie        = document.querySelector('.movie');
     const modal_wrap   = document.querySelector('.modal-wrap');
     const overlay      = document.getElementById('overlay');
-    playlists.forEach(function(playlist){
-      playlist.addEventListener('click', function(){
+    playLists.forEach(function(playList){
+      console.log(playList.dataset.ytid);
+      playList.addEventListener('click', function(){
         let ytid  = this.dataset.ytid;
-        let title = this.dataset.title;
-        let end   = this.dataset.end;
+        console.log('click');
+        let title = playList.dataset.title;
+        let end   = playList.dataset.end;
         //
         let iframe = `<iframe id="player" 
                               width="640" 
@@ -995,7 +997,7 @@
         movie.innerHTML(iframe);
         movie_modal.classList.add("active");
         modal_wrap.classList.add('playStart');
-        html[0].style({"overflow-y":"hidden"});
+        htmls[0].style({"overflow-y":"hidden"});
         // $(".global-nav, .clone-nav").hide();
         // $("#page-top").hide();
         onYouTubeIframeAPIReady();

@@ -2349,7 +2349,7 @@ iframe {
   background-color: rgba(0, 0, 0, 0.95);
   pointer-events: none;
   transition: all 1s;
-  z-index: 10;
+  z-index: 300;
 }
 
 #ace_movies .movie-modal.active {
