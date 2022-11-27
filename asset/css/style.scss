@@ -2344,13 +2344,18 @@ iframe {
 }
 
 #ace_movies #close {
-  position: absolute;
-  top: 0;
-  left: 8px;
+  color: #999;
   font-size: 32px;
-  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #fff;
+  padding: 8px;
+  position: absolute;
+  top: -42px;
+  left: 8px;
   z-index: 100;
-  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 #ace_movies #overlay {

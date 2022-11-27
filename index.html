@@ -976,7 +976,9 @@
     const movie_modal  = document.querySelector('.movie-modal');
     const movie        = document.querySelector('.movie');
     const modal_wrap   = document.querySelector('.modal-wrap');
+    const modal        = document.querySelector('modal');
     const overlay      = document.getElementById('overlay');
+    const close        = document.getElementById('close');
     playLists.forEach(function(playList){
       console.log(playList.dataset.ytid);
       playList.addEventListener('click', function(){
@@ -993,17 +995,26 @@
                               frameborder="0" 
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                       </iframe>`;
-        movie.innerHTML('');
-        movie.innerHTML(iframe);
+        movie.innerHTML = '';
+        movie.innerHTML = iframe;
         movie_modal.classList.add("active");
         modal_wrap.classList.add('playStart');
-        htmls[0].style({"overflow-y":"hidden"});
+        htmls[0].style.overflowY = 'hidden';
         // $(".global-nav, .clone-nav").hide();
         // $("#page-top").hide();
-        onYouTubeIframeAPIReady();
+        // onYouTubeIframeAPIReady();
         return false;
       })
-    })
+    });
+
+    close.addEventListener("click",function(){
+        movie_modal.classList.remove("active");
+        modal_wrap.classList.remove('playStart');
+        html[0].style.overflowY = 'auto';
+    //     $(".global-nav, .clone-nav").show();
+    //     $("#page-top").show();
+    });
+
 
     let tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -1011,13 +1022,15 @@
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     let player;
 
+  });
+  window.addEventListener('load', function(){
     function onYouTubeIframeAPIReady() {
         player = new YT.Player("player",{
             events: {
                 'onStateChange': onPlayerStateChange
             }
         });
-    }
+    };
 
     function onPlayerStateChange(event) {
         let ytStatus = event.data;
@@ -1033,8 +1046,9 @@
     }
     
     onYouTubeIframeAPIReady();
-  });
+    onYouTubeIframeAPIReady();
 
+  });
   </script>
 </body>
 </html>
