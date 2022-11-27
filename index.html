@@ -538,33 +538,45 @@
       </section>
       <hr class="sub-section hr-dots">
 
-      <section class="location top-section inview" title="Access">
+      <section class="access top-section inview" title="Access">
         <h2 class="info-title top-section-title"><span>アクセス</span></h2>
         <section>
-          <h3>公共交通機関のご利用</h3>
-          <details>
-            <summary>ＪＲ「博多駅」から</summary>
-            <div></div>
+          <p class="location">福岡中央郵便局向いの「ローソン天神1丁目店」様から博多方面へ2軒先<br />「天神MARUビル」10階に当事業所がございます。<br />横どなりの建物は「西鉄不動産」様です。</p>
+        </section>
+        <section>
+          <h3><span>公共交通機関のご利用</span></h3>
+          <details open>
+            <summary>ＪＲ</summary>
+            <div class="desc">「博多駅」から地下鉄「空港線」に乗り換え<br />「天神駅」下車</div>
           </details>
-          <details>
-            <summary>西鉄大牟田線「福岡天神駅」から</summary>
-            <div></div>
+          <details open>
+            <summary>西鉄大牟田線</summary>
+            <div class="desc">「福岡天神駅」から徒歩約8分</div>
           </details>
-          <details>
-            <summary>地下鉄空港線「天神駅」から</summary>
-            <div></div>
+          <details open>
+            <summary>市営地下鉄空港線</summary>
+            <div class="desc">「天神駅」東2出口より徒歩8分</div>
           </details>
-          <details>
-            <summary>地下鉄七隈線「天神南駅」から</summary>
-            <div></div>
+          <details open>
+            <summary>地下鉄七隈線</summary>
+            <div class="desc">「天神南駅」から徒歩約〇分</div>
+          </details>
+          <details open>
+            <summary>西鉄バス</summary>
+            <div class="desc"> 天神郵便局前より徒歩2分</div>
           </details>
         </section>
         <section>
-          <h3>お車でのご来所</h3>
+          <h3><span>お車でのご来所</span></h3>
+          <div class="desc">都市高速をご利用の方は「天神北」ランプにて下車約5分</div>
         </section>
         <section class="access-map">
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13293.994001615221!2d130.400014!3d33.592368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6d832cff2e4889af!2z5ZCI5ZCM5Lya56S-44OP44O844OI44OV44OrIOWwseWKtOaUr-aPtOS6i-alreaJgEFDRQ!5e0!3m2!1sja!2sjp!4v1590060900012!5m2!1sja!2sjp" class="google-map" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <h3><span>マップ</span></h3>
+          <div class="navigation-video-holder">
+            <iframe class="navigation-video" width="560" height="315" src="https://www.youtube.com/embed/vOQno7LLfVI?start=19" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="access-map-holder">
+            <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13293.994001615221!2d130.400014!3d33.592368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6d832cff2e4889af!2z5ZCI5ZCM5Lya56S-44OP44O844OI44OV44OrIOWwseWKtOaUr-aPtOS6i-alreaJgEFDRQ!5e0!3m2!1sja!2sjp!4v1590060900012!5m2!1sja!2sjp" class="google-map" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </section>
       </section>
@@ -928,6 +940,89 @@
         });
       }
     })
+  </script>
+  <script>
+  /*  
+  $(function(){
+    $playList = $("#ace").find(".playList");
+    $movie    = $("#ace").find(".movie");
+
+    $playList.each(function(i){
+        $(this).click(function(){
+            let ytid = $(this).data("ytid");
+            let title = $(this).data("title");
+            let end = $(this).data("end");
+            //
+            let iframe = `<iframe id="player" 
+                                  width="640" 
+                                  height="360" 
+                                  src="https://www.youtube.com/embed/${ytid}?rel=0&autoplay=1&start=0&end=${end}&mute=1&enablejsapi=1&modestbranding=1&origin=https://heart-full.org" 
+                                  title="${title}" 
+                                  frameborder="0" 
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                          </iframe>`;
+            $movie.html('');
+            $movie.html(iframe);
+            $(".movie-modal").addClass("active");
+            $(".modal-wrap").addClass('playStart');
+            $("html").css({"overflow-y":"hidden"});
+            $(".global-nav, .clone-nav").hide();
+            $("#page-top").hide();
+            onYouTubeIframeAPIReady();
+            return false;
+        });
+    });
+
+    $("#close,#overlay").on("click",function(){
+        $(".movie-modal").removeClass("active");
+        $(".modal-wrap").removeClass('playStart');
+        $("html").css({"overflow-y":"auto"});
+        $(".global-nav, .clone-nav").show();
+        $("#page-top").show();
+        scrollBack();
+    });
+  });
+  */
+  //
+  document.addEventListener('DOMContentLoaded', function(){
+    const movies = document.querySelectorAll('.youtube');
+    movies.forEach(movie, function(){
+      
+    })
+  });
+  let tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  let firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  let player;
+
+  function onYouTubeIframeAPIReady() {
+      player = new YT.Player("player",{
+          events: {
+              'onStateChange': onPlayerStateChange
+          }
+      });
+  }
+  function onPlayerStateChange(event) {
+      let ytStatus = event.data;
+      if (ytStatus == YT.PlayerState.ENDED) {
+          $(".movie-modal").removeClass("active");
+          $(".modal-wrap").removeClass('playStart');
+          $("#ace").find(".movie").html('');
+          $("html").css({"overflow-y":"auto"});
+          $(".global-nav, .clone-nav").show();
+          $("#page-top").show();
+          scrollBack();
+      }
+  }
+  
+  /*
+  function scrollBack() {
+      const obj = document.getElementById("ace_movies");
+      const offset = Math.ceil(obj.getBoundingClientRect().top) - 80;
+      $('html,body').animate({ scrollTop: `+=${offset}` }, 400);
+  }
+  */
   </script>
 </body>
 </html>
