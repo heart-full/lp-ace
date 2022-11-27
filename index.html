@@ -34,6 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" />
   <link rel="stylesheet" href="./asset/css/style.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body id="Index" class="Index">
   <div id="loading"></div>
@@ -1015,7 +1016,7 @@
   document.addEventListener('DOMContentLoaded', function(){
     const html        = document.getElementsByTagName('html');
     const playList    = document.querySelector('.playList');
-    const movies      = document.querySelectorAll('.youtube');
+    const movies      = document.querySelectorAll('.movie');
     const movie_modal = document.querySelector('.movie-modal');
     const modal_wrap  = document.querySelector('.modal-wrap');
     movies.forEach(function(movie){
@@ -1046,10 +1047,10 @@
     })
   });
 
-  let tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  let firstScriptTag = document.getElementsByTagName('script')[1];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // let tag = document.createElement('script');
+  // tag.src = "https://www.youtube.com/iframe_api";
+  // let firstScriptTag = document.getElementsByTagName('script')[1];
+  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   let player;
 
   function onYouTubeIframeAPIReady() {
