@@ -985,11 +985,36 @@
   */
   //
   document.addEventListener('DOMContentLoaded', function(){
+    const html = document.getElementsByTagName('html')
     const movies = document.querySelectorAll('.youtube');
+    const movie_modal = document.querySelector('.movie-modal');
+    const modal_wrap  = document.querySelector('.modal-wrp');
     movies.forEach(movie, function(){
-
+      const attrs = movie.attributes;
+      let ytid  = movie.dataset.ytid;
+      let title = movie.dataset.title;
+      let end   = movie.dataset.end;
+      //
+      let iframe = `<iframe id="player" 
+                            width="640" 
+                            height="360" 
+                            src="https://www.youtube.com/embed/${ytid}?rel=0&autoplay=1&start=0&end=${end}&mute=1&enablejsapi=1&modestbranding=1&origin=https://heart-full.org" 
+                            title="${title}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>`;
+      movie.innerHTML('');
+      movie.innerHTML(iframe);
+      movie_modal.classList.add("active");
+      modal_wrap.classList.add('playStart');
+      html[0].style({"overflow-y":"hidden"});
+      // $(".global-nav, .clone-nav").hide();
+      // $("#page-top").hide();
+      onYouTubeIframeAPIReady();
+      return false;
     })
   });
+  
   let tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   let firstScriptTag = document.getElementsByTagName('script')[0];
