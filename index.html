@@ -973,9 +973,10 @@
   document.addEventListener('load', function(){
     const html         = document.getElementsByTagName('html');
     const playLists    = document.querySelectorAll('.playList');
-    const movie        = document.querySelector('.movie');
     const movie_modal  = document.querySelector('.movie-modal');
+    const movie        = document.querySelector('.movie');
     const modal_wrap   = document.querySelector('.modal-wrap');
+    const overlay      = document.getElementById('overlay');
     playlists.forEach(function(playlist){
       playlist.addEventListener('click', function(){
         let ytid  = this.dataset.ytid;
