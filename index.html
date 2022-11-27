@@ -3,6 +3,7 @@
 <head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
   <meta charset="UTF-8">
   <meta name="robots" content="noindex,nofollow,nocache">
+  <script src="https://www.youtube.com/iframe_api">let player;</script>
   <script>
     const html = document.getElementsByTagName('html');
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
@@ -34,7 +35,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" />
   <link rel="stylesheet" href="./asset/css/style.css" />
-  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body id="Index" class="Index">
   <div id="loading"></div>
@@ -971,48 +971,46 @@
     })
   </script>
   <script>
-  /*  
-  $(function(){
-    $playList = $("#ace").find(".playList");
-    $movie    = $("#ace").find(".movie");
+  // $(function(){
+  //   $playList = $("#ace").find(".playList");
+  //   $movie    = $("#ace").find(".movie");
 
-    $playList.each(function(i){
-        $(this).click(function(){
-            let ytid = $(this).data("ytid");
-            let title = $(this).data("title");
-            let end = $(this).data("end");
-            //
-            let iframe = `<iframe id="player" 
-                                  width="640" 
-                                  height="360" 
-                                  src="https://www.youtube.com/embed/${ytid}?rel=0&autoplay=1&start=0&end=${end}&mute=1&enablejsapi=1&modestbranding=1&origin=https://heart-full.org" 
-                                  title="${title}" 
-                                  frameborder="0" 
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                          </iframe>`;
-            $movie.html('');
-            $movie.html(iframe);
-            $(".movie-modal").addClass("active");
-            $(".modal-wrap").addClass('playStart');
-            $("html").css({"overflow-y":"hidden"});
-            $(".global-nav, .clone-nav").hide();
-            $("#page-top").hide();
-            onYouTubeIframeAPIReady();
-            return false;
-        });
-    });
+  //   $playList.each(function(i){
+  //       $(this).click(function(){
+  //           let ytid = $(this).data("ytid");
+  //           let title = $(this).data("title");
+  //           let end = $(this).data("end");
+  //           //
+  //           let iframe = `<iframe id="player" 
+  //                                 width="640" 
+  //                                 height="360" 
+  //                                 src="https://www.youtube.com/embed/${ytid}?rel=0&autoplay=1&start=0&end=${end}&mute=1&enablejsapi=1&modestbranding=1&origin=https://heart-full.org" 
+  //                                 title="${title}" 
+  //                                 frameborder="0" 
+  //                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  //                         </iframe>`;
+  //           $movie.html('');
+  //           $movie.html(iframe);
+  //           $(".movie-modal").addClass("active");
+  //           $(".modal-wrap").addClass('playStart');
+  //           $("html").css({"overflow-y":"hidden"});
+  //           $(".global-nav, .clone-nav").hide();
+  //           $("#page-top").hide();
+  //           onYouTubeIframeAPIReady();
+  //           return false;
+  //       });
+  //   });
 
-    $("#close,#overlay").on("click",function(){
-        $(".movie-modal").removeClass("active");
-        $(".modal-wrap").removeClass('playStart');
-        $("html").css({"overflow-y":"auto"});
-        $(".global-nav, .clone-nav").show();
-        $("#page-top").show();
-        scrollBack();
-    });
-  });
-  */
-  //
+  //   $("#close,#overlay").on("click",function(){
+  //       $(".movie-modal").removeClass("active");
+  //       $(".modal-wrap").removeClass('playStart');
+  //       $("html").css({"overflow-y":"auto"});
+  //       $(".global-nav, .clone-nav").show();
+  //       $("#page-top").show();
+  //       scrollBack();
+  //   });
+  // });
+  
   document.addEventListener('DOMContentLoaded', function(){
     const html        = document.getElementsByTagName('html');
     const playList    = document.querySelector('.playList');
@@ -1051,7 +1049,7 @@
   // tag.src = "https://www.youtube.com/iframe_api";
   // let firstScriptTag = document.getElementsByTagName('script')[1];
   // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  let player;
+  // let player;
 
   function onYouTubeIframeAPIReady() {
       player = new YT.Player("player",{
