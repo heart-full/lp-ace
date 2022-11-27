@@ -1014,10 +1014,10 @@
       return false;
     })
   });
-  
+
   let tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
-  let firstScriptTag = document.getElementsByTagName('script')[0];
+  let firstScriptTag = document.getElementsByTagName('script')[1];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   let player;
 
@@ -1028,13 +1028,14 @@
           }
       });
   }
+
   function onPlayerStateChange(event) {
       let ytStatus = event.data;
       if (ytStatus == YT.PlayerState.ENDED) {
-          // $(".movie-modal").removeClass("active");
-          // $(".modal-wrap").removeClass('playStart');
-          // $("#ace").find(".movie").html('');
-          // $("html").css({"overflow-y":"auto"});
+          movie_modal.classList.remove("active");
+          modal_wrap.classList.remove('playStart');
+          movie.oinnerHTML('');
+          html[0].style({"overflow-y":"auto"});
           // $(".global-nav, .clone-nav").show();
           // $("#page-top").show();
           // scrollBack();
