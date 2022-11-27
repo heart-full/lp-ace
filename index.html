@@ -971,17 +971,16 @@
   </script>
   <script>
   document.addEventListener('load', function(){
-    const html        = document.getElementsByTagName('html');
-    const playList    = document.querySelector('.playList');
-    const movies      = document.querySelectorAll('.movie');
-    const movie_modal = document.querySelector('.movie-modal');
-    const modal_wrap  = document.querySelector('.modal-wrap');
-    movies.forEach(function(movie){
-      movie.addEventListener('click', function(){
-        const attrs = movie.attributes;
-        let ytid  = movie.dataset.ytid;
-        let title = movie.dataset.title;
-        let end   = movie.dataset.end;
+    const html         = document.getElementsByTagName('html');
+    const playLists    = document.querySelectorAll('.playList');
+    const movie        = document.querySelector('.movie');
+    const movie_modal  = document.querySelector('.movie-modal');
+    const modal_wrap   = document.querySelector('.modal-wrap');
+    playlists.forEach(function(playlist){
+      playlist.addEventListener('click', function(){
+        let ytid  = this.dataset.ytid;
+        let title = this.dataset.title;
+        let end   = this.dataset.end;
         //
         let iframe = `<iframe id="player" 
                               width="640" 

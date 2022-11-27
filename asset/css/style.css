@@ -2269,4 +2269,145 @@ iframe {
   stroke-dashoffset: 0;
   fill: rgb(255, 255, 255);
 }
+
+/* ACE YouTube
+------------------------- */
+#ace_movies {
+  width: 100%;
+  margin: 32px auto;
+}
+
+#ace_movies .mv-heading {
+  font-size: 26px;
+  padding-top: 30px;
+  padding-left: 0.5em;
+  border-bottom: 2px solid rgb(62, 70, 177);
+  position: relative;
+}
+
+#ace_movies .mv-heading span {
+  font-family: "Kosugi Maru", sans-serif;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+#ace_movies .mv-heading::before {
+  color: rgba(5, 62, 98, 0.2);
+  font-family: "Kosugi Maru", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  content: attr(data-en);
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 1;
+}
+
+#ace_movies .modal-wrap {
+  margin: 0 auto;
+}
+
+#ace_movies .playList-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(240px - 1rem - 1rem), 1fr));
+  grid-gap: 0.5em;
+  transform-origin: top left;
+}
+
+#ace_movies .playStart .playList-wrap {
+  transform: scale(0);
+}
+
+#ace_movies .playList {
+  background: #fff url(../images/youtube.svg) no-repeat center right 6%/10%;
+  display: flex;
+  height: auto;
+  min-height: 4em;
+  padding: 0.5em;
+  border: 4px solid #c21500;
+  -o-border-image: linear-gradient(to top right, #c21500 0%, #ffc500 100%);
+     border-image: linear-gradient(to top right, #c21500 0%, #ffc500 100%);
+  border-image-slice: 1;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+#ace_movies .playList span {
+  text-align: center;
+  line-height: 1;
+  margin: auto;
+}
+
+#ace_movies .movie-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+  transition: all 1s;
+  z-index: 10;
+}
+
+#ace_movies .movie-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#ace_movies .modal-box {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+#ace_movies .modal-inner {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+
+#ace_movies .movie {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+#ace_movies .movie iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#ace_movies #close {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 100;
+  color: #fff;
+}
+
+#ace_movies #overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  #ace_movies .wrap {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
