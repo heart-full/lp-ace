@@ -1039,10 +1039,17 @@ summary::-webkit-details-marker {
   justify-items: center;
   width: 100%;
   margin-bottom: 32px;
+  overflow-x: auto;
 }
 
 :is(.activities-time-table-graph-holder img) {
   width: 100%;
+}
+
+:is(.touch-device .activities-time-table-graph-holder img) {
+  width: 547px;
+  max-width: unset;
+  height: unset;
 }
 
 .activities-suchedule-timetable {
@@ -1109,7 +1116,7 @@ summary::-webkit-details-marker {
 // }
 
 :is(.activities-suchedule-timetable .timetable11to12 td:nth-of-type(2) img) {
-  max-width: clamp(120px, calc(100vw * 0.9 * 240 / 960 ), 240px);
+  max-width: clamp(200px, calc(100vw * 0.9 * 240 / 960 ), 240px);
 }
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
@@ -1141,6 +1148,11 @@ iframe {
   height: auto;
 }
 
+:is(.touch-device .bento-mv) {
+  max-height: 100vh
+} 
+
+:is(.activities .mendan .image-holder),
 :is(.activities .recruit .image-holder),
 :is(.activities .training .image-holder),
 :is(.activities .symposium .image-holder) {
