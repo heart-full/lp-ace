@@ -1062,7 +1062,7 @@ summary::-webkit-details-marker {
   min-width: 200px;
 }
 
-:is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img) {
+:is(.activities-suchedule-timetable .timetable11to12 td:nth-of-type(2) img) {
   max-width: clamp(120px, 45vw, 480px);
 }
 
