@@ -542,13 +542,13 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 630px) {
   :is(.page_footer .branch-info-holder) {
-    position: relative;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
     transform: scale(0.8);
     transform-origin: top right;
+    position: relative;
   }
 }
 :is(.page_footer .branch-info-holder .branch-info) {

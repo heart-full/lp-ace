@@ -570,7 +570,6 @@ summary::-webkit-details-marker {
     // grid-column-end: 2;
     // grid-row-start: 1;
     // grid-row-end: 2;
-    position: relative;
     // margin-top: 32px;
     // margin-bottom: 32px;
     // margin-left: 32px;
@@ -583,6 +582,7 @@ summary::-webkit-details-marker {
     grid-row-end: 3;
     transform: scale(0.8);
     transform-origin: top right;
+    position: relative;
   }
 }
 
