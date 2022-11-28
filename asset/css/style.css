@@ -467,7 +467,7 @@ summary::-webkit-details-marker {
 .page_footer {
   display: grid;
   grid-template-rows: 2fr 1fr 2em;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   max-height: 540px;
   min-height: 480px;
   position: relative;
@@ -554,8 +554,6 @@ summary::-webkit-details-marker {
 :is(.page_footer .branch-info-holder .branch-info) {
   aspect-ratio: 231/140;
   height: auto;
-  transform: scale(1.3);
-  transform-origin: top right;
 }
 
 :is(.page_footer .access-map-holder) {
