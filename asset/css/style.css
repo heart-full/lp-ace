@@ -466,7 +466,7 @@ summary::-webkit-details-marker {
 ******************************************************************/
 .page_footer {
   display: grid;
-  grid-template-rows: 2fr 1fr 2em;
+  grid-template-rows: auto auto 2em;
   grid-template-columns: auto auto;
   max-height: 540px;
   min-height: 480px;
@@ -483,8 +483,8 @@ summary::-webkit-details-marker {
   }
 }
 :is(.touch-device .page_footer) {
-  height: 100vh;
-  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
   max-height: unset;
 }
 
@@ -590,7 +590,6 @@ summary::-webkit-details-marker {
 :is(.page_footer .access-map-holder .access-map) {
   padding: 16px 16px 0;
   height: auto;
-  transform-origin: top right;
 }
 
 .access-route {
