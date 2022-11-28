@@ -466,9 +466,8 @@ summary::-webkit-details-marker {
 ******************************************************************/
 .page_footer {
   display: grid;
+  grid-template-columns: 48px 2fr 1fr;
   grid-template-rows: auto auto 2em;
-  grid-template-columns: auto auto;
-  max-height: 540px;
   min-height: 480px;
   position: relative;
   z-index: 1;
@@ -477,14 +476,14 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   .page_footer {
+    grid-template-columns: 48px 1fr;
     grid-template-rows: auto auto auto 2em;
-    grid-template-columns: 1fr;
     max-height: 100vh;
   }
 }
 :is(.touch-device .page_footer) {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: unset;
+  min-height: unset;
   max-height: unset;
 }
 
@@ -523,44 +522,6 @@ summary::-webkit-details-marker {
   }
 }
 */
-:is(.page_footer .branch-info-holder) {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  display: flex;
-  flex-direction: column;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
-}
-
-@media screen and (max-width: 630px) {
-  :is(.page_footer .branch-info-holder) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    transform: scale(0.8);
-    transform-origin: top right;
-    position: relative;
-  }
-}
-:is(.page_footer .branch-info-holder .branch-info) {
-  aspect-ratio: 231/140;
-  height: auto;
-}
-
-@media screen and (max-width: 640px) {
-  :is(.page_footer .branch-info-holder .branch-info) {
-    width: calc(100vw - 42px);
-  }
-}
 :is(.page_footer .access-map-holder) {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -571,25 +532,20 @@ summary::-webkit-details-marker {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: auto;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
 }
 
 @media screen and (max-width: 640px) {
   :is(.page_footer .access-map-holder) {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     position: relative;
   }
 }
 :is(.page_footer .access-map-holder .access-map) {
-  padding: 16px 16px 0;
   height: auto;
+  padding: 16px 16px 0;
 }
 
 .access-route {
@@ -599,9 +555,38 @@ summary::-webkit-details-marker {
   transform: scale(0.7);
 }
 
+:is(.page_footer .branch-info-holder) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+@media screen and (max-width: 640px) {
+  :is(.page_footer .branch-info-holder) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 60%;
+    margin-left: auto;
+    position: relative;
+  }
+}
+:is(.page_footer .branch-info-holder .branch-info) {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 231/140;
+}
+
+@media screen and (max-width: 640px) {
+  :is(.page_footer .branch-info-holder .branch-info) {
+    width: calc(100vw - 42px);
+  }
+}
 .youtube-qr-holder {
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
   display: flex;
@@ -610,15 +595,15 @@ summary::-webkit-details-marker {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-right: 64px;
+  margin-bottom: 1em;
   margin-left: auto;
   transform: scale(0.8);
 }
 
 @media screen and (max-width: 640px) {
   .youtube-qr-holder {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
   }
@@ -630,7 +615,7 @@ summary::-webkit-details-marker {
 
 .copyright {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 4;
   font-weight: 300;
@@ -641,7 +626,7 @@ summary::-webkit-details-marker {
 @media screen and (max-width: 640px) {
   .copyright {
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
   }
@@ -1879,6 +1864,13 @@ iframe {
 
 :is(.page_header .wake-menu.on) {
   top: 374px;
+}
+
+:is(.page_footer .wake-menu) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
 
 :is(.touch-device .page_header .wake-menu.on) {
