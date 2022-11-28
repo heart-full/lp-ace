@@ -569,7 +569,7 @@ summary::-webkit-details-marker {
     grid-row-start: 2;
     grid-row-end: 3;
     width: 60%;
-    margin-left: auto;
+    margin: auto;
     position: relative;
   }
 }
@@ -579,11 +579,6 @@ summary::-webkit-details-marker {
   aspect-ratio: 231/140;
 }
 
-@media screen and (max-width: 640px) {
-  :is(.page_footer .branch-info-holder .branch-info) {
-    width: calc(100vw - 42px);
-  }
-}
 .youtube-qr-holder {
   grid-column-start: 2;
   grid-column-end: 4;
@@ -606,6 +601,7 @@ summary::-webkit-details-marker {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
+    margin: auto;
   }
 }
 .youtube-qr-title {
@@ -1471,7 +1467,7 @@ iframe {
 }
 
 :is(.kengaku .reception-time > details) {
-  min-width: 180px;
+  min-width: 160px;
 }
 
 :is(.kengaku .reception-time > details summary) {
@@ -1611,8 +1607,7 @@ iframe {
 
 /* アクセス */
 :is(.access .location),
-:is(.access h3),
-:is(.access > section) {
+:is(.access h3) {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1651,12 +1646,12 @@ iframe {
   right: 0;
   bottom: 0;
   left: 0;
-  border-bottom: solid 1px #649cc9;
-  border-left: solid 1px #649cc9;
+  border-bottom: solid 2px #649cc9;
+  border-left: solid 2px #649cc9;
   z-index: -1;
-  transform: scaleX(0);
+  transform: scale(0);
   transform-origin: bottom left;
-  transition: all 0.3s ease-in-out 0.5s;
+  transition: all 1s ease-in-out 0.5s;
 }
 
 :is(.access .location)::after,
@@ -1670,22 +1665,22 @@ iframe {
   right: 0;
   bottom: 0;
   left: 0;
-  border-top: solid 1px #649cc9;
-  border-right: solid 1px #649cc9;
+  border-top: solid 2px #649cc9;
+  border-right: solid 2px #649cc9;
   z-index: -2;
-  transform: scaleX(0);
+  transform: scale(0);
   transform-origin: top right;
-  transition: all 0.3s ease-in-out 0.5s;
+  transition: all 1s ease-in-out 0.5s;
 }
 
 :is(.access.active .location)::before,
 :is(.access.active h3 span)::before {
-  transform: scaleX(1);
+  transform: scale(1);
 }
 
 :is(.access.active .location)::after,
 :is(.access.active h3 span)::after {
-  transform: scaleX(1);
+  transform: scale(1);
 }
 
 :is(.access details:not(:last-of-type)) {
