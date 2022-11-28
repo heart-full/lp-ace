@@ -1104,9 +1104,9 @@ summary::-webkit-details-marker {
   min-width: 200px;
 }
 
-:is(.activities-suchedule-timetable .timetable img) {
-  max-width: clamp(120px, calc(100vw * 0.9 * 240 / 960 ), 240px);
-}
+// :is(.activities-suchedule-timetable .timetable img) {
+//   max-width: clamp(120px, calc(100vw * 0.9 * 240 / 960 ), 240px);
+// }
 
 :is(.activities-suchedule-timetable .timetable11to12 td:first-of-type img) {
   max-width: clamp(120px, calc(100vw * 0.9 * 480 / 960 ), 480px);
@@ -1145,7 +1145,7 @@ iframe {
 :is(.activities .training .image-holder),
 :is(.activities .symposium .image-holder) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 16px;
 }
 
@@ -1314,7 +1314,7 @@ iframe {
 }
 
 :is(.touch-device .kengaku >section) {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 :is(.kengaku > section h3) {
