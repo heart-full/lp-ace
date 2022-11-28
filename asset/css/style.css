@@ -556,6 +556,11 @@ summary::-webkit-details-marker {
   height: auto;
 }
 
+@media screen and (max-width: 640px) {
+  :is(.page_footer .branch-info-holder .branch-info) {
+    width: calc(100vw - 42px);
+  }
+}
 :is(.page_footer .access-map-holder) {
   grid-column-start: 2;
   grid-column-end: 3;
