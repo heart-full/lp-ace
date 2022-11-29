@@ -1115,9 +1115,21 @@ summary::-webkit-details-marker {
 //   max-width: clamp(120px, calc(100vw * 0.9 * 240 / 960 ), 240px);
 // }
 
+:is(.activities-suchedule-timetable .timetable10to11 img) {
+  max-height: 180px;
+}
+
 :is(.activities-suchedule-timetable .timetable11to12 td:nth-of-type(2) img) {
   max-width: clamp(200px, calc(100vw * 0.9 * 240 / 960 ), 240px);
 }
+
+:is(.activities-suchedule-timetable .timetable12to13 .image-holder) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+}
+// :is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
+//   transform: scale(0.8);
+// }
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
   transform: scale(0.8);
