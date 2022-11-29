@@ -1571,7 +1571,7 @@ iframe {
 }
 
 :is(.sns-holder .qr-code) {
-  width: 200px;
+  width: clamp(64px, 6.6666666667vw, 64px);
   aspect-ratio: 1/1;
 }
 
