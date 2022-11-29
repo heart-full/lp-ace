@@ -1124,12 +1124,11 @@ summary::-webkit-details-marker {
 }
 
 :is(.activities-suchedule-timetable .timetable12to13 .image-holder) {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
 }
 :is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
   max-height: 90vh;
-  transform: scale(0.8);
 }
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
