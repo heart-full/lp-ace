@@ -1077,12 +1077,8 @@ summary::-webkit-details-marker {
   max-width: clamp(200px, 22.5vw, 240px);
 }
 
-:is(.activities-suchedule-timetable .timetable12to13 .image-holder) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-}
-
 :is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
+  max-height: 90vh;
   transform: scale(0.8);
 }
 
