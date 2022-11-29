@@ -17,8 +17,6 @@ html {
 }
 
 body {
-  font-size: 18px;
-  font-size: clamp(12px, 1.875vw, 18px);
   font-family: "Kosugi Maru", sans-serif;
   font-weight: 300;
   line-height: 1.6;
