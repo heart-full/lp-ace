@@ -1127,9 +1127,9 @@ summary::-webkit-details-marker {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
 }
-// :is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
-//   transform: scale(0.8);
-// }
+:is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
+  transform: scale(0.8);
+}
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
   transform: scale(0.8);
