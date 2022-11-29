@@ -1291,6 +1291,12 @@ iframe {
   border-radius: 1em;
 }
 
+@media screen and (max-width: 480px) {
+  :is(.Index .faq details) {
+    font-size: 0.8em;
+  }
+}
+
 :is(.Index .faq details summary) {
   font-size: 1.2em;
   display: grid;
@@ -1300,6 +1306,12 @@ iframe {
   align-items: center;
   height: 5em;
   margin-bottom: .5em;
+}
+
+@media screen and (max-width: 640px) {
+  :is(.Index .faq details summary) {
+    font-size: 1em;
+  }
 }
 
 :is(.Index .faq details summary img) {
