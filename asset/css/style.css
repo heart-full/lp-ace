@@ -659,7 +659,7 @@ summary::-webkit-details-marker {
   font-weight: 900;
   line-height: 0.8;
   display: block;
-  padding: 0.35em 1.1em 0.2em 0.7em;
+  padding: 0.35em 0.5em 0.2em 0.7em;
   background-color: rgb(55, 108, 255);
   position: absolute;
   top: 0;
@@ -1619,6 +1619,11 @@ iframe {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 480px) {
+  .ace-general-info-table {
+    font-size: 0.8em;
+  }
+}
 :is(.ace-general-info-table th, .ace-general-info-table td) {
   padding: 0.5em;
   border-bottom: solid 1px hsl(173deg, 23%, 40%);
