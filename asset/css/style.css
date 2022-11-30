@@ -902,7 +902,10 @@ summary::-webkit-details-marker {
 
 @media screen and (max-width: 640px) {
   :is(.Index .whats-ace-staff-message) {
-    grid: unset;
+    display: block;
+  }
+  :is(.Index .whats-ace-staff-message > p:not(:last-of-type)) {
+    margin-bottom: 1em;
   }
 }
 /* カリキュラム */
