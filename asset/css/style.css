@@ -1588,7 +1588,6 @@ iframe {
 :is(.sns .channel-name) {
   color: #fff;
   font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
 }
 
 :is(.sns-holder .sns-logo) {
