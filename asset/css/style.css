@@ -1431,8 +1431,11 @@ iframe {
 }
 
 @media screen and (max-width: 640px) {
+  :is(.kengaku .announce .contents picture img) {
+    transform: scale(1.2);
+  }
   :is(.kengaku .announce .contents picture) {
-    margin-right: clamp(0px, 2vw, 64px);
+    margin-right: clamp(8px, 2vw, 64px);
   }
 }
 :is(.kengaku .experience-schedule) {
