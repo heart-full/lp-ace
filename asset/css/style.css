@@ -900,6 +900,11 @@ summary::-webkit-details-marker {
   margin: 16px auto 32px;
 }
 
+@media screen and (max-width: 640px) {
+  :is(.Index .whats-ace-staff-message) {
+    grid: unset;
+  }
+}
 /* カリキュラム */
 .curriculumn-staff-message-holder::before {
   background-image: url(../images/staff-photo03.png);
