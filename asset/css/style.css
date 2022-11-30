@@ -1040,6 +1040,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.activities-suchedule-timetable td) {
+  display: block;
   gap: clamp(8px, 1.6666666667vw, 16px);
   margin-bottom: 1em;
   position: relative;
@@ -1048,11 +1049,6 @@ summary::-webkit-details-marker {
 :is(.activities-suchedule-timetable td .comment) {
   display: block;
   margin-bottom: 1em;
-}
-
-:is(.activities-suchedule-timetable tr:not(:last-of-type) td) {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 :is(.activities-suchedule-timetable dt) {
@@ -1089,7 +1085,10 @@ summary::-webkit-details-marker {
 }
 
 :is(.activities-suchedule-timetable .timetable12to13 .bento-mv) {
+  width: auto;
+  height: 320px;
   max-height: 90vh;
+  aspect-ratio: 1080/1920;
 }
 
 :is(.activities-suchedule-timetable .timetable13to18 .training img:first-of-type) {
@@ -1098,6 +1097,7 @@ summary::-webkit-details-marker {
 }
 
 :is(.activities-suchedule-timetable .zoom span) {
+  display: block;
   position: relative;
 }
 
@@ -2010,7 +2010,7 @@ iframe {
 }
 
 .c-text {
-  color: hsl(106deg, 69%, 20%);
+  color: hsl(0deg, 100%, 100%);
   font-size: clamp(16px, 6.6666666667vw, 64px);
   line-height: 1.4;
 }
@@ -2018,6 +2018,7 @@ iframe {
   letter-spacing: 0.2em;
   display: inline-block;
   opacity: 0;
+  text-shadow: 1px 1px hsl(106deg, 69%, 20%);
 }
 .c-text span:nth-child(1) {
   -webkit-animation: text 1s cubic-bezier(0.3, 0.72, 0.56, 0.99) 0.1s forwards;
