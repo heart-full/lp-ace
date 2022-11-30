@@ -1542,10 +1542,12 @@ iframe {
 
 /* SNS */
 :is(.sns-holder) {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+  grid-template-rows: auto;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 2em;
 }
 
 :is(.sns-holder > details) {
@@ -1560,6 +1562,7 @@ iframe {
   width: fit-content;
   width: 120px;
   padding: 16px;
+  margin: 0 auto 32px;
   border-radius: 16px;
   position: relative;
 }
