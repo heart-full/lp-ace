@@ -1706,7 +1706,7 @@ iframe {
 
 }
 
-:is() {
+:is(.sns-capture) {
   width: auto;
   height: 240px;
   aspect-ratio: 148 / 320;

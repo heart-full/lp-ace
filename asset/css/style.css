@@ -1631,6 +1631,12 @@ iframe {
   border-radius: 8px;
 }
 
+:is(.sns-capture) {
+  width: auto;
+  height: 240px;
+  aspect-ratio: 148/320;
+}
+
 /* 事業所案内 */
 .ace-general-info-table {
   width: -webkit-fit-content;
