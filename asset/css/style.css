@@ -961,7 +961,6 @@ summary::-webkit-details-marker {
 }
 
 :is(.curriculumn-weekly-table li) {
-  color: #333;
   text-indent: -0.75em;
   padding-left: 1em;
 }
@@ -1533,7 +1532,7 @@ iframe {
 :is(.sns-holder) {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-template-rows: auto;
   gap: 1.5em;
 }
@@ -1548,6 +1547,7 @@ iframe {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  width: 120px;
   padding: 16px;
   margin: 0 auto 32px;
   border-radius: 16px;
@@ -1578,14 +1578,13 @@ iframe {
 :is(.sns .sns-title),
 :is(.sns .channel-name) {
   color: #fff;
-  font-size: 1.5em;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
 }
 
 :is(.sns-holder .sns-logo) {
   display: block;
-  width: 64px;
+  width: 32px;
   position: absolute;
   top: 0;
   left: 0;
