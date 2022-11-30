@@ -1632,6 +1632,7 @@ iframe {
 @media screen and (max-width: 480px) {
   .ace-general-info-table {
     font-size: 0.8em;
+    letter-spacing: 0;
   }
 }
 :is(.ace-general-info-table th, .ace-general-info-table td) {
