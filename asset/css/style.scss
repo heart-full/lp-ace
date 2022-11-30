@@ -1613,10 +1613,13 @@ iframe {
 
 /* SNS */
 :is(.sns-holder) {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-template-rows: auto;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  // grid-template-rows: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5em;
 }
 
@@ -1630,7 +1633,7 @@ iframe {
   width: fit-content;
   width: 120px;
   padding: 16px;
-  margin: 0 auto 32px;
+  // margin: 0 auto 32px;
   border-radius: 16px;
   position: relative;
 }
