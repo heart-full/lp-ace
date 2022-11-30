@@ -154,6 +154,7 @@ summary::-webkit-details-marker {
 */
 /* header block */
 .page_header {
+  font-size: clamp(12px, 1.875vw, 18px);
   padding-top: clamp(1px, (100vw - 960px) * 8 / 960, 8px);
   height: 100vh;
   height: 100svh;
