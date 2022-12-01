@@ -611,7 +611,7 @@ iframe {
 :is(.Index .faq details summary) {
   font-size: 1.2em;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   gap: clamp(8px, calc(100vw * 16 / 960), 16px);
   align-items: center;
