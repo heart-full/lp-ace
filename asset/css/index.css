@@ -894,12 +894,7 @@ iframe {
   grid-template-rows: auto auto auto;
   justify-items: center;
   align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  width: 240px;
   padding: 16px;
-  margin: 0 auto 32px;
   border-radius: 16px;
   position: relative;
 }
