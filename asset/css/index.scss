@@ -946,11 +946,14 @@ iframe {
 
 :is(.sns-holder > details .details-description) {
   text-align: center;
+  display: grid;
+  min-height: 120px;
 }
 
-:is(.sns-holder > details .details-description dd) {
+:is(.sns-holder > details .details-description a) {
+  display: block;
   padding: 0;
-  margin: 0;
+  margin: auto auto 0;
 }
 
 :is(.sns-holder .qr-code) {
