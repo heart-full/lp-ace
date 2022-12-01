@@ -966,7 +966,7 @@ iframe {
 
 :is(.sns-capture) {
   width: auto;
-  height: 240px;
+  height: 180px;
   aspect-ratio: 148/320;
 }
 
