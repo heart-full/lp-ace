@@ -895,6 +895,7 @@ iframe {
   justify-items: center;
   align-items: center;
   padding: 16px;
+  margin: 0 16px;
   border-radius: 16px;
   position: relative;
 }
