@@ -1,9 +1,8 @@
-@charset "UTF-8";
-/* ============================ */
+/* ======================================================== */
 /*
 /* Header Block Definition
 /*
-/* ============================ */
+/* ======================================================== */
 .page_header {
   font-size: clamp(12px, 1.875vw, 18px);
   padding-top: clamp(1px, (100vw - 960px) * 8 / 960, 8px);
@@ -237,23 +236,53 @@
     transform: scaleX(1);
   }
 }
-/* ============================ */
+/* ======================================================== */
 /*
 /* Main Block Definition
 /*
-/* ============================ */
+/* ======================================================== */
+body {
+  counter-reset: number 0;
+}
+
+:is(.main .top-section)::before {
+  content: attr(title);
+  color: #999;
+  font-family: "Noto-Serif", serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 48px);
+  font-style: oblique;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: clamp(80px, 11.4583333333vw, 110px);
+  line-height: 1.2;
+  height: 48px;
+  padding-left: clamp(100px, 14.5833333333vw, 140px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+:is(.main .top-section)::after {
+  counter-increment: number 1;
+  content: counter(number, decimal-leading-zero);
+  color: #fff;
+  font-size: 2em;
+  font-family: "Noto-Sans", sans-serif;
+  font-weight: 900;
+  line-height: 0.8;
+  display: block;
+  padding: 0.35em 0.5em 0.2em 0.7em;
+  background-color: rgb(55, 108, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 :is(.main section) {
   padding: 16px;
-}
-
-:is(.main dd) {
-  padding-left: 1em;
-  margin-bottom: 0.5em;
-}
-
-:is(.main li::before) {
-  content: "・";
-  padding-right: 0.25em;
 }
 
 :is(.main .top-section) {
@@ -308,11 +337,11 @@
   transform: scale(0.8);
 }
 
-/* ============================ */
+/* ======================================================== */
 /*
 /* Footer Block Definition
 /*
-/* ============================ */
+/* ======================================================== */
 .page_footer {
   display: grid;
   grid-template-columns: 48px 2fr 1fr;
