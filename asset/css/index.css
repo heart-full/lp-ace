@@ -874,7 +874,7 @@ iframe {
 }
 
 /* SNS */
-:is(.sns-holder) {
+.sns-holder {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   grid-template-rows: auto;
@@ -964,10 +964,17 @@ iframe {
   border-radius: 8px;
 }
 
-:is(.sns-capture) {
+.sns-capture {
   width: auto;
   height: 120px;
   aspect-ratio: 148/320;
+}
+
+.sns-comment {
+  background-color: #fff;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 0.5em;
 }
 
 /* 事業所案内 */
