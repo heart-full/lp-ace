@@ -592,6 +592,7 @@ iframe {
   grid-template-rows: auto;
   gap: clamp(8px, 1.6666666667vw, 16px);
   align-items: center;
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
