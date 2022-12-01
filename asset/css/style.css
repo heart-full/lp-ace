@@ -257,7 +257,7 @@ body {
   background-size: clamp(80px, 11.4583333333vw, 110px);
   line-height: 1.2;
   height: 48px;
-  padding-left: clamp(100px, 14.5833333333vw, 140px);
+  padding-left: clamp(100px, 14.5833333333vw, 102px);
   position: absolute;
   top: 0;
   right: 0;
