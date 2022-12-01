@@ -615,7 +615,7 @@ iframe {
   grid-template-rows: auto;
   gap: clamp(8px, calc(100vw * 16 / 960), 16px);
   align-items: center;
-  height: 5em;
+  height: fit-content;
   margin-bottom: .5em;
 }
 
@@ -634,8 +634,8 @@ iframe {
   background-color: #fff;
   display: grid;
   align-items: center;
-  height: 3em;
-  padding: 0 .5em;
+  height: fit-content;
+  padding: .5em;
   border-radius: 0.5em;
 }
 
@@ -904,6 +904,7 @@ iframe {
   display: block;
   width: 50%;
   margin: 0 auto;
+  transform: scale(0.8);
 }
 
 :is(.kengaku .sub-section.hr-dots) {
@@ -1067,6 +1068,7 @@ iframe {
 :is(.access.active h3) {
   color: #fff;
   background-color: #649cc9;
+  padding: .5em;
 }
 
 :is(.access .location)::before,
