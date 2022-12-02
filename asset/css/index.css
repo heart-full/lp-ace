@@ -463,12 +463,20 @@ iframe {
 :is(.activities .training .image-holder),
 :is(.activities .symposium .image-holder) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(28%, 1fr));
   gap: 16px;
 }
 
-:is(.activities .recruit .image-holder img) {
+:is(.activities .mendan .image-holder img),
+:is(.activities .recruit .image-holder img),
+:is(.activities .training .image-holder img),
+:is(.activities .symposium .image-holder img) {
+  max-width: 180px;
   width: 100%;
+}
+
+:is(.activities .mendan .image-holder img) {
+  max-width: 240px;
 }
 
 /* 利用者の声 */
