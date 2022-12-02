@@ -75,10 +75,18 @@ input[type=text]::placeholder {
 }
 
 /* Material Design for Web */
+:root {
+  --mdc-theme-primary: hsl(173, 33%, 51%);
+}
+
 .mdc-text-field {
   width: 140%;
   max-width: 480px;
   transform: scale(0.7);
   transform-origin: top left;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--mdc-theme-primary);
 }
 /*# sourceMappingURL=kengaku.css.map */
