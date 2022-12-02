@@ -2,6 +2,7 @@
 
 .kengaku-form {
   padding: 1em 2em;
+  overflow: hidden;
 }
 
 .select-times {
@@ -63,4 +64,20 @@
   box-shadow: 0 9px 28px -6px rgba(0, 0, 0, 0.5);
 }
 
+input[type="text"] {
+  position: relative;
+  overflow: visible;
+}
+
+input[type="text"]::placeholder {
+  position: absolute;
+  
+}
+
 /* Material Design for Web */
+.mdc-text-field {
+  width: 140%;
+  max-width: 480px;
+  transform: scale(0.7);
+  transform-origin: top left;
+}
