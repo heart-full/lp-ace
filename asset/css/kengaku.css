@@ -1,5 +1,9 @@
 .kengaku-form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 1em 2em;
+  margin: 0 auto;
   overflow: hidden;
 }
 
