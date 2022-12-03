@@ -286,13 +286,12 @@ body {
 }
 
 :is(.main .top-section) {
-  padding: 0;
-  margin-bottom: 32px;
+  padding-top: 5em;
   position: relative;
 }
 
-:is(.main .top-section section) {
-  padding: 16px;
+:is(.main .top-section:not(:last-of-type)) {
+  margin-bottom: 32px;
 }
 
 /*
@@ -310,10 +309,6 @@ body {
 */
 :is(.main .top-section-title) {
   font-size: clamp(20px, 3.3333333333vw, 32px);
-}
-
-:is(.main .top-section) {
-  padding-top: 5em;
 }
 
 .hr-dots {

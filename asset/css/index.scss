@@ -37,7 +37,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  // z-index: -1;
 }
 
 .staff-photo-holder {
@@ -62,6 +62,7 @@
   left: 64px;
   border: solid 1px #666;
   border-radius: 50%;
+  z-index: 2;
 }
 
 .staff-message-wrapper::before {
@@ -1128,6 +1129,12 @@ iframe {
 :is(.access.active .location)::after,
 :is(.access.active h3 span)::after {
   transform: scale(1);
+}
+
+:is(.access .details-holder) {
+  padding: 1em;
+  border: solid 1px hsl(173, 33%, 51%);
+  border-radius: 0.5em;
 }
 
 :is(.access details:not(:last-of-type)) {
