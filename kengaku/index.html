@@ -302,7 +302,7 @@
     let errorCounter = 0;
     const checkLists = document.querySelectorAll('.validate');
     checkLists.forEach((checkList)=>{
-      checkList.addEventListener('blur', ()=>{
+      'blur change'.split(' ').forEach((e) => {
         const message = checkList.parentElement.previousElementSibling;
         if(!checkList.value) {
           message.textContent = '未入力です。';
@@ -312,7 +312,19 @@
           errorCounter = 0; //reset
         }
         console.log(errorCounter);
-      });
+      })
+
+    //   checkList.addEventListener('blur', ()=>{
+    //     const message = checkList.parentElement.previousElementSibling;
+    //     if(!checkList.value) {
+    //       message.textContent = '未入力です。';
+    //       errorCounter++;
+    //     }else {
+    //       message.textContent = '';
+    //       errorCounter = 0; //reset
+    //     }
+    //     console.log(errorCounter);
+    //   });
     });
 
     //
@@ -333,7 +345,7 @@
     indicator.addEventListener('click', async function() {
       await checkLists.forEach((checkList) => {
         if(checkList.value === '') errorCounter++;
-        // focus out
+        // 確認ボタンがクリックされたとき全てのフォーカスを外す
         checkList.blur();
         console.log(errorCounter);
       });
@@ -382,7 +394,7 @@
       submitHolder.innerHTML = submitBtn;
     }
 
-    //Mutation Observe
+    //Mutation Observe Submition
     const submitObserver = new MutationObserver(
       function(mutationList, observer) {
         let submitBtn = null;
@@ -392,7 +404,12 @@
             submitBtn = document.querySelector('.submit');
           }
         }
-        submitBtn.addEventListener('click', ()=>{
+        submitBtn.addEventListener('click', (errorCounter)=>{
+          if(errorCounter === 0) {
+            checkLists.forEach((checklist)=>{
+              checklist.blur();
+            });
+          }
           location.reload();
         });
       }
