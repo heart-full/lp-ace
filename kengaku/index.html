@@ -102,6 +102,7 @@
           <fieldset>
           <!-- Render textfield component -->
           <div class="element-holder">
+            <div class="error-message"></div>
             <label class="mdc-text-field mdc-text-field--outlined">
               <span class="mdc-notched-outline">
                 <span class="mdc-notched-outline__leading"></span>
@@ -110,11 +111,12 @@
                 </span>
                 <span class="mdc-notched-outline__trailing"></span>
               </span>
-              <input type="text" class="mdc-text-field__input" name="name" aria-labelledby="my-label-id">
+              <input type="text" class="mdc-text-field__input validate" name="name" aria-labelledby="my-label-id">
             </label>
             <p class="input-example">例）田中太郎</p>
           </div>
           <div class="element-holder">
+            <div class="error-message"></div>
             <label class="mdc-text-field mdc-text-field--outlined">
               <span class="mdc-notched-outline">
                 <span class="mdc-notched-outline__leading"></span>
@@ -123,24 +125,26 @@
                 </span>
                 <span class="mdc-notched-outline__trailing"></span>
               </span>
-              <input type="text" class="mdc-text-field__input" name="kana" aria-labelledby="my-label-id">
+              <input type="text" class="mdc-text-field__input validate" name="kana" aria-labelledby="my-label-id">
             </label>
             <p class="input-example">例）たなかたろう</p>
           </div>
           <div class="element-holder">
+            <div class="error-message"></div>
             <label class="mdc-text-field mdc-text-field--outlined">
               <span class="mdc-notched-outline">
                 <span class="mdc-notched-outline__leading"></span>
                 <span class="mdc-notched-outline__notch">
-                  <span class="mdc-floating-label" id="my-label-id">電話番号</span>
+                  <span class="mdc-floating-label" id="my-label-id">電話番号(半角数字)</span>
                 </span>
                 <span class="mdc-notched-outline__trailing"></span>
               </span>
-              <input type="text" class="mdc-text-field__input" name="tel" aria-labelledby="my-label-id">
+              <input type="number" class="mdc-text-field__input validate" name="tel" aria-labelledby="my-label-id">
             </label>
-            <p class="input-example">例：09017191111（ハイフンなし）</p>
+            <p class="input-example">例：09017191111（ハイフンなしの半角数字）</p>
           </div>
           <div class="element-holder">
+            <div class="error-message"></div>
             <label class="mdc-text-field mdc-text-field--outlined">
               <span class="mdc-notched-outline">
                 <span class="mdc-notched-outline__leading"></span>
@@ -149,7 +153,7 @@
                 </span>
                 <span class="mdc-notched-outline__trailing"></span>
               </span>
-              <input type="text" class="mdc-text-field__input" name="email" aria-labelledby="my-label-id">
+              <input type="email" class="mdc-text-field__input validate" name="email" aria-labelledby="my-label-id">
             </label>
             <p class="input-example">※半角英数字50文字以内で入力してください。<br />例：ace@heart-full.org</p>
           </div>
@@ -159,7 +163,7 @@
             <label for="select-times">見学時間</label>
             <span>午前</span>
             <span class="toggle">
-              <input name="select-times" type="checkbox" />
+              <input class="checkbox" name="select-times" type="checkbox" />
             </span>
             <span>午後</span>
             </div>
@@ -167,7 +171,7 @@
           </div>
           <hr class="sub-section hr-dots">
           <div class="element-holder">
-            <textarea class="comment" name="comment" cols="44" rows="10">ご要望等がございましたらご入力ください。</textarea>
+            <textarea class="comment" name="comment" cols="44" rows="10" placeholder="ご要望等がございましたらご入力ください。"></textarea>
             <p class="input-example">ご要望等がございましたらご入力ください。</p>
           </div>
           <div class="certification">
@@ -295,35 +299,60 @@
   </script>
   <script>
     // Validation
-    let validate = true;
+    let errorCounter = 0;
+    const checkLists = document.querySelectorAll('.validate');
+    checkLists.forEach((checkList)=>{
+      checkList.addEventListener('blur', ()=>{
+        const message = checkList.parentElement.previousElementSibling;
+        if(!checkList.value) {
+          message.textContent = '未入力です。';
+          errorCounter++;
+        }else {
+          message.textContent = '';
+          errorCounter = 0; //reset
+        }
+        console.log(errorCounter);
+      });
+    });
 
+    //
     // Confirm ～ Submit
+    //
     let agreeFlag = false;
     const root      = document.getElementsByTagName('html');
     const bodys     = document.getElementsByTagName('body');
+    const submitHolder = document.querySelector('.submit-holder');
+    const certification = document.querySelector('.certification');
     const indicator = document.getElementById('indicator');
     const container = document.getElementById('overlay');
     const dialog    = document.getElementById('dialog');
     const template_contents = document.getElementById('privacy-policy');
     const clone_contents    = template_contents.content.cloneNode(true);
 
-    if(validate === true) {
-      indicator.addEventListener('click', ()=>{
+    //
+    indicator.addEventListener('click', async function() {
+      await checkLists.forEach((checkList) => {
+        if(checkList.value === '') errorCounter++;
+        // focus out
+        checkList.blur();
+        console.log(errorCounter);
+      });
+      //未入力がなければダイアログを表示する
+      if(errorCounter === 0) {
         root[0].style.overflowY = 'hidden';
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
         dialog.setAttribute('open', 'true');
-      });
-    }else {
+      }else {
+        confirm('未入力があります。');
+      }
+    });
 
-    }
-
-    // Mutaion Observe
+    // Mutation Observe
     const config = { attributes: true, childList: true, subtree: true };
     const observer = new MutationObserver(
       function(mutationsList, observer) {
-        // Use traditional 'for loops' for IE 11
         for(const mutation of mutationsList) {
           if (mutation.type === 'childList') {
             const closeDialog = document.getElementById('close-dialog');
@@ -339,27 +368,38 @@
                 container.remove();
               }
               root[0].style.overflowY = 'scroll';
-
-            });
-
-            confirmBtn.addEventListener('click', ()=>{
-              console.log('confirm');
             });
           }
         }
       }
     );
-    observer.observe(dialog, config);
 
+    // Insert New Element
     const changeBtn = function () {
-      const submitHolder = document.querySelector('.submit-holder');
-      const certification = document.querySelector('.certification');
-      const confirmBtn = `<button type="button" id="confirm" class="confirm">入力内容の確認</button>`;
-
+      const submitBtn = `<button type="button" id="submit" class="submit">送信</button>`;
       submitHolder.innerHTML = '';
       certification.remove();
-      submitHolder.innerHTML = confirmBtn;
+      submitHolder.innerHTML = submitBtn;
     }
+
+    //Mutation Observe
+    const submitObserver = new MutationObserver(
+      function(mutationList, observer) {
+        let submitBtn = null;
+        for(const mutation of mutationList) {
+          if(mutation.type === 'childList') {
+            console.log(mutation.addedNodes[0]);
+            submitBtn = document.querySelector('.submit');
+          }
+        }
+        submitBtn.addEventListener('click', ()=>{
+          location.reload();
+        });
+      }
+    );
+
+    observer.observe(dialog, config);
+    submitObserver.observe(submitHolder, config);
 
   </script>
 </body>

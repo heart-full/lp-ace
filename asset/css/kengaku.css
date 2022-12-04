@@ -8,15 +8,16 @@ body.Kengaku {
 }
 
 .kengaku-form {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 480px;
   padding: 1em 2em;
   margin: 0 auto;
   overflow: hidden;
 }
 
 :is(.touch-device .kengaku-form) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 1em 0;
 }
 
@@ -27,6 +28,16 @@ fieldset {
 
 :is(.touch-device fieldset) {
   display: contents;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .element-holder {
