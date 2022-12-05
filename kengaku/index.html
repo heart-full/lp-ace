@@ -265,6 +265,7 @@
     </table>
   </template>
   <script defer src="../asset/js/apps.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"></script>
   <!-- Required Material Web JavaScript library -->
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script>
@@ -332,7 +333,9 @@
       });
       //未入力がなければダイアログを表示する
       if(errorCounter === 0) {
-        roots[0].style.overflowY = 'hidden';
+        //Scroll Rock
+        //roots[0].style.overflowY = 'hidden';
+        bodyScrollLock.disableBodyScroll(container);	
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
@@ -342,7 +345,7 @@
       }
     });
 
-    // Mutation Observe Dialog
+    // Mutation Observe Modal Dialog
     const config = { attributes: true, childList: true, subtree: true };
     const observer = new MutationObserver(
       function(mutationsList, observer) {
@@ -360,7 +363,9 @@
               } else {
                 container.remove();
               }
-              roots[0].style.overflowY = 'scroll';
+              //Reset Scroll Rock
+              //roots[0].style.overflowY = 'scroll';
+              bodyScrollLock.enableBodyScroll(container);
             });
           }
         }
