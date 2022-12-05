@@ -335,7 +335,7 @@
       if(errorCounter === 0) {
         //Scroll Rock
         //roots[0].style.overflowY = 'hidden';
-        bodyScrollLock.disableBodyScroll(container);	
+        bodyScrollLock.disableBodyScroll(dialog);	
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
@@ -365,7 +365,7 @@
               }
               //Reset Scroll Rock
               //roots[0].style.overflowY = 'scroll';
-              bodyScrollLock.clearAllBodyScroll(container);
+              bodyScrollLock.clearAllBodyScrollLocks();
             });
           }
         }
