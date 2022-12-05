@@ -298,7 +298,7 @@
     let kana  = '';
     let tel   = '';
     let email = '';
-    let times = 1;
+    let times = '';
     let comment = '';
     // Validation
     let errorCounter = 0;
@@ -342,6 +342,14 @@
       });
       //未入力がなければダイアログを表示する
       if(errorCounter === 0) {
+        //formの値の取得
+        name = document.getElementsByName('name')[0].value;
+        kana = document.getElementsByName('kana')[0].value;
+        tel  = document.getElementsByName('tel')[0].value;
+        email  = document.getElementsByName('email')[0].value;
+        times = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
+        comment = document.getElementsByName('comment')[0].value;
+
         //Scroll Rock
         roots[0].style.overflowY = 'hidden';
         bodys[0].appendChild(container);
