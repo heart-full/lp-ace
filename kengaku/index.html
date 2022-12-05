@@ -334,7 +334,7 @@
       //未入力がなければダイアログを表示する
       if(errorCounter === 0) {
         //Scroll Rock
-        //roots[0].style.overflowY = 'hidden';
+        roots[0].style.overflowY = 'hidden';
         bodyScrollLock.disableBodyScroll(dialog);	
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
@@ -364,7 +364,7 @@
                 container.remove();
               }
               //Reset Scroll Rock
-              //roots[0].style.overflowY = 'scroll';
+              roots[0].style.overflowY = 'scroll';
               bodyScrollLock.clearAllBodyScrollLocks();
             });
           }
