@@ -264,8 +264,7 @@
       </tr>
     </table>
   </template>
-  <div id="finished">
-  </div>
+  <template id="finished"></template>
   <script defer src="../asset/js/apps.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"></script>
   <!-- Required Material Web JavaScript library -->
@@ -328,10 +327,10 @@
     const certification = document.querySelector('.certification');
     const indicator = document.getElementById('indicator');
     const container = document.getElementById('overlay');
-    const dialog    = document.getElementById('dialog');
+    const dialog    = document.querySelector('.dialog');
     const policy = document.querySelector('.privacy-policy');
-    const template_contents = document.getElementById('privacy-policy');
-    const clone_contents    = template_contents.content.cloneNode(true);
+    let template_contents = document.getElementById('privacy-policy');
+    let clone_contents    = template_contents.content.cloneNode(true);
 
     //
     indicator.addEventListener('click', async function() {
@@ -344,7 +343,7 @@
       //未入力がなければダイアログを表示する
       if(errorCounter === 0) {
         //Scroll Rock
-        //roots[0].style.overflowY = 'hidden';
+        roots[0].style.overflowY = 'hidden';
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
@@ -354,7 +353,7 @@
       }
     });
 
-    // Mutation Observe Modal Dialog
+    // Mutation Observe Agreement Modal Dialog
     const config = { attributes: true, childList: true, subtree: true };
     const observer = new MutationObserver(
       function(mutationsList, observer) {
@@ -367,8 +366,11 @@
               if(agreement.checked === true) {
                 agreeFlag = true;
                 console.log(agreeFlag);
-                changeBtn();
-                container.remove();
+                // 最終確認画面に切り替え
+                changeDialog(); 
+                //changeBtn();
+                // 送信完了後にダイアログを削除
+                //container.remove();
               } else {
                 container.remove();
               }
@@ -386,6 +388,50 @@
       submitHolder.innerHTML = '';
       certification.remove();
       submitHolder.innerHTML = submitBtn;
+    }
+
+    //Completion
+    const changeDialog = function() { 
+      let template_finished = document.getElementById('finished');
+      const finishedContents = `<dialog class="dialog" open>
+                                  <table>
+                                  <caption>以下の内容でお受けいたします。</caption>
+                                  <tr>
+                                    <th>【 お名前 】</th>
+                                    <td>${name}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>【 ふりがな 】</th>
+                                    <td>${kana}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>【 電話番号 】</th>
+                                    <td>${tel}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>【 メールアドレス 】</th>
+                                    <td>${email}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>【 見学の時間帯 】</th>
+                                    <td>${times}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>【 ご要望等 】</th>
+                                    <td>${comment}</td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <button type="button" id="submit" class="submit">送信</button>
+                                    </td>
+                                  </table>
+                                </dialog>`;
+      template_finished.innerHTML = finishedContents;
+      const clone_finished = template_finished.content.cloneNode(true);
+      dialog.remove();
+      container.appendChild(clone_finished);
+      // dialog.appendChild(clone_finished);
+      // console.log(clone_finished);
     }
 
     //Mutation Observe Submition
@@ -409,39 +455,7 @@
       }
     );
     observer.observe(dialog, config);
-    submitObserver.observe(submitHolder, config);
-
-    //Completion
-    const finished = document.getElementById('finished');
-    const finishedContents = `<table>
-                                <caption>以下の内容でお受けいたします。</caption>
-                                <tr>
-                                  <th>【 お名前 】</th>
-                                  <td>${name}</td>
-                                </tr>
-                                <tr>
-                                  <th>【 ふりがな 】</th>
-                                  <td>${kana}</td>
-                                </tr>
-                                <tr>
-                                  <th>【 電話番号 】</th>
-                                  <td>${tel}</td>
-                                </tr>
-                                <tr>
-                                  <th>【 メールアドレス 】</th>
-                                  <td>${email}</td>
-                                </tr>
-                                <tr>
-                                  <th>【 見学の時間帯 】</th>
-                                  <td>${times}</td>
-                                </tr>
-                                <tr>
-                                  <th>【 ご要望等 】</th>
-                                  <td>${comment}</td>
-                                </tr>
-                              </table>`;
-    finished.innerHTML = finishedContents;
-
+    submitObserver.observe(dialog, config);
   </script>
 </body>
 

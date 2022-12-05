@@ -228,6 +228,10 @@ input[type=number] {
   border-radius: 1em;
 }
 
+:is(.dialog table) {
+  width: 100%;
+}
+
 :is(.dialog .close-dialog) {
   padding: 0.25em 1em;
   border: none;
