@@ -312,7 +312,7 @@
     // Confirm ～ Submit
     //
     let agreeFlag = false;
-    const root      = document.getElementsByTagName('html');
+    const roots      = document.getElementsByTagName('html');
     const bodys     = document.getElementsByTagName('body');
     const submitHolder = document.querySelector('.submit-holder');
     const certification = document.querySelector('.certification');
@@ -332,7 +332,7 @@
       });
       //未入力がなければダイアログを表示する
       if(errorCounter === 0) {
-        root[0].style.overflowY = 'hidden';
+        roots[0].style.overflowY = 'hidden';
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
@@ -360,7 +360,7 @@
               } else {
                 container.remove();
               }
-              root[0].style.overflowY = 'scroll';
+              roots[0].style.overflowY = 'scroll';
             });
           }
         }

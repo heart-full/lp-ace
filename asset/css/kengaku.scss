@@ -204,6 +204,7 @@ input[type="number"] {
   background-color: rgba(0, 0, 0, 0.7);
   display: grid;
   place-items: center;
+  position: -webkit-fixed;
   position: fixed;
   inset: 0;
   z-index: 50;
