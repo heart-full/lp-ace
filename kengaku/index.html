@@ -320,6 +320,7 @@
     const indicator = document.getElementById('indicator');
     const container = document.getElementById('overlay');
     const dialog    = document.getElementById('dialog');
+    const policy = document.querySelector('.privacy-policy');
     const template_contents = document.getElementById('privacy-policy');
     const clone_contents    = template_contents.content.cloneNode(true);
 
@@ -335,7 +336,7 @@
       if(errorCounter === 0) {
         //Scroll Rock
         roots[0].style.overflowY = 'hidden';
-        bodyScrollLock.disableBodyScroll(dialog);	
+        bodyScrollLock.disableBodyScroll(policy);	
         bodys[0].appendChild(container);
         dialog.appendChild(clone_contents);
         container.classList.add('overlay');
