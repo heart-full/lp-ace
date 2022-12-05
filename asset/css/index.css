@@ -1037,6 +1037,7 @@ iframe {
   color: #fff;
   background-color: #649cc9;
   padding: 0.5em;
+  border-radius: 4px;
 }
 
 :is(.access .location)::before,
