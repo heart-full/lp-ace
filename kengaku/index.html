@@ -291,19 +291,19 @@
     // Validation
     let errorCounter = 0;
     const checkLists = document.querySelectorAll('.validate');
-    // checkLists.forEach((checkList)=>{
-    //   'blur change'.split(' ').forEach((e) => {
-    //     const message = checkList.parentElement.previousElementSibling;
-    //     if(!checkList.value) {
-    //       message.textContent = '未入力です。';
-    //       errorCounter++;
-    //     }else {
-    //       message.textContent = '';
-    //       errorCounter = 0; //reset
-    //     }
-    //     console.log(errorCounter);
-    //   })
-    // });
+    checkLists.forEach((checkList)=>{
+      checkList.addEventListener('blur',()=>{
+        const message = checkList.parentElement.previousElementSibling;
+        if(!checkList.value) {
+          message.textContent = '未入力です。';
+          errorCounter++;
+        }else {
+          message.textContent = '';
+          errorCounter = 0; //reset
+        }
+        console.log(errorCounter);
+      });
+    });
 
     //
     // Confirm ～ Submit
