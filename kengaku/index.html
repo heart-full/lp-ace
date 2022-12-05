@@ -261,17 +261,7 @@
       </tr>
     </table>
   </template>
-  <script>
-    /* Navigation Button */
-    const wake_menus = document.querySelectorAll('.wake-menu');
-    wake_menus.forEach((elm) => {
-      elm.addEventListener('click', () => {
-        const target = elm.nextElementSibling;
-        elm.classList.toggle('on');
-        target.classList.toggle('on');
-      });
-    });
-  </script>
+  <script defer src="../asset/js/apps.js"></script>
   <!-- Required Material Web JavaScript library -->
   <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script>
@@ -281,7 +271,6 @@
       textFields.forEach((textField) => {
         mdc.textField.MDCTextField.attachTo(textField);
       });
-
       //Toggle Switch
       const toggles = document.querySelectorAll('.toggle');
       toggles.forEach((toggle) => {
@@ -297,6 +286,7 @@
       })
     })
   </script>
+  <!-- Form Validation ~ Submition -->
   <script>
     // Validation
     let errorCounter = 0;
@@ -313,18 +303,6 @@
         }
         console.log(errorCounter);
       })
-
-    //   checkList.addEventListener('blur', ()=>{
-    //     const message = checkList.parentElement.previousElementSibling;
-    //     if(!checkList.value) {
-    //       message.textContent = '未入力です。';
-    //       errorCounter++;
-    //     }else {
-    //       message.textContent = '';
-    //       errorCounter = 0; //reset
-    //     }
-    //     console.log(errorCounter);
-    //   });
     });
 
     //
@@ -361,7 +339,7 @@
       }
     });
 
-    // Mutation Observe
+    // Mutation Observe Dialog
     const config = { attributes: true, childList: true, subtree: true };
     const observer = new MutationObserver(
       function(mutationsList, observer) {
@@ -417,7 +395,6 @@
 
     observer.observe(dialog, config);
     submitObserver.observe(submitHolder, config);
-
   </script>
 </body>
 

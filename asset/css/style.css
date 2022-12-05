@@ -161,7 +161,7 @@
 */
 /* page scroll prompt */
 .scroll_prompt {
-  color: #999;
+  color: rgb(0, 65, 206);
   font-size: 0.8em;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
@@ -209,7 +209,7 @@
   padding-right: 4px;
   padding-left: 4px;
   padding-bottom: 8px;
-  border-bottom: solid 2px rgb(141, 141, 141);
+  border-bottom: solid 2px rgb(31, 83, 255);
   position: absolute;
   top: 0;
   right: 0;
