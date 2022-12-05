@@ -263,7 +263,7 @@
   </template>
   <script defer src="../asset/js/apps.js"></script>
   <!-- Required Material Web JavaScript library -->
-  <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script>
     window.addEventListener('load', () => {
       //Instantiate single textfield component rendered in the document
@@ -291,19 +291,19 @@
     // Validation
     let errorCounter = 0;
     const checkLists = document.querySelectorAll('.validate');
-    checkLists.forEach((checkList)=>{
-      'blur change'.split(' ').forEach((e) => {
-        const message = checkList.parentElement.previousElementSibling;
-        if(!checkList.value) {
-          message.textContent = '未入力です。';
-          errorCounter++;
-        }else {
-          message.textContent = '';
-          errorCounter = 0; //reset
-        }
-        console.log(errorCounter);
-      })
-    });
+    // checkLists.forEach((checkList)=>{
+    //   'blur change'.split(' ').forEach((e) => {
+    //     const message = checkList.parentElement.previousElementSibling;
+    //     if(!checkList.value) {
+    //       message.textContent = '未入力です。';
+    //       errorCounter++;
+    //     }else {
+    //       message.textContent = '';
+    //       errorCounter = 0; //reset
+    //     }
+    //     console.log(errorCounter);
+    //   })
+    // });
 
     //
     // Confirm ～ Submit
