@@ -996,6 +996,7 @@ iframe {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 480px) {
