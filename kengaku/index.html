@@ -381,6 +381,7 @@
         }
       }
     );
+    observer.observe(dialog, config);
 
     // Insert New Element
     const changeBtn = function () {
@@ -390,8 +391,31 @@
       submitHolder.innerHTML = submitBtn;
     }
 
+
+    //Mutation Observe Submition
+    const submitObserver = new MutationObserver(
+      function(mutationList, observer) {
+        let submitBtn = null;
+        for(const mutation of mutationList) {
+          if(mutation.type === 'childList') {
+            console.log(mutation.addedNodes[0]);
+            submitBtn = document.querySelector('.submit');
+          }
+        }
+        submitBtn.addEventListener('click', (errorCounter)=>{
+          if(errorCounter === 0) {
+            checkLists.forEach((checklist)=>{
+              checklist.blur();
+            });
+          }
+          location.reload();
+        });
+      }
+    );
+
     //Completion
     const changeDialog = function() { 
+      submitObserver.observe(container, config);
       let template_finished = document.getElementById('finished');
       const finishedContents = `<dialog class="dialog" open>
                                   <table>
@@ -433,29 +457,6 @@
       // dialog.appendChild(clone_finished);
       // console.log(clone_finished);
     }
-
-    //Mutation Observe Submition
-    const submitObserver = new MutationObserver(
-      function(mutationList, observer) {
-        let submitBtn = null;
-        for(const mutation of mutationList) {
-          if(mutation.type === 'childList') {
-            console.log(mutation.addedNodes[0]);
-            submitBtn = document.querySelector('.submit');
-          }
-        }
-        submitBtn.addEventListener('click', (errorCounter)=>{
-          if(errorCounter === 0) {
-            checkLists.forEach((checklist)=>{
-              checklist.blur();
-            });
-          }
-          location.reload();
-        });
-      }
-    );
-    observer.observe(dialog, config);
-    submitObserver.observe(dialog, config);
   </script>
 </body>
 
