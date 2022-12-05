@@ -150,11 +150,16 @@ input[type=number] {
 
 .submit-holder {
   text-align: center;
+  padding: 2em;
 }
 
 :is(.submit-holder button) {
   padding: 0.5em 1em;
   cursor: pointer;
+}
+
+:is(.touch-device .submit-holder button) {
+  font-size: 1.2em;
 }
 
 .hr-dots {
