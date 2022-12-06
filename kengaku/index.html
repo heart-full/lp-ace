@@ -409,29 +409,17 @@
                 }
                 // 最終確認画面に切り替え or 入力画面に戻る
                 changeDialog(); 
-                //changeBtn();
-                // 送信完了後にダイアログを削除
-                //container.remove();
               } else {
                 container.remove();
               }
               //Reset Scroll Rock
-              //roots[0].style.overflowY = 'scroll';
+              roots[0].style.overflowY = 'scroll';
             });
           }
         }
       }
     );
     observer.observe(dialog, config);
-
-    // // Insert New Element
-    // const changeBtn = function () {
-    //   const submitBtn = `<button type="button" id="submit" class="submit">送信</button>`;
-    //   submitHolder.innerHTML = '';
-    //   certification.remove();
-    //   submitHolder.innerHTML = submitBtn;
-    // }
-
 
     //Mutation Observe Submition
     const submitObserver = new MutationObserver(
