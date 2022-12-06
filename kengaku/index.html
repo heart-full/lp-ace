@@ -174,15 +174,15 @@
             <textarea class="comment" name="comment" cols="44" rows="10" placeholder="ご要望等がございましたらご入力ください。"></textarea>
             <p class="input-example">ご要望等がございましたらご入力ください。</p>
           </div>
-          <div>
-            <p>ご入力が終わりましたら内容を今一度ご確認ください。</p>
-          </div>
           <div class="certification">
             <h3 class="required">個人情報取り扱いについてのご同意</h3>
-            <p class="policy-general">入力された個人情報は合同会社ハートフルの個人情報保護指針に基づき取り扱われます。個人情報のお取り扱いに関しましてご確認及びご同意の上で確認ボタンをクリックして次に進んでください。</p>
+            <div class="policy-general">
+              <p>ご入力が終わりましたら内容を今一度ご確認ください。</p>
+              <p>また入力された個人情報は合同会社ハートフルの個人情報保護指針に基づき取り扱われます。個人情報のお取り扱いに関しまして「指針の表示」ボタンをクリックして必ずご確認頂きますようお願いします。</p>
+            </div>
           </div>
           <div class="submit-holder">
-            <button type="button" id="indicator">指針の確認</button>
+            <button type="button" id="indicator">指針の表示</button>
           </div>
           </fieldset>
         </form>
@@ -253,13 +253,16 @@
         <td>当事務所は、当所が保有する個人情報に関して、上記各項における取り組みを適宜見直し、改善していきます。本プライバシーポリシーに関するお問い合わせ及び、各種お手続き等に関するお問い合わせは、下記までご連絡ください。</td>
       </tr>
       <tr>
+        <td colspan="2">※ ご確認及びご同意いただけましたら「送信内容の表示」ボタンをクリックしてください。</td>
+      </tr>
+      <tr>
         <td colspan="2">
           <label for="agreement"><input type="checkbox" id="agreement" class="agreement">&nbsp;同意する</label>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <button type="button" id="close-dialog" class="close-dialog">閉じる</button>
+          <button type="button" id="close-dialog" class="close-dialog">送信内容の表示</button>
         </td>
       </tr>
     </table>
@@ -427,7 +430,7 @@
       let template_finished = document.getElementById('finished');
       const finishedContents = `<dialog class="dialog" open>
                                   <table class="sent-content">
-                                  <caption>以下の内容でお受けいたします。</caption>
+                                  <caption>以下の内容で承ります。</caption>
                                   <tr>
                                     <th>【 お名前 】</th>
                                     <td>${name}</td>
