@@ -232,6 +232,14 @@ input[type="number"] {
   cursor: pointer;
 }
 
+:is(.dialog .sent-content) {
+  font-size: .8em;
+  display: grid;
+}
+
+:is(.dialog .sent-content > tr) {
+  display: contents;
+}
 
 /* Material Design for Web */
 :root {
