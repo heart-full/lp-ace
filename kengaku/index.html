@@ -501,7 +501,7 @@
       
       template_finished.innerHTML = finishedContents;
       const clone_finished = template_finished.content.cloneNode(true);
-      editFlag ? dialog.remove() : '';
+      editFlag ? dialog.remove() : ''; // 再編集時には「送信内容の表示」画面切り替え時に「指針画面」を削除する
       container.appendChild(clone_finished);
     }
   </script>
