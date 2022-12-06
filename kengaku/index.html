@@ -285,7 +285,7 @@
       //Toggle Switch
       const toggles = document.querySelectorAll('.toggle');
       toggles.forEach((toggle) => {
-        toggle.addEventListener('click',()=>{
+        toggle.addEventListener('click', ()=>{
           toggle.classList.toggle('checked');
           const toggleInput = toggle.firstElementChild;
           if(!toggleInput.checked) {
@@ -299,22 +299,26 @@
   </script>
   <!-- Form Validation ~ Submition -->
   <script>
+    //
     // Form Element
-    let name  = '';
-    let kana  = '';
-    let tel   = '';
-    let email = '';
-    let times = '';
+    //
+    let name    = '';
+    let kana    = '';
+    let tel     = '';
+    let email   = '';
+    let times   = '';
     let comment = '';
 
     // Edit Flag (送信画面から入力画面への戻り)
     let editFlag = false;
 
+    //
     // Validation
+    //
     let errorCounter = 0;
     const checkLists = document.querySelectorAll('.validate');
     checkLists.forEach((checkList)=>{
-      checkList.addEventListener('blur',()=>{
+      checkList.addEventListener('blur', ()=>{
         const message = checkList.parentElement.previousElementSibling;
         if(!checkList.value) {
           message.textContent = '未入力です。';
@@ -323,7 +327,7 @@
           message.textContent = '';
           errorCounter = 0; //reset
         }
-        console.log(errorCounter);
+        //console.log(errorCounter);
       });
     });
 
@@ -331,34 +335,35 @@
     // Confirm ～ Submit
     //
     let agreeFlag = false;
-    const roots      = document.getElementsByTagName('html');
-    const bodys     = document.getElementsByTagName('body');
-    const submitHolder = document.querySelector('.submit-holder');
-    const certification = document.querySelector('.certification');
-    const indicator = document.getElementById('indicator');
-    const container = document.getElementById('overlay');
-    const dialog    = document.querySelector('.dialog');
-    const policy = document.querySelector('.privacy-policy');
+    const roots           = document.getElementsByTagName('html');
+    const bodys           = document.getElementsByTagName('body');
+    const submitHolder    = document.querySelector('.submit-holder');
+    const certification   = document.querySelector('.certification');
+    const indicator       = document.getElementById('indicator');
+    const container       = document.getElementById('overlay');
+    const dialog          = document.querySelector('.dialog');
+    const policy          = document.querySelector('.privacy-policy');
     let template_contents = document.getElementById('privacy-policy');
     let clone_contents    = template_contents.content.cloneNode(true);
 
     //
     indicator.addEventListener('click', async function() {
-      if(!editFlag) { //確認画面からの戻りでなければ
+      if(!editFlag) { 
+        //確認画面からの戻りでなければ確認ボタンがクリックされたとき全てのフォーカスを外す
         await checkLists.forEach((checkList) => {
           if(checkList.value === '') errorCounter++;
-          // 確認ボタンがクリックされたとき全てのフォーカスを外す
+          // 
           checkList.blur();
-          console.log(errorCounter);
+          //console.log(errorCounter);
         });
         //未入力がなければダイアログを表示する
         if(errorCounter === 0) {
           //formの値の取得
-          name = document.getElementsByName('name')[0].value;
-          kana = document.getElementsByName('kana')[0].value;
-          tel  = document.getElementsByName('tel')[0].value;
-          email  = document.getElementsByName('email')[0].value;
-          times = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
+          name    = document.getElementsByName('name')[0].value;
+          kana    = document.getElementsByName('kana')[0].value;
+          tel     = document.getElementsByName('tel')[0].value;
+          email   = document.getElementsByName('email')[0].value;
+          times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
           comment = document.getElementsByName('comment')[0].value;
 
           roots[0].style.overflowY = 'hidden';//Scroll Rock
@@ -369,47 +374,53 @@
         }else {
           confirm('未入力があります。');
         }
-      } else { //確認画面からの戻りの場合
-        console.log('再編集画面');
+      } else {
+        //確認画面からの戻りの場合
+        //console.log('再編集画面');
+
         //formの値の再取得
-        name = document.getElementsByName('name')[0].value;
-        kana = document.getElementsByName('kana')[0].value;
-        tel  = document.getElementsByName('tel')[0].value;
-        email  = document.getElementsByName('email')[0].value;
-        times = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
+        name    = document.getElementsByName('name')[0].value;
+        kana    = document.getElementsByName('kana')[0].value;
+        tel     = document.getElementsByName('tel')[0].value;
+        email   = document.getElementsByName('email')[0].value;
+        times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
         comment = document.getElementsByName('comment')[0].value;
 
         roots[0].style.overflowY = 'hidden';//Scroll Rock
         bodys[0].appendChild(container);
+
         //コンテナの初期化
         while(container.firstChild){
           container.removeChild(container.firstChild);
         }
-        //
+
+        //Mutation
         changeDialog();
       }
     });
 
-    // Mutation Observe Agreement Modal Dialog
+    // Agreement Modal Dialog Mutation Observe 
     const config = { attributes: true, childList: true, subtree: true };
     const observer = new MutationObserver(
       function(mutationsList, observer) {
         for(const mutation of mutationsList) {
           if (mutation.type === 'childList') {
             const closeDialog = document.getElementById('close-dialog');
-            const agreement = document.getElementById('agreement');
-            const confirmBtn = document.getElementById('confirm');
+            const agreement   = document.getElementById('agreement');
+            const confirmBtn  = document.getElementById('confirm');
             closeDialog.addEventListener('click', ()=>{
               if(agreement.checked === true) {
                 agreeFlag = true;
-                console.log(agreeFlag);
+                //console.log(agreeFlag);
+
                 // 初期化
                 while(container.firstChild){
                   container.removeChild(container.firstChild);
                 }
-                // 最終確認画面に切り替え or 入力画面に戻る
+                // 最終確認画面に切り替え
                 changeDialog(); 
               } else {
+                //モーダルウィンドウを廃棄して入力画面に戻る
                 container.remove();
               }
               //Reset Scroll Rock
@@ -421,13 +432,13 @@
     );
     observer.observe(dialog, config);
 
-    //Mutation Observe Submition
+    //Submition Mutation Observe
     const submitObserver = new MutationObserver(
       function(mutationList, observer) {
         let submitBtn = null;
         for(const mutation of mutationList) {
           if(mutation.type === 'childList') {
-            console.log(mutation.addedNodes[0]);
+            //console.log(mutation.addedNodes[0]);
             submitBtn = document.querySelector('.submit');
             cancelBtn = document.querySelector('.cancel');
           }
@@ -440,7 +451,7 @@
           editFlag = true;
           dialog.remove();
           container.remove();
-          console.log('Cancel Button Clicked!');
+          //console.log('Cancel Button Clicked!');
         });
 
         submitBtn.addEventListener('click', ()=>{
