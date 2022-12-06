@@ -177,8 +177,8 @@
           <div class="certification">
             <h3 class="required">個人情報取り扱いについてのご同意</h3>
             <div class="policy-general">
-              <p>ご入力が終わりましたら内容を今一度ご確認ください。</p>
-              <p>また入力された個人情報は合同会社ハートフルの個人情報保護指針に基づき取り扱われます。個人情報のお取り扱いに関しまして「指針の表示」ボタンをクリックして必ずご確認頂きますようお願いします。</p>
+              <p class="atention">※ ご入力が終わりましたら内容を今一度ご確認ください。</p>
+              <p class="atention">また入力された個人情報は合同会社ハートフルの個人情報保護指針に基づき取り扱われます。<br />個人情報のお取り扱いに関しまして「指針の表示」ボタンをクリックして必ずご確認頂きますようお願いします。</p>
             </div>
           </div>
           <div class="submit-holder">
@@ -227,7 +227,10 @@
   <div id="overlay"><dialog id="dialog" class="dialog"></dialog></div>
   <template id="privacy-policy">
     <table class="privacy-policy">
-      <caption>合同会社 ハートフル（以下、「弊社」といいます）は、弊社において相談者及び依頼人（以下、「相談者等」といいます）からご提供いただいた個人情報を、以下の基準に従って適切に管理し、相談者等のプライバシーの保護に努めています。</caption>
+      <caption>個人情報の取り扱い指針</caption>
+      <tr>
+        <td colspan="2">合同会社 ハートフル（以下、「弊社」といいます）は、弊社において相談者及び依頼人（以下、「相談者等」といいます）からご提供いただいた個人情報を、以下の基準に従って適切に管理し、相談者等のプライバシーの保護に努めています。</td>
+      </tr>
       <tr>
         <th>個人情報の収集</th>
         <td>ア）当事務所は偽りその他の不正な手段によらず、適法かつ公正な手段によって個人情報を取得いたします。<br>イ）お客様から個人情報は、出来る限り利用目的を限定します。</td>
@@ -253,7 +256,7 @@
         <td>当事務所は、当所が保有する個人情報に関して、上記各項における取り組みを適宜見直し、改善していきます。本プライバシーポリシーに関するお問い合わせ及び、各種お手続き等に関するお問い合わせは、下記までご連絡ください。</td>
       </tr>
       <tr>
-        <td colspan="2">※ ご確認及びご同意いただけましたら「送信内容の表示」ボタンをクリックしてください。</td>
+        <td colspan="2"><span class="atention">※ ご確認及びご同意いただけましたら「同意する」にチェックを入れていただき「送信内容の表示」ボタンをクリックしてください。</span></td>
       </tr>
       <tr>
         <td colspan="2">
@@ -303,6 +306,10 @@
     let email = '';
     let times = '';
     let comment = '';
+
+    // Edit Flag (送信画面から入力画面への戻り)
+    let editFlag = false;
+
     // Validation
     let errorCounter = 0;
     const checkLists = document.querySelectorAll('.validate');
@@ -337,15 +344,34 @@
 
     //
     indicator.addEventListener('click', async function() {
-      await checkLists.forEach((checkList) => {
-        if(checkList.value === '') errorCounter++;
-        // 確認ボタンがクリックされたとき全てのフォーカスを外す
-        checkList.blur();
-        console.log(errorCounter);
-      });
-      //未入力がなければダイアログを表示する
-      if(errorCounter === 0) {
-        //formの値の取得
+      if(!editFlag) { //確認画面からの戻りでなければ
+        await checkLists.forEach((checkList) => {
+          if(checkList.value === '') errorCounter++;
+          // 確認ボタンがクリックされたとき全てのフォーカスを外す
+          checkList.blur();
+          console.log(errorCounter);
+        });
+        //未入力がなければダイアログを表示する
+        if(errorCounter === 0) {
+          //formの値の取得
+          name = document.getElementsByName('name')[0].value;
+          kana = document.getElementsByName('kana')[0].value;
+          tel  = document.getElementsByName('tel')[0].value;
+          email  = document.getElementsByName('email')[0].value;
+          times = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
+          comment = document.getElementsByName('comment')[0].value;
+
+          roots[0].style.overflowY = 'hidden';//Scroll Rock
+          bodys[0].appendChild(container);
+          dialog.appendChild(clone_contents);
+          container.classList.add('overlay');
+          dialog.setAttribute('open', 'true');
+        }else {
+          confirm('未入力があります。');
+        }
+      } else { //確認画面からの戻りの場合
+        console.log('再編集画面');
+        //formの値の再取得
         name = document.getElementsByName('name')[0].value;
         kana = document.getElementsByName('kana')[0].value;
         tel  = document.getElementsByName('tel')[0].value;
@@ -353,14 +379,14 @@
         times = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
         comment = document.getElementsByName('comment')[0].value;
 
-        //Scroll Rock
-        roots[0].style.overflowY = 'hidden';
+        roots[0].style.overflowY = 'hidden';//Scroll Rock
         bodys[0].appendChild(container);
-        dialog.appendChild(clone_contents);
-        container.classList.add('overlay');
-        dialog.setAttribute('open', 'true');
-      }else {
-        confirm('未入力があります。');
+        //コンテナの初期化
+        while(container.firstChild){
+          container.removeChild(container.firstChild);
+        }
+        //
+        changeDialog();
       }
     });
 
@@ -377,7 +403,11 @@
               if(agreement.checked === true) {
                 agreeFlag = true;
                 console.log(agreeFlag);
-                // 最終確認画面に切り替え
+                // 初期化
+                while(container.firstChild){
+                  container.removeChild(container.firstChild);
+                }
+                // 最終確認画面に切り替え or 入力画面に戻る
                 changeDialog(); 
                 //changeBtn();
                 // 送信完了後にダイアログを削除
@@ -394,13 +424,13 @@
     );
     observer.observe(dialog, config);
 
-    // Insert New Element
-    const changeBtn = function () {
-      const submitBtn = `<button type="button" id="submit" class="submit">送信</button>`;
-      submitHolder.innerHTML = '';
-      certification.remove();
-      submitHolder.innerHTML = submitBtn;
-    }
+    // // Insert New Element
+    // const changeBtn = function () {
+    //   const submitBtn = `<button type="button" id="submit" class="submit">送信</button>`;
+    //   submitHolder.innerHTML = '';
+    //   certification.remove();
+    //   submitHolder.innerHTML = submitBtn;
+    // }
 
 
     //Mutation Observe Submition
@@ -411,14 +441,21 @@
           if(mutation.type === 'childList') {
             console.log(mutation.addedNodes[0]);
             submitBtn = document.querySelector('.submit');
+            cancelBtn = document.querySelector('.cancel');
           }
         }
-        submitBtn.addEventListener('click', (errorCounter)=>{
-          if(errorCounter === 0) {
-            checkLists.forEach((checklist)=>{
-              checklist.blur();
-            });
-          }
+
+        cancelBtn.addEventListener('click', ()=>{
+          roots[0].style.overflowY = 'scroll';
+          indicator.textContent = '送信内容の確認';
+          editFlag ? '' : document.querySelector('.certification').remove();
+          editFlag = true;
+          dialog.remove();
+          container.remove();
+          console.log('Cancel Button Clicked!');
+        });
+
+        submitBtn.addEventListener('click', ()=>{
           location.reload();
         });
       }
@@ -457,16 +494,16 @@
                                   </tr>
                                   <tr>
                                     <td class="submit-holder" colspan="2">
-                                      <button type="button" id="submit" class="submit">送　信</button>
+                                      <button type="button" id="cancel" class="cancel">入力画面に戻る</button>
+                                      <button type="button" id="submit" class="submit">送信する</button>
                                     </td>
                                   </table>
                                 </dialog>`;
+      
       template_finished.innerHTML = finishedContents;
       const clone_finished = template_finished.content.cloneNode(true);
-      dialog.remove();
+      editFlag ? dialog.remove() : '';
       container.appendChild(clone_finished);
-      // dialog.appendChild(clone_finished);
-      // console.log(clone_finished);
     }
   </script>
 </body>

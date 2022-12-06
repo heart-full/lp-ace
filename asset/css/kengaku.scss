@@ -47,6 +47,9 @@ input[type="number"] {
 .required::before {
   content: '必須';
   color: #f00;
+  font-size: .8em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
   padding-right: .5rem;
 }
 /*
@@ -225,6 +228,16 @@ input[type="number"] {
   width: 100%;
 }
 
+:is(.dialog table caption)::before {
+  content: '■';
+  padding-right: 0.5em;
+}
+
+:is(.dialog table caption)::after {
+  content: '■';
+  padding-left: 0.5em;
+}
+
 :is(.dialog .close-dialog) {
   padding: 0.25em 1em;
   border: none;
@@ -240,6 +253,14 @@ input[type="number"] {
 :is(.dialog .sent-content > tbody),
 :is(.dialog .sent-content > tbody > tr) {
   display: contents;
+}
+
+.atention {
+  color: #f00;
+  // font-size: .8em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  margin-bottom: 1em;
 }
 
 /* Material Design for Web */
