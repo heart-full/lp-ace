@@ -244,7 +244,8 @@ input[type=number] {
   display: grid;
 }
 
-:is(.dialog .sent-content > tr) {
+:is(.dialog .sent-content > tbody),
+:is(.dialog .sent-content > tbody > tr) {
   display: contents;
 }
 
