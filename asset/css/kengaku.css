@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root {
+  --border-color: hsl(172, 30%, 60%, .75);
+}
+
 h3 {
   font-size: 1rem;
 }
@@ -23,7 +27,37 @@ body.Kengaku {
 
 fieldset {
   padding: 2em;
+  border: unset;
   border-radius: 1em;
+  position: relative;
+  z-index: 1;
+}
+
+fieldset::before {
+  content: "";
+  background-color: #fff;
+  display: block;
+  padding: 0.2em;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  border-radius: 0.9em;
+  z-index: -1;
+}
+
+fieldset::after {
+  content: "";
+  background: linear-gradient(125deg, #70e1f5, #ffd194);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1em;
+  z-index: -2;
 }
 
 :is(.touch-device fieldset) {
@@ -38,6 +72,11 @@ input[type=number]::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+textarea {
+  border-color: var(--border-color);
+  border-radius: 5px;
 }
 
 .element-holder {
@@ -212,7 +251,7 @@ input[type=number] {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--border-color);
   display: grid;
   place-items: center;
   position: fixed;
@@ -283,6 +322,30 @@ input[type=number] {
   max-width: 480px;
 }
 
+/*
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {  border: solid 1px #00f;
+  border-top-color: var(--border-color);
+  border-right-color: var(--border-color);
+  border-bottom-color: var(--border-color);
+  border-left-color: transparent;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch {
+  border-top-color: var(--border-color);
+  border-right-color: transparent;
+  border-bottom-color: var(--border-color);
+  border-left-color: transparent;
+}
+
+
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+  border-top-color: var(--border-color);
+  border-right-color: transparent;
+  border-bottom-color: var(--border-color);
+  border-left-color: var(--border-color);
+}
+*/
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: var(--mdc-theme-primary);
 }

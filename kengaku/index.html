@@ -348,8 +348,8 @@
 
     //
     indicator.addEventListener('click', async function() {
-      if(!editFlag) { 
-        //確認画面からの戻りでなければ確認ボタンがクリックされたとき全てのフォーカスを外す
+      if(!editFlag) { //確認画面からの戻りでなければ
+        //確認ボタンがクリックされたとき全てのフォーカスを外す
         await checkLists.forEach((checkList) => {
           if(checkList.value === '') errorCounter++;
           // 
