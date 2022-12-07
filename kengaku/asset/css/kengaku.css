@@ -61,6 +61,10 @@ fieldset::after {
   z-index: -2;
 }
 
+:is(.touch-device fieldset) {
+  display: contents;
+}
+
 legend {
   font-size: 1.2em;
   line-height: 1;
@@ -73,8 +77,8 @@ legend {
   transform: translate(-50%, -45%);
 }
 
-:is(.touch-device fieldset) {
-  display: contents;
+:is(.touch-device legend) {
+  display: none;
 }
 
 input[type=number]::-webkit-outer-spin-button,
