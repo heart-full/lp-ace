@@ -78,7 +78,7 @@ legend {
 }
 
 :is(.touch-device legend) {
-  display: none;
+  transform: unset;
 }
 
 input[type=number]::-webkit-outer-spin-button,
