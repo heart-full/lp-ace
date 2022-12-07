@@ -20,7 +20,7 @@ body.Kengaku {
 
 :is(.touch-device .kengaku-form) {
   width: fit-content;
-  padding: 1em 0;
+  padding: 0;
 }
 
 fieldset {
@@ -75,6 +75,10 @@ legend {
 }
 
 :is(.touch-device legend) {
+  text-align: center;
+  position: unset;
+  padding: 0 0 1em;
+  left: 0;
   transform: unset;
 }
 
