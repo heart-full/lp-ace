@@ -45,12 +45,17 @@ const checkLists = document.querySelectorAll('.validate');
 checkLists.forEach((checkList)=>{
   checkList.addEventListener('blur', ()=>{
     const message = checkList.parentElement.previousElementSibling;
+    const warning = checkList.parentElement.parentElement;
     if(!checkList.value) {
+      warning.classList.add('error');
       message.textContent = '未入力です。';
       errorCounter++;
     }else {
       message.textContent = '';
       errorCounter = 0; //reset
+      //error warning reset
+      warning.classList.remove('error');
+      message.textContent = '';
     }
     //console.log(errorCounter);
   });
@@ -76,7 +81,10 @@ indicator.addEventListener('click', async function() {
   if(!editFlag) { //確認画面からの戻りでなければ
     //確認ボタンがクリックされたとき全てのフォーカスを外す
     await checkLists.forEach((checkList) => {
-      if(checkList.value === '') errorCounter++;
+      if(checkList.value === '') {
+        errorCounter++;
+        checkList.parentElement.parentElement.classList.add('error');
+      }
       // 
       checkList.blur();
       //console.log(errorCounter);
@@ -97,7 +105,8 @@ indicator.addEventListener('click', async function() {
       container.classList.add('overlay');
       dialog.setAttribute('open', 'true');
     }else {
-      confirm('未入力があります。');
+      confirm(`未入力が${errorCounter}つあります。`);
+      errorCounter = 0; //reset
     }
   } else {
     //確認画面からの戻りの場合
