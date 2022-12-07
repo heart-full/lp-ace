@@ -84,6 +84,8 @@ indicator.addEventListener('click', async function() {
       if(checkList.value === '') {
         errorCounter++;
         checkList.parentElement.parentElement.classList.add('error');
+        checkList.parentElement.parentElement.firstElementChild.classList.add('error');
+        checkList.parentElement.parentElement.firstElementChild.textContent = '未入力です';
       }
       // 
       checkList.blur();
