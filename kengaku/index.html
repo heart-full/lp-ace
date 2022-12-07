@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="../asset/css/style.css" />
   <!-- Required styles for Material Web -->
   <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-  <link rel="stylesheet" href="../asset/css/kengaku.css" />
+  <link rel="stylesheet" href="asset/css/kengaku.css" />
 </head>
 
 <body id="Kengaku" class="Kengaku">
@@ -78,15 +78,15 @@
               <div class="button__wrapper"></div>
               <div class="button__box">ハートフルACE</div>
             </a></li>
-          <li><a class="button" href="./">
+          <li><a class="button" href="../">
               <div class="button__wrapper"></div>
               <div class="button__box">就労移行支援とは？</div>
             </a></li>
-          <li><a class="button" href="../kengaku">
+          <li><a class="button" href="./">
               <div class="button__wrapper"></div>
               <div class="button__box">見学申し込み</div>
             </a></li>
-          <li><a class="button" href="../contact">
+          <li><a class="button" href="../">
               <div class="button__wrapper"></div>
               <div class="button__box">お問い合わせ</div>
             </a></li>
@@ -94,10 +94,10 @@
       </nav>
     </header>
     <main id="main" class="main">
-      <section class="top-section">
-
+      <section class="intro top-section inview" title="Field Trip">
+        <h2 class="intro-title top-section-title"><span>ハートフルＡＣＥ</span><span>見学のお申し込み</span></h2>
       </section>
-      <section class="top-section">
+      <section class="intro top-section inview" title="Application From">
         <form class="kengaku-form" action="" method="post">
           <fieldset>
           <!-- Render textfield component -->
@@ -271,240 +271,10 @@
     </table>
   </template>
   <template id="finished"></template>
-  <script defer src="../asset/js/apps.js"></script>
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"></script> -->
-  <!-- Required Material Web JavaScript library -->
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <script>
-    window.addEventListener('load', () => {
-      //Instantiate single textfield component rendered in the document
-      const textFields = document.querySelectorAll('.mdc-text-field');
-      textFields.forEach((textField) => {
-        mdc.textField.MDCTextField.attachTo(textField);
-      });
-      //Toggle Switch
-      const toggles = document.querySelectorAll('.toggle');
-      toggles.forEach((toggle) => {
-        toggle.addEventListener('click', ()=>{
-          toggle.classList.toggle('checked');
-          const toggleInput = toggle.firstElementChild;
-          if(!toggleInput.checked) {
-            toggleInput.checked = true;
-          } else {
-            toggleInput.checked = false;
-          }
-        })
-      })
-    })
-  </script>
-  <!-- Form Validation ~ Submition -->
-  <script>
-    //
-    // Form Element
-    //
-    let name    = '';
-    let kana    = '';
-    let tel     = '';
-    let email   = '';
-    let times   = '';
-    let comment = '';
-
-    // Edit Flag (送信画面から入力画面への戻り)
-    let editFlag = false;
-
-    //
-    // Validation ( Error Check )
-    //
-    let errorCounter = 0;
-    const checkLists = document.querySelectorAll('.validate');
-    checkLists.forEach((checkList)=>{
-      checkList.addEventListener('blur', ()=>{
-        const message = checkList.parentElement.previousElementSibling;
-        if(!checkList.value) {
-          message.textContent = '未入力です。';
-          errorCounter++;
-        }else {
-          message.textContent = '';
-          errorCounter = 0; //reset
-        }
-        //console.log(errorCounter);
-      });
-    });
-
-    //
-    // Confirm ～ Submit
-    //
-    let agreeFlag = false;
-    const roots           = document.getElementsByTagName('html');
-    const bodys           = document.getElementsByTagName('body');
-    const submitHolder    = document.querySelector('.submit-holder');
-    const certification   = document.querySelector('.certification');
-    const indicator       = document.getElementById('indicator');
-    const container       = document.getElementById('overlay');
-    const dialog          = document.querySelector('.dialog');
-    const policy          = document.querySelector('.privacy-policy');
-    let template_contents = document.getElementById('privacy-policy');
-    let clone_contents    = template_contents.content.cloneNode(true);
-
-    //
-    indicator.addEventListener('click', async function() {
-      if(!editFlag) { //確認画面からの戻りでなければ
-        //確認ボタンがクリックされたとき全てのフォーカスを外す
-        await checkLists.forEach((checkList) => {
-          if(checkList.value === '') errorCounter++;
-          // 
-          checkList.blur();
-          //console.log(errorCounter);
-        });
-        //未入力がなければダイアログを表示する
-        if(errorCounter === 0) {
-          //formの値の取得
-          name    = document.getElementsByName('name')[0].value;
-          kana    = document.getElementsByName('kana')[0].value;
-          tel     = document.getElementsByName('tel')[0].value;
-          email   = document.getElementsByName('email')[0].value;
-          times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
-          comment = document.getElementsByName('comment')[0].value;
-
-          roots[0].style.overflowY = 'hidden';//Scroll Rock
-          bodys[0].appendChild(container);
-          dialog.appendChild(clone_contents);
-          container.classList.add('overlay');
-          dialog.setAttribute('open', 'true');
-        }else {
-          confirm('未入力があります。');
-        }
-      } else {
-        //確認画面からの戻りの場合
-        //console.log('再編集画面');
-
-        //formの値の再取得
-        name    = document.getElementsByName('name')[0].value;
-        kana    = document.getElementsByName('kana')[0].value;
-        tel     = document.getElementsByName('tel')[0].value;
-        email   = document.getElementsByName('email')[0].value;
-        times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
-        comment = document.getElementsByName('comment')[0].value;
-
-        roots[0].style.overflowY = 'hidden';//Scroll Rock
-        bodys[0].appendChild(container);
-
-        //コンテナの初期化
-        while(container.firstChild){
-          container.removeChild(container.firstChild);
-        }
-
-        //Mutation
-        changeDialog();
-      }
-    });
-
-    // Agreement Modal Dialog Mutation Observe 
-    const config = { attributes: true, childList: true, subtree: true };
-    const observer = new MutationObserver(
-      function(mutationsList, observer) {
-        for(const mutation of mutationsList) {
-          if (mutation.type === 'childList') {
-            const closeDialog = document.getElementById('close-dialog');
-            const agreement   = document.getElementById('agreement');
-            const confirmBtn  = document.getElementById('confirm');
-            closeDialog.addEventListener('click', ()=>{
-              if(agreement.checked === true) {
-                agreeFlag = true;
-                //console.log(agreeFlag);
-
-                // 初期化
-                while(container.firstChild){
-                  container.removeChild(container.firstChild);
-                }
-                // 最終確認画面に切り替え
-                changeDialog(); 
-              } else {
-                //モーダルウィンドウを廃棄して入力画面に戻る
-                container.remove();
-              }
-              //Reset Scroll Rock
-              roots[0].style.overflowY = 'scroll';
-            });
-          }
-        }
-      }
-    );
-    observer.observe(dialog, config);
-
-    //Submition Mutation Observe
-    const submitObserver = new MutationObserver(
-      function(mutationList, observer) {
-        let submitBtn = null;
-        for(const mutation of mutationList) {
-          if(mutation.type === 'childList') {
-            //console.log(mutation.addedNodes[0]);
-            submitBtn = document.querySelector('.submit');
-            cancelBtn = document.querySelector('.cancel');
-          }
-        }
-
-        cancelBtn.addEventListener('click', ()=>{
-          roots[0].style.overflowY = 'scroll';
-          indicator.textContent = '送信内容の確認';
-          editFlag ? '' : document.querySelector('.certification').remove();
-          editFlag = true;
-          dialog.remove();
-          container.remove();
-          //console.log('Cancel Button Clicked!');
-        });
-
-        submitBtn.addEventListener('click', ()=>{
-          location.reload();
-        });
-      }
-    );
-
-    //Completion
-    const changeDialog = function() { 
-      submitObserver.observe(container, config);
-      let template_finished = document.getElementById('finished');
-      const finishedContents = `<dialog class="dialog" open>
-                                  <table class="sent-content">
-                                  <caption>以下の内容で承ります。</caption>
-                                  <tr>
-                                    <th>【 お名前 】</th>
-                                    <td>${name}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>【 ふりがな 】</th>
-                                    <td>${kana}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>【 電話番号 】</th>
-                                    <td>${tel}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>【 メールアドレス 】</th>
-                                    <td>${email}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>【 見学の時間帯 】</th>
-                                    <td>${times}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>【 ご要望等 】</th>
-                                    <td>${comment}</td>
-                                  </tr>
-                                  <tr>
-                                    <td class="submit-holder" colspan="2">
-                                      <button type="button" id="cancel" class="cancel">入力画面に戻る</button>
-                                      <button type="button" id="submit" class="submit">送信する</button>
-                                    </td>
-                                  </table>
-                                </dialog>`;
-      
-      template_finished.innerHTML = finishedContents;
-      const clone_finished = template_finished.content.cloneNode(true);
-      editFlag ? dialog.remove() : ''; // 再編集時には「送信内容の表示」画面切り替え時に「指針画面」を削除する
-      container.appendChild(clone_finished);
-    }
-  </script>
+  <script defer src="../asset/js/apps.js"></script>
+  <script defer src="asset/js/validate.js"></script>
 </body>
 
 </html>
