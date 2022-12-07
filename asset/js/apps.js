@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       left: 0,
       behavior: 'smooth'
     });
-    console.log(`${height}px`);
+    //console.log(`${height}px`);
   })
 });
 
