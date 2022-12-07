@@ -79,6 +79,7 @@ legend {
 
 :is(.touch-device legend) {
   text-align: center;
+  width: 100%;
   position: unset;
   padding: 0 0 1em;
   transform: unset;
