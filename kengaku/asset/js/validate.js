@@ -274,6 +274,7 @@ function submition(submitBtn) {
   fd.append('kana', kana.value);
   fd.append('tel', tel.value);
   fd.append('email', email.value);
+  fd.append('times', times.value);
   fd.append('comment', comment.value);
 
   // フォームの入力値を送信
