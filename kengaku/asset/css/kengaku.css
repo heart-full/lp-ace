@@ -336,8 +336,16 @@ textarea {
 }
 
 /* 完了画面 */
-.completion h3 {
+:is(.completion h3) {
   text-align: center;
+  margin-bottom: 1em;
+}
+
+.thanks-message {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 /* Material Design for Web */
