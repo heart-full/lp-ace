@@ -245,6 +245,19 @@ const changeDialog = function() {
 
 // Completion
 function thanks() {
-  location.reload();
+  const apply               = document.getElementById('apply');
+  const template_completion = document.getElementById('completion');
+  const clone_completion    = template_completion.content.cloneNode(true);
+
+  container.remove();
+  apply.innerHTML = '';
+  apply.appendChild(clone_completion);
+
+  apply.scrollIntoView({
+		behavior : 'smooth',
+		block    : 'end',
+		inline   : 'center'
+	});
+  //location.reload();
 
 }
