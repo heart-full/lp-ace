@@ -192,9 +192,12 @@ const submitObserver = new MutationObserver(
     });
 
     // 送信処理 ～ 完了画面表示
-    submitBtn.addEventListener('click', ()=>{
-      thanks();
-    });
+    submitBtn.addEventListener('click', 
+      async function(){
+        await submition();
+        thanks();
+      }
+    );
   }
 );
 
@@ -260,4 +263,31 @@ function thanks() {
 	});
   //location.reload();
 
+}
+
+function submition(submitBtn) {
+  // FormDataオブジェクトの初期化
+  const fd = new FormData();
+
+  // FormDataオブジェクトにデータをセット
+  fd.append('name', name.value);
+  fd.append('kana', kana.value);
+  fd.append('tel', tel.value);
+  fd.append('email', email.value);
+  fd.append('comment', comment.value);
+
+  // フォームの入力値を送信
+  fetch( 'contact.php', {
+    method: 'POST',
+    body: fd
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    thanks();
+  })
+  .catch((error) => {
+    console.error(error);
+    thanks();
+  });
 }
