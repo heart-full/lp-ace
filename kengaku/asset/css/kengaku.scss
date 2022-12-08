@@ -339,6 +339,11 @@ textarea {
   margin: 0 auto;
 }
 
+:is(.thanks-message p) {
+  margin-bottom: 1em;
+}
+
+
 /* Material Design for Web */
 :root {
   --mdc-theme-primary: hsl(173, 33%, 51%);
