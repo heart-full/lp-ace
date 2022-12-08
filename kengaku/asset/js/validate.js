@@ -261,11 +261,9 @@ function thanks() {
 		block    : 'end',
 		inline   : 'center'
 	});
-  //location.reload();
-
 }
 
-function submition(submitBtn) {
+function submition() {
   // FormDataオブジェクトの初期化
   const fd = new FormData();
 
