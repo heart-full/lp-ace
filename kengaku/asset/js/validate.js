@@ -180,6 +180,7 @@ const submitObserver = new MutationObserver(
       }
     }
 
+    // 入力画面へ戻る
     cancelBtn.addEventListener('click', ()=>{
       roots[0].style.overflowY = 'scroll';
       indicator.textContent = '送信内容の確認';
@@ -190,13 +191,14 @@ const submitObserver = new MutationObserver(
       //console.log('Cancel Button Clicked!');
     });
 
+    // 送信処理 ～ 完了画面表示
     submitBtn.addEventListener('click', ()=>{
-      location.reload();
+      thanks();
     });
   }
 );
 
-//Completion
+// Certification
 const changeDialog = function() { 
   submitObserver.observe(container, config);
   let template_finished = document.getElementById('finished');
@@ -239,4 +241,10 @@ const changeDialog = function() {
   const clone_finished = template_finished.content.cloneNode(true);
   editFlag ? dialog.remove() : ''; // 再編集時には「送信内容の表示」画面切り替え時に「指針画面」を削除する
   container.appendChild(clone_finished);
+}
+
+// Completion
+function thanks() {
+  location.reload();
+
 }
