@@ -290,3 +290,17 @@ function submition() {
     thanks();
   });
 }
+
+/* カレンダー（翌日以降のみ指定可） */
+(function startDate() {
+  
+  const d = new Date();
+  
+  /** 日付を文字列にフォーマットする */
+  const formatted = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
+
+  const calender = document.querySelector('.calender');
+  calender.min = formatted;
+
+  //console.log(formatted);
+})();
