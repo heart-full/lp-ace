@@ -278,7 +278,7 @@ function submition() {
   fd.append('comment', comment.value);
 
   /** フォームの入力値を送信 */ 
-  fetch( 'contact.php', {
+  fetch( 'https://formspree.io/f/xbjbnpeo', {
     method: 'POST',
     body: fd
   })
