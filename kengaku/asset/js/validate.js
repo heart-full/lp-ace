@@ -276,8 +276,10 @@ function submition(e) {
   //fd.append('email', email.value);
   fd.append('times', times.value);
   fd.append('comment', comment.value);
+  console.table(fd);
 
-  /** フォームの入力値を送信 */ 
+  /** フォームの入力値を送信 */
+if(window.confirm('送信します')) {
   fetch( 'https://formspree.io/f/xbjbnpeo', {
     method: 'POST',
     body: fd,
@@ -295,7 +297,7 @@ function submition(e) {
     thanks();
   });
 }
-
+}
 
 
 /** カレンダー（翌日以降のみ指定可） */
