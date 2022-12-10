@@ -547,13 +547,12 @@ iframe {
 
 :is(.facilities-photo-wrapper > figure > figcaption) {
   color: #000;
-  font-size: 0.6em;
-  background-color: rgba(255, 255, 255, 0.5);
+/  // background-color: rgba(255, 255, 255, 0.5);
   padding: 0.25em 0.5em;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  backdrop-filter: blur(12px);
+  // position: absolute;
+  // top: 16px;
+  // left: 16px;
+  // backdrop-filter: blur(12px);
 }
 
 @media screen and (max-width: 720px){
