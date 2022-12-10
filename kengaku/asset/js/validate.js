@@ -280,26 +280,27 @@ function submition(e) {
 
   /** フォームの入力値を送信 */
   /*
-if(window.confirm('送信します')) {
-  fetch( 'https://formspree.io/f/xbjbnpeo', {
-    method: 'POST',
-    body: fd,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    thanks();
-  })
-  .catch((error) => {
-    console.error(error);
-    thanks();
-  });
+  if(window.confirm('送信します')) {
+    fetch( 'https://formspree.io/f/xbjbnpeo', {
+      method: 'POST',
+      body: fd,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      thanks();
+    })
+    .catch((error) => {
+      console.error(error);
+      thanks();
+    });
+  }
+  */
 }
-}
-*/
+
 
 /** カレンダー（翌日以降のみ指定可） */
 (function startDate() {
