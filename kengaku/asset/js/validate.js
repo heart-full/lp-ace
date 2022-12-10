@@ -265,7 +265,7 @@ function thanks() {
 	});
 }
 
-function submition() {
+function submition(e) {
   /** FormDataオブジェクトの初期化 */
   const fd = new FormData();
 
@@ -273,7 +273,7 @@ function submition() {
   fd.append('name', name.value);
   fd.append('kana', kana.value);
   fd.append('tel', tel.value);
-  fd.append('email', email.value);
+  //fd.append('email', email.value);
   fd.append('times', times.value);
   fd.append('comment', comment.value);
 
