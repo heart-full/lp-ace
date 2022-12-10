@@ -474,6 +474,7 @@ iframe {
   width: auto;
   max-width: 100%;
   max-height: clamp(58px, 12.5vw, 120px);
+  margin: 0 auto;
 }
 
 :is(.activities .mendan .image-holder img) {
@@ -528,14 +529,7 @@ iframe {
 
 :is(.facilities-photo-wrapper > figure > figcaption) {
   color: #000;
-  font-size: 0.6em;
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 0.25em 0.5em;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
 }
 
 @media screen and (max-width: 720px) {

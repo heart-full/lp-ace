@@ -492,6 +492,7 @@ iframe {
   width: auto;
   max-width: 100%;
   max-height: clamp(58px, calc(100vw * 120 / 960), 120px);
+  margin: 0 auto;
 }
 
 :is(.activities .mendan .image-holder img) {
@@ -547,7 +548,7 @@ iframe {
 
 :is(.facilities-photo-wrapper > figure > figcaption) {
   color: #000;
-/  // background-color: rgba(255, 255, 255, 0.5);
+  // background-color: rgba(255, 255, 255, 0.5);
   padding: 0.25em 0.5em;
   // position: absolute;
   // top: 16px;
