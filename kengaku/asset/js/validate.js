@@ -99,7 +99,7 @@ indicator.addEventListener('click', async function() {
     /** 未入力がなければダイアログを表示する */
     if(errorCounter === 0) {
       /** formの値の取得 */
-      namae   = document.getElementsByName('name')[0].value;
+      namae   = document.getElementsByName('namae')[0].value;
       kana    = document.getElementsByName('kana')[0].value;
       tel     = document.getElementsByName('tel')[0].value;
       email   = document.getElementsByName('email')[0].value;
@@ -120,7 +120,7 @@ indicator.addEventListener('click', async function() {
     //console.log('再編集画面');
 
     /** formの値の再取得 */
-    namae   = document.getElementsByName('name')[0].value;
+    namae   = document.getElementsByName('namae')[0].value;
     kana    = document.getElementsByName('kana')[0].value;
     tel     = document.getElementsByName('tel')[0].value;
     email   = document.getElementsByName('email')[0].value;
