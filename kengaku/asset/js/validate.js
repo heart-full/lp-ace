@@ -34,6 +34,7 @@ let name    = '';
 let kana    = '';
 let tel     = '';
 let email   = '';
+let date    = '';
 let times   = '';
 let comment = '';
 
@@ -101,6 +102,7 @@ indicator.addEventListener('click', async function() {
       kana    = document.getElementsByName('kana')[0].value;
       tel     = document.getElementsByName('tel')[0].value;
       email   = document.getElementsByName('email')[0].value;
+      date    = document.getElementsByName('date')[0].value;
       times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
       comment = document.getElementsByName('comment')[0].value;
 
@@ -121,6 +123,7 @@ indicator.addEventListener('click', async function() {
     kana    = document.getElementsByName('kana')[0].value;
     tel     = document.getElementsByName('tel')[0].value;
     email   = document.getElementsByName('email')[0].value;
+    date    = document.getElementsByName('date')[0].value;
     times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
     comment = document.getElementsByName('comment')[0].value;
 
