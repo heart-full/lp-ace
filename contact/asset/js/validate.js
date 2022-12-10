@@ -224,7 +224,7 @@ const changeDialog = function() {
                                 <td>${email}</td>
                               </tr>
                               <tr>
-                                <th>【 ご質問 】</th>
+                                <th>【 お問い合わせ 】</th>
                                 <td>${comment}</td>
                               </tr>
                               <tr>
@@ -267,11 +267,11 @@ function submition() {
   fd.set('【ふりがな】', kana);
   fd.set('【電話番号】', tel);
   fd.set('【メールアドレス】', email);
-  fd.set('【ご要望】', comment);
+  fd.set('【お問い合わせ】', comment);
 
   /** フォームの入力値を送信 */
   if(window.confirm('送信します')) {
-    fetch('https://formspree.io/f/xbjbnpeo', {
+    fetch('https://formspree.io/f/maykrlrb', {
       method: 'post',
       body: fd,
       headers: {
