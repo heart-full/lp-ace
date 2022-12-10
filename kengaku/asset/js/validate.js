@@ -283,7 +283,7 @@ function submition() {
   fd.set('【電話番号】', tel);
   fd.set('【メールアドレス】', email);
   fd.set('【見学希望日】', date);
-  fd.set('k見学時間帯', times);
+  fd.set('【見学時間帯】', times);
   fd.set('【ご要望】', comment);
 
   /** フォームの入力値を送信 */
