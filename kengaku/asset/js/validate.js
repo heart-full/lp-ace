@@ -270,12 +270,13 @@ function submition(e) {
   const fd = new FormData();
 
   /** FormDataオブジェクトにデータをセット */
-  fd.append('name', name.value);
-  fd.append('kana', kana.value);
-  fd.append('tel', tel.value);
-  //fd.append('email', email.value);
-  fd.append('times', times.value);
-  fd.append('comment', comment.value);
+  fd.set('name', name.value);
+  fd.set('kana', kana.value);
+  fd.set('tel', tel.value);
+  fd.set('email', email.value);
+  fd.set('date', date.value);
+  fd.set('times', times.value);
+  fd.set('comment', comment.value);
   console.table(fd);
 
   /** フォームの入力値を送信 */
