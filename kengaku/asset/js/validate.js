@@ -285,7 +285,7 @@ function submition() {
   fd.set('date', date.value);
   fd.set('times', times.value);
   fd.set('comment', comment.value);
-  console.log(name.value);
+  console.log(namae.value);
 
   /** フォームの入力値を送信 */
   /*
