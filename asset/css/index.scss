@@ -780,6 +780,7 @@ iframe {
 
 :is(.kengaku .announce .contents > p) {
   flex: 1;
+  align-self: center;
 } 
 
 :is(.kengaku .announce .contents > p span) {
@@ -812,7 +813,7 @@ iframe {
   }
 
   :is(.kengaku .announce .contents picture) {
-    margin-right: clamp(8px, calc(100vw * 0.3 * 64 / 960), 64px);
+    margin-right: clamp(8px, calc(100vw * 0.3 * 0.8 * 64 / 960), 64px);
   }
 }
 

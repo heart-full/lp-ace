@@ -748,6 +748,7 @@ iframe {
 
 :is(.kengaku .announce .contents > p) {
   flex: 1;
+  align-self: center;
 }
 
 :is(.kengaku .announce .contents > p span) {
@@ -781,7 +782,7 @@ iframe {
     transform: scale(1.2);
   }
   :is(.kengaku .announce .contents picture) {
-    margin-right: clamp(8px, 2vw, 64px);
+    margin-right: clamp(8px, 1.6vw, 64px);
   }
 }
 :is(.kengaku .experience-schedule) {
