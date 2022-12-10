@@ -290,6 +290,11 @@ body {
   position: relative;
 }
 
+:is(.touch-device .main .top-section) {
+  padding-right: unset;
+  padding-left: unset;
+}
+
 :is(.main .top-section:not(:last-of-type)) {
   margin-bottom: 32px;
 }
