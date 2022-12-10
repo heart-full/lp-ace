@@ -489,7 +489,7 @@ iframe {
 :is(.activities .recruit .image-holder img),
 :is(.activities .training .image-holder img),
 :is(.activities .symposium .image-holder img) {
-  width: auto;
+  width: 100%;
   max-width: 180px;
   max-height: clamp(58px, calc(100vw * 120 / 960), 120px);
 }
