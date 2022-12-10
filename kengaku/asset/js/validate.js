@@ -200,7 +200,7 @@ const submitObserver = new MutationObserver(
     submitBtn.addEventListener('click', 
       async function(){
         await submition();
-        thanks();
+        //thanks();
       }
     );
   }
