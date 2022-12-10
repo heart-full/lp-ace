@@ -774,7 +774,7 @@
     // Loading Cookie Check
     let Cookie = false;
     if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
-      console.log(document.cookie);
+      // console.log(document.cookie);
       Cookie = true;
       document.getElementById('loading').remove();
     }
@@ -822,10 +822,10 @@
       // Correspondence for jQuery Object & etc.
       convertElement(element) {
         if (element instanceof HTMLElement) {
-          return element
+          return element;
         }
         if (element instanceof jQuery) {
-          return element[0]
+          return element[0];
         }
         return document.querySelector(element);
       }
@@ -860,7 +860,7 @@
       });
 
       await sleep(6000); //ロゴの表示時間
-      console.log('Heartfull ACE Animation Ended');
+      // console.log('Heartfull ACE Animation Ended');
       // loading.classList.add('remove');
       // loading_end = true;
     }
@@ -894,7 +894,7 @@
       }
     );
 
-    //ローディングの終了を監視
+    /** ローディングの終了を監視 */
     (() => {
       'use strict';
       if(Cookie) return;
@@ -903,7 +903,7 @@
         i++;
         container.addEventListener('transitionend', async function() {
           container.remove();
-          console.log('Loading Ended');
+          // console.log('Loading Ended');
           // Set Cookie
           document.cookie = "loading=finished";
         });
@@ -948,7 +948,7 @@
     })
   </script>
   <script>
-    // YouTube Movies
+  // YouTube Movies
   window.addEventListener('DOMContentLoaded', function(){
     const htmls        = document.getElementsByTagName('html');
     const playLists    = document.querySelectorAll('.playList');
@@ -959,7 +959,7 @@
     const overlay      = document.getElementById('overlay');
     const close        = document.getElementById('close');
     playLists.forEach(function(playList){
-      console.log(playList.dataset.ytid);
+      // console.log(playList.dataset.ytid);
       playList.addEventListener('click', function(){
         let ytid  = this.dataset.ytid;
         console.log('click');
