@@ -31,7 +31,7 @@ toggles.forEach((toggle) => {
 // Form Element
 //
 const kengaku = document.getElementById('kengaku-form');
-let name    = '';
+let namae   = '';
 let kana    = '';
 let tel     = '';
 let email   = '';
@@ -99,7 +99,7 @@ indicator.addEventListener('click', async function() {
     /** 未入力がなければダイアログを表示する */
     if(errorCounter === 0) {
       /** formの値の取得 */
-      name    = document.getElementsByName('name')[0].value;
+      namae   = document.getElementsByName('name')[0].value;
       kana    = document.getElementsByName('kana')[0].value;
       tel     = document.getElementsByName('tel')[0].value;
       email   = document.getElementsByName('email')[0].value;
@@ -120,7 +120,7 @@ indicator.addEventListener('click', async function() {
     //console.log('再編集画面');
 
     /** formの値の再取得 */
-    name    = document.getElementsByName('name')[0].value;
+    namae   = document.getElementsByName('name')[0].value;
     kana    = document.getElementsByName('kana')[0].value;
     tel     = document.getElementsByName('tel')[0].value;
     email   = document.getElementsByName('email')[0].value;
@@ -216,7 +216,7 @@ const changeDialog = function() {
                               <caption>以下の内容で承ります。</caption>
                               <tr>
                                 <th>【 お名前 】</th>
-                                <td>${name}</td>
+                                <td>${namae}</td>
                               </tr>
                               <tr>
                                 <th>【 ふりがな 】</th>
@@ -278,14 +278,14 @@ function submition() {
   const fd = new FormData();
 
   /** FormDataオブジェクトにデータをセット */
-  fd.set('name', name.value);
+  fd.set('namae', namae.value);
   fd.set('kana', kana.value);
   fd.set('tel', tel.value);
   fd.set('email', email.value);
   fd.set('date', date.value);
   fd.set('times', times.value);
   fd.set('comment', comment.value);
-  console.log(fd);
+  console.log(name.value);
 
   /** フォームの入力値を送信 */
   /*
