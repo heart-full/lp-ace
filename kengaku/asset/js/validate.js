@@ -278,13 +278,13 @@ function submition() {
   const fd = new FormData();
 
   /** FormDataオブジェクトにデータをセット */
-  fd.set('namae', namae);
-  fd.set('kana', kana);
-  fd.set('tel', tel);
-  fd.set('email', email);
-  fd.set('date', date);
-  fd.set('times', times);
-  fd.set('comment', comment);
+  fd.set('【お名前】', namae);
+  fd.set('【ふりがな】', kana);
+  fd.set('【電話番号】', tel);
+  fd.set('【メールアドレス】', email);
+  fd.set('【見学希望日】', date);
+  fd.set('k見学時間帯', times);
+  fd.set('【ご要望】', comment);
 
   /** フォームの入力値を送信 */
   if(window.confirm('送信します')) {
