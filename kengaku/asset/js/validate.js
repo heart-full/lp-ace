@@ -231,6 +231,10 @@ const changeDialog = function() {
                                 <td>${email}</td>
                               </tr>
                               <tr>
+                                <th>【 見学希望日 】</th>
+                                <td>${date}</td>
+                              </tr>
+                              <tr>
                                 <th>【 見学の時間帯 】</th>
                                 <td>${times}</td>
                               </tr>
@@ -241,7 +245,7 @@ const changeDialog = function() {
                               <tr>
                                 <td class="submit-holder" colspan="2">
                                   <button type="button" id="cancel" class="cancel">入力画面に戻る</button>
-                                  <button type="button" id="submit" class="submit">送信する</button>
+                                  <button type="submit" id="submit" class="submit">送信する</button>
                                 </td>
                               </table>
                             </dialog>`;
@@ -269,9 +273,10 @@ function thanks() {
 	});
 }
 
-function submition() {
+function submition(e) {
+  e.preventDefault();
   /** FormDataオブジェクトの初期化 */
-  const fd = new FormData(kengaku);
+  const fd = new FormData(e.target);
 
   /** FormDataオブジェクトにデータをセット */
   fd.set('name', name.value);
@@ -286,8 +291,8 @@ function submition() {
   /** フォームの入力値を送信 */
   /*
   if(window.confirm('送信します')) {
-    fetch( 'https://formspree.io/f/xbjbnpeo', {
-      method: 'POST',
+    fetch( e.tartget.action, {
+      method: form.method,
       body: fd,
       headers: {
         'Accept': 'application/json'
