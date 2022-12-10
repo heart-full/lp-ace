@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" />
   <link rel="stylesheet" href="../asset/css/base.css" />
   <link rel="stylesheet" href="../asset/css/style.css" />
-  <link rel="stylesheet" href="../asset/css/ikou.css" />
+  <link rel="stylesheet" href="asset/css/ikou.css" />
 </head>
 <body>
   <div id="Container" class="Container">
@@ -89,7 +89,7 @@
       <section class="top-section inview">
         <div class="under-constraction">
           <img src="asset/images/under_constraction.svg" width="604" height="769" alt="只今メンテナンス中">
-          <p>只今メンテナンス中です。しばらくおまちください。</p>
+          <p><span.no-wrap>只今メンテナンス中です。</span.no-wrap><span class="no-wrap">しばらくおまちください。</span></p>
         </div>
       </section>
     </main>
@@ -126,6 +126,12 @@
   </div>
   <script defer src="../asset/js/apps.js"></script>
   <script>
+    let height = window.innerHeight;
+    window.scrollBy({
+      top: height,
+      left: 0,
+      behavior: 'smooth'
+    });
   </script>
 </body>
 </html>
