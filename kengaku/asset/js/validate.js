@@ -279,6 +279,7 @@ function submition(e) {
   console.table(fd);
 
   /** フォームの入力値を送信 */
+  /*
 if(window.confirm('送信します')) {
   fetch( 'https://formspree.io/f/xbjbnpeo', {
     method: 'POST',
@@ -298,7 +299,7 @@ if(window.confirm('送信します')) {
   });
 }
 }
-
+*/
 
 /** カレンダー（翌日以降のみ指定可） */
 (function startDate() {
