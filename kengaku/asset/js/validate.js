@@ -289,7 +289,7 @@ function submition() {
   /** フォームの入力値を送信 */
   if(window.confirm('送信します')) {
     fetch('https://formspree.io/f/xbjbnpeo', {
-      method: POST,
+      method: 'post',
       body: fd,
       headers: {
         'Accept': 'application/json'
