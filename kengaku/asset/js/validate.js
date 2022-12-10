@@ -201,7 +201,7 @@ const submitObserver = new MutationObserver(
     submitBtn.addEventListener('click', 
       async function(){
         await submition();
-        //thanks();
+        thanks();
       }
     );
   }
@@ -285,13 +285,11 @@ function submition() {
   fd.set('date', date);
   fd.set('times', times);
   fd.set('comment', comment);
-  console.log(namae);
 
   /** フォームの入力値を送信 */
-  /*
   if(window.confirm('送信します')) {
-    fetch( e.tartget.action, {
-      method: form.method,
+    fetch('https://formspree.io/f/xbjbnpeo', {
+      method: POST,
       body: fd,
       headers: {
         'Accept': 'application/json'
@@ -307,7 +305,6 @@ function submition() {
       thanks();
     });
   }
-  */
 }
 
 
