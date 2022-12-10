@@ -30,6 +30,7 @@ toggles.forEach((toggle) => {
 //
 // Form Element
 //
+const kengaku = document.getElementById('kengaku-form');
 let name    = '';
 let kana    = '';
 let tel     = '';
@@ -268,9 +269,9 @@ function thanks() {
 	});
 }
 
-function submition(e) {
+function submition() {
   /** FormDataオブジェクトの初期化 */
-  const fd = new FormData();
+  const fd = new FormData(kengaku);
 
   /** FormDataオブジェクトにデータをセット */
   fd.set('name', name.value);
