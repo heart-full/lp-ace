@@ -280,7 +280,10 @@ function submition() {
   /** フォームの入力値を送信 */ 
   fetch( 'https://formspree.io/f/xbjbnpeo', {
     method: 'POST',
-    body: fd
+    body: fd,
+    headers: {
+      'Accept': 'application/json'
+    }
   })
   .then(response => response.json())
   .then(data => {
