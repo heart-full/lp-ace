@@ -1,24 +1,27 @@
 //
-// window.addEventListener('load', () => {
-  //Instantiate single textfield component rendered in the document
-  const textFields = document.querySelectorAll('.mdc-text-field');
-  textFields.forEach((textField) => {
-    mdc.textField.MDCTextField.attachTo(textField);
-  });
-  //Toggle Switch
-  const toggles = document.querySelectorAll('.toggle');
-  toggles.forEach((toggle) => {
-    toggle.addEventListener('click', ()=>{
-      toggle.classList.toggle('checked');
-      const toggleInput = toggle.firstElementChild;
-      if(!toggleInput.checked) {
-        toggleInput.checked = true;
-      } else {
-        toggleInput.checked = false;
-      }
-    })
+// Material Design Component
+//
+
+/** Instantiate single textfield component rendered in the document */
+const textFields = document.querySelectorAll('.mdc-text-field');
+textFields.forEach((textField) => {
+  mdc.textField.MDCTextField.attachTo(textField);
+});
+//Toggle Switch
+const toggles = document.querySelectorAll('.toggle');
+toggles.forEach((toggle) => {
+  toggle.addEventListener('click', ()=>{
+    toggle.classList.toggle('checked');
+    const toggleInput = toggle.firstElementChild;
+    if(!toggleInput.checked) {
+      toggleInput.checked = true;
+    } else {
+      toggleInput.checked = false;
+    }
   })
-// })
+})
+
+
 
 //
 //Form Validation ~ Submition
@@ -78,8 +81,8 @@ let clone_contents    = template_contents.content.cloneNode(true);
 
 //
 indicator.addEventListener('click', async function() {
-  if(!editFlag) { //確認画面からの戻りでなければ
-    //確認ボタンがクリックされたとき全てのフォーカスを外す
+  if(!editFlag) { /** 確認画面からの戻りでなければ */
+    /** 確認ボタンがクリックされたとき全てのフォーカスを外す */
     await checkLists.forEach((checkList) => {
       if(checkList.value === '') {
         errorCounter++;
@@ -91,9 +94,9 @@ indicator.addEventListener('click', async function() {
       checkList.blur();
       //console.log(errorCounter);
     });
-    //未入力がなければダイアログを表示する
+    /** 未入力がなければダイアログを表示する */
     if(errorCounter === 0) {
-      //formの値の取得
+      /** formの値の取得 */
       name    = document.getElementsByName('name')[0].value;
       kana    = document.getElementsByName('kana')[0].value;
       tel     = document.getElementsByName('tel')[0].value;
@@ -110,11 +113,10 @@ indicator.addEventListener('click', async function() {
       confirm(`未入力が${errorCounter}つあります。`);
       errorCounter = 0; //reset
     }
-  } else {
-    //確認画面からの戻りの場合
+  } else { /** 確認画面からの戻りの場合 */
     //console.log('再編集画面');
 
-    //formの値の再取得
+    /** formの値の再取得 */
     name    = document.getElementsByName('name')[0].value;
     kana    = document.getElementsByName('kana')[0].value;
     tel     = document.getElementsByName('tel')[0].value;
@@ -125,12 +127,12 @@ indicator.addEventListener('click', async function() {
     roots[0].style.overflowY = 'hidden';//Scroll Rock
     bodys[0].appendChild(container);
 
-    //コンテナの初期化
+    /** コンテナの初期化 */
     while(container.firstChild){
       container.removeChild(container.firstChild);
     }
 
-    //Mutation
+    /** Mutation */
     changeDialog();
   }
 });
@@ -149,17 +151,17 @@ const observer = new MutationObserver(
             agreeFlag = true;
             //console.log(agreeFlag);
 
-            // 初期化
+            /** 初期化 */
             while(container.firstChild){
               container.removeChild(container.firstChild);
             }
-            // 最終確認画面に切り替え
+            /** 最終確認画面に切り替え */
             changeDialog(); 
           } else {
-            //モーダルウィンドウを廃棄して入力画面に戻る
+            /** モーダルウィンドウを廃棄して入力画面に戻る */
             container.remove();
           }
-          //Reset Scroll Rock
+          /** Reset Scroll Rock */
           roots[0].style.overflowY = 'scroll';
         });
       }
@@ -180,7 +182,7 @@ const submitObserver = new MutationObserver(
       }
     }
 
-    // 入力画面へ戻る
+    /** 入力画面へ戻る */
     cancelBtn.addEventListener('click', ()=>{
       roots[0].style.overflowY = 'scroll';
       indicator.textContent = '送信内容の確認';
@@ -191,7 +193,7 @@ const submitObserver = new MutationObserver(
       //console.log('Cancel Button Clicked!');
     });
 
-    // 送信処理 ～ 完了画面表示
+    /** 送信処理 ～ 完了画面表示 */
     submitBtn.addEventListener('click', 
       async function(){
         await submition();
@@ -242,7 +244,7 @@ const changeDialog = function() {
   
   template_finished.innerHTML = finishedContents;
   const clone_finished = template_finished.content.cloneNode(true);
-  editFlag ? dialog.remove() : ''; // 再編集時には「送信内容の表示」画面切り替え時に「指針画面」を削除する
+  editFlag ? dialog.remove() : ''; /** 再編集時には「送信内容の表示」画面切り替え時に「指針画面」を削除する */
   container.appendChild(clone_finished);
 }
 
@@ -264,10 +266,10 @@ function thanks() {
 }
 
 function submition() {
-  // FormDataオブジェクトの初期化
+  /** FormDataオブジェクトの初期化 */
   const fd = new FormData();
 
-  // FormDataオブジェクトにデータをセット
+  /** FormDataオブジェクトにデータをセット */
   fd.append('name', name.value);
   fd.append('kana', kana.value);
   fd.append('tel', tel.value);
@@ -275,7 +277,7 @@ function submition() {
   fd.append('times', times.value);
   fd.append('comment', comment.value);
 
-  // フォームの入力値を送信
+  /** フォームの入力値を送信 */ 
   fetch( 'contact.php', {
     method: 'POST',
     body: fd
@@ -291,7 +293,9 @@ function submition() {
   });
 }
 
-/* カレンダー（翌日以降のみ指定可） */
+
+
+/** カレンダー（翌日以降のみ指定可） */
 (function startDate() {
   
   const d = new Date();
@@ -300,7 +304,9 @@ function submition() {
   const formatted = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
 
   const calender = document.querySelector('.calender');
+  const reserve  = document.querySelector('.reserve');
   calender.min = formatted;
+  reserve.textContent = formatted;
 
   //console.log(formatted);
 })();

@@ -580,4 +580,8 @@ summary::-webkit-details-marker {
   transform: translate(-50%, -50%);
   border-radius: 0.25em;
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
 /*# sourceMappingURL=base.css.map */

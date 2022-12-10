@@ -118,6 +118,8 @@ textarea {
 */
 .input-example {
   font-size: 0.8em;
+  text-indent: -1em;
+  padding-left: 1em;
   margin-bottom: 1em;
 }
 /*
@@ -325,12 +327,17 @@ textarea {
   display: contents;
 }
 
-.atention {
+.attention {
   color: #f00;
   // font-size: .8em;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 500;
   margin-bottom: 1em;
+}
+
+:is(.policy-general .attention:first-of-type) {
+  text-indent:  -1em;
+  padding-left: 1em;
 }
 
 /* 完了画面 */
