@@ -273,10 +273,9 @@ function thanks() {
 	});
 }
 
-function submition(e) {
-  e.preventDefault();
+function submition() {
   /** FormDataオブジェクトの初期化 */
-  const fd = new FormData(e.target);
+  const fd = new FormData();
 
   /** FormDataオブジェクトにデータをセット */
   fd.set('name', name.value);
@@ -286,7 +285,7 @@ function submition(e) {
   fd.set('date', date.value);
   fd.set('times', times.value);
   fd.set('comment', comment.value);
-  console.table(fd);
+  console.log(fd);
 
   /** フォームの入力値を送信 */
   /*
