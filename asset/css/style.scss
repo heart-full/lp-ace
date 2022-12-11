@@ -262,6 +262,7 @@ body {
   background-position: top left;
   background-size: clamp(80px, calc(100vw * 110 / 960), 110px);
   line-height: 1.6;
+  width: 0px;
   height: 48px;
   padding-left: clamp(100px, calc(100vw * 140 / 960), 102px);
   position: absolute;
@@ -269,6 +270,12 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+:is(.main .top-section.active)::before {
+  width: 100%;
 }
 
 :is(.main .top-section)::after {
