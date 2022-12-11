@@ -284,6 +284,38 @@
       left: 0,
       behavior: 'smooth'
     });
+    
+    // Intersection Observation
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // trigger
+      const inviews = document.querySelectorAll('.inview');
+      // options
+      const options = {
+        root: null,
+        threshold: 0,
+        rootMargin: "-50% 0%"
+      };
+
+      // Observer Object
+      const observer = new IntersectionObserver(showElements, options);
+
+      // fire
+      inviews.forEach(inview => {
+        observer.observe(inview);
+      });
+
+      // execution
+      function showElements(entries){
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // 各 .inview に .active を加える
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      }
+    })
   </script>
 </body>
 
