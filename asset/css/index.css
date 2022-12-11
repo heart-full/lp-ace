@@ -759,10 +759,10 @@ iframe {
 :is(.kengaku .announce .contents picture) {
   background-color: #fff;
   display: block;
-  width: 20%;
+  width: 12%;
   aspect-ratio: 9/12;
   padding: 9px;
-  margin-right: 64px;
+  margin-right: 4%;
   border-radius: 50%;
   transform: scale(1.5);
   border: solid 2px #649cc9;
@@ -773,11 +773,11 @@ iframe {
 }
 
 @media screen and (max-width: 640px) {
-  :is(.kengaku .announce .contents picture img) {
-    transform: scale(1.2);
-  }
   :is(.kengaku .announce .contents picture) {
     margin-right: clamp(8px, 1.6vw, 64px);
+  }
+  :is(.kengaku .announce .contents picture img) {
+    transform: scale(1.5);
   }
 }
 :is(.kengaku .experience-schedule) {
