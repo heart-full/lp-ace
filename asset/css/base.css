@@ -332,10 +332,11 @@ summary::-webkit-details-marker {
 }
 */
 /* page scroll prompt */
+/*
 .scroll_prompt {
   color: #999;
   font-size: 0.8em;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-weight: 500;
   line-height: 21px;
   text-align: center;
@@ -343,12 +344,12 @@ summary::-webkit-details-marker {
   height: 24px;
   padding-right: 4px;
   padding-left: 4px;
+  // padding-bottom: 8px;
   position: absolute;
   top: -64px;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   cursor: pointer;
 }
 
@@ -357,7 +358,7 @@ summary::-webkit-details-marker {
 }
 
 .scroll_prompt::before {
-  content: "";
+  content: '';
   color: #fff;
   line-height: 0.8;
   display: block;
@@ -374,7 +375,7 @@ summary::-webkit-details-marker {
 }
 
 .scroll_prompt::after {
-  content: "";
+  content: '';
   display: block;
   width: 64px;
   height: 24px;
@@ -388,27 +389,20 @@ summary::-webkit-details-marker {
   z-index: -1;
   transform: scaleX(0);
   transform-origin: right;
-  -webkit-animation: scroll_prompt ease-in-out 1.6s infinite;
-          animation: scroll_prompt ease-in-out 1.6s infinite;
-}
-
-@-webkit-keyframes scroll_prompt {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
+  animation: scroll_prompt ease-in-out 1.6s infinite;
 }
 
 @keyframes scroll_prompt {
   0% {
     transform: scaleX(0);
   }
+
   100% {
     transform: scaleX(1);
   }
+
 }
+*/
 /***************************************************
 /*
 /* Miscellaneous
