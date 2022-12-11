@@ -71,7 +71,7 @@
   padding: clamp(4px, 2.0833333333vw, 16px);
 }
 
-:is(.hazard-type-list > li) {
+:where(.hazard-type-list > li) {
   color: rgb(42, 110, 25);
   line-height: 0.8;
   background-color: #fff;
@@ -79,7 +79,7 @@
   border-radius: 3px;
 }
 
-:is(.hazard-type-list > li > em) {
+:where(.hazard-type-list > li > em) {
   font-weight: 600;
   font-style: normal;
 }
@@ -118,7 +118,7 @@
   backdrop-filter: blur(3px);
 }
 
-:is(.touch-device .site-concept) {
+:where(.touch-device .site-concept) {
   margin-top: auto;
   margin-bottom: clamp(8px, 3.3333333333vw, 32px);
 }
@@ -141,7 +141,7 @@
   z-index: 1;
 }
 
-:is(.site-message span) {
+:where(.site-message span) {
   white-space: nowrap;
 }
 
@@ -180,7 +180,7 @@
   cursor: pointer;
 }
 
-:is(.touch-device .scroll_prompt) {
+:where(.touch-device .scroll_prompt) {
   top: -80px;
 }
 
@@ -319,7 +319,7 @@ body {
   transform: translateX(-50%);
 }
 */
-:is(.main .top-section-title) {
+:where(.main .top-section-title) {
   font-size: clamp(20px, 3.3333333333vw, 32px);
 }
 
@@ -340,7 +340,7 @@ body {
   line-height: 0;
 }
 
-:is(.touch-device .hr-dots)::before {
+:where(.touch-device .hr-dots)::before {
   transform: scale(0.8);
 }
 
@@ -366,7 +366,7 @@ body {
     max-height: 100vh;
   }
 }
-:is(.touch-device .page_footer) {
+:where(.touch-device .page_footer) {
   min-height: unset;
   min-height: unset;
   max-height: unset;
@@ -407,7 +407,7 @@ body {
   }
 }
 */
-:is(.page_footer .access-map-holder) {
+:where(.page_footer .access-map-holder) {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -420,7 +420,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-  :is(.page_footer .access-map-holder) {
+  :where(.page_footer .access-map-holder) {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -428,7 +428,7 @@ body {
     position: relative;
   }
 }
-:is(.page_footer .access-map-holder .access-map) {
+:where(.page_footer .access-map-holder .access-map) {
   height: auto;
   padding: 16px 16px 0;
 }
@@ -440,7 +440,7 @@ body {
   transform: scale(0.7);
 }
 
-:is(.page_footer .branch-info-holder) {
+:where(.page_footer .branch-info-holder) {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -448,7 +448,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-  :is(.page_footer .branch-info-holder) {
+  :where(.page_footer .branch-info-holder) {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -458,7 +458,7 @@ body {
     position: relative;
   }
 }
-:is(.page_footer .branch-info-holder .branch-info) {
+:where(.page_footer .branch-info-holder .branch-info) {
   width: 100%;
   height: auto;
   aspect-ratio: 231/140;

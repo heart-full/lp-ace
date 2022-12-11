@@ -24,7 +24,7 @@ body.Contact {
   overflow: hidden;
 }
 
-:is(.touch-device .contact-form) {
+:where(.touch-device .contact-form) {
   width: fit-content;
   padding: 0;
 }
@@ -64,7 +64,7 @@ fieldset::after {
   z-index: -2;
 }
 
-:is(.touch-device fieldset) {
+:where(.touch-device fieldset) {
   display: contents;
 }
 
@@ -80,7 +80,7 @@ legend {
   transform: translate(-50%, -45%);
 }
 
-:is(.touch-device legend) {
+:where(.touch-device legend) {
   text-align: center;
   width: 100%;
   position: unset;
@@ -118,7 +118,7 @@ textarea {
   padding-right: .5rem;
 }
 /*
-:is(.touch-device .element-holder) {
+:where(.touch-device .element-holder) {
   transform: scale(0.7);
 }
 */
@@ -129,11 +129,11 @@ textarea {
   margin-bottom: 1em;
 }
 /*
-:is(.touch-device .input-example) {
+:where(.touch-device .input-example) {
   margin-bottom: 0;
 }
 */
-:is(.comment + .input-example) {
+:where(.comment + .input-example) {
   text-align: center;
 }
 
@@ -222,16 +222,16 @@ textarea {
   padding: 2em;
 }
 
-:is(.submit-holder button) {
+:where(.submit-holder button) {
   padding: .5em 1em;
   cursor: pointer;
 }
 
-:is(.touch-device .submit-holder button) {
+:where(.touch-device .submit-holder button) {
   font-size: 1.2em;
 }
 
-:is(.element-holder.error .error-message),
+:where(.element-holder.error .error-message),
 .error-message {
   color: #f00;
   font-size: 0.8em;
@@ -250,34 +250,34 @@ textarea {
 }
 
 .privacy-policy,
-.privacy-policy :is(caption, tr,th, td) {
+.privacy-policy :where(caption, tr,th, td) {
   font-size: .8rem;
   text-align: unset;
   display: block;
 }
 
-:is(.privacy-policy tr) {
+:where(.privacy-policy tr) {
   display: contents;
 }
 
-:is(.privacy-policy th) {
+:where(.privacy-policy th) {
   width: fit-content;
   margin-bottom: .25em;
   border-bottom: solid 2px hsl(170, 30%, 60%);
 }
 
-:is(.privacy-policy th)::before {
+:where(.privacy-policy th)::before {
   content: '■';
   display: inline-block;
   margin-right: 0.5em;
   transform: rotate(45deg);
 }
 
-:is(.privacy-policy td) {
+:where(.privacy-policy td) {
   margin-bottom: 1em;
 }
 
-:is(.privacy-policy tr:nth-last-of-type(-n+2) td) {
+:where(.privacy-policy tr:nth-last-of-type(-n+2) td) {
   text-align: center;
 }
 
@@ -302,34 +302,34 @@ textarea {
   // overflow-y: scroll;
 }
 
-:is(.dialog table) {
+:where(.dialog table) {
   width: 100%;
 }
 
-:is(.dialog table caption)::before {
+:where(.dialog table caption)::before {
   content: '■';
   padding-right: 0.5em;
 }
 
-:is(.dialog table caption)::after {
+:where(.dialog table caption)::after {
   content: '■';
   padding-left: 0.5em;
 }
 
-:is(.dialog .close-dialog) {
+:where(.dialog .close-dialog) {
   padding: 0.25em 1em;
   border: none;
   border-radius: 0.25em;
   cursor: pointer;
 }
 
-:is(.dialog .sent-content) {
+:where(.dialog .sent-content) {
   font-size: .8em;
   display: grid;
 }
 
-:is(.dialog .sent-content > tbody),
-:is(.dialog .sent-content > tbody > tr) {
+:where(.dialog .sent-content > tbody),
+:where(.dialog .sent-content > tbody > tr) {
   display: contents;
 }
 
@@ -341,13 +341,13 @@ textarea {
   margin-bottom: 1em;
 }
 
-:is(.policy-general .attention:first-of-type) {
+:where(.policy-general .attention:first-of-type) {
   text-indent:  -1em;
   padding-left: 1em;
 }
 
 /* 完了画面 */
-:is(.completion h3) {
+:where(.completion h3) {
   text-align: center;
   margin-bottom: 1em;
 }
@@ -357,7 +357,7 @@ textarea {
   margin: 0 auto;
 }
 
-:is(.thanks-message p) {
+:where(.thanks-message p) {
   margin-bottom: 1em;
 }
 
@@ -372,7 +372,7 @@ textarea {
   max-width: 480px;
 }
 
-:is(.touch-device .mdc-text-field) {
+:where(.touch-device .mdc-text-field) {
   // width: 140%;
   max-width: 480px;
 }
