@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   })
 });
 
-// Orientation Observation
+/** 
+ * Orientation Observation
+ */
 window.addEventListener('DOMContentLoaded', ()=>{
   const bodys = document.getElementsByTagName('body');
   const mql = window.matchMedia("(orientation: landscape)");
@@ -43,4 +45,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     listener(mql);
   }
 })
+
+/** 
+ * Scroll Prompt Animation
+ */
 
