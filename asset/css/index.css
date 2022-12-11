@@ -401,6 +401,10 @@
   margin-bottom: 3em;
 }
 
+:is(.activities-suchedule-timetable .training dd) {
+  margin-bottom: 0;
+}
+
 :is(.activities-suchedule-timetable .timetable span:first-of-type) {
   min-width: 200px;
 }
@@ -472,14 +476,20 @@ iframe {
 :is(.activities .recruit .image-holder img),
 :is(.activities .training .image-holder img),
 :is(.activities .symposium .image-holder img) {
-  width: auto;
+  width: 240px;
   max-width: 100%;
-  max-height: clamp(58px, 12.5vw, 120px);
+  max-height: clamp(58px, 12.5vw, 136px);
   margin: 0 auto;
 }
 
 :is(.activities .mendan .image-holder img) {
-  max-width: 240px;
+  width: 100%;
+  max-width: unset;
+  max-height: unset;
+}
+
+:is(.activities .training .image-holder img) {
+  max-height: unset;
 }
 
 /* 利用者の声 */
