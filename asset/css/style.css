@@ -252,6 +252,7 @@ body {
   font-weight: 900;
   font-size: clamp(32px, 5vw, 48px);
   font-style: oblique;
+  white-space: nowrap;
   background-repeat: no-repeat;
   background-position: top left;
   background-size: clamp(80px, 11.4583333333vw, 110px);
