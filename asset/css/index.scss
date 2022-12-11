@@ -407,9 +407,24 @@
   font-weight: 500;
   background-color: #fff;
   width: fit-content;
-  padding: 0 1em;
-  margin-bottom: 0.25em;
-  border-radius: 16px;
+  padding: 0.25em 1em;
+  margin-bottom: 0.5em;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+:is(.activities-suchedule-timetable dt)::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0.3em;
+  left: 0.3em;
+  border-right: solid 2px #fff;
+  border-bottom: solid 2px #fff;
+  border-radius: 0 0 8px 0;
 }
 
 :is(.activities-suchedule-timetable dd) {
@@ -719,7 +734,7 @@ iframe {
   // justify-content: center;
   // flex-wrap: wrap;
   gap: 2em;
-  padding: 0.5em 1em;
+  padding: clamp(0.5em , calc(100vw * 32 / 960), 32px) clamp(1em, calc(100vw * 32 / 960), 32px);
   border-radius: 1em;
   position: relative;
 }
