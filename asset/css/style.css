@@ -236,6 +236,29 @@
     transform: scaleX(1);
   }
 }
+.scroll_prompt.reverse::after {
+  transform-origin: left;
+  transform: scaleX(1);
+  -webkit-animation: scroll_prompt_reverse ease-in-out 1.6s infinite;
+  animation: scroll_prompt_reverse ease-in-out 1.6s infinite;
+}
+
+@-webkit-keyframes scroll_prompt_reverse {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes scroll_prompt_reverse {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
 /* ======================================================== */
 /*
 /* Main Block Definition
