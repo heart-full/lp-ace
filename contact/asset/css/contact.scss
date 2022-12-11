@@ -7,8 +7,14 @@
 h3 {
   font-size: 1rem;
 }
+
 body.Contact {
   font-size: 16px;
+}
+
+:is(.touch-device .main .top-section) {
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 .contact-form {

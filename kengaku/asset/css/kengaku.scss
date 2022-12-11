@@ -11,6 +11,11 @@ body.Kengaku {
   font-size: 16px;
 }
 
+:is(.touch-device .main .top-section) {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
 .kengaku-form {
   width: 480px;
   padding: 1em 2em;
