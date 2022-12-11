@@ -287,6 +287,7 @@
 
 :is(.curriculumn-weekly-table tr) {
   background-color: hsl(190deg 44% 73%);
+  background: linear-gradient(145deg, hsl(190deg 44% 50%), hsl(190deg 44% 73%));
   // width: fit-content;
   padding: 0.5em;
   border-radius: 0.5em;
@@ -298,7 +299,8 @@
 }
 
 :is(.curriculumn-weekly-table th) {
-  color: hsl(106, 69%, 20%);
+  // color: hsl(106, 69%, 20%);
+  color: #fff;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
   padding-bottom: 0.25em;
