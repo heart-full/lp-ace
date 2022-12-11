@@ -251,7 +251,7 @@ body {
   counter-reset: number 0;
 }
 
-:is(.main .top-section)::before {
+:where(.main .top-section)::before {
   content: attr(title);
   color: #999;
   font-family: 'Noto-Serif', serif;
@@ -274,11 +274,11 @@ body {
   transition: all .3s ease-in-out;
 }
 
-:is(.main .top-section.active)::before {
+:where(.main .top-section.active)::before {
   width: 100%;
 }
 
-:is(.main .top-section)::after {
+:where(.main .top-section)::after {
   counter-increment: number 1;
   content: counter(number, decimal-leading-zero);
   color: #fff;
@@ -295,21 +295,21 @@ body {
 }
 
 
-:is(.main section) {
+:where(.main section) {
   padding: 16px
 }
 
-:is(.main .top-section) {
+:where(.main .top-section) {
   padding-top: 5em;
   position: relative;
 }
 
-:is(.touch-device .main .top-section) {
+:where(.touch-device .main .top-section) {
   padding-right: unset;
   padding-left: unset;
 }
 
-:is(.main .top-section:not(:last-of-type)) {
+:where(.main .top-section:not(:last-of-type)) {
   margin-bottom: 32px; 
 }
 
