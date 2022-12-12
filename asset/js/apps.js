@@ -50,5 +50,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
  * Table OF Contents
  */
 
+window.addEventListener('DOMContentLoaded', ()=>{
+  const topSections = document.querySelectorAll('.top-section');
+  const toc = document.getElementById('toc');
+  let anchor = '';
+  topSections.forEach((elm)=>{
+    const _id = elm.getAttribute('id');
+    const _title = elm.getAttribute('data-title');
+    toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`);
+  });
+});
 
 

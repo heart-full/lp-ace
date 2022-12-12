@@ -539,4 +539,30 @@ body {
     grid-row-end: 5;
   }
 }
+/** 
+* Table Of Contents
+*/
+:where(#toc) {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(0%, -50%);
+}
+
+:where(#toc li) {
+  border-top: solid 1px #999;
+  border-right: solid 1px #999;
+  border-left: solid 1px #999;
+}
+
+:where(#toc li:last-of-type) {
+  border-bottom: solid 1px #999;
+}
+
+:where(#toc li a) {
+  color: #999;
+  font-size: 0.8em;
+  display: block;
+  padding: 0.25em 0.5em;
+}
 /*# sourceMappingURL=style.css.map */
