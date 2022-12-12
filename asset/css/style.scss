@@ -218,8 +218,8 @@
   top: 0;
   right: 0;
   z-index: -1;
-  -webkit-animation: scroll_prompt 1.6s ease-out infinite;
-          animation: scroll_prompt 1.6s ease-out infinite;
+  -webkit-animation: scroll_prompt 1.6s ease-out 1.6s infinite;
+          animation: scroll_prompt 1.6s ease-out 1.6s infinite;
 }
 
 @-webkit-keyframes scroll_prompt {
