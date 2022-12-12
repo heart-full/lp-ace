@@ -571,13 +571,13 @@ body {
 /** 
 * Table Of Contents
 */
-@media not all and (min-width: 1280px) {
+@media not all and (min-width: 1280px) and (min-height: 600px) {
   :where(#toc) {
     display: none;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) and (min-height: 600px) {
   :where(#toc) {
     display: block;
     position: fixed;
