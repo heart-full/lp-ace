@@ -571,9 +571,15 @@ body {
 /** 
 * Table Of Contents
 */
+@media not all and (min-width: 1280px) {
+  :where(#toc) {
+    display: none;
+  }
+}
 
 @media screen and (min-width: 1280px) {
   :where(#toc) {
+    display: block;
     position: fixed;
     position: -webkit-fixed;
     top: 50%;
@@ -605,8 +611,3 @@ body {
   }
 }
 
-@media screen and not (min-width: 1280px) {
-  #toc {
-    display: none;
-  }
-}
