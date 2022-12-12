@@ -940,11 +940,29 @@
           if (entry.isIntersecting) {
             // 各 .inview に .active を加える
             entry.target.classList.add('active');
+            activateIndex(entry.target);
           } else {
             entry.target.classList.remove('active');
           }
         });
       }
+
+      /**
+      * 目次の色を変える関数
+      * @param element
+      */
+      function activateIndex(element) {
+        // すでにアクティブになっている目次を選択
+        const currentActiveIndex = document.querySelector("#toc .active");
+        // すでにアクティブになっているものが0個の時（=null）以外は、activeクラスを除去
+        if (currentActiveIndex !== null) {
+          currentActiveIndex.classList.remove("active");
+        }
+        // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
+        const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+        newActiveIndex.classList.add("active");
+      }
+
     })
   </script>
   <script>

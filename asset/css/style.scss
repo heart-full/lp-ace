@@ -592,8 +592,14 @@ body {
 
   :where(#toc li a) {
     color: #999;
+    background-color:#fff;
     font-size: .8em;
     display: block;
     padding: .25em .5em;
+  }
+
+  :where(#toc li a.active) {
+    color: #fff;
+    background-color: #999;
   }
 }
