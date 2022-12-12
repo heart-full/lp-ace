@@ -542,7 +542,7 @@ body {
 /** 
 * Table Of Contents
 */
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1320px) {
   :where(#toc) {
     position: fixed;
     top: 50%;
