@@ -604,3 +604,9 @@ body {
     background-color: #999;
   }
 }
+
+@media screen and not (min-width: 1280px) {
+  #toc {
+    display: none;
+  }
+}
