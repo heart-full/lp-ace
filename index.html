@@ -936,14 +936,14 @@
       });
 
       // execution
-      function showElements(entries){
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
+      function showElements(inviews){
+        inviews.forEach(inview => {
+          if (inview.isIntersecting) {
             // 各 .inview に .active を加える
-            entry.target.classList.add('active');
-            activateIndex(entry.target);
+            inview.target.classList.add('active');
+            activateIndex(inview.target);
           } else {
-            entry.target.classList.remove('active');
+            inview.target.classList.remove('active');
           }
         });
       }
