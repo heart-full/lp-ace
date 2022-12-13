@@ -540,38 +540,53 @@ body {
   }
 }
 /** 
-* Table Of Contents
+* Table Of Contents & Side Grobal Navigation
 */
 @media not all and (min-width: 1280px) and (min-height: 600px) {
-  :where(#toc) {
+  :where(#toc),
+:where(#side-nav) {
     display: none;
   }
 }
 @media screen and (min-width: 1280px) and (min-height: 600px) {
-  :where(#toc) {
+  :where(#toc),
+:where(#side-nav) {
     display: block;
     position: fixed;
     position: -webkit-fixed;
     top: 50%;
-    right: 0;
     transform: translate(0%, -50%);
+    z-index: 1;
   }
-  :where(#toc li) {
+  :where(#toc) {
+    right: 0;
+  }
+  :where(#side-nav) {
+    left: 0;
+  }
+  :where(#side-nav.hide) {
+    display: none;
+  }
+  :where(#toc li),
+:where(#side-nav li) {
     border-top: solid 1px #999;
     border-right: solid 1px #999;
     border-left: solid 1px #999;
   }
-  :where(#toc li:last-of-type) {
+  :where(#toc li:last-of-type),
+:where(#side-nav li:last-of-type) {
     border-bottom: solid 1px #999;
   }
-  :where(#toc li a) {
+  :where(#toc li a),
+:where(#side-nav li a) {
     color: #999;
     background-color: #fff;
     font-size: 0.8em;
     display: block;
     padding: 0.25em 0.5em;
   }
-  :where(#toc li a.active) {
+  :where(#toc li a.active),
+:where(#side-nav li.active a) {
     color: #fff;
     background-color: #999;
   }

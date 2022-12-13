@@ -61,3 +61,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 
+/** 
+ * Side Grobal Navigation
+ */
+
+window.addEventListener('DOMContentLoaded', ()=>{
+  const anchor = document.getElementById('side-nav');
+  const anchorLists = document.querySelectorAll('#side-nav li');
+  const bodys = document.getElementsByTagName('body');
+  const _id = bodys[0].getAttribute('id');
+  const _height = window.innerHeight;
+  const _scroll = window.scrollY;
+  console.log(_id);
+  anchorLists.forEach(list =>{
+    if(list.dataset.id === _id)
+    list.classList.add('active');
+  });
+});

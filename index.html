@@ -40,7 +40,7 @@
 <body id="Index" class="Index" data-title="ハートフルACE">
   <div id="loading"></div>
   <div id="Container" class="Container">
-    <header id="header" class="page_header inview">
+    <header id="header" class="page_header">
       <h1 class="page-title" title="Heartfull ACE">
         <img class="corp-logo" src="asset/images/heartfull-logo.png" width="400" height="143" alt="合同会社ハートフルのロゴ">
         <span>障がい者<em>就労移行支援</em>事業所<br />ハートフルACE（エース）</span>
@@ -634,26 +634,26 @@
       </section>
     </main>
 
-    <footer id="footer" class="page_footer inview">
+    <footer id="footer" class="page_footer">
       <button class="button wake-menu">
         <span class="button__wrapper"></span>
         <span class="button__box">menu</span>
       </button>
       <nav id="Local" class="nav l-nav">
         <ul>
-          <li><a class="button" href="./">
+          <li data-id="Index"><a class="button" href="./">
             <div class="button__wrapper"></div>
             <div class="button__box">ハートフルACE</div>
           </a></li>
-          <li><a class="button" href="ikou/">
+          <li data-id="Ikou"><a class="button" href="ikou/">
             <div class="button__wrapper"></div>
             <div class="button__box">労移行支援とは？</div>
           </a></li>
-          <li><a class="button" href="kengaku/">
+          <li data-id="Kengaku"><a class="button" href="kengaku/">
             <div class="button__wrapper"></div>
             <div class="button__box">見学申し込み</div>
           </a></li>
-          <li><a class="button" href="./contact/">
+          <li data-id="Contact"><a class="button" href="./contact/">
             <div class="button__wrapper"></div>
             <div class="button__box">お問い合わせ</div>
           </a></li>
@@ -666,7 +666,12 @@
     </footer>
   </div>
   <ul id="toc"></ul>
-  <ul id="side-nav"></ul>
+  <ul id="side-nav">
+    <li data-id="Index"><a href="./">ハートフルACE</a></li>
+    <li data-id="Ikou"><a href="./ikou/">移行支援とは</a></li>
+    <li data-id="Kengaku"><a href="./kengaku/">見学申し込み</a></li>
+    <li data-id="Contact"><a href="./contact/">お問い合わせ</a></li>
+  </ul>
   <template id="c-text01">
     <div id="loading_message01" class="l-wrapper">
       <p class="c-text js-span-wrap-text">あなたの<br />「働きたい」を<br />応援します</p>
@@ -920,6 +925,7 @@
     document.addEventListener('DOMContentLoaded', ()=>{
       // trigger
       const inviews = document.querySelectorAll('.inview');
+      const active = document.querySelector('inview.active');
       // options
       const options = {
         root: null,
@@ -937,14 +943,17 @@
 
       // execution
       function showElements(inviews){
-        inviews.forEach(inview => {
+        inviews.forEach((inview, index) => {
           if (inview.isIntersecting) {
             // 各 .inview に .active を加える
             inview.target.classList.add('active');
+            // 目次の色を変える
             activateIndex(inview.target);
           } else {
             inview.target.classList.remove('active');
           }
+          if(!inview.isIntersecting) inview.target.classList.remove('active');
+
         });
       }
 
@@ -961,9 +970,44 @@
         }
         // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
         const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+        if(newActiveIndex)
         newActiveIndex.classList.add("active");
+        if(!element)
+        newActiveIndex.classList.remove("active");
       }
+      
+      /** 
+       * Side Grobal Navigation
+       */
+      //Intersection Observe Trigger
+      const _headers = document.querySelectorAll('.page_header');
+      const anchor = document.getElementById('side-nav');
+      console.log(_headers);
+      // options
+      const options2 = {
+        root: null
+      };
 
+      // Observer Object
+      const observer2 = new IntersectionObserver(hideElements, options2);
+
+      // fire
+      _headers.forEach(_header => {
+        observer2.observe(_header);
+      });
+
+      // execution
+      function hideElements(_headers){
+        _headers.forEach( _header =>{
+          if (_header.isIntersecting) {
+            console.log('Intersection');
+            if(_header)
+            anchor.classList.add('hide');
+          }else {
+            anchor.classList.remove('hide');
+          }
+      })
+      }
     })
   </script>
   <script>

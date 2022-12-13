@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../asset/css/style.css" />
   <link rel="stylesheet" href="asset/css/ikou.css" />
 </head>
-<body>
+<body id="Ikou" class="Ikou">
   <div id="Container" class="Container" data-title="就労移行支援とは">
     <header id="header" class="page_header">
     <h1 class="page-title" title="Heartfull ACE">
@@ -124,7 +124,12 @@
       <small class="copyright">Copyright@Heartfull ACE</small>
     </footer>
   </div>
-  <ul id="side-nav"></ul>
+  <ul id="side-nav">
+    <li data-id="Index"><a href="../">ハートフルACE</a></li>
+    <li data-id="Ikou"><a href="./">移行支援とは</a></li>
+    <li data-id="Kengaku"><a href="../kengaku/">見学申し込み</a></li>
+    <li data-id="Contact"><a href="../contact/">お問い合わせ</a></li>
+  </ul>
   <script defer src="../asset/js/apps.js"></script>
   <script>
     let height = window.innerHeight;
