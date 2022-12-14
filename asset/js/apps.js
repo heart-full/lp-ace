@@ -248,6 +248,13 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Through Header Block
  */
+let Cookie = false;
+window.addEventListener('load', ()=>{
+  let Cookie = false;
+  // document.cookie = "loading=finished";
+})
+
+if(Cookie) {
 const scroll_prompt = document.querySelector('.scroll_prompt');
 let scrollHeight = window.innerHeight;
 window.scrollBy({
@@ -255,3 +262,4 @@ window.scrollBy({
   left: 0,
   behavior: 'smooth'
 })
+}
