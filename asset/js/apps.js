@@ -1,4 +1,6 @@
-// Navigation Button
+/**
+ * Navigation Button
+ */
 const wake_menus = document.querySelectorAll('.wake-menu');
 wake_menus.forEach((elm) => {
   elm.addEventListener('click', () => {
@@ -8,7 +10,11 @@ wake_menus.forEach((elm) => {
   });
 });
 
-// Scroll Prompt
+
+
+/** 
+ * Scroll Prompt
+ */ 
 document.addEventListener('DOMContentLoaded', ()=>{
   const scroll_prompt = document.querySelector('.scroll_prompt');
   scroll_prompt.addEventListener('click', ()=>{
@@ -21,6 +27,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //console.log(`${height}px`);
   })
 });
+
+
 
 /** 
  * Orientation Observation
@@ -46,35 +54,183 @@ window.addEventListener('DOMContentLoaded', ()=>{
   }
 })
 
+
+
 /** 
- * Table OF Contents
+ * Sections Intersection Observation
  */
 
 window.addEventListener('DOMContentLoaded', ()=>{
-  const topSections = document.querySelectorAll('.top-section');
-  const toc = document.getElementById('toc');
-  let anchor = '';
-  topSections.forEach((elm)=>{
-    const _id = elm.getAttribute('id');
-    const _title = elm.getAttribute('data-title');
-    toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`);
+  //Trigger Target
+  const inviews  = document.querySelectorAll('.inview');
+
+  //Options
+  const options = {
+    root: null
+  };
+
+  //Create Observer Instance
+  const observer = new IntersectionObserver(showElements, options);
+
+  // Observe Execution
+  inviews.forEach(inview => {
+    observer.observe(inview);
   });
-});
+
+  // Callback
+  function showElements(inviews){
+    inviews.forEach((inview) => {
+      if (inview.isIntersecting) {
+        // 各 .inview に .active を加える
+        inview.target.classList.add('active');
+      } else {
+        inview.target.classList.remove('active');
+      }
+    });
+  }
+})
+
+
 
 /** 
  * Side Grobal Navigation
  */
-
 window.addEventListener('DOMContentLoaded', ()=>{
-  const anchor = document.getElementById('side-nav');
+  //
+  const sideNav = document.getElementById('side-nav');
   const anchorLists = document.querySelectorAll('#side-nav li');
+  // Get Anchor Link
   const bodys = document.getElementsByTagName('body');
   const _id = bodys[0].getAttribute('id');
-  const _height = window.innerHeight;
-  const _scroll = window.scrollY;
   console.log(_id);
   anchorLists.forEach(list =>{
     if(list.dataset.id === _id)
     list.classList.add('active');
   });
+
+  //Intersection Observe Trigger
+  const outViews = document.querySelectorAll('.outview');
+  
+  // options
+  const options = {
+    root: null
+  };
+
+  // Create Observer Instance Object
+  const outViewObserver = new IntersectionObserver(hideNav, options);
+
+  // Observe Execution
+  outViews.forEach(outview =>{
+    outViewObserver.observe(outview);
+  });
+
+  // Callback
+  function hideNav(outViews){
+    outViews.forEach((outview, index) => {
+      if (outview.isIntersecting) {
+        // サイドナビを非表示にする
+        sideNav.classList.add('hide');
+      } else {
+        sideNav.classList.remove('hide');
+      }
+    });
+  }
+});
+
+
+
+/** 
+ * Tabole Of Contents
+ */
+// Make TOC
+window.addEventListener('DOMContentLoaded', ()=>{
+  const topSections = document.querySelectorAll('.top-section');
+  //Insert Elements
+  const toc = document.getElementById('toc');
+  topSections.forEach((elm)=>{
+    const _id = elm.getAttribute('id');
+    const _title = elm.getAttribute('data-title');
+    toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`);
+  });
+
+  // Intersection Observation
+  // trigger
+  const inviews  = document.querySelectorAll('.inview');
+  const outViews = document.querySelectorAll('.outview');
+
+  // options
+  const options = {
+    root: null
+  };
+  const options2 = {
+    root: null,
+    threshold: 0,
+    rootMargin: "0% 0%"
+  };
+
+
+  // Create Observer Instance Object
+  const TOCObserver = new IntersectionObserver(showElements, options);
+  const OutViewObserver = new IntersectionObserver(inActive, options);
+
+  // Observe Execution
+  inviews.forEach(inview => {
+    TOCObserver.observe(inview);
+  });
+  outViews.forEach(outview => {
+    OutViewObserver.observe(outview);
+  });
+
+  // Callback Function
+  function showElements(inviews,outViews){
+    inviews.forEach((inview, index) => {
+      if (inview.isIntersecting) {
+        // 目次の色を変える
+        activateIndex(inview.target);
+      } else {
+        inview.target.classList.remove('active');
+      }
+    });
+  }
+  function inActive(outviews) {
+    const anchors = document.querySelectorAll('#toc a');
+    outViews.forEach(outview => {
+      if(outview.isIntersecting) {
+        outview.classList.add('active');
+        anchors.forEach(anchor => {
+          anchor.classList.remove('active');
+        })
+      }
+    });
+  }
+
+  /**
+  * 目次の色を変える関数
+  * @param element
+  */
+  function activateIndex(element) {
+    // すでにアクティブになっている目次を選択
+    const currentActiveIndex = document.querySelector("#toc .active");
+    // すでにアクティブになっているものが0個の時（=null）以外は、activeクラスを除去
+    if (currentActiveIndex !== null) {
+      currentActiveIndex.classList.remove("active");
+    }
+    // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
+    const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+    if(newActiveIndex)
+    newActiveIndex.classList.add("active");
+    if(!element)
+    newActiveIndex.classList.remove("active");
+  }
+})
+
+/** 
+ * Through Header Block
+ */
+const scroll_prompt = document.querySelector('.scroll_prompt');
+let scrollHeight = window.innerHeight;
+window.scrollBy({
+  top: scrollHeight,
+  left: 0,
+  behavior: 'smooth'
 });
