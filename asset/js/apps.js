@@ -66,7 +66,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
   //Options
   const options = {
-    root: null
+    root: null,
+    threashold: 0,
+    rootMargin: "-50% 0%"
   };
 
   //Create Observer Instance
@@ -113,7 +115,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
   
   // options
   const options = {
-    root: null
+    root: null,
+    threashold: 0,
+    rootMargin: "0% 0%"
   };
 
   // Create Observer Instance Object
@@ -144,9 +148,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
  */
 // Make TOC
 window.addEventListener('DOMContentLoaded', ()=>{
+  const _header     = document.querySelector('.page_header');
   const topSections = document.querySelectorAll('.top-section');
+  const inviews     = document.querySelectorAll('.inview');
+  const toc         = document.getElementById('toc');
+  const anchors     = document.querySelectorAll('#toc a');
   //Insert Elements
-  const toc = document.getElementById('toc');
   topSections.forEach((elm)=>{
     const _id = elm.getAttribute('id');
     const _title = elm.getAttribute('data-title');
@@ -154,33 +161,18 @@ window.addEventListener('DOMContentLoaded', ()=>{
   });
 
   // Intersection Observation
-  // trigger
-  const inviews  = document.querySelectorAll('.inview');
-  const outViews = document.querySelectorAll('.outview');
-
   // options
   const options = {
-    root: null
-  };
-  const options2 = {
     root: null,
-    threshold: 0,
+    threashold: 0,
     rootMargin: "0% 0%"
   };
-
-
   // Create Observer Instance Object
   const TOCObserver = new IntersectionObserver(showElements, options);
-  const OutViewObserver = new IntersectionObserver(inActive, options);
-
   // Observe Execution
   inviews.forEach(inview => {
     TOCObserver.observe(inview);
   });
-  outViews.forEach(outview => {
-    OutViewObserver.observe(outview);
-  });
-
   // Callback Function
   function showElements(inviews,outViews){
     inviews.forEach((inview, index) => {
@@ -189,17 +181,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
         activateIndex(inview.target);
       } else {
         inview.target.classList.remove('active');
-      }
-    });
-  }
-  function inActive(outviews) {
-    const anchors = document.querySelectorAll('#toc a');
-    outViews.forEach(outview => {
-      if(outview.isIntersecting) {
-        outview.classList.add('active');
-        anchors.forEach(anchor => {
-          anchor.classList.remove('active');
-        })
       }
     });
   }
@@ -222,7 +203,33 @@ window.addEventListener('DOMContentLoaded', ()=>{
     if(!element)
     newActiveIndex.classList.remove("active");
   }
+
+  /**
+   * header領域が表示されたら目次の反転表示を解除する
+   */
+  // options
+  const options2 = {
+    root: null,
+    threashold: 0,
+    // rootMargin: "-50% 0%"
+  };
+  // Create Observer Instance Object
+  const OutViewObserver = new IntersectionObserver(inActive, options2);
+  // Observe Execution
+    OutViewObserver.observe(_header);
+  // Callback Function
+  function inActive(_header) {
+    if(_header.isIntersecting) {
+      console.log('active');
+      outview.classList.add('active');
+      anchors.forEach(anchor => {
+        anchor.classList.remove('active');
+      })
+    }
+  }
 })
+
+
 
 /** 
  * Through Header Block
