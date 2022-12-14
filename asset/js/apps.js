@@ -129,6 +129,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
   });
 
   // Callback
+  /** 
+   * ヘッダーが表示されたら非表示
+   */
   function hideNav(outViews){
     outViews.forEach((outview, index) => {
       if (outview.isIntersecting) {
@@ -165,7 +168,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const options = {
     root: null,
     threashold: 0,
-    rootMargin: "0% 0%"
+    rootMargin: "0% 0% 0% 0%"
   };
   // Create Observer Instance Object
   const TOCObserver = new IntersectionObserver(showElements, options);
@@ -207,29 +210,40 @@ window.addEventListener('DOMContentLoaded', ()=>{
   /**
    * header領域が表示されたら目次の反転表示を解除する
    */
+  /*
+  //Intersection Observe Trigger
+  const outViews = document.querySelectorAll('.outview');
   // options
   const options2 = {
     root: null,
     threashold: 0,
-    // rootMargin: "-50% 0%"
+    rootMargin: "0px 0px 0px 0px"
   };
   // Create Observer Instance Object
   const OutViewObserver = new IntersectionObserver(inActive, options2);
   // Observe Execution
-    OutViewObserver.observe(_header);
+  outViews.forEach(outview =>{
+    OutViewObserver.observe(outview);
+  });
   // Callback Function
-  function inActive(_header) {
-    if(_header.isIntersecting) {
-      console.log('active');
-      outview.classList.add('active');
-      anchors.forEach(anchor => {
-        anchor.classList.remove('active');
-      })
+  function inActive(element) {
+    // すでにアクティブになっている目次を選択
+    const currentActiveIndex = document.querySelector("#toc .active");
+    // すでにアクティブになっているものが0個の時（=null）以外は、activeクラスを除去
+    if (currentActiveIndex !== null) {
+      currentActiveIndex.classList.remove("active");
+    } else {
+      // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
+      const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+      if(newActiveIndex)
+      newActiveIndex.classList.add("active");
+      if(!element)
+      newActiveIndex.classList.remove("active");
+      }
     }
-  }
+  })
+  */
 })
-
-
 
 /** 
  * Through Header Block
@@ -240,4 +254,4 @@ window.scrollBy({
   top: scrollHeight,
   left: 0,
   behavior: 'smooth'
-});
+})
