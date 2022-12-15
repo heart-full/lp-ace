@@ -207,59 +207,24 @@ window.addEventListener('DOMContentLoaded', ()=>{
     if(!element)
     newActiveIndex.classList.remove("active");
   }
-
-  /**
-   * header領域が表示されたら目次の反転表示を解除する
-   */
-  /*
-  //Intersection Observe Trigger
-  const outViews = document.querySelectorAll('.outview');
-  // options
-  const options2 = {
-    root: null,
-    threashold: 0,
-    rootMargin: "0px 0px 0px 0px"
-  };
-  // Create Observer Instance Object
-  const OutViewObserver = new IntersectionObserver(inActive, options2);
-  // Observe Execution
-  outViews.forEach(outview =>{
-    OutViewObserver.observe(outview);
-  });
-
-  function inActive(element) {
-    // すでにアクティブになっている目次を選択
-    const currentActiveIndex = document.querySelector("#toc .active");
-    // すでにアクティブになっているものが0個の時（=null）以外は、activeクラスを除去
-    if (currentActiveIndex !== null) {
-      currentActiveIndex.classList.remove("active");
-    } else {
-      // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
-      const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
-      if(newActiveIndex)
-      newActiveIndex.classList.add("active");
-      if(!element)
-      newActiveIndex.classList.remove("active");
-    }
-  }
-  */
 })
 
 /** 
  * Through Header Block
  */
+/*
 let Cookie = false;
 window.addEventListener('load', ()=>{
-  let Cookie = false;
   // document.cookie = "loading=finished";
 })
 
 if(Cookie) {
-const scroll_prompt = document.querySelector('.scroll_prompt');
-let scrollHeight = window.innerHeight;
-window.scrollBy({
-  top: scrollHeight,
-  left: 0,
-  behavior: 'smooth'
-})
+  const scroll_prompt = document.querySelector('.scroll_prompt');
+  let scrollHeight = window.innerHeight;
+  window.scrollBy({
+    top: scrollHeight,
+    left: 0,
+    behavior: 'smooth'
+  })
 }
+*/
