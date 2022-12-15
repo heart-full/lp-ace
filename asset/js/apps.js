@@ -157,10 +157,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const toc         = document.getElementById('toc');
   const anchors     = document.querySelectorAll('#toc a');
   //Insert Elements
-  topSections.forEach((elm)=>{
+  topSections.forEach((elm, index)=>{
     const _id = elm.getAttribute('id');
     const _title = elm.getAttribute('data-title');
-    toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`);
+    if(index === 0) toc.insertAdjacentHTML('beforeend', `<li><a href="#">PAGE TOP</a></li>`);
+    toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`); 
   });
 
   // Intersection Observation
