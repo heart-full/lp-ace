@@ -29,14 +29,11 @@ sticky_wake_menus.forEach((menu) => {
  */ 
 document.addEventListener('DOMContentLoaded', ()=>{
   const scroll_prompt = document.querySelector('.scroll_prompt');
+  const firstSection  = document.getElementById('intro');
   scroll_prompt.addEventListener('click', ()=>{
-    let height = window.innerHeight
-    window.scrollBy({
-      top: height,
-      left: 0,
+    firstSection.scrollIntoView({
       behavior: 'smooth'
     });
-    //console.log(`${height}px`);
   })
 });
 

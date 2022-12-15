@@ -46,7 +46,7 @@
 
 <body id="Kengaku" class="Kengaku" data-title="見学申し込み">
   <div id="Container" class="Container">
-    <header id="header" class="page_header">
+    <header id="header" class="page_header inview outview">
       <h1 class="page-title" title="Heartfull ACE">
         <img class="corp-logo" src="../asset/images/heartfull-logo.png" width="400" height="143" alt="合同会社ハートフルのロゴ">
         <span>障がい者<em>就労移行支援</em>事業所<br />ハートフルACE（エース）</span>
@@ -241,6 +241,7 @@
       <small class="copyright">Copyright@Heartfull ACE</small>
     </footer>
   </div>
+  <ul id="toc"></ul>
   <ul id="side-nav">
     <li data-id="Index"><a href="../">ハートフルACE</a></li>
     <li data-id="Ikou"><a href="../ikou/">移行支援とは</a></li>
@@ -312,13 +313,6 @@
   <script defer src="../asset/js/apps.js"></script>
   <script defer src="asset/js/validate.js"></script>
   <script>
-    let height = window.innerHeight;
-    window.scrollBy({
-      top: height,
-      left: 0,
-      behavior: 'smooth'
-    });
-    
     // Intersection Observation
     document.addEventListener('DOMContentLoaded', ()=>{
       // trigger

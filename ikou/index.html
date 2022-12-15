@@ -39,7 +39,7 @@
 </head>
 <body id="Ikou" class="Ikou">
   <div id="Container" class="Container" data-title="就労移行支援とは">
-    <header id="header" class="page_header">
+    <header id="header" class="page_header outview inview">
     <h1 class="page-title" title="Heartfull ACE">
       <img class="corp-logo" src="../asset/images/heartfull-logo.png" width="400" height="143" alt="合同会社ハートフルのロゴ">
       <span>障がい者<em>就労移行支援</em>事業所<br />ハートフルACE（エース）</span>
@@ -95,7 +95,7 @@
       </ul>
     </nav>
     <main id="main" class="main">
-      <section class="top-section inview">
+      <section id="intro" class="top-section inview">
         <div class="under-constraction">
           <img src="asset/images/under_constraction.svg" width="604" height="769" alt="只今メンテナンス中">
           <p><span.no-wrap>只今メンテナンス中です。</span.no-wrap><span class="no-wrap">しばらくおまちください。</span></p>
@@ -133,6 +133,7 @@
       <small class="copyright">Copyright@Heartfull ACE</small>
     </footer>
   </div>
+  <ul id="toc"></ul>
   <ul id="side-nav">
     <li data-id="Index"><a href="../">ハートフルACE</a></li>
     <li data-id="Ikou"><a href="./">移行支援とは</a></li>
@@ -140,13 +141,5 @@
     <li data-id="Contact"><a href="../contact/">お問い合わせ</a></li>
   </ul>
   <script defer src="../asset/js/apps.js"></script>
-  <script>
-    let height = window.innerHeight;
-    window.scrollBy({
-      top: height,
-      left: 0,
-      behavior: 'smooth'
-    });
-  </script>
 </body>
 </html>
