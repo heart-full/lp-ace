@@ -208,15 +208,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
     newActiveIndex.classList.remove("active");
   }
 
-    // Callback
-  /** 
-   * ヘッダーが表示されたら非表示
-   */
-
-
   /**
    * header領域が表示されたら目次の反転表示を解除する
    */
+  /*
   //Intersection Observe Trigger
   const outViews = document.querySelectorAll('.outview');
   // options
@@ -245,8 +240,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
       newActiveIndex.classList.add("active");
       if(!element)
       newActiveIndex.classList.remove("active");
-     }
+    }
   }
+  */
 })
 
 /** 
