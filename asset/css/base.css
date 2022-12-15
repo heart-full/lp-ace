@@ -130,8 +130,16 @@ summary::-webkit-details-marker {
 }
 
 /* Navigation Block */
-.g-nav, .l-nav {
+.g-nav {
+  position: -webkit-fixed;
+  position: fixed;
+}
+
+.l-nav {
   position: absolute;
+}
+
+.g-nav, .l-nav {
   top: 110px;
   left: 0;
   z-index: 100;
@@ -142,6 +150,10 @@ summary::-webkit-details-marker {
 
 .g-nav {
   top: 110px;
+}
+
+.g-nav .button__box {
+  font-size: 1.5em;
 }
 
 .touch-device .g-nav {
@@ -184,6 +196,11 @@ summary::-webkit-details-marker {
   position: relative;
 }
 
+@media all and (min-width: 960px) {
+  .page_header {
+    margin-bottom: 1em;
+  }
+}
 .page-title {
   color: rgb(42, 110, 25);
   font-size: clamp(8px, 1.6666666667vw, 11px);

@@ -10,7 +10,6 @@
   font-size: clamp(12px, 1.875vw, 18px);
   padding-top: clamp(1px, (100vw - 960px) * 8 / 960, 8px);
   height: 100vh;
-  margin-bottom: 1em;
   overflow: hidden;
   position: relative;
 }
@@ -271,6 +270,95 @@
     transform: scaleX(0);
   }
 }
+
+
+/* ======================================================== */
+/*
+/* Sticky Global Navigation Block Definition
+/*
+/* ======================================================== */
+.sticky-nav {
+  width: 100%;
+  max-width: 960px;
+  padding: 1em 2em;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.sticky-nav::before {
+  content: '';
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: .75;
+}
+
+.sticky-nav ul {
+  display: flex;
+  padding: 0 1em;
+  gap: 1em;
+}
+
+.sticky-nav ul li {
+  flex: 1;
+}
+
+@media screen and (min-width: 1280px) {
+  .sticky-nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .sticky-nav ul li:last-of-type {
+    display: none; 
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .sticky-nav ul li {
+    flex: unset;
+  }  
+  .sticky-nav ul li:last-of-type {
+    display: block;
+    margin-left: auto;
+  }
+  .sticky-nav ul li:not(:last-of-type) {
+    display: none;
+  }
+}
+
+.sticky-nav ul a {
+  color: #666;
+  font-size: clamp(13px, calc(100vw * 16 / 960), 16px);
+  background-color: #fff;
+  text-align: center;
+  display: block;
+  padding: .25em 1em;
+  border: solid 1px #999;
+  border-radius: .5em;
+}
+
+.sticky-wake-menu {
+  padding: .75em 2em;
+  -webkit-appearance: none;
+  appearance: none;
+  border: unset;
+  border-radius: .5em;
+  cursor: pointer;
+}
+/*
+.sticky-wake-menu.hide {
+  display: none;
+}
+*/
 
 
 

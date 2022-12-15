@@ -10,6 +10,18 @@ wake_menus.forEach((elm) => {
   });
 });
 
+const sticky_wake_menus = document.querySelectorAll('.sticky-wake-menu');
+const wake_menu         = document.querySelector('.wake-menu');
+const global_nav        = document.getElementById('Global');
+sticky_wake_menus.forEach((menu) => {
+  menu.addEventListener('click', () => {
+    console.log('click!');
+    // console.table(global_nav_anchors);
+    global_nav.classList.toggle('on');
+    wake_menu.classList.toggle('on');
+  });
+});
+
 
 
 /** 
