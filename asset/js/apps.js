@@ -215,10 +215,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     if(!element)
     newActiveIndex.classList.remove("active");
   }
-
-  /** 
-   * ヘッダーが表示されたら反転表示を停止
-   */
 })
 
 /** 
