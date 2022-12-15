@@ -7,10 +7,13 @@
   font-size: clamp(12px, 1.875vw, 18px);
   padding-top: clamp(1px, (100vw - 960px) * 8 / 960, 8px);
   height: 100vh;
-  height: 100svh;
   margin-bottom: 1em;
   overflow: hidden;
   position: relative;
+}
+
+.touch-device .page_header {
+  height: 100svh;
 }
 
 .page-title {
