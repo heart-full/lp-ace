@@ -411,6 +411,7 @@ body {
 
 :where(.main .top-section) {
   padding-top: 5em;
+  margin-bottom: 1em;
   position: relative;
 }
 
