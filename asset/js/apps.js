@@ -151,16 +151,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
  */
 // Make TOC
 window.addEventListener('DOMContentLoaded', ()=>{
-  const _header     = document.querySelector('.page_header');
-  const topSections = document.querySelectorAll('.top-section');
   const inviews     = document.querySelectorAll('.inview');
   const toc         = document.getElementById('toc');
-  const anchors     = document.querySelectorAll('#toc a');
   //Insert Elements
-  topSections.forEach((elm, index)=>{
+  inviews.forEach((elm, index)=>{
     const _id = elm.getAttribute('id');
     const _title = elm.getAttribute('data-title');
-    if(index === 0) toc.insertAdjacentHTML('beforeend', `<li><a href="#">PAGE TOP</a></li>`);
     toc.insertAdjacentHTML('beforeend', `<li><a href="#${_id}">${_title}</a></li>`); 
   });
 
@@ -207,6 +203,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
     if(!element)
     newActiveIndex.classList.remove("active");
   }
+
+  /** 
+   * ヘッダーが表示されたら反転表示を停止
+   */
 })
 
 /** 
