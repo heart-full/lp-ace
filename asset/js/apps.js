@@ -22,6 +22,11 @@ sticky_wake_menus.forEach((menu) => {
   });
 });
 
+const closeBtn = document.querySelector('.closebtn');
+closeBtn.addEventListener('click', ()=>{
+  global_nav.classList.remove('on');
+  wake_menu.classList.remove('on');
+});
 
 
 /** 
