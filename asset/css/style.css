@@ -162,6 +162,7 @@
   }
   /* Header Hero Section */
   .page_header-hero {
+    background: url(../images/hero_bg.jpg) left top no-repeat;
     background-size: cover;
     display: grid;
     grid-template-rows: auto 1fr auto;
