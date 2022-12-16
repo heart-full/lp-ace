@@ -238,3 +238,19 @@ if(Cookie) {
   })
 }
 */
+
+/**
+ * Orientation Observation
+ */
+const _roots = document.getElementsByName('html'); 
+if (window.matchMedia( "(orientation: portrait)" ).matches) {
+  /* ビューポートの幅が 400 ピクセル以上の場合のコードをここに */
+  _roots.forEach(_root =>{
+    _root.classList.add('portrait');
+  })
+} else {
+  /* ビューポートの幅は 400 ピクセル未満の場合のコードをここに */
+  _roots.forEach(_root =>{
+    _root.classList.add('landscape');
+  })
+}

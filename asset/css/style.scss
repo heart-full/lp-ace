@@ -447,7 +447,7 @@ body {
 }
 
 @media all and (orientation: portrait) {
-  .g-nav > ul {
+  .portrait .g-nav > ul {
     gap: 1em;
   }
 }
