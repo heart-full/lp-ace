@@ -148,7 +148,7 @@ body {
 .site-message span {
   white-space: nowrap;
 }
-
+/*
 .page-title {
   color: rgb(42, 110, 25);
   font-size: clamp(8px, 1.6666666667vw, 11px);
@@ -171,7 +171,7 @@ body {
 .page-title span {
   white-space: nowrap;
 }
-
+*/
 .ace-branch-logo {
   width: clamp(120px, 32.2916666667vw, 310px);
   margin-left: auto;
@@ -193,12 +193,11 @@ body {
     background-position: left -120px top 0px;
   }
 }
-
+/*
 .hazard-type-list {
   font-size: clamp(8px, 2.1666666667vw, 13px);
   display: flex;
   gap: 4px;
-  /*position: absolute;*/
   padding: clamp(4px, 2.0833333333vw, 16px);
 }
 
@@ -214,7 +213,8 @@ body {
   font-weight: 600;
   font-style: normal;
 }
-
+*/
+/*
 .catchcopy-holder {
   width: clamp(124px, 32.5vw, 312px);
   padding-top: clamp(8px, 1.6666666667vw, 16px);
@@ -234,7 +234,6 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
 }
-
 .site-concept {
   color: rgb(0, 110, 255);
   font-size: clamp(18px, 3.3333333333vw, 32px);
@@ -275,6 +274,8 @@ body {
 .site-message span {
   white-space: nowrap;
 }
+*/
+
 
 /* page scroll prompt */
 .scroll_prompt {
@@ -405,10 +406,6 @@ body {
   transform: scale(0.8) translateX(-240px);
   transform-origin: top left;
   transition: all 0.2s 0.15s ease;
-}
-
-.g-nav {
-  top: 110px;
 }
 
 .touch-device .g-nav {
