@@ -106,13 +106,6 @@ summary::-webkit-details-marker {
 }
 
 
-:is(.main, .page_footer) {
-  background-color: #fff;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 
 
 
@@ -127,7 +120,7 @@ summary::-webkit-details-marker {
 * Navigation Button
 *
 /***************************************************/
-:is(.button) {
+.button {
   display: block ;
   position : relative ;
   width : 240px ;
@@ -139,7 +132,7 @@ summary::-webkit-details-marker {
   cursor: pointer;
 }
 
-:is(.button)::before {
+.button::before {
   content : '' ;
   position : absolute ;
   z-index : 2 ;
@@ -152,7 +145,7 @@ summary::-webkit-details-marker {
   background: radial-gradient( rgba(255,255,255,1) 0%, rgba(255,255,255,0) 33%, rgba(255,255,255,0) 100%);
 }
 
-:is(.button)::after{
+.button::after{
   content : '' ;
   position : absolute ;
   z-index : 2 ;
@@ -238,7 +231,7 @@ summary::-webkit-details-marker {
   color : rgba(255,255,255,1) ;
 }
 
-:is(.wake-menu) {
+.wake-menu {
   font-size: 1.2em;
   position:absolute;
   appearance: none;
@@ -251,31 +244,31 @@ summary::-webkit-details-marker {
   z-index: 100;
 }
 
-:is(.wake-menu.on) {
+.wake-menu.on {
   top: 374px;
   transform: rotate(0) scale(0.8);
 }
 
-:is(.page_header .wake-menu.on) {
+.page_header .wake-menu.on {
   top: 374px;
 }
 
-:is(.page_footer .wake-menu) {
+.page_footer .wake-menu {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 4;
 }
 
-:is(.touch-device .page_header .wake-menu.on) {
+.touch-device .page_header .wake-menu.on {
   top: 264px;
 }
 
-:is(.page_footer .wake-menu.on) {
+.page_footer .wake-menu.on {
   top: 346px;
 }
 
-:is(.wake-menu.on .button__box)::after {
+.wake-menu.on .button__box::after {
   content: 'Close';
   color: #666;
   background-color: #fff;
@@ -291,7 +284,7 @@ summary::-webkit-details-marker {
 
 }
 
-:is(.no-wrap) {
+.no-wrap {
   white-space: nowrap;
 }
 

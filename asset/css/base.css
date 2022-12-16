@@ -84,12 +84,6 @@
     font-family: "Noto Sans JP", sans-serif;
     letter-spacing: unset;
   }
-  :is(.main, .page_footer) {
-    background-color: #fff;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-  }
   /***************************************************
   /*
   /* Miscellaneous
@@ -100,7 +94,7 @@
   * Navigation Button
   *
   /***************************************************/
-  :is(.button) {
+  .button {
     display: block;
     position: relative;
     width: 240px;
@@ -111,7 +105,7 @@
     transition: all 0.7s ease;
     cursor: pointer;
   }
-  :is(.button)::before {
+  .button::before {
     content: "";
     position: absolute;
     z-index: 2;
@@ -123,7 +117,7 @@
     background: rgb(170, 255, 240);
     background: radial-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 33%, rgba(255, 255, 255, 0) 100%);
   }
-  :is(.button)::after {
+  .button::after {
     content: "";
     position: absolute;
     z-index: 2;
@@ -199,7 +193,7 @@
     letter-spacing: 8px;
     color: rgb(255, 255, 255);
   }
-  :is(.wake-menu) {
+  .wake-menu {
     font-size: 1.2em;
     position: absolute;
     -webkit-appearance: none;
@@ -213,26 +207,26 @@
     left: 0;
     z-index: 100;
   }
-  :is(.wake-menu.on) {
+  .wake-menu.on {
     top: 374px;
     transform: rotate(0) scale(0.8);
   }
-  :is(.page_header .wake-menu.on) {
+  .page_header .wake-menu.on {
     top: 374px;
   }
-  :is(.page_footer .wake-menu) {
+  .page_footer .wake-menu {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 4;
   }
-  :is(.touch-device .page_header .wake-menu.on) {
+  .touch-device .page_header .wake-menu.on {
     top: 264px;
   }
-  :is(.page_footer .wake-menu.on) {
+  .page_footer .wake-menu.on {
     top: 346px;
   }
-  :is(.wake-menu.on .button__box)::after {
+  .wake-menu.on .button__box::after {
     content: "Close";
     color: #666;
     background-color: #fff;
@@ -246,7 +240,7 @@
     transform: translate(-50%, -50%);
     border-radius: 0.25em;
   }
-  :is(.no-wrap) {
+  .no-wrap {
     white-space: nowrap;
   }
 }
