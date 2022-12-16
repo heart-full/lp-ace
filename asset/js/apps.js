@@ -48,15 +48,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
  * Orientation Observation
  */
 window.addEventListener('DOMContentLoaded', ()=>{
-  const bodys = document.getElementsByTagName('body');
+  const _roots = document.getElementsByTagName('html');
   const mql = window.matchMedia("(orientation: landscape)");
   /* Event Listener */
   const listener = (e) => {
     if(e.matches) {
+      _roots.forEach(_root =>{
+        _root.classList.add('landscape');
+      })
       bodys[0].classList.add('landscape');
       console.log('landscape');
     } else {
-      bodys[0].classList.remove('landscape');
+      _roots.forEach(_root =>{
+        _root.classList.add('portrait');
+      })
       console.log('portrait');
     }
 
@@ -239,18 +244,3 @@ if(Cookie) {
 }
 */
 
-/**
- * Orientation Observation
- */
-const _roots = document.getElementsByName('html'); 
-if (window.matchMedia( "(orientation: portrait)" ).matches) {
-  /* ビューポートの幅が 400 ピクセル以上の場合のコードをここに */
-  _roots.forEach(_root =>{
-    _root.classList.add('portrait');
-  })
-} else {
-  /* ビューポートの幅は 400 ピクセル未満の場合のコードをここに */
-  _roots.forEach(_root =>{
-    _root.classList.add('landscape');
-  })
-}
