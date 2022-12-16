@@ -399,7 +399,7 @@
   .g-nav > ul, .l-nav > ul {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.25em;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;

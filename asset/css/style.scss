@@ -435,7 +435,7 @@ body {
 .g-nav > ul, .l-nav > ul {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: .25em;
   width: fit-content;
   padding-top: 16px;
 }
