@@ -1,6 +1,16 @@
 @layer style {
-  :is(.Container) {
+  body {
+    counter-reset: number 0;
+  }
+  .Container {
     position: relative;
+  }
+  .main,
+.page_footer {
+    background-color: #fff;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
   }
   /* ======================================================== */
   /*
@@ -167,14 +177,14 @@
     /*position: absolute;*/
     padding: clamp(4px, 2.0833333333vw, 16px);
   }
-  :is(.hazard-type-list > li) {
+  .hazard-type-list > li {
     color: rgb(42, 110, 25);
     line-height: 0.8;
     background-color: #fff;
     padding: 0.4em;
     border-radius: 3px;
   }
-  :is(.hazard-type-list > li > em) {
+  .hazard-type-list > li > em {
     font-weight: 600;
     font-style: normal;
   }
@@ -453,10 +463,7 @@
   /* Main Block Definition
   /*
   /* ======================================================== */
-  body {
-    counter-reset: number 0;
-  }
-  :is(.main .top-section)::before {
+  .main .top-section::before {
     content: attr(title);
     color: #999;
     font-family: "Noto-Serif", serif;
@@ -479,10 +486,10 @@
     overflow: hidden;
     transition: all 0.3s ease-in-out;
   }
-  :is(.main .top-section.active)::before {
+  .main .top-section.active::before {
     width: 100%;
   }
-  :is(.main .top-section)::after {
+  .main .top-section::after {
     counter-increment: number 1;
     content: counter(number, decimal-leading-zero);
     color: #fff;
@@ -497,32 +504,19 @@
     top: 0;
     left: 0;
   }
-  :is(.main section) {
+  .main section {
     padding: 16px;
   }
-  :is(.main .top-section) {
+  .main .top-section {
     padding-top: 5em;
     margin-bottom: 1em;
     position: relative;
   }
-  :is(.touch-device .main .top-section) {
+  .touch-device .main .top-section {
     padding-right: unset;
     padding-left: unset;
   }
-  /*
-  .top-section::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: auto;
-    border-bottom: double 3px #999;
-    position: absolute;
-    bottom: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  */
-  :is(.main .top-section-title) {
+  .main .top-section-title {
     font-size: clamp(20px, 3.3333333333vw, 32px);
   }
   .hr-dots {
@@ -539,7 +533,7 @@
     color: hsl(173deg, 33%, 51%);
     line-height: 0;
   }
-  :is(.touch-device .hr-dots)::before {
+  .touch-device .hr-dots::before {
     transform: scale(0.8);
   }
   /* ======================================================== */
@@ -563,7 +557,7 @@
       max-height: 100vh;
     }
   }
-  :is(.touch-device .page_footer) {
+  .touch-device .page_footer {
     min-height: unset;
     min-height: unset;
     max-height: unset;
@@ -601,7 +595,7 @@
     }
   }
   */
-  :is(.page_footer .access-map-holder) {
+  .page_footer .access-map-holder {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -613,7 +607,7 @@
     width: fit-content;
   }
   @media screen and (max-width: 640px) {
-    :is(.page_footer .access-map-holder) {
+    .page_footer .access-map-holder {
       grid-column-start: 2;
       grid-column-end: 3;
       grid-row-start: 1;
@@ -621,7 +615,7 @@
       position: relative;
     }
   }
-  :is(.page_footer .access-map-holder .access-map) {
+  .page_footer .access-map-holder .access-map {
     height: auto;
     padding: 16px 16px 0;
   }
@@ -631,14 +625,14 @@
     margin: 0 auto;
     transform: scale(0.7);
   }
-  :is(.page_footer .branch-info-holder) {
+  .page_footer .branch-info-holder {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
   }
   @media screen and (max-width: 640px) {
-    :is(.page_footer .branch-info-holder) {
+    .page_footer .branch-info-holder {
       grid-column-start: 2;
       grid-column-end: 3;
       grid-row-start: 2;
@@ -648,7 +642,7 @@
       position: relative;
     }
   }
-  :is(.page_footer .branch-info-holder .branch-info) {
+  .page_footer .branch-info-holder .branch-info {
     width: 100%;
     height: auto;
     aspect-ratio: 231/140;
@@ -702,14 +696,14 @@
   * Table Of Contents & Side Grobal Navigation
   */
   @media not all and (min-width: 1280px) and (min-height: 600px) {
-    :is(#toc),
-:is(#side-nav) {
+    #toc,
+#side-nav {
       display: none;
     }
   }
   @media screen and (min-width: 1280px) and (min-height: 600px) {
-    :is(#toc),
-:is(#side-nav) {
+    #toc,
+#side-nav {
       display: block;
       position: fixed;
       position: -webkit-fixed;
@@ -717,35 +711,35 @@
       transform: translate(0%, -50%);
       z-index: 1;
     }
-    :is(#toc) {
+    #toc {
       right: 0;
     }
-    :is(#side-nav) {
+    #side-nav {
       left: 0;
     }
-    :is(#side-nav.hide) {
+    #side-nav.hide {
       display: none;
     }
-    :is(#toc li),
-:is(#side-nav li) {
+    #toc li,
+#side-nav li {
       border-top: solid 1px #999;
       border-right: solid 1px #999;
       border-left: solid 1px #999;
     }
-    :is(#toc li:last-of-type),
-:is(#side-nav li:last-of-type) {
+    #toc li:last-of-type,
+#side-nav li:last-of-type {
       border-bottom: solid 1px #999;
     }
-    :is(#toc li a),
-:is(#side-nav li a) {
+    #toc li a,
+#side-nav li a {
       color: #999;
       background-color: #fff;
       font-size: 0.8em;
       display: block;
       padding: 0.25em 0.5em;
     }
-    :is(#toc li a.active),
-:is(#side-nav li.active a) {
+    #toc li a.active,
+#side-nav li.active a {
       color: #fff;
       background-color: #999;
     }

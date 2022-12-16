@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @layer style {
 
+body {
+  counter-reset: number 0;
+}
+
 .Container {
   position: relative;
 }
@@ -198,7 +202,7 @@
   padding: clamp(4px, 2.0833333333vw, 16px);
 }
 
-:is(.hazard-type-list > li) {
+.hazard-type-list > li {
   color: rgb(42, 110, 25);
   line-height: 0.8;
   background-color: #fff;
@@ -206,7 +210,7 @@
   border-radius: 3px;
 }
 
-:is(.hazard-type-list > li > em) {
+.hazard-type-list > li > em {
   font-weight: 600;
   font-style: normal;
 }
@@ -519,10 +523,6 @@
 /* Main Block Definition
 /*
 /* ======================================================== */
-body {
-  counter-reset: number 0;
-}
-
 .main .top-section::before {
   content: attr(title);
   color: #999;
@@ -583,7 +583,7 @@ body {
   padding-left: unset;
 }
 
-.main .top-section-title){
+.main .top-section-title {
   font-size: clamp(20px, calc(100vw * 32 / 960), 32px);
   // background-color:rgb(0, 110, 255, 0.25);
   // border-bottom: solid 2px rgb(0, 110, 255, 0.25);
@@ -649,7 +649,7 @@ body {
 //   }
 // }
 
-:is(.touch-device .page_footer) {
+.touch-device .page_footer {
   min-height: unset;
   min-height: unset;
   max-height: unset;
@@ -691,7 +691,7 @@ body {
 }
 */
 
-:is(.page_footer .access-map-holder) {
+.page_footer .access-map-holder {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -703,7 +703,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-  :is(.page_footer .access-map-holder) {
+  .page_footer .access-map-holder {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -712,7 +712,7 @@ body {
   }
 }
 
-:is(.page_footer .access-map-holder .access-map) {
+.page_footer .access-map-holder .access-map {
   height: auto;
   padding: 16px 16px 0;
 }
@@ -724,7 +724,7 @@ body {
   transform: scale(0.7);
 }
 
-:is(.page_footer .branch-info-holder) {
+.page_footer .branch-info-holder {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -732,7 +732,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
-  :is(.page_footer .branch-info-holder) {
+  .page_footer .branch-info-holder {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -743,7 +743,7 @@ body {
   }
 }
 
-:is(.page_footer .branch-info-holder .branch-info) {
+.page_footer .branch-info-holder .branch-info {
   width: 100%;
   height: auto;
   aspect-ratio: 231 / 140;
@@ -801,15 +801,15 @@ body {
 * Table Of Contents & Side Grobal Navigation
 */
 @media not all and (min-width: 1280px) and (min-height: 600px) {
-  :is(#toc),
-  :is(#side-nav) {
+  #toc,
+  #side-nav {
     display: none;
   }
 }
 
 @media screen and (min-width: 1280px) and (min-height: 600px) {
-  :is(#toc),
-  :is(#side-nav) {
+  #toc,
+  #side-nav {
     display: block;
     position: fixed;
     position: -webkit-fixed;
@@ -818,32 +818,32 @@ body {
     z-index: 1;
   }
 
-  :is(#toc) {
+  #toc {
     right: 0;
   }
 
-  :is(#side-nav) {
+  #side-nav {
     left: 0;
   }
   
-  :is(#side-nav.hide) {
+  #side-nav.hide {
     display: none;
   }
   
-  :is(#toc li),
-  :is(#side-nav li) {
+  #toc li,
+  #side-nav li {
     border-top: solid 1px #999;
     border-right: solid 1px #999;
     border-left: solid 1px #999;
   }
 
-  :is(#toc li:last-of-type),
-  :is(#side-nav li:last-of-type) {
+  #toc li:last-of-type,
+  #side-nav li:last-of-type {
     border-bottom: solid 1px #999;
   }
 
-  :is(#toc li a),
-  :is(#side-nav li a) {
+  #toc li a,
+  #side-nav li a {
     color: #999;
     background-color:#fff;
     font-size: .8em;
@@ -851,8 +851,8 @@ body {
     padding: .25em .5em;
   }
 
-  :is(#toc li a.active),
-  :is(#side-nav li.active a) {
+  #toc li a.active,
+  #side-nav li.active a {
     color: #fff;
     background-color: #999;
   }
