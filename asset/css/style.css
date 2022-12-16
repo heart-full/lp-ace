@@ -399,6 +399,7 @@
   .g-nav > ul, .l-nav > ul {
     display: flex;
     flex-direction: column;
+    gap: 1em;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -408,6 +409,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+  @media all and (orientation: portrait) {
+    .g-nav > ul {
+      gap: 1em;
+    }
   }
   /* ======================================================== */
   /*

@@ -435,7 +435,7 @@ body {
 .g-nav > ul, .l-nav > ul {
   display: flex;
   flex-direction: column;
-  // gap: 1em;
+  gap: 1em;
   width: fit-content;
   padding-top: 16px;
 }
@@ -444,6 +444,12 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media all and (orientation: portrait) {
+  .g-nav > ul {
+    gap: 1em;
+  }
 }
 
 
