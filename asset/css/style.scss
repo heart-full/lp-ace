@@ -567,6 +567,16 @@ body {
   left: 0;
 }
 
+.top-section-title span {
+  color: #fff;
+  display: block;
+  // background-color:#81D8D0;
+  background-color:hsl(173, 33%, 51%);
+  width: fit-content;
+  padding: 0 1em;
+  margin: 0 auto;
+  border-radius: 1em;
+}
 
 .main section {
   padding: 16px
