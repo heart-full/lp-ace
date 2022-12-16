@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
 
     /* regist Listner */
-    mql.addEventListener(listener);
+    mql.addEventListener('change', listener);
 
     /* Initialization */
     listener(mql);
