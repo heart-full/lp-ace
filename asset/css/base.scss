@@ -193,9 +193,9 @@ summary::-webkit-details-marker {
   backdrop-filter: blur(5px);
 }
 
-.g-nav .button__box {
+:is(.g-nav, .l-nav) .button__box {
   // color: hsl(110, 86%, 20%);
-  font-size: .8em;
+  font-size: .6em;
 }
 /*
 .touch-device .button__box {
