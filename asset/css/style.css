@@ -418,7 +418,7 @@
     transition: all 0.2s 0.15s ease;
   }
   @media not all and (min-width: 640px) {
-    .l-nav {
+    .l-nav .wake-menu {
       display: none;
     }
   }
