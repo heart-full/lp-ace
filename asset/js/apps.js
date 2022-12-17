@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
       if(_width > _height) { //landscape
         html[0].classList.add('landscape');
       } else { //portrait
-        html[0.classList.remove('landscape')];
+        html[0.classList.remove('landscape');
       }
     }
   }
