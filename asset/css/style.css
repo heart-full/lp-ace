@@ -422,7 +422,7 @@
       display: none;
     }
   }
-  .touch-device :is(.l-nav, .wake-menu) {
+  .touch-device :is(.l-nav .wake-menu) {
     display: none;
   }
   .page_header .nav.on {
