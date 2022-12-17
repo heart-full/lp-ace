@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Resize Observation (Orientation Observation)
  */
-window.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('orientationchange', ()=>{
   const html = document.getElementsByTagName('html');
   const _header = document.getElementById('header');
   let _width = window.innerWidth;
