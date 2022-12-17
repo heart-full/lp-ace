@@ -7,6 +7,8 @@
     const html = document.getElementsByTagName('html');
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       html[0].classList.add('touch-device');
+    } else {
+      html[0].classList.add('desktop');
     }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

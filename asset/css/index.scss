@@ -1154,16 +1154,16 @@ iframe {
   transition: all 1s ease-in-out .5s;
 }
 
-.portrait .access.active .location::before,
-.portrait .access.active h3 span::before {
+:is(.desktop, .portrait) .access.active :is(.location::before, .location::after),
+:is(.desktop, .portrait) .access.active h3 :is(span::before, span::after) {
   transform: scale(1);
 }
-
+/*
 .portrait .access.active .location::after,
 .portrait .access.active h3 span::after {
   transform: scale(1);
 }
-
+*/
 .access .details-holder {
   padding: 1em;
   border: solid 1px hsl(173, 33%, 51%);
