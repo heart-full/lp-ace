@@ -651,25 +651,7 @@
   }
   .kengaku .contact .ace-line-qr {
     text-align: center;
-    position: absolute;
-    top: -32px;
-    right: clamp(8px, 1.6666666667vw, 16px);
-    transform: scale(1.5);
-    transform-origin: right bottom;
-  }
-  @media screen and (max-width: 640px) {
-    .kengaku .contact .ace-line-qr {
-      position: unset;
-      transform: unset;
-      transform-origin: unset;
-    }
-    .kengaku .contact .ace-line-qr figure {
-      width: 30%;
-      margin: 0 auto;
-    }
-    .kengaku .contact .ace-line-qr img {
-      width: 100%;
-    }
+    float: right;
   }
   .kengaku .contact .ace-line-qr figcaption {
     color: #fff;

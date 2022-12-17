@@ -764,31 +764,32 @@ iframe {
 
 .kengaku .contact .ace-line-qr {
   text-align: center;
+  float: right
   // width: clamp(32px, calc(100vw * 64 / 960), 64px);
   // height: clamp(32px, calc(100vw * 64 / 960), 64px);
-  position: absolute;
+  // position: absolute;
   // top: clamp(8px, calc(100vw * 16 / 960), 16px);
-  top: -32px;
-  right: clamp(8px, calc(100vw * 16 / 960), 16px);
-  transform: scale(1.5);
-  transform-origin: right bottom;
+  // top: -32px;
+  // right: clamp(8px, calc(100vw * 16 / 960), 16px);
+  // transform: scale(1.5);
+  // transform-origin: right bottom;
 }
 
 @media screen and (max-width: 640px) {
-  .kengaku .contact .ace-line-qr {
-    position: unset;
-    transform: unset;
-    transform-origin: unset;
-  }
+  // .kengaku .contact .ace-line-qr {
+  //   position: unset;
+  //   transform: unset;
+  //   transform-origin: unset;
+  // }
 
-  .kengaku .contact .ace-line-qr figure {
-    width: 30%;
-    margin: 0 auto;
-  }
+  // .kengaku .contact .ace-line-qr figure {
+  //   width: 30%;
+  //   margin: 0 auto;
+  // }
 
-  .kengaku .contact .ace-line-qr img {
-    width: 100%;
-  }
+  // .kengaku .contact .ace-line-qr img {
+  //   width: 100%;
+  // }
 }
 
 .kengaku .contact .ace-line-qr figcaption {
