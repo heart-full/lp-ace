@@ -961,13 +961,15 @@
     transform-origin: top right;
     transition: all 1s ease-in-out 0.5s;
   }
-  .access.active .location::before,
+  @media all and (orientation: portrait) {
+    .access.active .location::before,
 .access.active h3 span::before {
-    transform: scale(1);
-  }
-  .access.active .location::after,
+      transform: scale(1);
+    }
+    .access.active .location::after,
 .access.active h3 span::after {
-    transform: scale(1);
+      transform: scale(1);
+    }
   }
   .access .details-holder {
     padding: 1em;

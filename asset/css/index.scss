@@ -1154,15 +1154,16 @@ iframe {
   transition: all 1s ease-in-out .5s;
 }
 
+@media all and (orientation: portrait) {
+  .access.active .location::before,
+  .access.active h3 span::before {
+    transform: scale(1);
+  }
 
-.access.active .location::before,
-.access.active h3 span::before {
-  transform: scale(1);
-}
-
-.access.active .location::after,
-.access.active h3 span::after {
-  transform: scale(1);
+  .access.active .location::after,
+  .access.active h3 span::after {
+    transform: scale(1);
+  }
 }
 
 .access .details-holder {
