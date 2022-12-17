@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
 
     /* regist Listner */
-    mql.addEventListener('change', listener);
+    mql.addEventListener('orientationchange', listener);
 
     /* Initialization */
     listener(mql);
