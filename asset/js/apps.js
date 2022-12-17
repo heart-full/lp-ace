@@ -45,32 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 /** 
- * Orientation Observation
- */
-window.addEventListener('DOMContentLoaded', ()=>{
-  const _roots = document.getElementsByTagName('html');
-  const mql = window.matchMedia("(orientation: landscape)");
-  /* Event Listener */
-  function listener(mql) {
-    if(mql.matches) {
-      _roots[0].classList.add('landscape');
-      console.log('landscape');
-    } else {
-      _roots[0].classList.add('portrait');
-      console.log('portrait');
-    }
-
-    /* regist Listner */
-    mql.addEventListener('orientationchange', listener);
-
-    /* Initialization */
-    listener(mql);
-  }
-})
-
-
-/** 
- * Resize Observation (Orientation Observation)
+ * Mobile Device Orientation Change Observation
  */
 window.addEventListener('orientationchange', ()=>{
   const html = document.getElementsByTagName('html');
@@ -84,6 +59,7 @@ window.addEventListener('orientationchange', ()=>{
 
   function resizeHandler(entries) {
     for (let entry of entries) {
+      //回転時は幅と高さが逆転する
       if(_width < _height) { //landscape
         html[0].classList.add('landscape');
         html[0].classList.remove('portrait');
