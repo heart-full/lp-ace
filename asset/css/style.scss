@@ -837,6 +837,7 @@ body {
   background-color: rgba(0, 0, 0, .35);
   width: clamp(300px, calc(100vmin * 420 / 960), 420px);
   height: auto;
+  padding: 1em;
   margin: 0 auto;
   border-radius: .5em;
   transform: scale(0.7);
