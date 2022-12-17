@@ -128,7 +128,7 @@ body {
   backdrop-filter: blur(3px);
 }
 
-.touch-device .site-concept {
+.touch-device.portrait .site-concept {
   margin-top: auto;
   margin-bottom: clamp(8px, calc(100vw * 32 / 960), 32px);;
 }
@@ -302,8 +302,12 @@ body {
   cursor: pointer;
 }
 
-.touch-device .scroll_prompt {
+.portrait .scroll_prompt {
   top: -80px;
+}
+
+.landscape .scroll_prompt {
+  top: -40px;
 }
 
 .scroll_prompt::before {

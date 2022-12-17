@@ -111,7 +111,7 @@
     -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
   }
-  .touch-device .site-concept {
+  .touch-device.portrait .site-concept {
     margin-top: auto;
     margin-bottom: clamp(8px, 3.3333333333vw, 32px);
   }
@@ -279,8 +279,11 @@
     backdrop-filter: blur(8px);
     cursor: pointer;
   }
-  .touch-device .scroll_prompt {
+  .portrait .scroll_prompt {
     top: -80px;
+  }
+  .landscape .scroll_prompt {
+    top: -40px;
   }
   .scroll_prompt::before {
     content: "";
