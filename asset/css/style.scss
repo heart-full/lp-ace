@@ -490,6 +490,33 @@ body {
 
 .sticky-nav ul li {
   flex: 1;
+  padding: 2px;
+  border-radius: .6em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sticky-nav ul li:before {
+  content: '';
+  background: linear-gradient(125deg, hsl(46, 100%, 86%), hsl(165, 63%, 34%));
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: scale(2);
+  transition: all .3s linear .3s;
+}
+
+.sticky-nav ul li:hover::before {
+  transform: rotate(125deg) scale(2);
 }
 
 @media screen and (min-width: 1280px) {
@@ -518,14 +545,18 @@ body {
 }
 
 .sticky-nav ul a {
-  color: #666;
+  color: hsl(197, 100%, 23%);
   font-size: clamp(13px, calc(100vw * 16 / 960), 16px);
   background-color: #fff;
   text-align: center;
   display: block;
   padding: .25em 1em;
-  border: solid 1px #999;
+  // border: solid 1px #999;
   border-radius: .5em;
+}
+
+.sticky-nav ul li:hover a {
+  color: #6666;
 }
 
 .sticky-wake-menu {
@@ -537,6 +568,15 @@ body {
   cursor: pointer;
 }
 
+@media not all and (min-width: 640px) {
+  .sticky-wake-menu {
+    color: hsl(197, 100%, 23%);
+    background-color: #fff;
+  }
+  .sticky-wake-menu:hover {
+    color: #6666;
+  }
+}
 
 
 /* ======================================================== */

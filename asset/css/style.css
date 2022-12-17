@@ -449,6 +449,31 @@
   }
   .sticky-nav ul li {
     flex: 1;
+    padding: 2px;
+    border-radius: 0.6em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .sticky-nav ul li:before {
+    content: "";
+    background: linear-gradient(125deg, hsl(46deg, 100%, 86%), hsl(165deg, 63%, 34%));
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(2);
+    transition: all 0.3s linear 0.3s;
+  }
+  .sticky-nav ul li:hover::before {
+    transform: rotate(125deg) scale(2);
   }
   @media screen and (min-width: 1280px) {
     .sticky-nav {
@@ -473,14 +498,16 @@
     }
   }
   .sticky-nav ul a {
-    color: #666;
+    color: hsl(197deg, 100%, 23%);
     font-size: clamp(13px, 1.6666666667vw, 16px);
     background-color: #fff;
     text-align: center;
     display: block;
     padding: 0.25em 1em;
-    border: solid 1px #999;
     border-radius: 0.5em;
+  }
+  .sticky-nav ul li:hover a {
+    color: rgba(102, 102, 102, 0.4);
   }
   .sticky-wake-menu {
     padding: 0.75em 2em;
@@ -490,6 +517,15 @@
     border: unset;
     border-radius: 0.5em;
     cursor: pointer;
+  }
+  @media not all and (min-width: 640px) {
+    .sticky-wake-menu {
+      color: hsl(197deg, 100%, 23%);
+      background-color: #fff;
+    }
+    .sticky-wake-menu:hover {
+      color: rgba(102, 102, 102, 0.4);
+    }
   }
   /* ======================================================== */
   /*
