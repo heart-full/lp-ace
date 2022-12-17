@@ -56,7 +56,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
       _roots.forEach(_root =>{
         _root.classList.add('landscape');
       })
-      bodys[0].classList.add('landscape');
       console.log('landscape');
     } else {
       _roots.forEach(_root =>{
