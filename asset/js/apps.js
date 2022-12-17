@@ -52,6 +52,7 @@ window.addEventListener('orientationchange', ()=>{
   const _header = document.getElementById('header');
   let _width = window.innerWidth;
   let _height = window.innerHeight;
+  let aspectRatio = (_height / _width);
   if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
     const windowResizeObserver = new ResizeObserver(resizeHandler);
     windowResizeObserver.observe(_header);
@@ -60,8 +61,8 @@ window.addEventListener('orientationchange', ()=>{
   function resizeHandler(entries) {
     for (let entry of entries) {
       //回転時は幅と高さが逆転する。( _width ⇒ _height, _height ⇒ _width )
-      if(_width < _height) { //landscape
-        html[0].classList.add('landscape');
+      if(aspectRatio < 1) { //landscape
+        html[0].cl1.add('landscape');
         html[0].classList.remove('portrait');
       } else { //portrait
         html[0].classList.add('portrait');
