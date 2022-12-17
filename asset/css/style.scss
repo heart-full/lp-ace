@@ -423,10 +423,8 @@ body {
 
 .touch-device .g-nav {
   background-color: rgba(0, 0, 0, .5);
-  height: 100vh;
   position: -webkit-fixed;
   position: fixed;
-  bottom: unset;
 }
 
 .touchi-device .g-nav::before {
