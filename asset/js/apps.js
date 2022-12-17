@@ -48,20 +48,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
  * Orientation Observation
  */
 window.addEventListener('DOMContentLoaded', ()=>{
-  const bodys = document.getElementsByTagName('body');
+  const _roots = document.getElementsByTagName('html');
   const mql = window.matchMedia("(orientation: landscape)");
   /* Event Listener */
-  const listener = (e) => {
-    if(e.matches) {
+  function listener(mql) {
+    if(mql.matches) {
+      _roots.forEach(_root =>{
+        _root.classList.add('landscape');
+      })
       bodys[0].classList.add('landscape');
       console.log('landscape');
     } else {
-      bodys[0].classList.remove('landscape');
+      _roots.forEach(_root =>{
+        _root.classList.add('portrait');
+      })
       console.log('portrait');
     }
 
     /* regist Listner */
-    mql.addEventListener("change", listener);
+    mql.addEventListener('change', listener);
 
     /* Initialization */
     listener(mql);
@@ -238,3 +243,4 @@ if(Cookie) {
   })
 }
 */
+

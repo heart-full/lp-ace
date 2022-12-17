@@ -372,7 +372,7 @@
     transition: all 0.2s 0.15s ease;
   }
   .touch-device .g-nav {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.5);
     position: -webkit-fixed;
     position: fixed;
   }
@@ -399,6 +399,7 @@
   .g-nav > ul, .l-nav > ul {
     display: flex;
     flex-direction: column;
+    gap: 0.125em;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -408,6 +409,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+  @media all and (orientation: portrait) {
+    .portrait .g-nav > ul {
+      gap: 1em;
+    }
   }
   /* ======================================================== */
   /*
