@@ -272,16 +272,18 @@
     padding-right: 4px;
     padding-left: 4px;
     position: absolute;
-    top: -64px;
+    top: -40px;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     cursor: pointer;
   }
+  /*
   .portrait .scroll_prompt {
     top: -80px;
   }
+  */
   .landscape .scroll_prompt {
     top: -40px;
   }
