@@ -395,6 +395,7 @@
     height: 100dvh;
     position: -webkit-fixed;
     position: fixed;
+    bottom: unset;
   }
   .touchi-device .g-nav::before {
     content: "";
