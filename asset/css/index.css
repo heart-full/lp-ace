@@ -939,9 +939,6 @@
     border-bottom: solid 2px #649cc9;
     border-left: solid 2px #649cc9;
     z-index: -1;
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: all 1s ease-in-out 0.5s;
   }
   .access .location::after,
 .access h3 span::after {
@@ -957,20 +954,19 @@
     border-top: solid 2px #649cc9;
     border-right: solid 2px #649cc9;
     z-index: -2;
-    transform: scale(0);
-    transform-origin: top right;
-    transition: all 1s ease-in-out 0.5s;
   }
-  :is(.desktop, .portrait) .access.active :is(.location::before, .location::after),
-:is(.desktop, .portrait) .access.active h3 :is(span::before, span::after) {
+  .desktop .access.active .location::before,
+.portrait .access.active .location::before,
+.desktop .access.active h3 span::before,
+.portrait .access.active h3 span::before {
     transform: scale(1);
   }
-  /*
-  .portrait .access.active .location::after,
-  .portrait .access.active h3 span::after {
+  .desktop .access.active .location::after,
+.portrait .access.active .location::after,
+.desktop .access.active h3 span::after,
+.portrait .access.active h3 span::after {
     transform: scale(1);
   }
-  */
   .access .details-holder {
     padding: 1em;
     border: solid 1px hsl(173deg, 33%, 51%);
