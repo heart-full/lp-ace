@@ -72,8 +72,25 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Resize Observation (Orientation Observation)
  */
+window.addEventListener('DOMContentLoaded', ()=>{
+  const html = document.getElementsByTagName('html');
+  let _width = window.innerWidth;
+  let _height = window.innerHeight;
+  if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    const windowResizeObserver = new ResizeObserver(resizeHandler);
+    textareaObserver.observe(window);
+  }
 
-
+  function resizeHandler(entries) {
+    for (let entry of entries) {
+      if(_width > _height) { //landscape
+        html[0].classList.add('landscape');
+      } else { //portrait
+        html[0.classList.remove('landscape')];
+      }
+    }
+  }
+})
 
 
 
