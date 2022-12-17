@@ -45,6 +45,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 /** 
+ * Mobile Device Initial Orientation Observation
+ */
+window.addEventListener('load', ()=>{
+  if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    let _width = window.innerWidth;
+    let _height = window.innerHeight;
+    let aspectRatio = parseInt(_height / _width);
+    console.log(aspectRatio);
+    if(aspectRatio) { //portrait
+      html[0].classList.add('portrait');
+    } else { //landscape
+      html[0].classList.add('landscape');
+    }
+  } 
+})
+
+
+
+/** 
  * Mobile Device Orientation Change Observation
  */
 window.addEventListener('orientationchange', ()=>{
@@ -52,7 +71,7 @@ window.addEventListener('orientationchange', ()=>{
   const _header = document.getElementById('header');
   let _width = window.innerWidth;
   let _height = window.innerHeight;
-  let aspectRatio = (_height / _width);
+  let aspectRatio = parseInt(_height / _width);
   console.log(aspectRatio);
   if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
     const windowResizeObserver = new ResizeObserver(resizeHandler);
@@ -62,7 +81,7 @@ window.addEventListener('orientationchange', ()=>{
   function resizeHandler(entries) {
     for (let entry of entries) {
       //回転時は幅と高さが逆転する。( _width ⇒ _height, _height ⇒ _width )
-      if(aspectRatio > 1) { //landscape
+      if(aspectRatio) { //landscape
         html[0].classList.add('landscape');
         html[0].classList.remove('portrait');
       } else { //portrait
