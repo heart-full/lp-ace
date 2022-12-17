@@ -228,15 +228,6 @@
     grid-row-start: 1;
     grid-row-end: 4;
   }
-  /*
-  .touch-device .page_header .wake-menu.on {
-    top: 264px;
-  }
-
-  .page_footer .wake-menu.on {
-    top: 346px;
-  }
-  */
   .wake-menu.on .button__box::after {
     content: "Close";
     color: #666;

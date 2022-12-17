@@ -450,12 +450,12 @@ body {
 }
 
 @media not all and (min-width: 640px) {
-  .l-nav .wake-menu {
+  .page_footer .wake-menu {
     display: none;
   }
 }
 
-.touch-device .l-nav .wake-menu {
+.touch-device .page_footer .wake-menu {
   display: none;
 }
 
