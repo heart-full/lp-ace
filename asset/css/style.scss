@@ -456,7 +456,7 @@ body {
   }
 }
 
-.touch-device :is(.l-nav .wake-menu) {
+.touch-device .l-nav .wake-menu {
   display: none;
 }
 
