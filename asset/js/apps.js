@@ -53,14 +53,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
   /* Event Listener */
   function listener(mql) {
     if(mql.matches) {
-      _roots.forEach(_root =>{
-        _root.classList.add('landscape');
-      })
+      _roots[0].classList.add('landscape');
       console.log('landscape');
     } else {
-      _roots.forEach(_root =>{
-        _root.classList.add('portrait');
-      })
+      _roots[0].classList.add('portrait');
       console.log('portrait');
     }
 
@@ -71,6 +67,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
     listener(mql);
   }
 })
+
+
+/** 
+ * Resize Observation (Orientation Observation)
+ */
+
+
+
 
 
 
