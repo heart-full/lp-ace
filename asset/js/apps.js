@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   let _height = window.innerHeight;
   if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
     const windowResizeObserver = new ResizeObserver(resizeHandler);
-    textareaObserver.observe(window);
+    windowResizeObserver.observe(window);
   }
 
   function resizeHandler(entries) {
