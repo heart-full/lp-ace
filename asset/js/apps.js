@@ -84,7 +84,7 @@ window.addEventListener('orientationchange', ()=>{
 
   function resizeHandler(entries) {
     for (let entry of entries) {
-      if(_width > _height) { //landscape
+      if(_width < _height) { //landscape
         html[0].classList.add('landscape');
         html[0].classList.remove('portrait');
       } else { //portrait

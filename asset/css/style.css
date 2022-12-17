@@ -26,6 +26,9 @@
     overflow: hidden;
     position: relative;
   }
+  .landscape .page_header {
+    background-color: red;
+  }
   @media all and (min-width: 960px) {
     .page_header {
       margin-bottom: 1em;
