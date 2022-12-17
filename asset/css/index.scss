@@ -1153,7 +1153,7 @@ iframe {
   transform-origin: top right;
   transition: all 1s ease-in-out .5s;
 }
-
+/*
 @media all and (orientation: portrait) {
   .access.active .location::before,
   .access.active h3 span::before {
@@ -1165,7 +1165,7 @@ iframe {
     transform: scale(1);
   }
 }
-
+*/
 .access .details-holder {
   padding: 1em;
   border: solid 1px hsl(173, 33%, 51%);
