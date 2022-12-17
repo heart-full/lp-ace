@@ -219,8 +219,8 @@
     transform: rotate(-90deg) translate(-50%, -100%) scale(0.8);
   }
   .page_footer .wake-menu.on {
-    top: 374px;
-    transform: rotate(0) scale(0.8);
+    top: 50%;
+    transform: rotate(0) translateY(calc(-50% + 62px));
   }
   .page_footer .wake-menu {
     grid-column-start: 1;
