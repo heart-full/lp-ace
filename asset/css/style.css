@@ -361,6 +361,7 @@
   /*
   /* ======================================================== */
   .g-nav {
+    font-size: clamp(12px, 1.4583333333vw, 14px);
     background-color: transparent;
     width: 240px;
     top: 0;
@@ -377,6 +378,7 @@
     position: fixed;
   }
   .l-nav {
+    font-size: clamp(12px, 1.4583333333vw, 14px);
     position: absolute;
     top: 80px;
     left: 0;

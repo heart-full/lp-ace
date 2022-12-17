@@ -211,6 +211,9 @@
     left: 0;
     z-index: 100;
   }
+  :is(.page_header, .page_footer) .wake-menu {
+    font-size: clamp(12px, 1.6666666667vw, 16px);
+  }
   .page_header .wake-menu.on {
     top: 50%;
     transform: rotate(-90deg) translate(-50%, -100%) scale(0.8);

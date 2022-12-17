@@ -389,6 +389,7 @@ body {
 /*
 /* ======================================================== */
 .g-nav {
+  font-size: clamp(12px, calc(100vw * 14 / 960), 14px);
   background-color: transparent;
   width: 240px;
   top: 0;
@@ -408,6 +409,7 @@ body {
 }
 
 .l-nav {
+  font-size: clamp(12px, calc(100vw * 14 / 960), 14px);
   position: absolute;
   // top: 110px;
   top: 80px;
