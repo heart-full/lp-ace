@@ -16,10 +16,12 @@
     padding-left: 1em;
     margin-bottom: 0.5em;
   }
+  /*
   .main li::before {
-    content: "・";
+    content: '・';
     padding-right: 0.25em;
   }
+  */
   .staff-message-holder {
     display: grid;
     place-items: center;
@@ -1395,7 +1397,7 @@
     display: flex;
     height: auto;
     min-height: 4em;
-    padding: 0.5em;
+    padding: 0.5em 1.5em 0.5em 1em;
     border: 4px solid #c21500;
     -o-border-image: linear-gradient(to top right, #c21500 0%, #ffc500 100%);
        border-image: linear-gradient(to top right, #c21500 0%, #ffc500 100%);
@@ -1404,9 +1406,10 @@
     cursor: pointer;
   }
   #ace_movies .playList span {
-    text-align: center;
     line-height: 1;
-    margin: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   #ace_movies .movie-modal {
     position: fixed;
