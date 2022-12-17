@@ -74,11 +74,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
  */
 window.addEventListener('DOMContentLoaded', ()=>{
   const html = document.getElementsByTagName('html');
+  const _header = document.getElementById('header');
   let _width = window.innerWidth;
   let _height = window.innerHeight;
   if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
     const windowResizeObserver = new ResizeObserver(resizeHandler);
-    windowResizeObserver.observe(window);
+    windowResizeObserver.observe(_header);
   }
 
   function resizeHandler(entries) {
