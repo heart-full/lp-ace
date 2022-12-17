@@ -740,9 +740,11 @@
     padding: 16px 16px 0;
   }
   .access-route {
+    background-color: rgba(0, 0, 0, 0.35);
     width: clamp(300px, 43.75vmin, 420px);
     height: auto;
     margin: 0 auto;
+    border-radius: 0.5em;
     transform: scale(0.7);
   }
   .page_footer .branch-info-holder {
