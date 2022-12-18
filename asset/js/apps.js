@@ -17,14 +17,18 @@ sticky_wake_menus.forEach((menu) => {
     console.log('click!');
     // console.table(global_nav_anchors);
     global_nav.classList.toggle('on');
-    wake_menu.classList.toggle('on');
-  });
+    wake_menus.forEach(wake_menu =>{
+      wake_menu.classList.remove('on');
+    })
+    });
 });
 
 const closeBtn = document.querySelector('.closebtn');
 closeBtn.addEventListener('click', ()=>{
   global_nav.classList.remove('on');
-  wake_menu.classList.remove('on');
+  wake_menus.forEach(wake_menu =>{
+    wake_menu.classList.remove('on');
+  })
 });
 
 
