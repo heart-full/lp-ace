@@ -45,6 +45,7 @@ let date    = '';
 let times   = '';
 let comment = '';
 const d = new Date();
+  //日付を文字列にフォーマットする
 const limitDate = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
 const limit = new Date(limitDate);
 const limitTimeStamp = limit.getTime();
@@ -338,19 +339,19 @@ function submition() {
 
 
 /** カレンダー（翌日以降のみ指定可） */
-(function startDate() {
+(function startDate(limit) {
   
-  const d = new Date();
+  // const d = new Date();
   
-  /** 日付を文字列にフォーマットする */
-  const formatted = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
+  // /** 日付を文字列にフォーマットする */
+  // const formatted = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
 
   const datepicker = document.querySelector('.calender');
   const reserve    = document.querySelector('.reserve');
   
-  datepicker.value    = formatted;
-  datepicker.min      = formatted;
-  reserve.textContent = formatted;
+  datepicker.value    = limit;
+  datepicker.min      = limit;
+  reserve.textContent = limit;
 
   //console.log(formatted);
-})();
+})(limitDate);
