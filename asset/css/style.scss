@@ -803,14 +803,11 @@ body {
   z-index: -2;
 }
 /*
-@media screen and (orientation: landscape) {
-  .page_footer {
-    height: auto;
-    max-height: inherit;
-  }
+.landscape .page_footer {
+  height: auto;
+  max-height: inherit;
 }
 */
-
 .page_footer .access-map-holder {
   grid-column-start: 2;
   grid-column-end: 3;
