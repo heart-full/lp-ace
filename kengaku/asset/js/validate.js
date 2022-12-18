@@ -44,6 +44,8 @@ let email   = '';
 let date    = '';
 let times   = '';
 let comment = '';
+let reserveTimeStamp = '';
+
 const d = new Date();
   //日付を文字列にフォーマットする
 const limitDate = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
@@ -67,18 +69,18 @@ checkLists.forEach((checkList)=>{
       if(!warning.classList.contains('error')) {
         warning.classList.add('error');
         message.textContent = '未入力です。';
-        errorCounter++;
+        // errorCounter++;
       }
     }else {
       if(checkList.type === 'date') {
         const reserveDate      = new Date(checkList.value);
-        const reserveTimeStamp = reserveDate.getTime();
+        reserveTimeStamp = reserveDate.getTime();
         // console.log(`reserveTimeStamp：${reserveTimeStamp}`);
         // カレンダーの日付チェック
         if(limitTimeStamp > reserveTimeStamp) {
           warning.classList.add('error');
           message.textContent = '翌日以降の日付をご選択ください。';
-          errorCounter++;
+          // errorCounter++;
         }else {
           message.textContent = '';
           // errorCounter = 0; //reset
@@ -159,8 +161,19 @@ indicator.addEventListener('click', async function() {
     date    = document.getElementsByName('date')[0].value;
     times   = (document.getElementsByName('select-times')[0].checked === true) ? '午後' : '午前';
     comment = document.getElementsByName('comment')[0].value;
-
+    //見学日の再確認
+    const reserveDate = new Date(date);
+    reserveTimeStamp = reserveDate.getTime();
+    if(limitTimeStamp > reserveTimeStamp) {
+      const calenderHolder = document.querySelector('.calender-holder');
+      const calenderErrorMessage = document.querySelector('.calender-holder .error-message');
+      calenderHolder.classList.add('error');
+      calenderErrorMessage.textContent = '翌日以降の日付をご選択ください。';
+      return;
+    }
+    //モーダルロック
     roots[0].style.overflowY = 'hidden';//Scroll Rock
+    //ダイアログ挿入
     bodys[0].appendChild(container);
 
     /** コンテナの初期化 */
