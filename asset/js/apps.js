@@ -11,7 +11,6 @@ wake_menus.forEach((elm) => {
 });
 
 const sticky_wake_menus = document.querySelectorAll('.sticky-wake-menu');
-const wake_menu         = document.querySelector('.wake-menu');
 const global_nav        = document.getElementById('Global');
 sticky_wake_menus.forEach((menu) => {
   menu.addEventListener('click', () => {
@@ -52,7 +51,7 @@ window.addEventListener('load', ()=>{
     let _width = window.innerWidth;
     let _height = window.innerHeight;
     let aspectRatio = parseInt(_height / _width);
-    console.log(aspectRatio);
+    // console.log(aspectRatio);
     if(aspectRatio) { //portrait
       html[0].classList.add('portrait');
     } else { //landscape
@@ -247,20 +246,17 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Through Header Block
  */
-/*
-let Cookie = false;
-window.addEventListener('load', ()=>{
-  // document.cookie = "loading=finished";
-})
 
-if(Cookie) {
-  const scroll_prompt = document.querySelector('.scroll_prompt');
-  let scrollHeight = window.innerHeight;
-  window.scrollBy({
-    top: scrollHeight,
-    left: 0,
+// let Cookie = false;
+// window.addEventListener('load', ()=>{
+//  document.cookie = "loading=finished";
+// })
+
+if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
+  const firstSection  = document.getElementById('intro');
+  firstSection.scrollIntoView({
     behavior: 'smooth'
   })
 }
-*/
+
 
