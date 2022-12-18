@@ -44,6 +44,11 @@ let email   = '';
 let date    = '';
 let times   = '';
 let comment = '';
+const d = new Date();
+const limitDate = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2, '0')}-${(d.getDate()+1).toString().padStart(2, '0')}`.replace(/\n|\r/g, '');
+const limit = new Date(limitDate);
+const limitTimeStamp = limit.getTime();
+// console.log(`limitTimeStamp：${limitTimeStamp}`);
 
 // Edit Flag (送信画面から入力画面への戻り)
 let editFlag = false;
@@ -52,7 +57,7 @@ let editFlag = false;
 // Validation ( Error Check )
 //
 let errorCounter = 0;
-const checkLists = document.querySelectorAll('.validate');
+const checkLists  = document.querySelectorAll('.validate');
 checkLists.forEach((checkList)=>{
   checkList.addEventListener('blur', ()=>{
     const message = checkList.parentElement.previousElementSibling;
@@ -62,13 +67,31 @@ checkLists.forEach((checkList)=>{
       message.textContent = '未入力です。';
       errorCounter++;
     }else {
-      message.textContent = '';
-      errorCounter = 0; //reset
-      //error warning reset
-      warning.classList.remove('error');
-      message.textContent = '';
+      if(checkList.type === 'date') {
+        const reserveDate      = new Date(checkList.value);
+        const reserveTimeStamp = reserveDate.getTime();
+        // console.log(`reserveTimeStamp：${reserveTimeStamp}`);
+        // カレンダーの日付チェック
+        if(limitTimeStamp > reserveTimeStamp) {
+          warning.classList.add('error');
+          message.textContent = '翌日以降の日付をご選択ください。';
+          errorCounter++;
+        }else {
+          message.textContent = '';
+          errorCounter = 0; //reset
+          //error warning reset
+          warning.classList.remove('error');
+          message.textContent = '';
+        }
+      }else {
+        message.textContent = '';
+        errorCounter = 0; //reset
+        //error warning reset
+        warning.classList.remove('error');
+        message.textContent = '';
+      }
+      //console.log(errorCounter);
     }
-    //console.log(errorCounter);
   });
 });
 

@@ -176,8 +176,11 @@
           </div>
           <hr class="sub-section hr-dots">
           <div class="element-holder calender-holder">
+            <div class="error-message"></div>
+            <span>
             <label for="date">見学日</label>
-            <input class="calender" name="date" type="date" min="" required />
+            <input class="calender validate" name="date" type="date" min="" required />
+            </span>
             <p class="input-example"><span class="no-wrap attention">※見学のご予約は<span class="reserve"></span>以降で</span><br /><span class="no-wrap">お願いいたします。</span><span class="no-wrap">（日・祝日は不可）</span><br /><span>12/31, 1/1, 1/2も休業日にて不可</span></p>
           </div>
           <hr class="sub-section hr-dots">
@@ -320,6 +323,7 @@
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script defer src="../asset/js/apps.js"></script>
   <script defer src="asset/js/validate.js"></script>
+  <!--
   <script>
     // Intersection Observation
     document.addEventListener('DOMContentLoaded', ()=>{
@@ -353,6 +357,7 @@
       }
     })
   </script>
+  -->
 </body>
 
 </html>
