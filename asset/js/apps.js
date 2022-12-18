@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   // Get Anchor Link
   const bodys = document.getElementsByTagName('body');
   const _id = bodys[0].getAttribute('id');
-  console.log(_id);
+  // console.log(_id);
   anchorLists.forEach(list =>{
     if(list.dataset.id === _id)
     list.classList.add('active');
