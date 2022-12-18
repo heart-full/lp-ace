@@ -158,11 +158,19 @@ textarea {
   width: fit-content;
 }
 
+.select-times > * {
+  margin: auto;
+}
+
+.select-times span {
+  font-size: 1.5em;
+}
+
 .toggle {
   position: relative;
   display: inline-block;
-  width: 39px;
-  height: 24px;
+  width: 64px;
+  height: 32px;
   // margin: 20px 30px;
   border-radius: 25px;
   overflow: hidden;
@@ -191,8 +199,8 @@ textarea {
   position: absolute;
   top: 1.5px;
   left: 1.5px;
-  width: 21px;
-  height: 21px;
+  width: 30px;
+  height: 30px;
   display: block;
   border-radius: 50px;
   background: #fff;
@@ -206,7 +214,7 @@ textarea {
 }
 
 .toggle.checked:after {
-  left: 16.5px;
+  left: 30.5px;
   box-shadow: 0 9px 28px -6px rgba(0, 0, 0, 0.5);
 }
 
