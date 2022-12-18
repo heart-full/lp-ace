@@ -1200,6 +1200,10 @@ iframe {
   gap: 1em;
 }
 
+.landscape .access-map-holder {
+  grid-template-columns: unset;
+}
+
 .access-map-holder iframe {
   width: 100%;
   height: auto;

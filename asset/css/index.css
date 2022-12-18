@@ -993,6 +993,9 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1em;
   }
+  .landscape .access-map-holder {
+    grid-template-columns: unset;
+  }
   .access-map-holder iframe {
     width: 100%;
     height: auto;
