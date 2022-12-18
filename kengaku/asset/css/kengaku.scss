@@ -166,6 +166,12 @@ textarea {
   font-size: 1.5em;
 }
 
+.am.checked,
+.pm.checked {
+  color: hsl(98, 100%, 37%);
+  font-weight: bold;
+}
+
 .toggle {
   position: relative;
   display: inline-block;

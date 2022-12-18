@@ -9,14 +9,20 @@ textFields.forEach((textField) => {
 });
 //Toggle Switch
 const toggles = document.querySelectorAll('.toggle');
+const am = document.querySelector('.am');
+const pm = document.querySelector('.pm');
 toggles.forEach((toggle) => {
   toggle.addEventListener('click', ()=>{
     toggle.classList.toggle('checked');
     const toggleInput = toggle.firstElementChild;
     if(!toggleInput.checked) {
       toggleInput.checked = true;
+      am.classList.remove('checked');
+      pm.classList.add('checked');
     } else {
       toggleInput.checked = false;
+      am.classList.add('checked');
+      pm.classList.remove('checked');
     }
   })
 })
