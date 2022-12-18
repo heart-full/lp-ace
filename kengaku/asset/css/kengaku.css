@@ -208,9 +208,9 @@ textarea {
   content: "";
   position: absolute;
   top: 1.5px;
-  left: 1.5px;
-  width: 30px;
-  height: 30px;
+  left: 2px;
+  width: 29px;
+  height: 29px;
   display: block;
   border-radius: 50px;
   background: #fff;
