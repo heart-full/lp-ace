@@ -93,6 +93,9 @@
             backdrop-filter: blur(3px);
     aspect-ratio: 192/59;
   }
+  .catchcopy-holder .touch-device {
+    width: clamp(84px, 32.5vw, 120px);
+  }
   .catchcopy {
     width: 100%;
     -o-object-fit: contain;
