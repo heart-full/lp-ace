@@ -150,6 +150,10 @@ textarea {
   margin: 0 auto;
 }
 
+.ios .calender {
+  font-size: 2em;
+}
+
 .select-times-holder {
   width: -webkit-fit-content;
   width: -moz-fit-content;
