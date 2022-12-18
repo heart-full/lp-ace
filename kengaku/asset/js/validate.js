@@ -64,9 +64,11 @@ checkLists.forEach((checkList)=>{
     const message = checkList.parentElement.previousElementSibling;
     const warning = checkList.parentElement.parentElement;
     if(!checkList.value) {
-      warning.classList.add('error');
-      message.textContent = '未入力です。';
-      errorCounter++;
+      if(!warning.classList.contains('error')) {
+        warning.classList.add('error');
+        message.textContent = '未入力です。';
+        errorCounter++;
+      }
     }else {
       if(checkList.type === 'date') {
         const reserveDate      = new Date(checkList.value);
@@ -79,19 +81,18 @@ checkLists.forEach((checkList)=>{
           errorCounter++;
         }else {
           message.textContent = '';
-          errorCounter = 0; //reset
+          // errorCounter = 0; //reset
           //error warning reset
           warning.classList.remove('error');
           message.textContent = '';
         }
       }else {
         message.textContent = '';
-        errorCounter = 0; //reset
+        // errorCounter = 0; //reset
         //error warning reset
         warning.classList.remove('error');
         message.textContent = '';
       }
-      //console.log(errorCounter);
     }
   });
 });
@@ -114,7 +115,8 @@ let clone_contents    = template_contents.content.cloneNode(true);
 //
 indicator.addEventListener('click', async function() {
   if(!editFlag) { /** 確認画面からの戻りでなければ */
-    /** 確認ボタンがクリックされたとき全てのフォーカスを外す */
+    errorCounter = 0; //Counter Reset
+    // 再確認
     await checkLists.forEach((checkList) => {
       if(checkList.value === '') {
         errorCounter++;
@@ -122,7 +124,7 @@ indicator.addEventListener('click', async function() {
         checkList.parentElement.parentElement.firstElementChild.classList.add('error');
         checkList.parentElement.parentElement.firstElementChild.textContent = '未入力です';
       }
-      // 
+      /** 確認ボタンがクリックされたとき全てのフォーカスを外す */
       checkList.blur();
       //console.log(errorCounter);
     });
