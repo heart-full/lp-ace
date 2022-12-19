@@ -12,7 +12,7 @@ body.Contact {
   font-size: 16px;
 }
 
-:where(.touch-device .main section) {
+.touch-device .main section {
   padding-right: 16px;
   padding-left: 16px;
 }
@@ -24,7 +24,7 @@ body.Contact {
   overflow: hidden;
 }
 
-:where(.touch-device .contact-form) {
+.touch-device .contact-form {
   width: fit-content;
   padding: 0;
 }
@@ -80,7 +80,7 @@ legend {
   transform: translate(-50%, -45%);
 }
 
-:where(.touch-device legend) {
+.touch-device legend {
   text-align: center;
   width: 100%;
   position: unset;
@@ -133,7 +133,7 @@ textarea {
   margin-bottom: 0;
 }
 */
-:where(.comment + .input-example) {
+.comment + .input-example {
   text-align: center;
 }
 
@@ -227,11 +227,11 @@ textarea {
   cursor: pointer;
 }
 
-:where(.touch-device .submit-holder button) {
+.touch-device .submit-holder button {
   font-size: 1.2em;
 }
 
-:where(.element-holder.error .error-message),
+.element-holder.error .error-message,
 .error-message {
   color: #f00;
   font-size: 0.8em;
@@ -256,7 +256,7 @@ textarea {
   display: block;
 }
 
-:where(.privacy-policy tr) {
+.privacy-policy tr {
   display: contents;
 }
 
@@ -266,18 +266,18 @@ textarea {
   border-bottom: solid 2px hsl(170, 30%, 60%);
 }
 
-:where(.privacy-policy th)::before {
+.privacy-policy th::before {
   content: '■';
   display: inline-block;
   margin-right: 0.5em;
   transform: rotate(45deg);
 }
 
-:where(.privacy-policy td) {
+.privacy-policy td {
   margin-bottom: 1em;
 }
 
-:where(.privacy-policy tr:nth-last-of-type(-n+2) td) {
+.privacy-policy tr:nth-last-of-type(-n+2) td {
   text-align: center;
 }
 
@@ -302,34 +302,34 @@ textarea {
   // overflow-y: scroll;
 }
 
-:where(.dialog table) {
+.dialog table {
   width: 100%;
 }
 
-:where(.dialog table caption)::before {
+.dialog table caption::before {
   content: '■';
   padding-right: 0.5em;
 }
 
-:where(.dialog table caption)::after {
+.dialog table caption::after {
   content: '■';
   padding-left: 0.5em;
 }
 
-:where(.dialog .close-dialog) {
+.dialog .close-dialog {
   padding: 0.25em 1em;
   border: none;
   border-radius: 0.25em;
   cursor: pointer;
 }
 
-:where(.dialog .sent-content) {
+.dialog .sent-content {
   font-size: .8em;
   display: grid;
 }
 
-:where(.dialog .sent-content > tbody),
-:where(.dialog .sent-content > tbody > tr) {
+.dialog .sent-content > tbody,
+.dialog .sent-content > tbody > tr {
   display: contents;
 }
 
@@ -341,13 +341,13 @@ textarea {
   margin-bottom: 1em;
 }
 
-:where(.policy-general .attention:first-of-type) {
+.policy-general .attention:first-of-type {
   text-indent:  -1em;
   padding-left: 1em;
 }
 
 /* 完了画面 */
-:where(.completion h3) {
+.completion h3 {
   text-align: center;
   margin-bottom: 1em;
 }
@@ -357,7 +357,7 @@ textarea {
   margin: 0 auto;
 }
 
-:where(.thanks-message p) {
+.thanks-message p {
   margin-bottom: 1em;
 }
 
@@ -372,7 +372,7 @@ textarea {
   max-width: 480px;
 }
 
-:where(.touch-device .mdc-text-field) {
+.touch-device .mdc-text-field {
   // width: 140%;
   max-width: 480px;
 }
