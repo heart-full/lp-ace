@@ -1019,6 +1019,7 @@
     z-index: 200;
     transition: all 1s;
     opacity: 1;
+    z-index: 9999;
   }
   :is(#loading) {
     background: linear-gradient(-45deg, #f9c2eb, #a8c2ee, #c2f9d0, #ffdea5) fixed;

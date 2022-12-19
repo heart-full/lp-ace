@@ -1,4 +1,11 @@
 /**
+ * Loading Remove
+ */
+setTimeout(() => {
+  document.getElementById('loading').remove();
+}, 500);
+
+/**
  * Navigation Button
  */
 const wake_menus = document.querySelectorAll('.wake-menu');
