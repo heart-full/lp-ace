@@ -20,7 +20,7 @@
     letter-spacing: 2px;
     height: 100%;
   }
-  :is(.touch-device body) {
+  .touch-device body {
     font-size: clamp(12px, 1.875vw, 18px);
   }
   /*
@@ -71,7 +71,7 @@
   a {
     text-decoration: none;
   }
-  :is(summary) {
+  summary {
     display: block;
     width: -webkit-fit-content;
     width: -moz-fit-content;
