@@ -196,6 +196,14 @@ body {
   position: relative;
 }
 
+.portrait .page_header-hero {
+  background: url(../images/hero_bg_m.webp) left top no-repeat;
+}
+
+.landscape .page_header-hero {
+  background: url(../images/hero_bg_m.webp) left top no-repeat;
+}
+
 @media screen and (max-width: 600px) {
   .page_header-hero {
     background-position: left -120px top 0px;
