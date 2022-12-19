@@ -255,11 +255,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 // 初回アクセス時
 if (document.cookie.indexOf('visited=yes') === -1) {
   document.cookie = 'visited=yes path=/';
-  console.log('初回のアクセスです');
+  // console.log('初回のアクセスです');
 } else {
   // 2回目以降のアクセス
   throughHeader();
-  console.log('2回目以降のアクセスです');
+  // console.log('2回目以降のアクセスです');
 }
 
 
@@ -272,8 +272,10 @@ if (document.cookie.indexOf('visited=yes') === -1) {
 //  document.cookie = "loading=finished";
 // })
 function throughHeader () {
-  const firstSection  = document.getElementById('intro');
-  firstSection.scrollIntoView({
-    behavior: 'smooth'
-  })
+  // if (document.cookie.indexOf('loading=finished') != -1) {
+    const firstSection  = document.getElementById('intro');
+    firstSection.scrollIntoView({
+      behavior: 'smooth'
+    })
+  // }
 }
