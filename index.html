@@ -7,6 +7,15 @@
     const html = document.getElementsByTagName('html');
     if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       html[0].classList.add('touch-device');
+      let _width = window.innerWidth;
+      let _height = window.innerHeight;
+      let aspectRatio = parseInt(_height / _width);
+      // console.log(aspectRatio);
+      if(aspectRatio) { //portrait
+        html[0].classList.add('portrait');
+      } else { //landscape
+        html[0].classList.add('landscape');
+      }
     } else {
       html[0].classList.add('desktop');
     }

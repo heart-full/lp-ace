@@ -170,21 +170,25 @@
   }
   /* Header Hero Section */
   .page_header-hero {
-    background: url(../images/hero_bg_l.webp) left top no-repeat;
-    background-size: cover;
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: calc(100% - 28px);
     position: relative;
   }
+  .desktop .page_header-hero {
+    background: url(../images/hero_bg_l.webp) left top no-repeat;
+    background-size: cover;
+  }
   .portrait .page_header-hero {
     background: url(../images/hero_bg_s.webp) left top no-repeat;
+    background-size: cover;
   }
   .landscape .page_header-hero {
     background: url(../images/hero_bg_m.webp) left top no-repeat;
+    background-size: cover;
   }
   @media screen and (max-width: 600px) {
-    .page_header-hero {
+    .touch-device .page_header-hero {
       background-position: left -120px top 0px;
     }
   }
