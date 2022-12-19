@@ -3,7 +3,7 @@
  */
 setTimeout(() => {
   document.getElementById('loading').remove();
-}, 1000);
+}, 500);
 
 /**
  * Navigation Button
