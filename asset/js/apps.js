@@ -272,10 +272,8 @@ if (document.cookie.indexOf('visited=yes') === -1) {
 //  document.cookie = "loading=finished";
 // })
 function throughHeader () {
-  if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
-    const firstSection  = document.getElementById('intro');
-    firstSection.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
+  const firstSection  = document.getElementById('intro');
+  firstSection.scrollIntoView({
+    behavior: 'smooth'
+  })
 }
