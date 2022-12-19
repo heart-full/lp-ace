@@ -61,7 +61,7 @@ window.addEventListener('load', ()=>{
     } else { //landscape
       html[0].classList.add('landscape');
     }
-    
+
   } 
 })
 
@@ -248,6 +248,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
   }
 })
 
+
+/** 
+ * 初回アクセスチェック
+ */
+// 初回アクセス時
+if (document.cookie.indexOf('visited=yes') === -1) {
+  document.cookie = 'visited=yes path=/';
+  console.log('初回のアクセスです');
+} else {
+  // 2回目以降のアクセス
+  throughHeader();
+  console.log('2回目以降のアクセスです');
+}
+
+
 /** 
  * Through Header Block
  */
@@ -256,12 +271,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 // window.addEventListener('load', ()=>{
 //  document.cookie = "loading=finished";
 // })
-
-if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
-  const firstSection  = document.getElementById('intro');
-  firstSection.scrollIntoView({
-    behavior: 'smooth'
-  })
+function throughHeader () {
+  if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
+    const firstSection  = document.getElementById('intro');
+    firstSection.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
 }
-
-
