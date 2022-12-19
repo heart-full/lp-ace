@@ -61,6 +61,7 @@ window.addEventListener('load', ()=>{
     } else { //landscape
       html[0].classList.add('landscape');
     }
+    
   } 
 })
 
