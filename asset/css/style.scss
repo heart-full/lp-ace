@@ -230,6 +230,9 @@ body {
 
 /* Header Hero Section */
 .page_header-hero {
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: calc(100% - 28px);
@@ -237,18 +240,15 @@ body {
 }
 
 .desktop .page_header-hero {
-  background: url(../images/hero_bg_l.webp) left top no-repeat;
-  background-size: cover;
+  background-image: url(../images/hero_bg_l.webp);
 }
 
 .touch-device.portrait .page_header-hero {
-  background: url(../images/hero_bg_s.webp) left top no-repeat;
-  background-size: cover;
+  background-image: url(../images/hero_bg_s.webp);
 }
 
 .touch-device.landscape .page_header-hero {
-  background: url(../images/hero_bg_m.webp) left top no-repeat;
-  background-size: cover;
+  background-image: url(../images/hero_bg_m.webp);
 }
 
 @media screen and (max-width: 600px) {
