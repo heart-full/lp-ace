@@ -804,6 +804,7 @@
   </template>
   <script>
   if(mobile) {
+    if (document.cookie.indexOf('visited=yes') != -1) {
   /***************************************************
    * 
    * Loading Animation
@@ -950,6 +951,7 @@
       attributes: true
     });
   })();
+  }
   }
   </script>
   <script defer src="asset/js/apps2.js"></script>
