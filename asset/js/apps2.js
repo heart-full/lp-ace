@@ -274,11 +274,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Through Header Block
  */
-
-// let Cookie = false;
-// window.addEventListener('load', ()=>{
-//  document.cookie = "loading=finished";
-// })
 (function throughHeader () {
   if (document.cookie.indexOf('loading=finished') != -1) {
     setTimeout(() => {
