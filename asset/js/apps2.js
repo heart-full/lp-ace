@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 // window.addEventListener('load', ()=>{
 //  document.cookie = "loading=finished";
 // })
-function throughHeader () {
+(function throughHeader () {
   if (document.cookie.indexOf('loading=finished') != -1) {
     setTimeout(() => {
       // document.getElementById('loading').remove();
@@ -289,4 +289,4 @@ function throughHeader () {
       })
       }, 500);
   }
-}
+})();
