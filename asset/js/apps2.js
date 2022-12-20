@@ -1,9 +1,9 @@
 /**
  * Loading Remove
  */
-setTimeout(() => {
-  document.getElementById('loading').remove();
-}, 500);
+// setTimeout(() => {
+//   document.getElementById('loading').remove();
+// }, 500);
 
 
 /**
@@ -261,14 +261,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
  * 初回アクセスチェック
  */
 // 初回アクセス時
-if (document.cookie.indexOf('visited=yes') === -1) {
-  document.cookie = 'visited=yes path=/';
-  // console.log('初回のアクセスです');
-} else {
-  // 2回目以降のアクセス
-  throughHeader();
-  // console.log('2回目以降のアクセスです');
-}
+// if (document.cookie.indexOf('visited=yes') === -1) {
+//   document.cookie = 'visited=yes path=/';
+//   // console.log('初回のアクセスです');
+// } else {
+//   // 2回目以降のアクセス
+//   throughHeader();
+//   // console.log('2回目以降のアクセスです');
+// }
 
 
 /** 
@@ -280,10 +280,13 @@ if (document.cookie.indexOf('visited=yes') === -1) {
 //  document.cookie = "loading=finished";
 // })
 function throughHeader () {
-  // if (document.cookie.indexOf('loading=finished') != -1) {
-    const firstSection  = document.getElementById('intro');
-    firstSection.scrollIntoView({
-      behavior: 'smooth'
-    })
-  // }
+  if (document.cookie.indexOf('loading=finished') != -1) {
+    setTimeout(() => {
+      // document.getElementById('loading').remove();
+      const firstSection  = document.getElementById('intro');
+      firstSection.scrollIntoView({
+        behavior: 'smooth'
+      })
+      }, 500);
+  }
 }
