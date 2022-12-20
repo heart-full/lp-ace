@@ -230,7 +230,7 @@
     background-image: url(../images/staff-photo03.webp);
   }
   @media screen and (max-width: 640px) {
-    .Index .curriculumn .staff-message-wrapper {
+    .curriculumn .staff-message-wrapper {
       top: clamp(8px, 1.6666666667vw, 16px);
       bottom: unset;
     }
@@ -263,7 +263,7 @@
     border-radius: 0.5em;
     box-shadow: 1px 1px 2px 2px rgba(126, 126, 126, 0.2);
   }
-  .curriculumn-weekly-table th, .curriculumn-weekly-table td {
+  .curriculumn-weekly-table :is(th, td) {
     display: block;
   }
   .curriculumn-weekly-table th {
@@ -296,7 +296,7 @@
     background-image: url(../images/staff-photo02.webp);
   }
   @media screen and (max-width: 640px) {
-    :is(.Index .activities .staff-message-wrapper) {
+    .activities .staff-message-wrapper {
       top: clamp(8px, 1.6666666667vw, 16px);
       bottom: unset;
     }
@@ -831,8 +831,7 @@
     width: clamp(64px, 6.6666666667vw, 64px);
     aspect-ratio: 1/1;
   }
-  .sns .sns-title,
-.sns .channel-name {
+  .sns :is(.sns-title, .channel-name) {
     color: #fff;
     font-family: "Noto Sans JP", sans-serif;
   }

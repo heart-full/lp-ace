@@ -75,7 +75,7 @@ body {
   position: relative;
 }
 
-.landscape .page_header {
+.touch-device.landscape .page_header {
   background-color: hsl(173, 33%, 51%, .25);
 }
 
@@ -241,12 +241,12 @@ body {
   background-size: cover;
 }
 
-.portrait .page_header-hero {
+.touch-device.portrait .page_header-hero {
   background: url(../images/hero_bg_s.webp) left top no-repeat;
   background-size: cover;
 }
 
-.landscape .page_header-hero {
+.touch-device.landscape .page_header-hero {
   background: url(../images/hero_bg_m.webp) left top no-repeat;
   background-size: cover;
 }
@@ -365,7 +365,7 @@ body {
   top: -80px;
 }
 */
-.landscape .scroll_prompt {
+.touch-device.landscape .scroll_prompt {
   top: -40px;
 }
 
