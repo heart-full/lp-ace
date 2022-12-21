@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 /** 
  * Through Header Block
  */
-(function throughHeader () {
+window.addEventListener('load', ()=>{
   if (document.cookie.indexOf('loading=finished') != -1) {
     setTimeout(() => {
       // document.getElementById('loading').remove();
@@ -282,6 +282,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
       firstSection.scrollIntoView({
         behavior: 'smooth'
       })
-      }, 500);
+    }, 500);
   }
-})();
+})
