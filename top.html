@@ -803,8 +803,13 @@
     </div>
   </template>
   <script>
+<<<<<<< HEAD
   if(mobile) {
   if (document.cookie.indexOf('loading=finished') != -1) {
+=======
+  if(document.cookie.indexOf('loading=finished') === -1) {
+    if (mobile) {
+>>>>>>> 3827dc7e133573d4f26874bc631f9bd695e58952
   /***************************************************
    * 
    * Loading Animation
@@ -812,11 +817,11 @@
    * *************************************************/
   // Loading Cookie Check
   let Cookie = false;
-  if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
+   if (document.cookie.split(';').some((item) => item.includes('loading=finished'))) {
     console.log(document.cookie);
     Cookie = true;
-    document.getElementById('loading').remove();
-  }
+    // document.getElementById('loading').remove();
+   }
 
 
   //Timer
@@ -944,6 +949,7 @@
         // console.log('Loading Ended');
         // Set Cookie
         document.cookie = "loading=finished";
+        document.cookie = 'visited=yes path=/';
       });
     });
 
@@ -952,6 +958,14 @@
     });
   })();
   }
+  } else {
+    setTimeout(() => {
+      document.getElementById('loading').remove();
+      const firstSection  = document.getElementById('intro');
+      firstSection.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }, 500);
   }
   </script>
   <script defer src="asset/js/apps2.js"></script>
