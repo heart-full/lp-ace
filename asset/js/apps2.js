@@ -277,11 +277,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 window.addEventListener('load', ()=>{
   if (document.cookie.indexOf('loading=finished') != -1) {
     setTimeout(() => {
-      // document.getElementById('loading').remove();
-      const firstSection  = document.getElementById('intro');
+      const firstSection = document.getElementById('intro');
       firstSection.scrollIntoView({
         behavior: 'smooth'
       })
+      document.getElementById('loading').remove();
     }, 500);
   }
 })
