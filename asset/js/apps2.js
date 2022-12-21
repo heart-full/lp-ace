@@ -281,7 +281,7 @@ window.addEventListener('load', ()=>{
       firstSection.scrollIntoView({
         behavior: 'smooth'
       })
-      document.getElementById('loading').remove();
+      // document.getElementById('loading').remove();
     }, 500);
   }
 })
