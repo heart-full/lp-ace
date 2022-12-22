@@ -437,6 +437,31 @@
   /* Global Navigation & Local Navigation Block Definition
   /*
   /* ======================================================== */
+  @media not all and (min-width: 960px) {
+    .desktop .wake-menu {
+      display: none;
+    }
+  }
+  .touch-device.landscape .wake-menu {
+    display: none;
+  }
+  :is(.page_header, .page_footer) .wake-menu {
+    font-size: clamp(12px, 1.6666666667vw, 16px);
+  }
+  .page_header .wake-menu.on {
+    top: 50%;
+    transform: rotate(-90deg) translate(-50%, -100%) scale(0.8);
+  }
+  .page_footer .wake-menu.on {
+    top: 50%;
+    transform: rotate(0) translateY(calc(-50% + 62px));
+  }
+  .page_footer .wake-menu {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
   .g-nav {
     font-size: clamp(12px, 1.4583333333vw, 14px);
     background-color: transparent;
@@ -586,7 +611,7 @@
   .sticky-nav ul li:hover::before {
     transform: rotate(125deg) scale(2);
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 960px) {
     .sticky-nav {
       display: none;
     }

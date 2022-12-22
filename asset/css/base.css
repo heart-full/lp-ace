@@ -214,45 +214,6 @@
     left: 0;
     z-index: 100;
   }
-  @media not all and (min-width: 1280px) {
-    .desktop .wake-menu {
-      display: none;
-    }
-  }
-  .touch-device.landscape .wake-menu {
-    display: none;
-  }
-  :is(.page_header, .page_footer) .wake-menu {
-    font-size: clamp(12px, 1.6666666667vw, 16px);
-  }
-  .page_header .wake-menu.on {
-    top: 50%;
-    transform: rotate(-90deg) translate(-50%, -100%) scale(0.8);
-  }
-  .page_footer .wake-menu.on {
-    top: 50%;
-    transform: rotate(0) translateY(calc(-50% + 62px));
-  }
-  .page_footer .wake-menu {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 4;
-  }
-  .wake-menu.on .button__box::after {
-    content: "Close";
-    color: #666;
-    background-color: #fff;
-    font-size: 1em;
-    font-weight: bold;
-    display: block;
-    padding: 0.25em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 0.25em;
-  }
   .no-wrap {
     white-space: nowrap;
   }
