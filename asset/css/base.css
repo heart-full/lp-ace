@@ -23,6 +23,9 @@
   .touch-device body {
     font-size: clamp(12px, 1.875vw, 18px);
   }
+  .touch-device.portrait body {
+    letter-spacing: 1px;
+  }
   /*
   @media screen and (max-width: 960px) {
     body {
