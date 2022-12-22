@@ -214,6 +214,9 @@
     left: 0;
     z-index: 100;
   }
+  .touch-device.landscape .wake-menu {
+    display: none;
+  }
   :is(.page_header, .page_footer) .wake-menu {
     font-size: clamp(12px, 1.6666666667vw, 16px);
   }
