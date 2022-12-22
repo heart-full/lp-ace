@@ -214,6 +214,11 @@
     left: 0;
     z-index: 100;
   }
+  @media not all and (min-width: 1280px) {
+    .desktop .wake-menu {
+      display: none;
+    }
+  }
   .touch-device.landscape .wake-menu {
     display: none;
   }
