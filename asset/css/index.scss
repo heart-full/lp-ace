@@ -498,19 +498,13 @@ iframe {
   max-height: 100vh
 } 
 
-.activities .mendan .image-holder,
-.activities .recruit .image-holder,
-.activities .training .image-holder,
-.activities .symposium .image-holder {
+.activities :is(.mendan, .recruit, .training, .symposium) .image-holder  {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(28%, 1fr));
   gap: 16px;
 }
 
-.activities .mendan .image-holder img,
-.activities .recruit .image-holder img,
-.activities .training .image-holder img,
-.activities .symposium .image-holder img {
+.activities :is(.mendan, .recruit, .training, .symposium) .image-holder img {
   width: 240px;
   max-width: 100%;
   max-height: clamp(58px, calc(100vw * 120 / 960), 136px);
