@@ -474,6 +474,13 @@
     transform: translate(-100%, 0);
     transition: all 0.2s 0.15s ease;
   }
+  @media all and (min-width: 640px) {
+    @media not all and (min-width: 960px) {
+      .g-nav {
+        display: none;
+      }
+    }
+  }
   @media not all and (min-width: 640px) {
     .g-nav {
       background-color: rgba(0, 0, 0, 0.5);
