@@ -446,7 +446,6 @@
     margin: 0 auto;
   }
   .activities .mendan .image-holder img {
-    width: 100%;
     max-width: unset;
     max-height: unset;
   }
