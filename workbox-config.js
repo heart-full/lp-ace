@@ -3,7 +3,7 @@ export default {
 	globDirectory: './docs/',
 	globPatterns: [
 		'./docs/*.html',
-		'./docs/assets/**/*.{js,css,jpg,jpeg,png,svg,ico}'
+		'./docs/asset/**/*.{js,css,jpg,jpeg,png,svg,ico}'
 	],
 	swDest: './src/sw.js',
 	ignoreURLParametersMatching: [

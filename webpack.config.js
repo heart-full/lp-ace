@@ -28,7 +28,7 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 
 const __dirname = path.resolve(path.dirname(''));
 const isProd = process.env.NODE_ENV === 'production';
-const outputPath = path.resolve(__dirname, "doc");
+const outputPath = path.resolve(__dirname, "docs");
 
 export default {
   mode: isProd ? 'production' : 'development',
@@ -127,7 +127,7 @@ export default {
   },
   plugins: [
     new InjectManifest({
-      swSrc: './src/service-worker.js'
+      swSrc: './src/sw.js'
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -141,21 +141,21 @@ export default {
       filename: 'ikou/index.html',
       inject: 'body',
       //chunk: ['app'],
-      excludeAssets: ["./src/service-worker.js", "./src/manifest.json"]
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackPlugin({
       template: './src/kengaku/index.html',
-      filename: '/index.html',
+      filename: 'kengaku/index.html',
       inject: 'body',
       //chunk: ['app'],
-      excludeAssets: ["./src/service-worker.js", "./src/manifest.json"]
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackPlugin({
       template: './src/contact/index.html',
       filename: 'contact/index.html',
       inject: 'body',
       //chunk: ['app'],
-      excludeAssets: ["./src/service-worker.js", "./src/manifest.json"]
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackSkipAssetsPlugin({
       excludeAssets: ["sw.js"]
