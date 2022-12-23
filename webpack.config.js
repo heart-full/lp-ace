@@ -41,7 +41,7 @@ export default {
     app: './src/index.js',
   },
   output: {
-    path: outputPath,
+    path: path.resolve(__dirname, "docs/"),
     //publicPath: '/lp-ace/',
     filename: ({runtime}) => {
       // Check if the current filename is for the service worker:
@@ -55,7 +55,7 @@ export default {
       return './asset/js/[name].[contenthash:8].js';
     },
     //Asset Modules の出力先の指定
-    assetModuleFilename: 'images/[name].[contenthash:8][ext]',
+    // assetModuleFilename: './asset/**/[name].[contenthash:8][ext]',
     clean: true,
   },
   module: {
@@ -65,7 +65,7 @@ export default {
         loader: "html-loader",
       },
       {
-        test: /\.s[ac]ss$/i, // 対象となるファイルの拡張子
+        test: /\.(css|scss|sass)$/, // 対象となるファイルの拡張子
         use: [
           // Creates `style` nodes from JS strings
           //"style-loader",
@@ -74,9 +74,16 @@ export default {
             options: { publicPath: '../' },
           },
           // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader", 
+            options: {
+               sourceMap: true,
+            },
+          },
           // Compiles Sass to CSS
-          "sass-loader",
+          {
+            loader:"sass-loader"
+          },
         ],
       },
       //Asset Modules の設定
@@ -86,7 +93,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./asset/images/[name].[contenthash:8][ext]"
+          filename: "./asset/images/[name][ext]"
         }
       },
       {

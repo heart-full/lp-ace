@@ -828,7 +828,7 @@ body {
   align-items: center;
   justify-content: center;
   &::before {
-    // content: url(../images/hr2.svg);
+    // content: url(images/hr2.svg);
     content: '';
     aspect-ratio: 300 / 45;
     width: 100px;
