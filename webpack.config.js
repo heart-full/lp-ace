@@ -84,7 +84,7 @@ export default {
         //対象とするアセットファイルの拡張子を正規表現で指定
         test: /\.(png|jpe?g|gif|svg|avif|webp)$/i,  
         //いずれかの type を指定
-        type: 'asset/resource',
+        type: 'asset/inline',
         generator: {
           filename: "./asset/images/[name].[contenthash:8][ext]"
         }
