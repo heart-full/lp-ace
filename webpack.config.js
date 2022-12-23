@@ -52,7 +52,7 @@ export default {
       }
 
       // Otherwise, output files as normal
-      return './assets/js/[name].[contenthash:8].js';
+      return './asset/js/[name].[contenthash:8].js';
     },
     clean: true,
   },
@@ -81,7 +81,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./assets/images/[name].[hash:8][ext]"
+          filename: "./asset/images/[name].[hash:8][ext]"
         }
       },
       {
@@ -90,7 +90,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./assets/fonts/[name][ext]"
+          filename: "./asset/fonts/[name][ext]"
         }
       },
       {
@@ -99,7 +99,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./assets/images/ico/[name].ico"
+          filename: "./asset/images/ico/[name].ico"
         }
       },
       {
@@ -108,7 +108,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./assets/images/ico/[name][ext]"
+          filename: "./asset/images/ico/[name][ext]"
         }
       },
       {
@@ -164,7 +164,7 @@ export default {
       excludeAssets: ["manifest.json"]
     }),
     new MiniCssExtractPlugin({
-      filename: './assets/css/[name].[contenthash:8].css',
+      filename: './asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
       publicPath: '/ace/',
@@ -181,32 +181,32 @@ export default {
       ios: true,
       icons: [
           {
-              src: path.resolve("src/assets/images/ico/icon-192x192.png"),
+              src: path.resolve("src/asset/images/ico/icon-192x192.png"),
               sizes: "192x192",
               type: "image/png",
               purpose: "any maskable",
-              destination: 'assets/images/icons',
+              destination: 'asset/images/icons',
           },
           {
-              src: path.resolve("src/assets/images/ico/icon-256x256.png"),
+              src: path.resolve("src/asset/images/ico/icon-256x256.png"),
               sizes: "256x256",
               type: "image/png",
               purpose: "any maskable",
-              destination: 'assets/images/icons',
+              destination: 'asset/images/icons',
           },
           {
-              src: path.resolve("src/assets/images/ico/icon-384x384.png"),
+              src: path.resolve("src/asset/images/ico/icon-384x384.png"),
               sizes: "384x384",
               type: "image/png",
               purpose: "any maskable",
-              destination: 'assets/images/icons',
+              destination: 'asset/images/icons',
           },
           {
-              src: path.resolve("src/assets/images/ico/icon-512x512.png"),
+              src: path.resolve("src/asset/images/ico/icon-512x512.png"),
               sizes: "512x512",
               type: "image/png",
               purpose: "any maskable",
-              destination: 'assets/images/icons',
+              destination: 'asset/images/icons',
           }
       ],
     }),
