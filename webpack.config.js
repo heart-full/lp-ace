@@ -41,19 +41,21 @@ export default {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'docs/'),
-    //publicPath: '/ace/',
+    path: outputPath,
+    //publicPath: '/lp-ace/',
     filename: ({runtime}) => {
       // Check if the current filename is for the service worker:
       if (runtime === 'sw') {
         // Output a service worker in the root of the dist directory
         // Also, ensure the output file name doesn't have a hash in it
-        return '[name].js';
+        return 'service-worker.js?';
       }
 
       // Otherwise, output files as normal
       return './asset/js/[name].[contenthash:8].js';
     },
+    //Asset Modules の出力先の指定
+    assetModuleFilename: 'images/[name].[contenthash:8][ext]',
     clean: true,
   },
   module: {
@@ -67,7 +69,10 @@ export default {
         use: [
           // Creates `style` nodes from JS strings
           //"style-loader",
-          MiniCssExtractPlugin.loader,
+          {
+            loader:  MiniCssExtractPlugin.loader,
+            options: { publicPath: '../' },
+          },
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
@@ -81,7 +86,7 @@ export default {
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
-          filename: "./asset/images/[name].[hash:8][ext]"
+          filename: "./asset/images/[name].[contenthash:8][ext]"
         }
       },
       {
@@ -126,9 +131,9 @@ export default {
     extensions: ['.js', '.jsx', '.json']
   },
   plugins: [
-    new InjectManifest({
-      swSrc: './src/sw.js'
-    }),
+    // new InjectManifest({
+    //   swSrc: './src/sw.js'
+    // }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
@@ -167,7 +172,7 @@ export default {
       filename: './asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
-      publicPath: '/ace/',
+      publicPath: './',
       includeDirectory: true,
       theme_color: "#9bfbfd",
       background_color: "#9bfbfd",
