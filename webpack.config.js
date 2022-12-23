@@ -65,7 +65,7 @@ export default {
         loader: "html-loader",
       },
       {
-        test: /\.(css|scss|sass)$/, // 対象となるファイルの拡張子
+        test: /\.(scss|sass)$/, // 対象となるファイルの拡張子
         use: [
           // Creates `style` nodes from JS strings
           //"style-loader",
