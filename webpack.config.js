@@ -85,6 +85,9 @@ export default {
             loader:"sass-loader"
           },
         ],
+        generator: {
+          filename: "./asset/css/[name][ext]"
+        }
       },
       //Asset Modules の設定
       {
