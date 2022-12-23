@@ -78,6 +78,8 @@ export default {
           // Compiles Sass to CSS
           "sass-loader",
         ],
+        generator: {
+          filename: "./asset/css/[name].[contenthash:8][ext]"
       },
       //Asset Modules の設定
       {
