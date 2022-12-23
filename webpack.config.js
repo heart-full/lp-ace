@@ -71,7 +71,6 @@ export default {
           //"style-loader",
           {
             loader:  MiniCssExtractPlugin.loader,
-            options: { publicPath: '../' },
           },
           // Translates CSS into CommonJS
           {
