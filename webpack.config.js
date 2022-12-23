@@ -80,6 +80,7 @@ export default {
         ],
         generator: {
           filename: "./asset/css/[name].[contenthash:8][ext]"
+        },
       },
       //Asset Modules の設定
       {
