@@ -812,6 +812,16 @@
     </div>
   </template>
   <script>
+  /***************************************************
+   * 
+   * Service Worker
+   * 
+   * *************************************************/
+   if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+
+
   if(document.cookie.indexOf('loading=finished') === -1) {
     if (mobile) {
   /***************************************************

@@ -56,92 +56,6 @@ export default {
     },
     clean: true,
   },
-  plugins: [
-    // new InjectManifest({
-    //   swSrc: './src/sw.js'
-    // }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-      inject: 'body',
-      //chunk: ['app'],
-      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/ikou/index.html',
-      filename: 'ikou/index.html',
-      inject: 'body',
-      //chunk: ['app'],
-      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/kengaku/index.html',
-      filename: 'kengaku/index.html',
-      inject: 'body',
-      //chunk: ['app'],
-      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/contact/index.html',
-      filename: 'contact/index.html',
-      inject: 'body',
-      //chunk: ['app'],
-      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
-    }),
-    new HtmlWebpackSkipAssetsPlugin({
-      excludeAssets: ["sw.js"]
-    }),
-    new HtmlWebpackSkipAssetsPlugin({
-      excludeAssets: ["manifest.json"]
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'asset/css/[name].[contenthash:8].css',
-    }),
-    new WebpackPwaManifest({
-      publicPath: './',
-      includeDirectory: true,
-      theme_color: "#9bfbfd",
-      background_color: "#9bfbfd",
-      display: "standalone",
-      scope: "https://heart-full.github.io/lp-ace/",
-      start_url: "https://heart-full.github.io/lp-ace/",
-      name: "Heartfull ACE",
-      short_name: "ACE",
-      description: "障がい者就労支援事業所ハートフルACE",
-      crossorigin: 'use-credentials',
-      ios: true,
-      icons: [
-          {
-              src: path.resolve("src/asset/images/ico/icon-192x192.png"),
-              sizes: "192x192",
-              type: "image/png",
-              purpose: "any maskable",
-              destination: 'asset/images/icons',
-          },
-          {
-              src: path.resolve("src/asset/images/ico/icon-256x256.png"),
-              sizes: "256x256",
-              type: "image/png",
-              purpose: "any maskable",
-              destination: 'asset/images/icons',
-          },
-          {
-              src: path.resolve("src/asset/images/ico/icon-384x384.png"),
-              sizes: "384x384",
-              type: "image/png",
-              purpose: "any maskable",
-              destination: 'asset/images/icons',
-          },
-          {
-              src: path.resolve("src/asset/images/ico/icon-512x512.png"),
-              sizes: "512x512",
-              type: "image/png",
-              purpose: "any maskable",
-              destination: 'asset/images/icons',
-          }
-      ],
-    }),
-  ],
   module: {
     rules: [
       {
@@ -152,7 +66,7 @@ export default {
         test: /\.(scss|sass)$/, // 対象となるファイルの拡張子
         use: [
           // Creates `style` nodes from JS strings
-          //"style-loader",
+          {loader:"style-loader"},
           {
             loader:  MiniCssExtractPlugin.loader,
           },
@@ -229,6 +143,94 @@ export default {
       },
     ],
   },
+  plugins: [
+    // new InjectManifest({
+    //   swSrc: './src/sw.js'
+    // }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body',
+      //chunk: ['app'],
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ikou/index.html',
+      filename: 'ikou/index.html',
+      inject: 'body',
+      //chunk: ['app'],
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/kengaku/index.html',
+      filename: 'kengaku/index.html',
+      inject: 'body',
+      //chunk: ['app'],
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contact/index.html',
+      filename: 'contact/index.html',
+      inject: 'body',
+      //chunk: ['app'],
+      excludeAssets: ["./src/sw.js", "./src/manifest.json"]
+    }),
+    new HtmlWebpackSkipAssetsPlugin({
+      excludeAssets: ["sw.js"]
+    }),
+    new HtmlWebpackSkipAssetsPlugin({
+      excludeAssets: ["manifest.json"]
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'asset/css/[name].[contenthash:8].css',
+    }),
+    new WebpackPwaManifest({
+      publicPath: './',
+      includeDirectory: true,
+      theme_color: "#9bfbfd",
+      background_color: "#9bfbfd",
+      display: "standalone",
+      // scope: "https://heart-full.github.io/lp-ace/",
+      // start_url: "https://heart-full.github.io/lp-ace/",
+      scope: "./",
+      start_url: "./",
+      name: "Heartfull ACE",
+      short_name: "ACE",
+      description: "障がい者就労支援事業所ハートフルACE",
+      crossorigin: 'use-credentials',
+      ios: true,
+      icons: [
+          {
+              src: path.resolve("src/asset/images/ico/icon-192x192.png"),
+              sizes: "192x192",
+              type: "image/png",
+              purpose: "any maskable",
+              destination: 'asset/images/icons',
+          },
+          {
+              src: path.resolve("src/asset/images/ico/icon-256x256.png"),
+              sizes: "256x256",
+              type: "image/png",
+              purpose: "any maskable",
+              destination: 'asset/images/icons',
+          },
+          {
+              src: path.resolve("src/asset/images/ico/icon-384x384.png"),
+              sizes: "384x384",
+              type: "image/png",
+              purpose: "any maskable",
+              destination: 'asset/images/icons',
+          },
+          {
+              src: path.resolve("src/asset/images/ico/icon-512x512.png"),
+              sizes: "512x512",
+              type: "image/png",
+              purpose: "any maskable",
+              destination: 'asset/images/icons',
+          }
+      ],
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },

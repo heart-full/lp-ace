@@ -29,9 +29,9 @@
   "short_name": "ACE",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "https://heart-full.github.io/lp-ace/",
+  "start_url": "./",
   "theme_color": "#9bfbfd",
   "background_color": "#9bfbfd",
-  "scope": "https://heart-full.github.io/lp-ace/",
+  "scope": "./",
   "description": "障がい者就労支援事業所ハートフルACE"
 }
