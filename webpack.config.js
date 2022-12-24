@@ -52,7 +52,7 @@ export default {
       }
 
       // Otherwise, output files as normal
-      return './asset/js/[name].[contenthash:8].js';
+      return 'asset/js/[name].[contenthash:8].js';
     },
     clean: true,
   },
@@ -74,12 +74,14 @@ export default {
           {
             loader: "css-loader", 
             options: {
-               sourceMap: true,
+              // オプションでCSS内のurl()メソッドを取り込む
+              url: false,
+              sourceMap: true,
             },
           },
           //Compiles Sass to CSS
           {
-            loader:"sass-loader"
+            loader:"sass-loader",
           },
         ],
         generator: {
@@ -182,7 +184,7 @@ export default {
       excludeAssets: ["manifest.json"]
     }),
     new MiniCssExtractPlugin({
-      filename: 'asset/css/[name].[contenthash:8].css',
+      // filename: 'asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
       publicPath: './',
