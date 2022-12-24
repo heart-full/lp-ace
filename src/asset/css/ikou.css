@@ -1,0 +1,19 @@
+.main {
+  min-height: 100vh;
+}
+
+.under-constraction {
+  display: grid;
+  place-items: center;
+}
+
+:is(.under-constraction img) {
+  transform: scale(0.5);
+}
+
+:is(.under-constraction p) {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+/*# sourceMappingURL=ikou.css.map */
