@@ -233,13 +233,13 @@
     position: relative;
   }
   .desktop .page_header-hero {
-    background-image: url(./asset/images/hero_bg_l.webp);
+    background-image: url(../images/hero_bg_l.webp);
   }
   .touch-device.portrait .page_header-hero {
-    background-image: url(./asset/images/hero_bg_s.webp);
+    background-image: url(../images/hero_bg_s.webp);
   }
   .touch-device.landscape .page_header-hero {
-    background-image: url(./asset/images/hero_bg_m.webp);
+    background-image: url(../images/hero_bg_m.webp);
   }
   @media screen and (max-width: 600px) {
     .touch-device .page_header-hero {
@@ -798,7 +798,7 @@
   }
   .page_footer::after {
     content: "";
-    background-image: url(asset/images/footer_bg.webp);
+    background-image: url(../images/footer_bg.webp);
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: cover;
