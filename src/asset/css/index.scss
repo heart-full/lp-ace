@@ -482,7 +482,7 @@ iframe {
 
 .activities-suchedule-timetable .zoom span:nth-of-type(2)::after {
   content: '';
-  background: url(asset/images/zoom.png) no-repeat center center;
+  background: url(../images/zoom.png) no-repeat center center;
   background-size: cover;
   display: block;
   width: clamp(24px, calc(100vw * 48 / 960), 48px);
@@ -1244,7 +1244,7 @@ iframe {
 }
 
 #ace_movies .playList {
-  background: #fff url(asset/images/youtube-logo.svg) no-repeat center right 6%/10%;
+  background: #fff url(../images/youtube-logo.svg) no-repeat center right 6%/10%;
   display: flex;
   height: auto;
   min-height: 4em;
