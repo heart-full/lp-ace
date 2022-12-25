@@ -1,9 +1,9 @@
-import './asset/css/base.scss';
-import './asset/css/style.scss';
-import './asset/css/index.scss';
-import './asset/css/kengaku.scss';
-import './asset/css/ikou.scss';
-import './asset/css/contact.scss';
+// import './asset/css/base.css';
+// import './asset/css/style.css';
+// import './asset/css/index.css';
+// import './asset/css/kengaku.css';
+// import './asset/css/ikou.css';
+// import './asset/css/contact.css';
 // import './asset/js/apps2.js';
 // import './asset/js/contact_validate.js';
 // import './asset/js/kengaku_validate.js';

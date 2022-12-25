@@ -56,7 +56,8 @@ export default {
       // Otherwise, output files as normal
       return 'asset/js/[name].[contenthash:8].js';
     },
-    clean: true,
+    assetModuleFilename: '[name][ext]',
+    // clean: true,
   },
   module: {
     rules: [
@@ -67,10 +68,6 @@ export default {
       {
         test: /\.s[ac]ss$/i, // 対象となるファイルの拡張子
         use: [
-          // Creates `style` nodes from JS strings
-          {
-            loader: "style-loader",
-          },
           {
             loader: MiniCssExtractPlugin.loader,
           },
@@ -79,12 +76,8 @@ export default {
             loader: "css-loader", 
             options: {
               // オプションでSASS/SCSS内のurl()メソッドを取り込まない
-              url: false,
+              url: true,
               sourceMap: enabledSourceMap,
-              // 0 => no loaders (default);
-              // 1 => postcss-loader;
-              // 2 => postcss-loader, sass-loader
-              importLoaders: 2
             },
           },
           //Compiles Sass to CSS
@@ -97,38 +90,16 @@ export default {
           },
         ],
       },
-      //Asset Modules の設定
       {
         //対象とするアセットファイルの拡張子を正規表現で指定
         test: /\.(css)$/i,
-        //use: [
-        //   // linkタグに出力する機能
-        //   {
-        //     loader: "style-loader"
-        //   },
-        //   {
-        //     loader: MiniCssExtractPlugin.loader
-        //   },
-        //   // CSSをバンドル
-        //  {
-        //    loader: "css-loader",
-        //    options: {
-        //      // オプションでCSS内のurl()メソッドを取り込む
-        //      url: true,
-        //      sourceMap: true,
-        //      // 0 => no loaders (default);
-        //      // 1 => postcss-loader;
-        //      // 2 => postcss-loader, sass-loader
-        //      importLoaders: 2
-        //    },
-        //  }
-        //],
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
           filename: "./asset/css/[name][ext]"
         }
       },
+      // Asset Modules の設定
       // {
       //   //対象とするアセットファイルの拡張子を正規表現で指定
       //   test: /\.(js)$/i,  
