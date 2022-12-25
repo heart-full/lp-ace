@@ -28,7 +28,9 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 
 const __dirname = path.resolve(path.dirname(''));
 const isProd = process.env.NODE_ENV === 'production';
-const outputPath = path.resolve(__dirname, "docs/");
+// ソースマップの利用有無(productionのときはソースマップを利用しない)
+const enabledSourceMap = !isProd;
+const outputPath = path.resolve(__dirname, "./docs");
 
 export default {
   mode: isProd ? 'production' : 'development',
@@ -63,32 +65,70 @@ export default {
         loader: "html-loader",
       },
       {
-        test: /\.(scss|sass)$/, // 対象となるファイルの拡張子
+        test: /\.s[ac]ss$/i, // 対象となるファイルの拡張子
         use: [
           // Creates `style` nodes from JS strings
-          {loader:"style-loader"},
           {
-            loader:  MiniCssExtractPlugin.loader,
+            loader: "style-loader",
           },
-          // Translates CSS into CommonJS
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          //Translates CSS into CommonJS
           {
             loader: "css-loader", 
             options: {
-              // オプションでCSS内のurl()メソッドを取り込む
+              // オプションでSASS/SCSS内のurl()メソッドを取り込まない
               url: false,
-              sourceMap: true,
+              sourceMap: enabledSourceMap,
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader
+              importLoaders: 2
             },
           },
           //Compiles Sass to CSS
           {
             loader:"sass-loader",
+            options: {
+              // ソースマップの利用有無
+              sourceMap: enabledSourceMap,
+            }
           },
         ],
-        generator: {
-          filename: "asset/css/[name][ext]"
-        }
       },
       //Asset Modules の設定
+      {
+        //対象とするアセットファイルの拡張子を正規表現で指定
+        test: /\.(css)$/i,
+        //use: [
+        //   // linkタグに出力する機能
+        //   {
+        //     loader: "style-loader"
+        //   },
+        //   {
+        //     loader: MiniCssExtractPlugin.loader
+        //   },
+        //   // CSSをバンドル
+        //  {
+        //    loader: "css-loader",
+        //    options: {
+        //      // オプションでCSS内のurl()メソッドを取り込む
+        //      url: true,
+        //      sourceMap: true,
+        //      // 0 => no loaders (default);
+        //      // 1 => postcss-loader;
+        //      // 2 => postcss-loader, sass-loader
+        //      importLoaders: 2
+        //    },
+        //  }
+        //],
+        //いずれかの type を指定
+        type: 'asset/resource',
+        generator: {
+          filename: "./asset/css/[name][ext]"
+        }
+      },
       // {
       //   //対象とするアセットファイルの拡張子を正規表現で指定
       //   test: /\.(js)$/i,  
@@ -184,7 +224,7 @@ export default {
       excludeAssets: ["manifest.json"]
     }),
     new MiniCssExtractPlugin({
-      // filename: 'asset/css/[name].[contenthash:8].css',
+      filename: 'asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
       publicPath: './',
