@@ -195,7 +195,7 @@ export default {
       excludeAssets: ["manifest.json"]
     }),
     new MiniCssExtractPlugin({
-      filename: 'asset/css/[name].[contenthash:8].css',
+      filename: 'https://heart-full.github.io/lp-ace/asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
       // publicPath: './',
