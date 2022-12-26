@@ -1,0 +1,37 @@
+{
+  "icons": [
+    {
+      "src": "https://heart-full.github.io/lp-ace/asset/images/icons/icon_512x512.6b737575d2c22d23bb415a26c65a6497.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://heart-full.github.io/lp-ace/asset/images/icons/icon_384x384.0afb6fdd6cc93c94712137c2ffeefc01.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://heart-full.github.io/lp-ace/asset/images/icons/icon_256x256.440b94a6b3774e1810b0e370d176888c.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://heart-full.github.io/lp-ace/asset/images/icons/icon_192x192.3fc11a63d2b65fb1bfacf5d0ed0e7648.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "Heartfull ACE",
+  "short_name": "ACE",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "https://heart-full.github.io/lp-ace/",
+  "theme_color": "#9bfbfd",
+  "background_color": "#9bfbfd",
+  "scope": "https://heart-full.github.io/lp-ace/",
+  "description": "障がい者就労支援事業所ハートフルACE"
+}
