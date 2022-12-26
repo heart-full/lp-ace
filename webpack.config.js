@@ -54,7 +54,8 @@ export default {
       }
 
       // Otherwise, output files as normal
-      return 'asset/js/[name].[contenthash:8].js';
+      // return 'asset/js/[name].[contenthash:8].js';
+      return 'asset/js/[name].js';
     },
     assetModuleFilename: '[name][ext]',
     // clean: true,
@@ -195,7 +196,7 @@ export default {
       excludeAssets: ["manifest.json"]
     }),
     new MiniCssExtractPlugin({
-      filename: 'https://heart-full.github.io/lp-ace/asset/css/[name].[contenthash:8].css',
+      filename: 'asset/css/[name].[contenthash:8].css',
     }),
     new WebpackPwaManifest({
       // publicPath: './',
