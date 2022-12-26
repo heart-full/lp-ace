@@ -166,6 +166,16 @@
     <li data-id="Kengaku"><a href="../kengaku/">見学申し込み</a></li>
     <li data-id="Contact"><a href="../contact/">お問い合わせ</a></li>
   </ul>
+  <script>
+    /***************************************************
+     * 
+     * Service Worker
+     * 
+     * *************************************************/
+     if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../service-worker.js');
+    }
+  </script>
   <script defer src="../asset/js/apps.js?Cookie=true"></script>
 </body>
 </html>

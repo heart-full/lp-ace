@@ -332,6 +332,16 @@
     </section>
   </template>
   <template id="finished"></template>
+  <script>
+    /***************************************************
+     * 
+     * Service Worker
+     * 
+     * *************************************************/
+     if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../service-worker.js');
+    }
+  </script>
   <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"></script> -->
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <script defer src="../asset/js/apps.js"></script>
