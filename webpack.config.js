@@ -40,7 +40,7 @@ export default {
     // Service worker entry point:
     sw: './src/sw.js',
     // Application entry point
-    main: './src/index.js',
+    main: './src/asset/js/index.js',
   },
   output: {
     path: outputPath,
@@ -54,11 +54,10 @@ export default {
       }
 
       // Otherwise, output files as normal
-      // return 'asset/js/[name].[contenthash:8].js';
-      return 'asset/js/[name].js';
+      return 'asset/js/[name].[contenthash:8].js';
     },
-    assetModuleFilename: '[name][ext]',
-    // clean: true,
+    assetModuleFilename: 'asset/js/[name][ext]',
+    clean: true,
   },
   module: {
     rules: [
