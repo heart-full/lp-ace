@@ -1,9 +1,9 @@
 /**
  * Loading Remove
  */
-setTimeout(() => {
-  document.getElementById('loading').remove();
-}, 500);
+// setTimeout(() => {
+//   document.getElementById('loading').remove();
+// }, 500);
 
 
 /**

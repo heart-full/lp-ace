@@ -57,7 +57,7 @@ export default {
       return 'asset/js/[name].[contenthash:8].js';
     },
     assetModuleFilename: 'asset/js/[name][ext]',
-    clean: true,
+    // clean: true,
   },
   module: {
     rules: [
