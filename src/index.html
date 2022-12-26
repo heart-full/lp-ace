@@ -58,14 +58,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" /> -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+JP:wght@100;300;400;500;700;900&display=swap" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="./asset/css/base.min.css" />
   <link rel="stylesheet" href="./asset/css/style.min.css" />
   <link rel="stylesheet" href="./asset/css/index.min.css" />
   <link rel="stylesheet" href="./asset/css/loading.min.css" />
 </head>
 <body id="Index" class="Index" data-title="ハートフルACE">
-  <div id="loading"></div>
+  <!-- <div id="loading"></div> -->
   <div id="Container" class="Container">
     <header id="header" class="page_header inview outview" data-title="PAGE TOP">
       <h1 class="page-title" title="Heartfull ACE">
@@ -472,7 +472,7 @@
                   <img src="asset/images/curriculumn.svg" width="998" height="656" alt="カリキュラム体験" loading="lazy">
                   <img src="asset/images/muryou-taiken.svg" width="704" height="508" alt="無料体験実施中" loading="lazy">
                 </span>
-              </spaｎ>
+              </span>
             </p>
             </details>
             <details open>
@@ -713,6 +713,7 @@
     <li data-id="Kengaku"><a href="./kengaku/">見学申し込み</a></li>
     <li data-id="Contact"><a href="./contact/">お問い合わせ</a></li>
   </ul>
+  <!--
   <template id="c-text01">
     <div id="loading_message01" class="l-wrapper">
       <p class="c-text js-span-wrap-text">あなたの<br />「働きたい」を<br />応援します</p>
@@ -811,6 +812,7 @@
       </svg>
     </div>
   </template>
+  -->
   <script>
   /***************************************************
    * 
@@ -821,6 +823,7 @@
     navigator.serviceWorker.register('./service-worker.js');
   }
   </script>
+  <!--
   <script>
   if(document.cookie.indexOf('loading=finished') === -1) {
     if (mobile) {
@@ -982,7 +985,8 @@
     }, 500);
   }
   </script>
-  <script defer src="./asset/js/apps2.js"></script>
+  -->
+  <script defer src="./asset/js/apps.js"></script>
   <script defer src="./asset/js/youtube.js"></script>
 </body>
 </html>
