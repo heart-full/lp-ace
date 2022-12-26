@@ -40,7 +40,7 @@ export default {
     // Service worker entry point:
     sw: './src/sw.js',
     // Application entry point
-    app: './src/index.js',
+    main: './src/index.js',
   },
   output: {
     path: outputPath,
