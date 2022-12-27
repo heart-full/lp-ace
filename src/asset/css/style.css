@@ -104,7 +104,6 @@
   .corp-logo {
     width: clamp(30px, 8.3333333333vw, 80px);
     height: auto;
-    max-height: 2em;
     aspect-ratio: 400/143;
     margin-left: clamp(8px, 1.6666666667vw, 16px);
   }

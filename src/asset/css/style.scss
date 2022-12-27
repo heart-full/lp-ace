@@ -103,7 +103,6 @@ body {
 .corp-logo {
   width: clamp(30px, calc(100vw * 80 / 960), 80px);
   height: auto;
-  max-height: 2em;
   aspect-ratio: 400 / 143;
   margin-left: clamp(8px, calc(100vw * 16 /960), 16px);  
 }

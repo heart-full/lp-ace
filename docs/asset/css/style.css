@@ -104,7 +104,6 @@
   .corp-logo {
     width: clamp(30px, 8.3333333333vw, 80px);
     height: auto;
-    max-height: 2em;
     aspect-ratio: 400/143;
     margin-left: clamp(8px, 1.6666666667vw, 16px);
   }
@@ -158,8 +157,8 @@
   .site-concept {
     color: rgb(0, 110, 255);
     font-size: clamp(18px, 3.3333333333vw, 32px);
-    font-family: "Noto Serif JP", serif;
-    font-weight: 500;
+    font-family: serif;
+    font-weight: bold;
     background-color: rgba(255, 255, 255, 0.4);
     place-self: center;
     width: -webkit-fit-content;
@@ -232,14 +231,14 @@
     height: calc(100% - 28px);
     position: relative;
   }
-  .desktop .page_header-hero {
-    background-image: url(../images/hero_bg_l.webp);
-  }
   .touch-device.portrait .page_header-hero {
     background-image: url(../images/hero_bg_s.webp);
   }
   .touch-device.landscape .page_header-hero {
     background-image: url(../images/hero_bg_m.webp);
+  }
+  .desktop .page_header-hero {
+    background-image: url(../images/hero_bg_l.webp);
   }
   @media screen and (max-width: 600px) {
     .touch-device .page_header-hero {
@@ -437,10 +436,8 @@
   /* Global Navigation & Local Navigation Block Definition
   /*
   /* ======================================================== */
-  @media not all and (min-width: 960px) {
-    .desktop .wake-menu {
-      display: none;
-    }
+  .desktop .wake-menu {
+    display: none;
   }
   .touch-device.landscape .wake-menu {
     display: none;
@@ -618,7 +615,7 @@
   .sticky-nav ul li:hover::before {
     transform: rotate(125deg) scale(2);
   }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1280px) {
     .sticky-nav {
       display: none;
     }
@@ -675,6 +672,10 @@
   /* Main Block Definition
   /*
   /* ======================================================== */
+  main, footer {
+    font-family: "Kosugi Maru", sans-serif;
+    font-weight: 300;
+  }
   .main .top-section::before {
     content: attr(title);
     color: #999;
