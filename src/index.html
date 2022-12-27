@@ -6,7 +6,7 @@
   <script>
     let mobile= false;
     const html = document.getElementsByTagName('html');
-    if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    if (navigator.userAgentData.match(/iPhone|Android.+Mobile/)) {
       mobile = true;
       html[0].classList.add('touch-device');
       let _width = window.innerWidth;
