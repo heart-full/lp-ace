@@ -77,7 +77,7 @@ export default {
             options: {
               // オプションでSASS/SCSS内のurl()メソッドを取り込まない
               url: true,
-              sourceMap: enabledSourceMap,
+              sourceMap: true,
             },
           },
           //Compiles Sass to CSS
@@ -85,7 +85,7 @@ export default {
             loader:"sass-loader",
             options: {
               // ソースマップの利用有無
-              sourceMap: enabledSourceMap,
+              sourceMap: true,
             }
           },
         ],
