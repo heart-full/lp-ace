@@ -470,10 +470,8 @@ body {
 //   border-radius: 0.25em;
 // }
 
-@media not all and (min-width: 960px) {
-  .desktop .wake-menu {
-    display: none;
-  }
+.desktop .wake-menu {
+  display: none;
 }
 
 .touch-device.landscape .wake-menu {

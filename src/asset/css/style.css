@@ -437,10 +437,8 @@
   /* Global Navigation & Local Navigation Block Definition
   /*
   /* ======================================================== */
-  @media not all and (min-width: 960px) {
-    .desktop .wake-menu {
-      display: none;
-    }
+  .desktop .wake-menu {
+    display: none;
   }
   .touch-device.landscape .wake-menu {
     display: none;
