@@ -41,7 +41,12 @@ export default {
     // Service worker entry point:
     sw: './src/sw.js',
     // Application entry point
-    main: './src/asset/js/index.js',
+    bundle: './src/asset/js/bundle.js',
+    // apps: './src/asset/js/apps.js',
+    // // Other JS
+    // contact_validate: './src/asset/js/contact_validate.js',
+    // kengaku_validate: './src/asset/js/kengaku_validate.js',
+    // youtube: './src/asset/js/youtube.js',
   },
   output: {
     path: outputPath,
@@ -50,15 +55,14 @@ export default {
       // Check if the current filename is for the service worker:
       if (runtime === 'sw') {
         // Output a service worker in the root of the dist directory
-        // Also, ensure the output file name doesn't have a hash in it
         return 'service-worker.js?';
       }
 
       // Otherwise, output files as normal
-      return 'asset/js/[name].[contenthash:8].js';
+      return 'asset/js/[name].js';
     },
-    assetModuleFilename: 'asset/js/[name][ext]',
-    // clean: true,
+    assetModuleFilename: 'asset/js/[name].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -85,6 +89,7 @@ export default {
           {
             loader:"sass-loader",
             options: {
+              url: true,
               // ソースマップの利用有無
               sourceMap: true,
             }
@@ -93,7 +98,7 @@ export default {
       },
       {
         //対象とするアセットファイルの拡張子を正規表現で指定
-        test: /\.(css)$/i,
+        test: /\.(css)/i,
         //いずれかの type を指定
         type: 'asset/resource',
         generator: {
@@ -107,7 +112,7 @@ export default {
       //   //いずれかの type を指定
       //   type: 'asset/resource',
       //   generator: {
-      //     filename: "./asset/js/[name][ext]"
+      //     filename: "./asset/js/[name].js"
       //   }
       // },
       {
