@@ -26,6 +26,7 @@ import {HtmlWebpackSkipAssetsPlugin} from 'html-webpack-skip-assets-plugin';
 // manifest.json
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 
+
 const __dirname = path.resolve(path.dirname(''));
 const isProd = process.env.NODE_ENV === 'production';
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
