@@ -224,7 +224,6 @@
   }
   /* Header Hero Section */
   .page_header-hero {
-    background-image: url(../images/hero_bg_s.webp);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -233,14 +232,14 @@
     height: calc(100% - 28px);
     position: relative;
   }
-  .desktop .page_header-hero {
-    background-image: url(../images/hero_bg_l.webp);
-  }
   .touch-device.portrait .page_header-hero {
     background-image: url(../images/hero_bg_s.webp);
   }
   .touch-device.landscape .page_header-hero {
     background-image: url(../images/hero_bg_m.webp);
+  }
+  .desktop .page_header-hero {
+    background-image: url(../images/hero_bg_l.webp);
   }
   @media screen and (max-width: 600px) {
     .touch-device .page_header-hero {
