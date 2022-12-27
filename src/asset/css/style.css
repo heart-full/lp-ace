@@ -158,8 +158,8 @@
   .site-concept {
     color: rgb(0, 110, 255);
     font-size: clamp(18px, 3.3333333333vw, 32px);
-    font-family: "Noto Serif JP", serif;
-    font-weight: 500;
+    font-family: serif;
+    font-weight: bold;
     background-color: rgba(255, 255, 255, 0.4);
     place-self: center;
     width: -webkit-fit-content;
