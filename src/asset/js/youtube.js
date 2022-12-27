@@ -22,7 +22,8 @@ window.addEventListener('DOMContentLoaded', function(){
                             src="https://www.youtube.com/embed/${ytid}?rel=0&autoplay=1&start=0&end=${end}&mute=1&enablejsapi=1&modestbranding=1&origin=https://heart-full.org" 
                             title="${title}" 
                             frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                            loading="lazy"
                     </iframe>`;
       movie.innerHTML = '';
       movie.innerHTML = iframe;
