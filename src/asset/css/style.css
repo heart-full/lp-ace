@@ -673,6 +673,10 @@
   /* Main Block Definition
   /*
   /* ======================================================== */
+  main, footer {
+    font-family: "Kosugi Maru", sans-serif;
+    font-weight: 300;
+  }
   .main .top-section::before {
     content: attr(title);
     color: #999;
