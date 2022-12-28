@@ -13,12 +13,17 @@ import path from 'path';
 
 // simplifies creation of HTML files
 // to serve your webpack bundles. 
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import {HtmlWebpackSkipAssetsPlugin} from 'html-webpack-skip-assets-plugin';
 
 //import fs from 'fs';
 //import globule from 'globule';
+
+//import webpack-remove-empty-scripts
+import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 
 // Workbox plugin
 //import {GenerateSW} from 'workbox-webpack-plugin';
@@ -41,7 +46,7 @@ export default {
     // Service worker entry point:
     sw: './src/sw.js',
     // Application entry point
-    bundle: './src/asset/js/bundle.js',
+    // bundle: './src/asset/js/bundle.js',
     // apps: './src/asset/js/apps.js',
     // // Other JS
     // contact_validate: './src/asset/js/contact_validate.js',
@@ -61,7 +66,7 @@ export default {
       // Otherwise, output files as normal
       return 'asset/js/[name].js';
     },
-    assetModuleFilename: 'asset/js/[name].js',
+    assetModuleFilename: './asset/js/[name].js',
     clean: true,
   },
   module: {
@@ -80,18 +85,19 @@ export default {
           {
             loader: "css-loader", 
             options: {
-              // オプションでSASS/SCSS内のurl()メソッドを取り込まない
-              url: true,
-              sourceMap: true,
+              // css内のurl()メソッドを取り込まない
+              url: false,
+              // ソースマップの利用有無
+              sourceMap: !isProd,
+              importLoaders: 2
             },
           },
           //Compiles Sass to CSS
           {
             loader:"sass-loader",
             options: {
-              url: true,
               // ソースマップの利用有無
-              sourceMap: true,
+              sourceMap: !isProd,
             }
           },
         ],
@@ -162,7 +168,15 @@ export default {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`, 　ここを追加することでjsのminifyの設定を維持しつつcssをminifyできる（スプレッド演算子のイメージ）。
+      new CssMinimizerPlugin(),
+    ],
+  },
   plugins: [
+    new CleanWebpackPlugin(),    
     // new InjectManifest({
     //   swSrc: './src/sw.js'
     // }),
@@ -170,28 +184,28 @@ export default {
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body',
-      //chunk: ['app'],
+      chunk: ['index'],
       excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackPlugin({
       template: './src/ikou/index.html',
       filename: 'ikou/index.html',
       inject: 'body',
-      //chunk: ['app'],
+      chunk: ['ikou'],
       excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackPlugin({
       template: './src/kengaku/index.html',
       filename: 'kengaku/index.html',
       inject: 'body',
-      //chunk: ['app'],
+      chunk: ['kengaku'],
       excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackPlugin({
       template: './src/contact/index.html',
       filename: 'contact/index.html',
       inject: 'body',
-      //chunk: ['app'],
+      chunk: ['contact'],
       excludeAssets: ["./src/sw.js", "./src/manifest.json"]
     }),
     new HtmlWebpackSkipAssetsPlugin({
@@ -200,9 +214,8 @@ export default {
     new HtmlWebpackSkipAssetsPlugin({
       excludeAssets: ["manifest.json"]
     }),
-    new MiniCssExtractPlugin({
-      filename: 'asset/css/[name].[contenthash:8].css',
-    }),
+    new MiniCssExtractPlugin(),
+    new RemoveEmptyScriptsPlugin(),
     new WebpackPwaManifest({
       // publicPath: './',
       publicPath: 'https://heart-full.github.io/lp-ace/',
