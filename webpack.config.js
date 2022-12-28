@@ -67,7 +67,7 @@ export default {
       return 'asset/js/[name].js';
     },
     assetModuleFilename: './asset/js/[name].js',
-    clean: true,
+    // clean: true,
   },
   module: {
     rules: [
@@ -86,7 +86,7 @@ export default {
             loader: "css-loader", 
             options: {
               // css内のurl()メソッドを取り込まない
-              url: false,
+              url: true,
               // ソースマップの利用有無
               sourceMap: !isProd,
               importLoaders: 2
