@@ -13,7 +13,6 @@ import path from 'path';
 
 // simplifies creation of HTML files
 // to serve your webpack bundles. 
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
@@ -35,7 +34,7 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 const __dirname = path.resolve(path.dirname(''));
 const isProd = process.env.NODE_ENV === 'production';
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
-const enabledSourceMap = !isProd;
+const enabledSourceMap = MODE === "development";
 const outputPath = path.resolve(__dirname, "./docs");
 
 export default {
@@ -88,7 +87,7 @@ export default {
               // css内のurl()メソッドを取り込まない
               url: true,
               // ソースマップの利用有無
-              sourceMap: !isProd,
+              sourceMap: enabledSourceMap,
               importLoaders: 2
             },
           },
@@ -97,7 +96,7 @@ export default {
             loader:"sass-loader",
             options: {
               // ソースマップの利用有無
-              sourceMap: !isProd,
+              sourceMap: enabledSourceMap,
             }
           },
         ],
@@ -176,7 +175,6 @@ export default {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),    
     // new InjectManifest({
     //   swSrc: './src/sw.js'
     // }),
