@@ -34,20 +34,20 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 const __dirname = path.resolve(path.dirname(''));
 const isProd = process.env.NODE_ENV === 'production';
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
-const enabledSourceMap = MODE === "development";
+const enabledSourceMap = process.env.NODE_ENVMODE === "development";
 const outputPath = path.resolve(__dirname, "./docs");
 
 export default {
   mode: isProd ? 'production' : 'development',
-  devtool: 'source-map',
+  devtool: isProd ? 'eval' : 'source-map',
   context: process.cwd(),
   entry: {
     // Service worker entry point:
     sw: './src/sw.js',
     // Application entry point
     // bundle: './src/asset/js/bundle.js',
+    // Other JS
     // apps: './src/asset/js/apps.js',
-    // // Other JS
     // contact_validate: './src/asset/js/contact_validate.js',
     // kengaku_validate: './src/asset/js/kengaku_validate.js',
     // youtube: './src/asset/js/youtube.js',
@@ -87,7 +87,7 @@ export default {
               // css内のurl()メソッドを取り込まない
               url: true,
               // ソースマップの利用有無
-              sourceMap: enabledSourceMap,
+              // sourceMap: enabledSourceMap,
               importLoaders: 2
             },
           },
@@ -101,6 +101,7 @@ export default {
           },
         ],
       },
+      // Asset Modules の設定
       {
         //対象とするアセットファイルの拡張子を正規表現で指定
         test: /\.(css)/i,
@@ -110,16 +111,6 @@ export default {
           filename: "./asset/css/[name][ext]"
         }
       },
-      // Asset Modules の設定
-      // {
-      //   //対象とするアセットファイルの拡張子を正規表現で指定
-      //   test: /\.(js)$/i,  
-      //   //いずれかの type を指定
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: "./asset/js/[name].js"
-      //   }
-      // },
       {
         //対象とするアセットファイルの拡張子を正規表現で指定
         test: /\.(png|jpe?g|gif|svg|avif|webp)$/i,  
