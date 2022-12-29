@@ -482,7 +482,7 @@ iframe {
 
 .activities-suchedule-timetable .zoom span:nth-of-type(2)::after {
   content: '';
-  background: url(../images/zoom.png) no-repeat center center;
+  background: url(../images/zoom.webp) no-repeat center center;
   background-size: cover;
   display: block;
   width: clamp(24px, calc(100vw * 48 / 960), 48px);
