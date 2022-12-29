@@ -16,6 +16,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import {HtmlWebpackSkipAssetsPlugin} from 'html-webpack-skip-assets-plugin';
 
 //import fs from 'fs';
@@ -162,6 +163,7 @@ export default {
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       // `...`, 　ここを追加することでjsのminifyの設定を維持しつつcssをminifyできる（スプレッド演算子のイメージ）。
+      new TerserPlugin(),
       new CssMinimizerPlugin(),
     ],
   },
