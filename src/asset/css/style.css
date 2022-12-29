@@ -153,8 +153,6 @@
   .catchcopy {
     width: 100%;
     height: auto;
-    -o-object-fit: contain;
-       object-fit: contain;
   }
   .site-concept {
     color: rgb(0, 110, 255);
