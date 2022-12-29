@@ -67,7 +67,9 @@ export default {
       return 'asset/js/[name].js';
     },
     assetModuleFilename: './asset/js/[name].js',
-    // clean: true,
+    clean: {
+      keep: /asset\/(css|images)\//,
+    },
   },
   module: {
     rules: [
