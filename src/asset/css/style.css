@@ -148,6 +148,7 @@
   }
   .touch-device .catchcopy-holder {
     width: clamp(84px, 32.5vw, 120px);
+    aspect-ratio: 300/92;
   }
   .catchcopy {
     width: 100%;
